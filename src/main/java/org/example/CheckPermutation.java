@@ -9,19 +9,22 @@ import java.util.*;
 * */
 public class CheckPermutation {
 
+
  public static boolean algoOne(String stringOne, String stringTwo){
+
+
      if(stringOne.length() != stringTwo.length()){
          return false;
      }
 
-     Set<char> characterMap = new HashSet<char>();
+     Set<Character> characterMap = new HashSet<Character>();
 
-     for(char current: stringOne.toCharArray()){
+     for(char current: stringOne.toLowerCase().toCharArray()){
          characterMap.add(current);
      }
 
      for(int i = 0; i < stringTwo.length(); i++){
-         if(!characterMap.contains(stringTwo.charAt(i))){
+         if(!characterMap.contains(stringTwo.toLowerCase().charAt(i))){
              return false;
          }
      }
