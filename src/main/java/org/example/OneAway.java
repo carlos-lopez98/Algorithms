@@ -1,16 +1,17 @@
 package org.example;
 
-public class OneWay {
-    String string = "carlos";
+public class OneAway {
 
-    public OneWay() {
+    public OneAway() {
     }
 
     public boolean algoOne(String one, String two){
 
         if(one.equals(two)){
             return true;
-        }else if (one.length() == two.length()){
+        }else if(Math.abs(one.length() - two.length()) >= 2){
+            return false;
+        } else if (one.length() == two.length()){
             int mismatch = 0;
             for(int i = 0; i < one.length(); i++){
                 if(one.toCharArray()[i] != two.toCharArray()[i]){

@@ -2,9 +2,9 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        OneWay oneWay = new OneWay();
+        OneAway oneAway = new OneAway();
 
-        boolean match = oneWay.algoOne("Carlooooos", "carlos");
+        boolean match = oneAway.algoOne("Cas", "carlos");
 
         System.out.println(match);
     }
