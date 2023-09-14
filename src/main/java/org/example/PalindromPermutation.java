@@ -24,9 +24,7 @@ public class PalindromPermutation {
             characterMap.put(i, refactored.toCharArray()[i]);
         }
 
-        characterMap.put()
-
-
+//        characterMap.put()
 
       return false;
     }

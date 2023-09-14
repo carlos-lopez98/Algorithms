@@ -2,9 +2,10 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String test = "Harry";
-        String testTwo = "Ya";
+        OneWay oneWay = new OneWay();
 
-        System.out.println(CheckPermutation.algoOne(test, testTwo));
+        boolean match = oneWay.algoOne("Carlooooos", "carlos");
+
+        System.out.println(match);
     }
 }
