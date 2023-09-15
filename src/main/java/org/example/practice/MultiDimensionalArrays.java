@@ -65,4 +65,15 @@ public class MultiDimensionalArrays {
         System.out.println(matrix[0][2] + " " + matrix[1][2] + " " + matrix[2][2]);
 
     }
+
+    public static void sumRows(){
+        for(int i =0; i < matrix.length; i++){
+            System.out.println("Sum Row: " + i);
+            int sum = 0;
+            for(int j = 0; j< matrix.length; j++){
+                   sum += matrix[i][j];
+            }
+            System.out.println(sum);
+        }
+    }
 }
