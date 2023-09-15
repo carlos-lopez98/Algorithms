@@ -67,11 +67,26 @@ public class MultiDimensionalArrays {
     }
 
     public static void sumRows(){
+
+        //Staying in first column, and getting the length of that column, returns row numbers
         for(int i =0; i < matrix.length; i++){
             System.out.println("Sum Row: " + i);
             int sum = 0;
             for(int j = 0; j< matrix.length; j++){
                    sum += matrix[i][j];
+            }
+            System.out.println(sum);
+        }
+    }
+
+    public static void sumColumns(){
+
+        //Staying in first row, and getting length of that row, returns column numbers
+        for(int i = 0; i < matrix[0].length; i++){
+            System.out.println("Sum of Column: " + i);
+            int sum = 0;
+            for(int j = 0; j < matrix.length; j++){
+                sum += matrix[j][i];
             }
             System.out.println(sum);
         }

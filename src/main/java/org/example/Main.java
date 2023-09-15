@@ -30,8 +30,7 @@ public class Main {
 //        System.out.println(matrix[1][0]); //4
 //
 //        MultiDimensionalArrays.printIndicesByColumn();
-            MultiDimensionalArrays.sumRows();
-
+            MultiDimensionalArrays.sumColumns();
 
     }
 }
