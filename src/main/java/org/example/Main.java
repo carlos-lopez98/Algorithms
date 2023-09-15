@@ -2,10 +2,14 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        OneAway oneAway = new OneAway();
 
-        boolean match = oneAway.algoOne("Cas", "carlos");
+//        //String Compression
+//        System.out.println(StringCompression.algoOne("aaaabbcc"));
+//        System.out.println(StringCompression.algoOne("aaaaaaa"));
+//        System.out.println(StringCompression.algoOne("Carlos"));
+//        System.out.println(StringCompression.algoOne("AABBBCC"));
 
-        System.out.println(match);
+
+
     }
 }
