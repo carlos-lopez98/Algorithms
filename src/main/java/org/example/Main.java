@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.practice.MultiDimensionalArrays;
+import org.example.practice.reference_type.Person;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,7 +31,24 @@ public class Main {
 //        System.out.println(matrix[1][0]); //4
 //
 //        MultiDimensionalArrays.printIndicesByColumn();
-            MultiDimensionalArrays.sumColumns();
+//            MultiDimensionalArrays.sumColumns();
 
+
+        //These objects reference the same address
+        Person personOne = new Person("Carlos");
+        Person personTwo = personOne;
+
+        System.out.println(personOne.getName());
+        System.out.println(personTwo.getName());
+
+        personOne.setName("Naomi");
+
+        System.out.println("Person One: " + personOne.getName());
+        System.out.println("Person Two: " + personTwo.getName());
+
+        personTwo.setName("Jack");
+
+        System.out.println("Person One: " + personOne.getName());
+        System.out.println("Person Two: " + personTwo.getName());
     }
 }

@@ -2,12 +2,12 @@ package org.example.practice;
 
 
 /*
-* Practice for Multi Dimensional Arrays
-* */
+ * Practice for Multi Dimensional Arrays
+ * */
 public class MultiDimensionalArrays {
 
     //Initialization
-    static int[][] matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
+    static int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
     //Excersises Accessing Elements
     //2nd Column third row
@@ -19,20 +19,20 @@ public class MultiDimensionalArrays {
     //First Column, First Row
     //First Column, Second Row
 
-    public static String printArray(){
+    public static String printArray() {
 
         //This prints the address reference to where the array is stored in memory
         return matrix.toString();
     }
 
-    public static void printArrayCorrect(){
+    public static void printArrayCorrect() {
 
         //Outer Loop here is the Row Traversal
-        for(int i = 0; i < matrix.length; i++){
+        for (int i = 0; i < matrix.length; i++) {
             System.out.println("Column " + i);
 
             //Inner Loop Here is the column traversal
-            for(int j=0; j< matrix[0].length; j++){
+            for (int j = 0; j < matrix[0].length; j++) {
 
                 System.out.print(" " + matrix[j][i] + " ");
             }
@@ -40,7 +40,7 @@ public class MultiDimensionalArrays {
     }
 
 
-    public static void printIndicesByRow(){
+    public static void printIndicesByRow() {
 
         System.out.println("Print Top");
         System.out.println(matrix[0][0] + " " + matrix[0][1] + " " + matrix[0][2]);
@@ -53,7 +53,7 @@ public class MultiDimensionalArrays {
 
     }
 
-    public static void printIndicesByColumn(){
+    public static void printIndicesByColumn() {
 
         System.out.println("Print First");
         System.out.println(matrix[0][0] + " " + matrix[1][0] + " " + matrix[2][0]);
@@ -66,26 +66,24 @@ public class MultiDimensionalArrays {
 
     }
 
-    public static void sumRows(){
-
+    public static void sumRows() {
         //Staying in first column, and getting the length of that column, returns row numbers
-        for(int i =0; i < matrix.length; i++){
+        for (int i = 0; i < matrix.length; i++) {
             System.out.println("Sum Row: " + i);
             int sum = 0;
-            for(int j = 0; j< matrix.length; j++){
-                   sum += matrix[i][j];
+            for (int j = 0; j < matrix.length; j++) {
+                sum += matrix[i][j];
             }
             System.out.println(sum);
         }
     }
 
-    public static void sumColumns(){
-
+    public static void sumColumns() {
         //Staying in first row, and getting length of that row, returns column numbers
-        for(int i = 0; i < matrix[0].length; i++){
+        for (int i = 0; i < matrix[0].length; i++) {
             System.out.println("Sum of Column: " + i);
             int sum = 0;
-            for(int j = 0; j < matrix.length; j++){
+            for (int j = 0; j < matrix.length; j++) {
                 sum += matrix[j][i];
             }
             System.out.println(sum);
