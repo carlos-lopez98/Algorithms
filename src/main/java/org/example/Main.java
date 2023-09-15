@@ -11,7 +11,6 @@ public class Main {
 //        System.out.println(StringCompression.algoOne("Carlos"));
 //        System.out.println(StringCompression.algoOne("AABBBCC"));
 
-        MultiDimensionalArrays.printIndices();
-
+        MultiDimensionalArrays.printIndicesByColumn();
     }
 }

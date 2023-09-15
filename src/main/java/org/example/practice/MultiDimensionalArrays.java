@@ -30,7 +30,7 @@ public class MultiDimensionalArrays {
     }
 
 
-    public static void printIndices(){
+    public static void printIndicesByRow(){
 
         System.out.println("Print Top");
         System.out.println(matrix[0][0] + " " + matrix[0][1] + " " + matrix[0][2]);
@@ -40,6 +40,19 @@ public class MultiDimensionalArrays {
 
         System.out.println("Print Bottom");
         System.out.println(matrix[2][0] + " " + matrix[2][1] + " " + matrix[2][2]);
+
+    }
+
+    public static void printIndicesByColumn(){
+
+        System.out.println("Print First");
+        System.out.println(matrix[0][0] + " " + matrix[1][0] + " " + matrix[2][0]);
+
+        System.out.println("Print Second");
+        System.out.println(matrix[0][1] + " " + matrix[1][1] + " " + matrix[2][1]);
+
+        System.out.println("Print Third");
+        System.out.println(matrix[0][2] + " " + matrix[1][2] + " " + matrix[2][2]);
 
     }
 }
