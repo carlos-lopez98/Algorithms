@@ -34,21 +34,36 @@ public class Main {
 //            MultiDimensionalArrays.sumColumns();
 
 
-        //These objects reference the same address
-        Person personOne = new Person("Carlos");
-        Person personTwo = personOne;
+//        //These objects reference the same address - Whenever a change is made to one object - you update both...
+//        Person personOne = new Person("Carlos");
+//        Person personTwo = personOne;
+//
+//        System.out.println(personOne.getName());
+//        System.out.println(personTwo.getName());
+//
+//        personOne.setName("Naomi");
+//
+//        System.out.println("Person One: " + personOne.getName());
+//        System.out.println("Person Two: " + personTwo.getName());
+//
+//        personTwo.setName("Jack");
+//
+//        System.out.println("Person One: " + personOne.getName());
+//        System.out.println("Person Two: " + personTwo.getName());
+//
+//        personOne.setName("April");
+//
+//        System.out.println("Person One: " + personOne.getName());
+//        System.out.println("Person Two: " + personTwo.getName());
 
-        System.out.println(personOne.getName());
-        System.out.println(personTwo.getName());
 
-        personOne.setName("Naomi");
+        String test = new String("Carlos");
 
-        System.out.println("Person One: " + personOne.getName());
-        System.out.println("Person Two: " + personTwo.getName());
-
-        personTwo.setName("Jack");
-
-        System.out.println("Person One: " + personOne.getName());
-        System.out.println("Person Two: " + personTwo.getName());
+        for(int i = 0; i < 10; i++){
+            //Concat returns a new string everytime - based on the original test string
+            String current = test.concat(String.valueOf(i));
+            current = test.concat(String.valueOf(i + 1));
+            System.out.print(" " + current + " ");
+        }
     }
 }
