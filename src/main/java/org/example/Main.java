@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.practice.MultiDimensionalArrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -9,7 +11,7 @@ public class Main {
 //        System.out.println(StringCompression.algoOne("Carlos"));
 //        System.out.println(StringCompression.algoOne("AABBBCC"));
 
-
+        MultiDimensionalArrays.printIndices();
 
     }
 }
