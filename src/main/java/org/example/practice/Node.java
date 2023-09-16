@@ -38,6 +38,8 @@ public class Node {
              n.next = n.next.next;
              return head;
          }
+         //Notice how we're only moving the position of n, we're always going to return the head reference, when removing
+         //a node that's not the head
           n = n.next;
         }
         return head;
