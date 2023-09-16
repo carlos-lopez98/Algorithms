@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.practice.MultiDimensionalArrays;
+import org.example.practice.ReturnKthtoLast;
+import org.example.practice.SinglyLinkedList;
 import org.example.practice.reference_type.Person;
 
 public class Main {
@@ -57,13 +59,25 @@ public class Main {
 //        System.out.println("Person Two: " + personTwo.getName());
 
 
-        String test = new String("Carlos");
+//        String test = new String("Carlos");
+//
+//        for(int i = 0; i < 10; i++){
+//            //Concat returns a new string everytime - based on the original test string
+//            String current = test.concat(String.valueOf(i));
+//            current = test.concat(String.valueOf(i + 1));
+//            System.out.print(" " + current + " ");
+//        }
 
-        for(int i = 0; i < 10; i++){
-            //Concat returns a new string everytime - based on the original test string
-            String current = test.concat(String.valueOf(i));
-            current = test.concat(String.valueOf(i + 1));
-            System.out.print(" " + current + " ");
-        }
+//        //KthToLast Test
+//        SinglyLinkedList list = new SinglyLinkedList();
+//        // Append 15 elements to the list
+//        for (int i = 1; i <= 15; i++) {
+//            list.append(i);
+//        }
+//        ReturnKthtoLast instant = new ReturnKthtoLast();
+//        System.out.println(instant.algoOne(list.head, 1).data);
+
+
+
     }
 }

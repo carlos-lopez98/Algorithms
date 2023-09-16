@@ -2,36 +2,37 @@ package org.example.practice;
 
 
 /*
-* Implement an algorithm to find the kth to last element of a singly linked list
-* */
+ * Implement an algorithm to find the kth to last element of a singly linked list
+ * */
 public class ReturnKthtoLast {
 
+    int counter = -1;
 
-    int counter = 0;
+    public ReturnKthtoLast() {
+    }
 
-    public  ReturnKthtoLast(){};
-    public Node algoOne(Node head,int kthToLast){
-        if(head == null) return null;
+    public Node algoOne(Node head, int kthToLast) {
+        //LinkList is null
+        if (head == null) return null;
 
-
-
-
-
-        return head;
+        //If not start Looping
+        return backtrack(head, kthToLast);
     }
 
 
-    private Node backtrack(Node currentCall, int kthToLast){
+    private Node backtrack(Node currentCall, int kthToLast) {
         //Recursive Call breaker
-        if(currentCall == null){
+        if (currentCall == null) {
             return null;
         }
 
-        Node n = backtrack(currentCall, kthToLast);
+        Node n = backtrack(currentCall.next, kthToLast);
 
+        //Counter will be zero
         counter++;
 
-        if(counter == kthToLast){
+        //Unless kthToLast is one
+        if (counter == kthToLast) {
             return currentCall;
         }
 
