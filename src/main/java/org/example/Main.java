@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.practice.MultiDimensionalArrays;
+import org.example.practice.Node;
 import org.example.practice.ReturnKthtoLast;
 import org.example.practice.SinglyLinkedList;
 import org.example.practice.reference_type.Person;
@@ -77,9 +78,21 @@ public class Main {
 //        ReturnKthtoLast instant = new ReturnKthtoLast();
 //        System.out.println(instant.algoOne(list.head, 1).data);
 
+        DeleteMiddleNode delete = new DeleteMiddleNode();
 
+        Node nodeOne = new Node(1);
+        Node nodeTwo = new Node(2);
+        Node nodeThree = new Node(3);
+        Node nodeFour = new Node(4);
+        Node nodeFive = new Node(5);
 
+        nodeOne.next = nodeTwo;
+        nodeTwo.next = nodeThree;
+        nodeThree.next = nodeFour;
+        nodeFour.next = nodeFive;
 
+        delete.algoOne(nodeThree);
 
+        System.out.println(nodeThree.next.data);
     }
 }
