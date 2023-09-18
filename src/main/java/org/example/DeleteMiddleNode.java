@@ -8,12 +8,14 @@ import org.example.practice.Node;
 * */
 public class DeleteMiddleNode {
 
-
+    //Think about pass by reference, and how that affects this algorithm
     public void algoOne(Node middlenode) {
+
 
         if ( middlenode == null){
             return;
         }
 
+        middlenode = middlenode.next;
     }
 }

@@ -93,6 +93,11 @@ public class Main {
 
         delete.algoOne(nodeThree);
 
-        System.out.println(nodeThree.next.data);
+
+        while(nodeOne.next !=null){
+            System.out.println(nodeOne.next.data);
+
+            nodeOne = nodeOne.next;
+        }
     }
 }
