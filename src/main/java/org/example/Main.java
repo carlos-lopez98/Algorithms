@@ -78,26 +78,56 @@ public class Main {
 //        ReturnKthtoLast instant = new ReturnKthtoLast();
 //        System.out.println(instant.algoOne(list.head, 1).data);
 
-        DeleteMiddleNode delete = new DeleteMiddleNode();
+        //Delete Middle Node
+//        DeleteMiddleNode delete = new DeleteMiddleNode();
+//
+//        Node nodeOne = new Node(1);
+//        Node nodeTwo = new Node(2);
+//        Node nodeThree = new Node(3);
+//        Node nodeFour = new Node(4);
+//        Node nodeFive = new Node(5);
+//
+//        nodeOne.next = nodeTwo;
+//        nodeTwo.next = nodeThree;
+//        nodeThree.next = nodeFour;
+//        nodeFour.next = nodeFive;
+//
+//        delete.algoOne(nodeThree);
+//
+//
+//        while(nodeOne.next !=null){
+//            System.out.println(nodeOne.next.data);
+//
+//            nodeOne = nodeOne.next;
+//        }
 
-        Node nodeOne = new Node(1);
-        Node nodeTwo = new Node(2);
-        Node nodeThree = new Node(3);
-        Node nodeFour = new Node(4);
-        Node nodeFive = new Node(5);
+
+//        3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [x=5]
+        //Partition
+        Node nodeOne = new Node(3);
+        Node nodeTwo = new Node(5);
+        Node nodeThree = new Node(8);
+        Node nodeFour = new Node(5);
+        Node nodeFive = new Node(10);
+        Node nodeSix = new Node(2);
+        Node nodeSeven = new Node(1);
 
         nodeOne.next = nodeTwo;
         nodeTwo.next = nodeThree;
         nodeThree.next = nodeFour;
         nodeFour.next = nodeFive;
+        nodeFive.next = nodeSix;
+        nodeSix.next = nodeSeven;
 
-        delete.algoOne(nodeThree);
 
+        Partition partition = new Partition();
 
-        while(nodeOne.next !=null){
-            System.out.println(nodeOne.next.data);
+        Node head = partition.algoOne(nodeOne, 5);
 
-            nodeOne = nodeOne.next;
+        while(head != null){
+            System.out.println(head.data);
+
+            head = head.next;
         }
     }
 }
