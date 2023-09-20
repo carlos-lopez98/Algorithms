@@ -52,7 +52,10 @@ public class MyStack<T> {
     //Push should be able to push a new Node as well as the data
     public void push(T data){
         if(top == null){
-            this.top.data = data;
+            /*You Cannot Access Null Data*/
+//            this.top.data = data;
+            StackNode<T> node = new StackNode<>(data);
+            this.top = node;
         }else{
          StackNode<T> node = new StackNode<>(data);
          node.next = this.top;
