@@ -15,6 +15,11 @@ public class LoopDetectionLinkedList {
 
 
 
-    //Second way is to use the tortaise and hare algorithm
+    //Second way is to use the tortoise and hare algorithm
+    //This uses two pointers, one fast one slow
+    //If the two collide it tells us there is a loop in the linked list
+    //To get the head node of the cycle, at the collision point, you will
+    //set one of the two pointers = to the original head
+    //Then both move one at a time, where they meet will be the root node of your loop
 
 }
