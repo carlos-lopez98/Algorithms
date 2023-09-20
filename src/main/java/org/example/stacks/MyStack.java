@@ -50,12 +50,22 @@ public class MyStack<T> {
 
 
     //Push should be able to push a new Node as well as the data
-    public push(T data){
-
+    public void push(T data){
+        if(top == null){
+            this.top.data = data;
+        }else{
+         StackNode<T> node = new StackNode<>(data);
+         node.next = this.top;
+         top = node;
+        }
     };
-    public push(StackNode<T> Node){
-
-
+    public void push(StackNode<T> node){
+    if (top == null){
+        this.top = node;
+    }else{
+     node.next = top;
+     top = node;
+    }
     }
 }
 
