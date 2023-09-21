@@ -12,8 +12,28 @@ public class MajorityElement {
     //First off the array is sorted, so if an element has a duplicate it will be adjacent to itself
     //So for every unique element you find you could compare it's current space, to the value of current space + N/2
     //If that value is itself then, you have found your majority element
-    //Runtime would be O(n) as you'd be iterating through a list until you reach your majority element
+    //Runtime would be O(n) as you'd be iterating through a list until you reach your element to find
     //No new space needed so O(1) space complexity
+
+
+    //Solution two - find your element to search using a binary search
+
+
+    public int binarySearch(int[] ints, int low, int high, int x) {
+
+        while(low < high){
+            int mid = (low + high)/2;
+            if(ints[mid] == x){
+                return mid;
+            }else if(ints[mid] < x){
+                high = mid - 1;
+            }else{
+                low = mid + 1;
+            }
+        }
+        //Return -1 if we don't find the x in the array
+        return -1;
+    }
 
 
 
