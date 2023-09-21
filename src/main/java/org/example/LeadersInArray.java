@@ -1,11 +1,12 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /*
 *
-* Write a program to print all the leaders in the array. An element is a leader if it is greater than all the elements
+* Write a program to print all the leaders in the array. An element is a leader if it is greater than or equal to all the elements
 * to it's right side. And the rightmost is always a leader
 *
 * INPUT:
@@ -24,25 +25,22 @@ public class LeadersInArray {
     public static ArrayList<Integer> leaders(int arr[], int n){
         // Your code here
         ArrayList<Integer> ints = new ArrayList<Integer>();
-        int max = 0;
 
-        for(int i = n-1; i >= 0; i--){
+        int max = arr[n-1];
+        ints.add(max);
 
-            if(arr[i] > max){
+        for(int i = n-2; i >= 0; i--){
+            if(arr[i] >= max){
                 ints.add(arr[i]);
                 max = arr[i];
             }
         }
 
         //I would have to reverse the list to get the correct output
-        ArrayList<Integer> reversed = new ArrayList<Integer>();
 
-        for(int i = ints.size() - 1; i >= 0; i--){
-            int currentRight = ints.get(i);
-            reversed.add(currentRight);
-        }
+        Collections.reverse(ints);
 
-        return reversed;
+        return ints;
     }
 
 }
