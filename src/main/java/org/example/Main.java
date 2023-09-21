@@ -103,31 +103,41 @@ public class Main {
 
 
 //        3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [x=5]
-        //Partition
-        Node nodeOne = new Node(3);
-        Node nodeTwo = new Node(5);
-        Node nodeThree = new Node(8);
-        Node nodeFour = new Node(5);
-        Node nodeFive = new Node(10);
-        Node nodeSix = new Node(2);
-        Node nodeSeven = new Node(1);
+//        //Partition
+//        Node nodeOne = new Node(3);
+//        Node nodeTwo = new Node(5);
+//        Node nodeThree = new Node(8);
+//        Node nodeFour = new Node(5);
+//        Node nodeFive = new Node(10);
+//        Node nodeSix = new Node(2);
+//        Node nodeSeven = new Node(1);
+//
+//        nodeOne.next = nodeTwo;
+//        nodeTwo.next = nodeThree;
+//        nodeThree.next = nodeFour;
+//        nodeFour.next = nodeFive;
+//        nodeFive.next = nodeSix;
+//        nodeSix.next = nodeSeven;
+//
+//
+//        Partition partition = new Partition();
+//
+//        Node head = partition.algoOne(nodeOne, 5);
+//
+//        while(head != null){
+//            System.out.println(head.data);
+//
+//            head = head.next;
+//        }
+//    }
 
-        nodeOne.next = nodeTwo;
-        nodeTwo.next = nodeThree;
-        nodeThree.next = nodeFour;
-        nodeFour.next = nodeFive;
-        nodeFive.next = nodeSix;
-        nodeSix.next = nodeSeven;
 
-
-        Partition partition = new Partition();
-
-        Node head = partition.algoOne(nodeOne, 5);
-
-        while(head != null){
-            System.out.println(head.data);
-
-            head = head.next;
-        }
+//        //FindCommonElements Implementation
+//        int[] one = new int[]{1, 5, 10, 20, 40, 80};
+//        int[] two = new int[]{6, 7, 20, 80, 100};
+//        int[] three = new int[]{3, 4, 15, 20, 30, 70, 80, 120};
+//
+//        FindCommonElements elements = new FindCommonElements();
+//        elements.algoOne(one, two, three);
     }
 }
