@@ -37,9 +37,7 @@ public class LeadersInArray {
         }
 
         //I would have to reverse the list to get the correct output
-
         Collections.reverse(ints);
-
         return ints;
     }
 
