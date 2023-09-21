@@ -21,20 +21,38 @@ public class MajorityElement {
 
     public int binarySearch(int[] ints, int low, int high, int x) {
 
-        while(low < high){
-            int mid = (low + high)/2;
-            if(ints[mid] == x){
+        //This works because eventually low and high, will be greater/ less than each other
+        //so looop breaks
+        while(low <= high){
+
+            int mid = ((high - low)/2) + low ;
+
+            //Do not use <= or >= when doing binary search
+            if((mid == 0 || ints[mid - 1] < x) && ints[mid] == x ){
                 return mid;
             }else if(ints[mid] < x){
-                high = mid - 1;
-            }else{
                 low = mid + 1;
+            }else {
+                high = mid - 1;
             }
         }
         //Return -1 if we don't find the x in the array
         return -1;
     }
 
+    public boolean isMajority(int[] ints, int size, int x){
 
+        int position = binarySearch(ints,0, size - 1, x);
 
+        //No majority element found, couldn't even find x at all
+        if(position == -1){
+            return false;
+        }
+
+        if (position + (size/2) < size - 1 && ints[position] == ints[position + size/2]) {
+            return true;
+        }
+
+        return false;
+    }
 }
