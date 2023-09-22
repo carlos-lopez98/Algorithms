@@ -21,9 +21,39 @@ public class EquilibriumPointInArray {
     //Then sum right starting at point I if they equal return I
     //Then just keep doing this until you reach the end of the list
     // else return -1
+    //This solution works, but it's not optimized it's O(N^2)
+    public static int findEquilibrium(int arr[], int n)
+    {
+        //add code here
+        //i will be the pivot point
+        //it'll keep moving forward until we reach an equilibrium point
+        for(int i = 0; i < n; i++){
 
+            int leftSum = 0;
+            int rightSum = 0;
 
+            //Find Left Sum
+            for(int j = 0; j < i; j++){
+                if(i == 0){
+                    break;
+                }else{
+                    leftSum += arr[j];
+                }
+            }
 
+            //Find Right Sum
+            if(i != n){
+                for(int k = i + 1; k < n; k++){
+                    rightSum += arr[k];
+                }
+            }
+
+            if(leftSum == rightSum){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
 
