@@ -15,6 +15,33 @@ public class EquilibriumPointInArray {
     // To get right sum, it'll be total sum - sum up to current iteration i - then you check if they're equal
     //If they are return the current index as it's the equilibrium point
     //If not equal iterate again, until you reach the end of the list - return -1 if no point is found
+    public static int findEquilibriumOptimal(int arr[], int n){
+        int[] sums = new int[arr.length];
+        //Set's first sum to beginning int
+        int currentSum = arr[0];
+        sums[0] = currentSum;
+
+        //Iterate through first array and add the elements to a new sum[] array
+        for(int i = 1; i < n; i++){
+            //saves each sum into corresponding space
+            sums[i] = currentSum += arr[i];
+        }
+
+        //We want the pointer to start at one to avoid a leftSum at position 0
+        for(int j = 1; j < n; j++){
+            //Keeps track of Total, Left and Right Sums
+            int total = sums[arr.length - 1];
+            int leftSum = sums[j - 1];
+            int rightSum = total - sums[j];
+
+            if(leftSum == rightSum){
+                return j;
+            }
+        }
+        return -1;
+    }
+
+
 
 
     //Another route would be to sum left up to point I
