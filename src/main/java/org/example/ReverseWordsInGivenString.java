@@ -20,9 +20,11 @@ public class ReverseWordsInGivenString {
 
         //Split the string at the dots - it'll return a string array
         //The "." has a special meaning when splitting strings - it means split all characters - so this returns an empty array
+        //Split is essentially generating multiple strings - this leads to O(N) space complexity
         String[] words = s.split("\\.");
         String reversed = new String();
 
+        //For the iteration - this would be O(N) since this would take longer the longer your string is
         for(int i = words.length - 1; i > -1; i--){
 
             if (reversed.isBlank()){
