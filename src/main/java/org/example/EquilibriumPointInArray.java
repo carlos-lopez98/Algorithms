@@ -17,5 +17,14 @@ public class EquilibriumPointInArray {
     //If not equal iterate again, until you reach the end of the list - return -1 if no point is found
 
 
+    //Another route would be to sum left up to point I
+    //Then sum right starting at point I if they equal return I
+    //Then just keep doing this until you reach the end of the list
+    // else return -1
+
+
+
+
+
 
 }
