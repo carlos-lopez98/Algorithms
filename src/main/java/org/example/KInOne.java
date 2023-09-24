@@ -12,12 +12,12 @@ public class KInOne {
     //The implementation would take too long
 
     //Let's say you want an array of four stacks with each having a capacity of four stackable elements
-    public static int[] completeStackArray;
+    public int[] completeStackArray;
     private int stackCapacity;
-    public void createStackArray(int stackCapacity, int stacksNeeded){
+    public KInOne(int stackCapacity, int stacksNeeded){
         // This will give us an array, that can hold our capacity per stack + the total number of stacks we need
         this.stackCapacity = stackCapacity;
-        completeStackArray = new int[stackCapacity * stacksNeeded];
+        this.completeStackArray = new int[stackCapacity * stacksNeeded];
     }
 
     //This method will push a value, into the stack at the specified position in our completeArray
@@ -44,7 +44,10 @@ public class KInOne {
         int endReference = startReference + stackCapacity -1;
 
         //Need to check if last item in the current stack has a value, then it's full
-
+        //When using an array of primitives you can't reference null values
+        if(this.completeStackArray[endReference] != null){
+            return false;
+        }
 
         //If I'm at stack 0, I would need to access elements from (0 - stackCapacity - 1) if capacity is four, elements would be stored in 0 - 3
         //If I'm at stack 1, I would need to access elements from (stackCapacity - stackCapacity + 3) if capacity is four, elemenst would be stored in 4 - 7
