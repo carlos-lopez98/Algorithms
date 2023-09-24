@@ -45,6 +45,9 @@ public class KInOne {
 
         int numStacks = completeStackArray.length * stackCapacity;
         int startReference = numStacks * stackPosition;
+
+        //WE MAY OR MAY NOT NEED THIS -- WE CAN'T CHECK IF A POSITION IS NULL
+        //SINCE A PRIMITVE ARRAY CAN'T HOLD NULL VALUES
         int endReference = startReference + stackCapacity -1;
 
         //Need to check if last item in the current stack has a value, then it's full
@@ -54,13 +57,14 @@ public class KInOne {
             return false;
         }*/
 
+        if(stackSize[stackPosition] >= stackCapacity){
+            System.out.println("Stack at position " + stackPosition + " is full ");
+            return true;
+        }
         //If I'm at stack 0, I would need to access elements from (0 - stackCapacity - 1) if capacity is four, elements would be stored in 0 - 3
         //If I'm at stack 1, I would need to access elements from (stackCapacity - stackCapacity + 3) if capacity is four, elemenst would be stored in 4 - 7
         //If I'm at stack 2, I would need to access elements from (stackCapacity + 4 - stackCapacity + 4 + 3) if capacity is four, elemenst would be stored in 8 - 11
         //If I'm at stack 3, I would need to access elements from (stackCapacity + 4 + 4 - stackCapacity + 4 + 4 + 3) if capacity is four, elemenst would be stored in 12 - 15
-
-
-
-
+        return false;
     }
 }
