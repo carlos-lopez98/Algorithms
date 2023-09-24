@@ -34,6 +34,11 @@ public class KInOne {
     //Each segment represents a position of a stack -- to pull values from it -- we'd have to be able to reference
     //Particular positions
     private boolean stackIsFull(int stackPosition){
+        //If I'm at stack 0, I would need to access elements from (0 - stackCapacity - 1) if capacity is four, elements would be stored in 0 - 3
+        //If I'm at stack 1, I would need to access elements from (stackCapacity - stackCapacity + 3) if capacity is four, elemenst would be stored in 4 - 7
+        //If I'm at stack 2, I would need to access elements from (stackCapacity + 4 - stackCapacity + 4 + 3) if capacity is four, elemenst would be stored in 8 - 11
+        //If I'm at stack 3, I would need to access elements from (stackCapacity + 4 + 4 - stackCapacity + 4 + 4 + 3) if capacity is four, elemenst would be stored in 12 - 15
+
 
 
 
