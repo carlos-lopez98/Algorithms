@@ -43,12 +43,10 @@ public class KInOne {
         //TotalNum Stacks * stackPosition this gives us the starting point for each stack
         //StartingPoint + stackCapacity - 1 this gives you the reference point to last value in each stack
 
-        int numStacks = completeStackArray.length * stackCapacity;
-        int startReference = numStacks * stackPosition;
 
         //WE MAY OR MAY NOT NEED THIS -- WE CAN'T CHECK IF A POSITION IS NULL
         //SINCE A PRIMITVE ARRAY CAN'T HOLD NULL VALUES
-        int endReference = startReference + stackCapacity -1;
+//        int endReference = startReference + stackCapacity -1;
 
         //Need to check if last item in the current stack has a value, then it's full
 
@@ -70,9 +68,11 @@ public class KInOne {
 
     //This method will add the value to the top of the specified stack
     public void addToTop(int stackPosition, int value){
+        int numStacks = completeStackArray.length * stackCapacity;
+        int startReference = numStacks * stackPosition;
 
-
-
+        //Think about this, the top element will be the (current stackSize + startReference) - 1 -- The minus one
+        //Is there because the stackSize will be 4 -- but the index is 0-3, you have to account for the difference
 
     }
 
