@@ -67,4 +67,13 @@ public class KInOne {
         //If I'm at stack 3, I would need to access elements from (stackCapacity + 4 + 4 - stackCapacity + 4 + 4 + 3) if capacity is four, elemenst would be stored in 12 - 15
         return false;
     }
+
+    //This method will add the value to the top of the specified stack
+    public void addToTop(int stackPosition, int value){
+
+
+
+
+    }
+
 }
