@@ -21,17 +21,18 @@ public class KInOne {
     }
 
     //This method will push a value, into the stack at the specified position in our completeArray
-    public static void pushToKStack(int stackPosition, int value){
+    public void pushToKStack(int stackPosition, int value){
     //First in order to push to the specified stack, we must have space left to push onto it
         //If our stackPosition has values = to our stackCapacity - throw an error and not add
-        if(stackIsFull){
+        if(this.stackIsFull(stackPosition)){
             throw new RuntimeException("Specified Stack Is Full");
         }
 
     }
 
     //This will check if the stack being asked for is full -- since our array is split into stacks
-    //Each segment represents a position of a stack
+    //Each segment represents a position of a stack -- to pull values from it -- we'd have to be able to reference
+    //Particular positions
     private boolean stackIsFull(int stackPosition){
 
 
