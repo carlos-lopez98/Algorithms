@@ -22,6 +22,12 @@ public class KInOne {
         // This will give us an array, that can hold our capacity per stack + the total number of stacks we need
         this.stackCapacity = stackCapacity;
         this.completeStackArray = new int[stackCapacity * stacksNeeded];
+        this.stackSize = new int[stacksNeeded];
+
+        //Initializes all my stacks in the array to a size of 0 to start
+        for(int i = 0; i < stacksNeeded; i++){
+            stackSize[i] = 0;
+        }
     }
 
     //This method will push a value, into the stack at the specified position in our completeArray
@@ -73,6 +79,8 @@ public class KInOne {
 
         //Think about this, the top element will be the (current stackSize + startReference) - 1 -- The minus one
         //Is there because the stackSize will be 4 -- but the index is 0-3, you have to account for the difference
+
+
 
     }
 
