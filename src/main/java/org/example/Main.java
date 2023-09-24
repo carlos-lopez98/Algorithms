@@ -141,19 +141,19 @@ public class Main {
 //        elements.algoOne(one, two, three);
 
 
-        //MajorityElement in SortedArray
-        int arr[] = {1, 2, 3, 3, 3, 3, 10};
-        int n = arr.length;
-        int x = 3;
-
-        MajorityElement element = new MajorityElement();
-        if (element.isMajority(arr, n, x)==true) {
-
-            System.out.println(x + " appears more than "+
-                    n/2 + " times in arr[]");
-        } else {
-            System.out.println(x + " does not appear more than " +
-                    n/2 + " times in arr[]");
-        }
+//        //MajorityElement in SortedArray
+//        int arr[] = {1, 2, 3, 3, 3, 3, 10};
+//        int n = arr.length;
+//        int x = 3;
+//
+//        MajorityElement element = new MajorityElement();
+//        if (element.isMajority(arr, n, x)==true) {
+//
+//            System.out.println(x + " appears more than "+
+//                    n/2 + " times in arr[]");
+//        } else {
+//            System.out.println(x + " does not appear more than " +
+//                    n/2 + " times in arr[]");
+//        }
     }
 }

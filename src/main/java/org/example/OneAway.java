@@ -49,7 +49,7 @@ public class OneAway {
             }
         }else if(one.length() > two.length()){
             int mismatch = 0;
-            for(int i =0, j = 0; i < one.length()){
+            for(int i =0, j = 0; i < one.length(); i++){
 
                 if(one.charAt(i) == two.charAt(j)){
                     j++;
