@@ -38,6 +38,8 @@ public class KInOne {
             throw new RuntimeException("Specified Stack Is Full");
         }
 
+        //Adds value to top of stack
+        addToTop(stackPosition, value);
     }
 
     //This will check if the stack being asked for is full -- since our array is split into stacks
@@ -79,9 +81,32 @@ public class KInOne {
 
         //Think about this, the top element will be the (current stackSize + startReference) - 1 -- The minus one
         //Is there because the stackSize will be 4 -- but the index is 0-3, you have to account for the difference
-
-
-
+        if(stackPosition == 0 && startReference == 0){
+            completeStackArray[startReference + stackSize[stackPosition]] = value;
+        }else{
+            completeStackArray[startReference + stackSize[stackPosition]] = value;
+        }
+        stackSize[stackPosition]++;
     }
 
+    //Before we can pop() we must check to see if the specified stack is empty
+    public int pop(int stackPosition){
+
+        //Checks if stack is empty first
+        isEmpty(stackPosition);
+
+        int numStacks = completeStackArray.length * stackCapacity;
+        int startReference = numStacks * stackPosition;
+
+
+        return completeStackArray[startReference + stackSize[stackPosition] - 1];
+    }
+
+    public boolean isEmpty(int stackPosition){
+        if(stackSize[stackPosition] == 0){
+            throw new RuntimeException("Stack at position " + stackPosition + " is Empty");
+        }
+
+        return false;
+    }
 }
