@@ -39,6 +39,11 @@ public class KInOne {
         //TotalNum Stacks * stackPosition this gives us the starting point for each stack
         //StartingPoint + stackCapacity - 1 this gives you the reference point to last value in each stack
 
+        int numStacks = completeStackArray.length * stackCapacity;
+        int startReference = numStacks * stackPosition;
+        int endReference = startReference + stackCapacity -1;
+
+        //Need to check if last item in the current stack has a value, then it's full
 
 
         //If I'm at stack 0, I would need to access elements from (0 - stackCapacity - 1) if capacity is four, elements would be stored in 0 - 3
