@@ -35,6 +35,8 @@ public class KInOne {
     //Particular positions
     private boolean stackIsFull(int stackPosition){
         //How can I get the starting position or the end position everytime to reference the correct elements?
+        //completeStack.size() == 16/ stackCapacity == TotalNum Stacks
+        //TotalNum Stacks * stackPosition this gives us the starting point for each stack
 
         //If I'm at stack 0, I would need to access elements from (0 - stackCapacity - 1) if capacity is four, elements would be stored in 0 - 3
         //If I'm at stack 1, I would need to access elements from (stackCapacity - stackCapacity + 3) if capacity is four, elemenst would be stored in 4 - 7
