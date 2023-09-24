@@ -14,6 +14,10 @@ public class KInOne {
     //Let's say you want an array of four stacks with each having a capacity of four stackable elements
     public int[] completeStackArray;
     private int stackCapacity;
+
+    //Since we can't reference null values -- we'll have to create an array, that keeps track of the occupied
+    //Spaces in each one of our stacks
+    public int[] stackSize;
     public KInOne(int stackCapacity, int stacksNeeded){
         // This will give us an array, that can hold our capacity per stack + the total number of stacks we need
         this.stackCapacity = stackCapacity;
@@ -22,7 +26,7 @@ public class KInOne {
 
     //This method will push a value, into the stack at the specified position in our completeArray
     public void pushToKStack(int stackPosition, int value){
-    //First in order to push to the specified stack, we must have space left to push onto it
+        //First in order to push to the specified stack, we must have space left to push onto it
         //If our stackPosition has values = to our stackCapacity - throw an error and not add
         if(this.stackIsFull(stackPosition)){
             throw new RuntimeException("Specified Stack Is Full");
