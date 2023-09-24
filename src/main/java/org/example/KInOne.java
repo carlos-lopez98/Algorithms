@@ -97,9 +97,9 @@ public class KInOne {
 
         int numStacks = completeStackArray.length * stackCapacity;
         int startReference = numStacks * stackPosition;
-
-
-        return completeStackArray[startReference + stackSize[stackPosition] - 1];
+        int intPopped = completeStackArray[startReference + stackSize[stackPosition] - 1];
+        stackSize[stackPosition]--;
+        return intPopped;
     }
 
     public boolean isEmpty(int stackPosition){
