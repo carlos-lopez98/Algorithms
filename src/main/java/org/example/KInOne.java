@@ -44,10 +44,11 @@ public class KInOne {
         int endReference = startReference + stackCapacity -1;
 
         //Need to check if last item in the current stack has a value, then it's full
-        //When using an array of primitives you can't reference null values
+
+        /*Primitives a cannot hold null types they are only able to hold values
         if(this.completeStackArray[endReference] != null){
             return false;
-        }
+        }*/
 
         //If I'm at stack 0, I would need to access elements from (0 - stackCapacity - 1) if capacity is four, elements would be stored in 0 - 3
         //If I'm at stack 1, I would need to access elements from (stackCapacity - stackCapacity + 3) if capacity is four, elemenst would be stored in 4 - 7
