@@ -97,16 +97,23 @@ public class KInOne {
 
         int numStacks = completeStackArray.length * stackCapacity;
         int startReference = numStacks * stackPosition;
-        int intPopped = completeStackArray[startReference + stackSize[stackPosition] - 1];
+        int intPopped = completeStackArray[stackSize[stackPosition] + startReference - 1];
         stackSize[stackPosition]--;
         return intPopped;
     }
 
-    public boolean isEmpty(int stackPosition){
+    public int peek(int stackPosition){
+        isEmpty(stackPosition);
+
+        int numStacks = completeStackArray.length * stackCapacity;
+        int startReference = numStacks * stackPosition;
+
+        return completeStackArray[stackSize[stackPosition] + startReference - 1];
+    }
+
+    public void isEmpty(int stackPosition){
         if(stackSize[stackPosition] == 0){
             throw new RuntimeException("Stack at position " + stackPosition + " is Empty");
         }
-
-        return false;
     }
 }
