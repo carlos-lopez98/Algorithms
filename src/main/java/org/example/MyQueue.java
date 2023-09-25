@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Stack;
+
 /*
 *
 * Implement a MyQueue class which implements a queue using two stacks
@@ -17,7 +19,24 @@ public class MyQueue {
     //When it's empty, so as we're adding to the first stack, we won't add to the second
     //When we pop, we'll shift all elements from the first to the second, but won't shift again until the second one is empty
 
+    public Stack<Integer> stackNewest;
+    public Stack<Integer> stackOldest;
+
+    public void add(int value){
 
 
 
+    }
+
+    //Since it's a queue we'll return the last added element - FIFO
+    public int remove(){
+
+
+    }
+
+    //This is what will shift our stacks from the first stack to the second stack
+    public void shift(){
+
+
+    }
 }
