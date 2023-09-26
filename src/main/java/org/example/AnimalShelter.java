@@ -16,5 +16,4 @@ public class AnimalShelter {
     //When dequeueing a dog, we'll pull from the dog structure and vice versa
     //When dequeueingAny, we'll peek into each list, and return whichever is older
     //When queueing we'll see what is being passed in, then add to the respective list
-
 }
