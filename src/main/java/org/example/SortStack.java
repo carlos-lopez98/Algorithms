@@ -30,5 +30,11 @@ public class SortStack {
             //it'll just push the items from the old stack to the tempStack
             tempStack.push(compare);
         }
+
+        //At this point the elements will be sorted in ascending values, so you just pop() the whole tempstack()
+        //To get them to sort in descending values
+        while(!tempStack.isEmpty()){
+            unsorted.push(tempStack.pop());
+        }
     }
 }
