@@ -18,10 +18,17 @@ public class SortStack {
 
         //Use a while loop because we want to go through all elements to make sure they get sorted
         while(!unsorted.isEmpty()){
+            //Hold an element from the first stack to compare to tempStack
+            int compare = unsorted.pop();
 
+            //If it's not empty it'll compare and push items from temp to the old stack
+            while(!tempStack.isEmpty() && tempStack.peek() > compare){
+             unsorted.push(tempStack.pop());
+            }
 
-
-
+            //If it is empty/ elements on temp stack are less than temp variable,
+            //it'll just push the items from the old stack to the tempStack
+            tempStack.push(compare);
         }
     }
 }
