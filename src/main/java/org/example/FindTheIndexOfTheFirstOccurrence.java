@@ -16,7 +16,6 @@ public class FindTheIndexOfTheFirstOccurrence {
 
 
     public int algoOne(String haystack, String needle){
-
-
+        return haystack.indexOf(needle);
     }
 }
