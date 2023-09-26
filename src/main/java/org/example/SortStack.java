@@ -9,9 +9,7 @@ import java.util.Stack;
 * */
 public class SortStack {
 
-
     //Since this algorithm is being done in place no need to return anything
-
     public void algoOne(Stack<Integer> unsorted){
         //Temporary Stack used for Sorting
         Stack<Integer> tempStack = new Stack<>();
