@@ -19,9 +19,27 @@ public class AnimalShelter {
     //When dequeueingAny, we'll peek into each list, and return whichever is older
     //When queueing we'll see what is being passed in, then add to the respective list
 
-    Queue<Dog> dogs = new Queue<Dogs>();
+
+    Queue<Dog> dogs = new Queue<Dog>();
     Queue<Cat> cats = new Queue<Cat>();
 
+    public Dog dequeueDog(){
+        return dogs.poll();
+    }
 
+    public Cat dequeueCat(){
+        return cats.poll();
+    }
 
+    public Animal dequeueAny(){
+
+     Dog tempD = dogs.peek();
+     Cat tempC = cats.peek();
+
+        if(tempD.getTimeIn() > tempC.getTimeIn()){
+            return dogs.poll();
+        }else{
+            return cats.poll();
+        }
+    }
 }
