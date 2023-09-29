@@ -1,6 +1,7 @@
 package org.example.trees;
 
 import java.lang.module.FindException;
+import java.net.BindException;
 import java.util.Arrays;
 
 /*
@@ -61,13 +62,31 @@ public class MinHeap {
                 }
 
                 int min = items[0];
+                items[0] = items[size - 1];
+                //We want to keep track of our size, to ensure we add properly to the end of the list
+                size--;
 
                 heapifyDown();
-
                 return min;
         }
 
 
+        //This will be the helper method used to sort down
+        private void heapifyDown(){
 
 
+
+
+
+
+        }
+
+        //Checks if current element has as parent element
+        private boolean hasParent(int index){
+                if(getParentIndex(index) > -1){
+                        return true;
+                }else{
+                       return false;
+                }
+        }
 }
