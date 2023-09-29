@@ -17,12 +17,14 @@ public class Tree {
         this.root = root;
     }
 
-    public static void inOrderTraversal(TreeNode root){
+    //This is post order Traversal, you'll end up traversing all the children nodes
+    //before the parent node is addressed
+    public static void postOrderTraversal(TreeNode root){
 
         if(root != null){
             if(root.children != null){
                 for(TreeNode node: root.children){
-                    inOrderTraversal(node);
+                    postOrderTraversal(node);
                 }
             }
             System.out.println(root.name);
