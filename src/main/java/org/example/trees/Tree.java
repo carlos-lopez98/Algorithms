@@ -35,10 +35,20 @@ public class Tree {
 
     public static void inOrderTraversal(TreeNode root){
 
+
+
+
+
     }
 
+    //Visits the current nodes before the children
     public static void preOderTraversal(TreeNode root){
 
-
+        if(root != null){
+            System.out.println(root.name);
+            for(TreeNode node: root.children){
+                preOderTraversal(node);
+            }
+        }
     }
 }

@@ -158,7 +158,7 @@ public class Main {
 //                    n/2 + " times in arr[]");
 //        }
 
-
+        //PostOrderTraversal Implementation
         TreeNode root = new TreeNode();
         root.name = "root";
         TreeNode nodeB = new TreeNode();
@@ -175,6 +175,8 @@ public class Main {
         nodeG.name = "nodeG";
         TreeNode nodeH = new TreeNode();
         nodeH.name = "nodeH";
+
+
         root.children.add(nodeB);
         root.children.add(nodeC);
         root.children.add(nodeD);
@@ -183,9 +185,8 @@ public class Main {
         nodeC.children.add(nodeG);
         nodeD.children.add(nodeH);
 
-        Tree.postOrderTraversal(root);
+//        Tree.postOrderTraversal(root);
 
-
-
+            Tree.preOderTraversal(root);
     }
 }
