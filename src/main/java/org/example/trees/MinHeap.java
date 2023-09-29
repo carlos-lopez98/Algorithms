@@ -109,6 +109,15 @@ public class MinHeap {
         }
     }
 
+    //Checks if current element has a leftChild element
+        private boolean hasLeftChild(int index){
+            if(getLeftChildIndex(index) <= size){
+                    return true;
+            }else {
+                    return false;
+            }
+        }
+
     //Performs a swap between two values in the items array
     private void swap(int indexOne, int indexTwo) {
         int value = items[indexOne];
