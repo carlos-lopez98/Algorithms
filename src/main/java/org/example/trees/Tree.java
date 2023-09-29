@@ -30,4 +30,13 @@ public class Tree {
             System.out.println(root.name);
         }
     }
+
+    public static void inOrderTraversal(TreeNode root){
+
+    }
+
+    public static void preOderTraversal(TreeNode root){
+
+
+    }
 }
