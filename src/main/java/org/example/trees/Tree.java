@@ -33,6 +33,7 @@ public class Tree {
         }
     }
 
+    //Visits the nodes in ascending order/ left-right, so left branch, parent, then right branch
     public static void inOrderTraversal(TreeNode root){
 
 
