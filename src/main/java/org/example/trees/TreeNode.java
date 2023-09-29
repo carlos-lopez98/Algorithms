@@ -6,6 +6,7 @@ package org.example.trees;
 * */
 public class TreeNode {
 
-
+    public String name;
+    public TreeNode[] children;
 
 }
