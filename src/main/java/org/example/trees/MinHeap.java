@@ -70,12 +70,28 @@ public class MinHeap {
                 return min;
         }
 
+        public void add(int value){
+                //Make sure we have enough space in our array to add
+                ensureCapacity();
+
+                //
+
+
+        }
+
 
         //This will be the helper method used to sort down
         private void heapifyDown(){
 
 
 
+
+
+
+        }
+
+        //This will be the helper method used to sort up
+        private void heapifyUp(){
 
 
 
