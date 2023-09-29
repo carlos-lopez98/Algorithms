@@ -22,11 +22,13 @@ public class Tree {
     public static void postOrderTraversal(TreeNode root){
 
         if(root != null){
+
             if(root.children != null){
                 for(TreeNode node: root.children){
                     postOrderTraversal(node);
                 }
             }
+
             System.out.println(root.name);
         }
     }

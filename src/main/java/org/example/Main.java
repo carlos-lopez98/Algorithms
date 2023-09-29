@@ -5,6 +5,8 @@ import org.example.practice.Node;
 import org.example.practice.ReturnKthtoLast;
 import org.example.practice.SinglyLinkedList;
 import org.example.practice.reference_type.Person;
+import org.example.trees.Tree;
+import org.example.trees.TreeNode;
 
 public class Main {
     public static void main(String[] args) {
@@ -155,5 +157,35 @@ public class Main {
 //            System.out.println(x + " does not appear more than " +
 //                    n/2 + " times in arr[]");
 //        }
+
+
+        TreeNode root = new TreeNode();
+        root.name = "root";
+        TreeNode nodeB = new TreeNode();
+        nodeB.name = "nodeB";
+        TreeNode nodeC = new TreeNode();
+        nodeC.name = "nodeC";
+        TreeNode nodeD = new TreeNode();
+        nodeD.name = "nodeD";
+        TreeNode nodeE = new TreeNode();
+        nodeE.name = "nodeE";
+        TreeNode nodeF = new TreeNode();
+        nodeF.name = "nodeF";
+        TreeNode nodeG = new TreeNode();
+        nodeG.name = "nodeG";
+        TreeNode nodeH = new TreeNode();
+        nodeH.name = "nodeH";
+        root.children.add(nodeB);
+        root.children.add(nodeC);
+        root.children.add(nodeD);
+        nodeB.children.add(nodeE);
+        nodeB.children.add(nodeF);
+        nodeC.children.add(nodeG);
+        nodeD.children.add(nodeH);
+
+        Tree.postOrderTraversal(root);
+
+
+
     }
 }
