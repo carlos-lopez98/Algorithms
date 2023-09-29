@@ -20,16 +20,12 @@ public class Tree {
     public static void inOrderTraversal(TreeNode root){
 
         if(root != null){
-            System.out.println(root.name);
-            if(root.children == null){
-
-
+            if(root.children != null){
+                for(TreeNode node: root.children){
+                    inOrderTraversal(node);
+                }
             }
-
+            System.out.println(root.name);
         }
-
-
-
-        System.out.println(ro);
     }
 }
