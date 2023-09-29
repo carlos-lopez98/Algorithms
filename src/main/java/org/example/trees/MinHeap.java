@@ -1,5 +1,7 @@
 package org.example.trees;
 
+import java.lang.module.FindException;
+
 /*
 *
 * A min heap is an unordered complete binary tree, where each node can have at max two child elements
@@ -21,6 +23,23 @@ public class MinHeap {
         public MinHeap(int size){
                 this.size = size;
                 items = new int[size];
+        }
+
+        //We're also going to add methods to provide help in retrieving child and parent nodes
+        private int getParentIndex(int index){
+                int parentInd = (index - 1)/2; // Why does this give us the parent index?
+                return parentInd;
+        }
+
+        private int getLeftChildIndex(int index){
+                int leftChildInd = (index * 2) + 1;
+                return leftChildInd;
+        }
+
+        //Think about positioning in an array - to deduce why this works
+        private int getRightChildIndex(int index){
+                int rightChildIndex = (index * 2) + 2;
+                return rightChildIndex;
         }
 
 }
