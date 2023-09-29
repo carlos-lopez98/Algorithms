@@ -87,8 +87,28 @@ public class MinHeap {
 
     //This will be the helper method used to sort down
     private void heapifyDown() {
+        //Heapify down always starts at the root node which will always have index 0 when implemented with an array
+        int index = 0;
 
+        while(hasLeftChild(index)){
+         //If we made it into the while loop, that means one of the children is less than the root element
+         //But we want to make sure we're going to swap with the smallest child element
+         //So here we must find it, since you can only have two children per node, you only have to do one comparison
+         int smallerChildIndex =  getLeftChildIndex(index);
 
+         if(hasRightChild(index) && items[smallerChildIndex] < items[getRightChildIndex(index)]){
+             smallerChildIndex = getRightChildIndex(index);
+         }
+
+         if(items[index] < items[smallerChildIndex]){
+             break;
+         }else{
+             swap(index, smallerChildIndex);
+         }
+
+         //Move the pointer down to keep it on track
+         index = smallerChildIndex;
+        }
     }
 
     //This will be the helper method used to sort up
@@ -96,7 +116,9 @@ public class MinHeap {
         int index = size - 1;
         while (hasParent(items[index]) && items[getParentIndex(index)] > items[index]) {
             //Swap parent with current
-                swap(getParentIndex(index), index);
+            swap(getParentIndex(index), index);
+            //Move our index up - basically we keep pointing at the same value that is moving up
+            index = getParentIndex(index);
         }
     }
 
@@ -110,13 +132,21 @@ public class MinHeap {
     }
 
     //Checks if current element has a leftChild element
-        private boolean hasLeftChild(int index){
-            if(getLeftChildIndex(index) <= size){
-                    return true;
-            }else {
-                    return false;
-            }
+    private boolean hasLeftChild(int index) {
+        if (getLeftChildIndex(index) <= size - 1) {
+            return true;
+        } else {
+            return false;
         }
+    }
+
+    private boolean hasRightChild(int index){
+        if(getRightChildIndex(index) <= size - 1){
+            return true;
+        } else{
+            return false;
+        }
+    }
 
     //Performs a swap between two values in the items array
     private void swap(int indexOne, int indexTwo) {
