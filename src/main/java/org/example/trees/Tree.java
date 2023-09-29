@@ -16,4 +16,20 @@ public class Tree {
     public Tree(TreeNode root){
         this.root = root;
     }
+
+    public static void inOrderTraversal(TreeNode root){
+
+        if(root != null){
+            System.out.println(root.name);
+            if(root.children == null){
+
+
+            }
+
+        }
+
+
+
+        System.out.println(ro);
+    }
 }
