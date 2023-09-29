@@ -1,6 +1,7 @@
 package org.example.trees;
 
 import java.lang.module.FindException;
+import java.util.Arrays;
 
 /*
 *
@@ -17,11 +18,12 @@ public class MinHeap {
         //When you add/ remove an element you need to be able to resort your heap
         //You can add helper methods, heapifyDown() or heapifyUp()
         int size;
+        int capacity;
         int[] items;
 
         //Initializes our heap, to have an array size of the provided size
         public MinHeap(int size){
-                this.size = size;
+                this.capacity = size;
                 items = new int[size];
         }
 
@@ -43,5 +45,29 @@ public class MinHeap {
         //When adding an element to the heap - it's preffered to add it to the end of the array, then bubble up to sort
         //This is because, if you were to swap with the root, then bubble down, it would be a lot more complex to implement
         //Even though the runtimes are not much different
+
+        private void ensureCapacity(){
+                //This will make sure we have enough space to add new elements
+                if(size == capacity){
+                        items = Arrays.copyOf(items, items.length * 2);
+                }
+        }
+
+        //This is how we retrieve and remove the minimum value
+        //After the retreival we want to sort the array, back to descending values
+        public int poll(){
+                if(items == null){
+                        throw new RuntimeException();
+                }
+
+                int min = items[0];
+
+                heapifyDown();
+
+                return min;
+        }
+
+
+
 
 }
