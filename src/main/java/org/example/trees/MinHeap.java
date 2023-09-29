@@ -74,9 +74,12 @@ public class MinHeap {
                 //Make sure we have enough space in our array to add
                 ensureCapacity();
 
-                //
-
-
+                //Add item to last position
+                items[size] = value;
+                //Size moves up one position
+                size++;
+                //Then re-sort the array
+                heapifyUp();
         }
 
 
@@ -92,6 +95,14 @@ public class MinHeap {
 
         //This will be the helper method used to sort up
         private void heapifyUp(){
+                int index = size - 1;
+
+             while(hasParent(items[index]) && items[getParentIndex(index)] > items[index]){
+                     //Swap parent with current
+
+
+             }
+
 
 
 
@@ -104,5 +115,12 @@ public class MinHeap {
                 }else{
                        return false;
                 }
+        }
+
+        //Performs a swap between two values in the items array
+        private void swap(int indexOne, int indexTwo){
+                int value = items[indexOne];
+                items[indexOne] = items[indexTwo];
+                items[indexTwo] = value;
         }
 }
