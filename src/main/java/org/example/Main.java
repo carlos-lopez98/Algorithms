@@ -187,6 +187,8 @@ public class Main {
 
 //        Tree.postOrderTraversal(root);
 
-            Tree.preOderTraversal(root);
+//            Tree.preOderTraversal(root);
+
+            Tree.inOrderTraversal(root);
     }
 }

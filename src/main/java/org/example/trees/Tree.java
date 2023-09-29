@@ -35,11 +35,24 @@ public class Tree {
 
     //Visits the nodes in ascending order/ left-right, so left branch, parent, then right branch
     public static void inOrderTraversal(TreeNode root){
+        //Implementing this with nodes, that have a list reference to children is a bit tricky
 
+        if(root != null){
+            if(!root.children.isEmpty()){
+                //Go Left
+                inOrderTraversal(root.children.get(0));
 
+                //Retrieve current
+                System.out.println(root.name);
 
-
-
+                //Go Right
+                for(int i = 1; i < root.children.size(); i++){
+                    inOrderTraversal(root.children.get(i));
+                }
+            }else{
+                System.out.println(root.name);
+            }
+        }
     }
 
     //Visits the current nodes before the children
