@@ -191,29 +191,33 @@ public class Main {
 //            Tree.inOrderTraversal(root);
 
 
-        //SumLists
+//        //SumLists
+//
+//        Node list1_1 = new Node(7);
+//        Node list1_2 = new Node(1);
+//        Node list1_3 = new Node(6);
+//
+//        Node list2_1 = new Node(5);
+//        Node list2_2 = new Node(9);
+//        Node list2_3 = new Node(2);
+//        Node list2_4 = new Node(1);
+//
+//        list1_1.next = list1_2;
+//        list1_2.next = list1_3;
+//
+//        list2_1.next = list2_2;
+//        list2_2.next = list2_3;
+//        list2_3.next = list2_4;
+//
+//        Node head = SumLists.sum(list1_1, list2_1);
+//
+//        while( head != null){
+//            System.out.print(head.data + " ");
+//            head = head.next;
+//        }
 
-        Node list1_1 = new Node(7);
-        Node list1_2 = new Node(1);
-        Node list1_3 = new Node(6);
 
-        Node list2_1 = new Node(5);
-        Node list2_2 = new Node(9);
-        Node list2_3 = new Node(2);
-        Node list2_4 = new Node(1);
 
-        list1_1.next = list1_2;
-        list1_2.next = list1_3;
 
-        list2_1.next = list2_2;
-        list2_2.next = list2_3;
-        list2_3.next = list2_4;
-
-        Node head = SumLists.sum(list1_1, list2_1);
-
-        while( head != null){
-            System.out.print(head.data + " ");
-            head = head.next;
-        }
     }
 }
