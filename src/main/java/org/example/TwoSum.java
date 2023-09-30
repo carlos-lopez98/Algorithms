@@ -31,11 +31,31 @@ public class TwoSum {
         //My first thought is to use a HashMap, that stores not only the compliment but also the index at which that
         //compliment was obtained
 
-        Map<Integer, Integer> intMap = new HashMap<>();
+        HashMap<Integer, Integer> intMap = new HashMap<>();
 
+        //Add all our compliments into our HashMap
         for(int i = 0; i < nums.length; i++){
-
+            int compliment = target - nums[i];
+            intMap.put(compliment, i); //We need the position, so that we don't find an indices compliment at the same index
+            //Think about three, it'll be compliment to itself, so when we loop through it, it'll return true/ that index
         }
+
+
+        //Loops through our array a second time
+        for(int j = 0; j < nums.length; j++){
+            int current = nums[j];
+            int compliment = target - current;
+
+            //Checks if our compliment is in our previous map
+            //If it is, our compliment must have a different index, than the one we're on
+            //If it's the same, that means our compliment == current value, which won't make sense
+            //You can add the same index to itself to get an answer
+         if(intMap.containsKey(compliment) && intMap.get(compliment) != j){
+             return new int[]{j, intMap.get(compliment)};
+         }
+        }
+
+        return new int[2];
     }
 }
 
