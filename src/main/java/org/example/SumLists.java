@@ -15,12 +15,23 @@ import org.example.practice.Node;
 * */
 public class SumLists {
 
-public Node sum(Node integerOne, Node IntegerTwo){
+public Node sum(Node integerOne, Node integerTwo){
+    //First what values must be stored
+    int summation;
+    Node headToReturn;
+    Node sumList;
+    int carry;
+
+    //You need to use the or, because you want the iteration to keep going if one is shorter than the other
+    while(integerOne != null || integerTwo != null){
+
+
+
+    }
 
 
 
 
 
 }
-
 }
