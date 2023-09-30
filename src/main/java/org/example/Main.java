@@ -158,37 +158,62 @@ public class Main {
 //                    n/2 + " times in arr[]");
 //        }
 
-        //PostOrderTraversal Implementation
-        TreeNode root = new TreeNode();
-        root.name = "root";
-        TreeNode nodeB = new TreeNode();
-        nodeB.name = "nodeB";
-        TreeNode nodeC = new TreeNode();
-        nodeC.name = "nodeC";
-        TreeNode nodeD = new TreeNode();
-        nodeD.name = "nodeD";
-        TreeNode nodeE = new TreeNode();
-        nodeE.name = "nodeE";
-        TreeNode nodeF = new TreeNode();
-        nodeF.name = "nodeF";
-        TreeNode nodeG = new TreeNode();
-        nodeG.name = "nodeG";
-        TreeNode nodeH = new TreeNode();
-        nodeH.name = "nodeH";
-
-
-        root.children.add(nodeB);
-        root.children.add(nodeC);
-        root.children.add(nodeD);
-        nodeB.children.add(nodeE);
-        nodeB.children.add(nodeF);
-        nodeC.children.add(nodeG);
-        nodeD.children.add(nodeH);
+//        //PostOrderTraversal Implementation
+//        TreeNode root = new TreeNode();
+//        root.name = "root";
+//        TreeNode nodeB = new TreeNode();
+//        nodeB.name = "nodeB";
+//        TreeNode nodeC = new TreeNode();
+//        nodeC.name = "nodeC";
+//        TreeNode nodeD = new TreeNode();
+//        nodeD.name = "nodeD";
+//        TreeNode nodeE = new TreeNode();
+//        nodeE.name = "nodeE";
+//        TreeNode nodeF = new TreeNode();
+//        nodeF.name = "nodeF";
+//        TreeNode nodeG = new TreeNode();
+//        nodeG.name = "nodeG";
+//        TreeNode nodeH = new TreeNode();
+//        nodeH.name = "nodeH";
+//
+//
+//        root.children.add(nodeB);
+//        root.children.add(nodeC);
+//        root.children.add(nodeD);
+//        nodeB.children.add(nodeE);
+//        nodeB.children.add(nodeF);
+//        nodeC.children.add(nodeG);
+//        nodeD.children.add(nodeH);
 
 //        Tree.postOrderTraversal(root);
-
 //            Tree.preOderTraversal(root);
 
-            Tree.inOrderTraversal(root);
+//            Tree.inOrderTraversal(root);
+
+
+        //SumLists
+
+        Node list1_1 = new Node(7);
+        Node list1_2 = new Node(1);
+        Node list1_3 = new Node(6);
+
+        Node list2_1 = new Node(5);
+        Node list2_2 = new Node(9);
+        Node list2_3 = new Node(2);
+        Node list2_4 = new Node(1);
+
+        list1_1.next = list1_2;
+        list1_2.next = list1_3;
+
+        list2_1.next = list2_2;
+        list2_2.next = list2_3;
+        list2_3.next = list2_4;
+
+        Node head = SumLists.sum(list1_1, list2_1);
+
+        while( head != null){
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
     }
 }
