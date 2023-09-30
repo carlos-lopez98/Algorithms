@@ -15,7 +15,6 @@ import java.util.Map;
 * */
 public class TwoSum {
 
-
     //This one works by putting all the compliment values into the HashMap
     //Then iterates through the array, if the array contains the compliment value and
     //it's not equal to it's same position then return true

@@ -10,7 +10,11 @@ package org.example;
 
 public class SumOfThree {
 
-
+    //For this one you don't need to return the indexes of the positions that acheive three sum
+    //That means we can sort the array, and just use a three pointer method -- and or
+    //Use our previous twoSum solution -- to get the two sum
+    //While we have a pointer at the beginning of the list -- that will be added to that twoSum
+    //And if that = target then we return true
 
 
 
