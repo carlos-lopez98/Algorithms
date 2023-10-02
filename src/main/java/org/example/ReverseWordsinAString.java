@@ -27,19 +27,28 @@ public class ReverseWordsinAString {
         int j = i+1;
 
         //Will iterate through whole list, but stop at spaces
+        //Keeps iterating, it'll break when I hits a space/ is greater than size
         while (i < size && s.charAt(i) != ' '){
 
-
-            while(j < size){
+            while(j < size && s.charAt(j) != ' '){
                 //If j reaches a space, add the work backwards
                 //If not just keep iterating
-                if(s.charAt(j) == ' '){
-                    result = s.substring(i, j) + " " + result;
-                    j = i+1;
-                }
                 j++;
             }
 
+            //Once J = space, we'll substring up to that space
+            //Notice how we did the concatenation - new word + result - effectively making the sentence backwards
+            result = s.substring(i, j) + " " + result;
+
+            //since J hit a space, we must iterate until it hits a letter
+            while(s.charAt(j) == ' ' && j < size){
+                j++;
+            }
+
+            //once it hits a letter, our i moves to that spot
+            //and our j moves one forward -- then loop repeats
+            i = j;
+            j = i+1;
         }
 
         return result;
