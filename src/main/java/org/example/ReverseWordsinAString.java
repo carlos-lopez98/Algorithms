@@ -20,5 +20,28 @@ public class ReverseWordsinAString {
     //While the other traverses till the end, save those indexes, than create a substring
     //Then add that substring to the end of my new string to return
 
+    public String reverseWords(String s){
+        String result = "";
+        int size = s.length();
+        int i = 0 ;
+        int j = i+1;
 
+        //Will iterate through whole list, but stop at spaces
+        while (i < size && s.charAt(i) != ' '){
+
+
+            while(j < size){
+                //If j reaches a space, add the work backwards
+                //If not just keep iterating
+                if(s.charAt(j) == ' '){
+                    result = s.substring(i, j) + " " + result;
+                    j = i+1;
+                }
+                j++;
+            }
+
+        }
+
+        return result;
+    }
 }
