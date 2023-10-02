@@ -26,6 +26,11 @@ public class ReverseWordsinAString {
         int i = 0 ;
         int j = i+1;
 
+        //One thing I forgot was the leading/ trailing white spaces
+        //If not trimmed, then you'll end up not even going through the loop in the first place
+        s = s.trim(); //This trims in O(N) time
+
+
         //Will iterate through whole list, but stop at spaces
         //Keeps iterating, it'll break when I hits a space/ is greater than size
         while (i < size && s.charAt(i) != ' '){
