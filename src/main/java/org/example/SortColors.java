@@ -12,6 +12,13 @@ package org.example;
 public class SortColors {
 
 
+    //The optimal way to solve this is to use three pointers
+    //This only works because of how the problem is set up
+    //There are only three numbers that could be in the array
+
+
+
+
     //This is technically the brute force solution
     public static int[] sortColors(int[] colors){
 
