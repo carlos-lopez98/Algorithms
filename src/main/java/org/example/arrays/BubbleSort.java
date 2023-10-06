@@ -10,9 +10,8 @@ package org.example.arrays;
 
 public class BubbleSort {
 
-    int[] intArray = {20, 35, -15, 7, 55, 1, -22};
 
-    public void sortAscendingLeftToRight(int[] array) {
+    public static void sortAscendingLeftToRight(int[] intArray) {
 
         for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for(int i =0; i < lastUnsortedIndex; i++){
@@ -25,7 +24,7 @@ public class BubbleSort {
     }
 
 
-    private void swap(int[] array, int i, int j) {
+    private static void swap(int[] array, int i, int j) {
 
         if (i == j) {
             return;
