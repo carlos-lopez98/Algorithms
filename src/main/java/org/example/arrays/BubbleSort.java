@@ -27,8 +27,7 @@ public class BubbleSort {
     public static void sortAscendingRighToLeft(int[] intArray){
 
     //Here we basically want our unsorted index to go up to the start point, since we're right to left
-    for(int lastUnsortedIndex = intArray[0]; lastUnsortedIndex < intArray.length; lastUnsortedIndex++){
-
+    for(int lastUnsortedIndex = 0; lastUnsortedIndex < intArray.length; lastUnsortedIndex++){
         //Pointer moves from right to left, sorting in ascending order from left to right
         for(int i = intArray.length - 1; i > 0; i--){
          if(intArray[i] < intArray[i - 1]) {
@@ -36,8 +35,6 @@ public class BubbleSort {
          }
         }
     }
-
-
     }
 
     private static void swap(int[] array, int i, int j) {
