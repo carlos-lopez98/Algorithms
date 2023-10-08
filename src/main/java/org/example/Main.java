@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.arrays.BubbleSort;
+import org.example.arrays.SelectionSort;
 import org.example.practice.MultiDimensionalArrays;
 import org.example.practice.Node;
 import org.example.practice.ReturnKthtoLast;
@@ -238,8 +239,8 @@ public class Main {
         int[] intArray = {20, 35, -15, 7, 55, 1, -22};
 
 
-        BubbleSort.sortAscendingRighToLeft(intArray);
-
+//        BubbleSort.sortAscendingRighToLeft(intArray);
+        SelectionSort.selectionSortAscendingLeftToRight(intArray);
         //Sorts in Ascending order LeftToRight
 //        BubbleSort.sortAscendingLeftToRight(intArray);
 //
