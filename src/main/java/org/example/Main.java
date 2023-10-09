@@ -239,12 +239,8 @@ public class Main {
         int[] intArray = {20, 35, -15, 7, 55, 1, -22};
 
 
-//        BubbleSort.sortAscendingRighToLeft(intArray);
-        BubbleSort.sortDescendingRightToLeft(intArray);
-//        SelectionSort.selectionSortAscendingLeftToRight(intArray);
-        //Sorts in Ascending order LeftToRight
-//        BubbleSort.sortAscendingLeftToRight(intArray);
-//
+        SelectionSort.selectionSortDescendingLeftToRight(intArray);
+
         for(int i = 0; i < intArray.length; i++){
             System.out.print(intArray[i] + " ");
         }
