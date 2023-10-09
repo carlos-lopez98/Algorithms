@@ -28,7 +28,21 @@ public class BubbleSort {
     }
     }
 
+    public static void sortDescendingRightToLeft(int[] intArray){
 
+        for(int lastUnsortedIndex = 0; lastUnsortedIndex < intArray.length; lastUnsortedIndex++){
+
+            //Logic here is that both pointers move inward essentially bubbling up all possible values
+            for(int i = intArray.length - 1; i > lastUnsortedIndex; i--){
+
+                //Since we want greater values at the left, the comparison is for if it's greater than
+               if(intArray[i] > intArray[i-1]){
+                swap(intArray, i , i-1);
+               }
+            }
+        }
+
+    }
 
     public static void sortAscendingLeftToRight(int[] intArray) {
 
