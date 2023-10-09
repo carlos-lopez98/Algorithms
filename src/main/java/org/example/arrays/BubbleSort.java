@@ -8,8 +8,16 @@ package org.example.arrays;
  *
  * */
 
+import java.lang.reflect.Array;
+
 public class BubbleSort {
 
+
+    public static void sortDescendingLeftToRight(int[] intArray){
+
+
+
+    }
 
     public static void sortAscendingLeftToRight(int[] intArray) {
 
