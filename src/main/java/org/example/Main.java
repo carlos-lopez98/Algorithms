@@ -240,7 +240,8 @@ public class Main {
 
 
 //        BubbleSort.sortAscendingRighToLeft(intArray);
-        SelectionSort.selectionSortAscendingLeftToRight(intArray);
+        BubbleSort.sortDescendingLeftToRight(intArray);
+//        SelectionSort.selectionSortAscendingLeftToRight(intArray);
         //Sorts in Ascending order LeftToRight
 //        BubbleSort.sortAscendingLeftToRight(intArray);
 //

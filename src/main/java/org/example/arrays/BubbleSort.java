@@ -13,11 +13,22 @@ import java.lang.reflect.Array;
 public class BubbleSort {
 
 
+    //Largest to smallest -- sort from the left to right
+    //Bubble up the largest elements
     public static void sortDescendingLeftToRight(int[] intArray){
 
+    for(int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--){
 
-
+        //You only swap if less, than since you want small values bubbled to the right
+        for(int i = 0; i < lastUnsortedIndex; i++){
+           if(intArray[i] < intArray[i+1]){
+               swap(intArray, i, i+1);
+           }
+        }
     }
+    }
+
+
 
     public static void sortAscendingLeftToRight(int[] intArray) {
 
