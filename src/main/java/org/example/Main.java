@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.arrays.BubbleSort;
+import org.example.arrays.InsertionSort;
 import org.example.arrays.SelectionSort;
 import org.example.practice.MultiDimensionalArrays;
 import org.example.practice.Node;
@@ -239,7 +240,7 @@ public class Main {
         int[] intArray = {20, 35, -15, 7, 55, 1, -22};
 
 
-        SelectionSort.selectionSortDescendingLeftToRight(intArray);
+        InsertionSort.insertionSortDescending(intArray);
 
         for(int i = 0; i < intArray.length; i++){
             System.out.print(intArray[i] + " ");
