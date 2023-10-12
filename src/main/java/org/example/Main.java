@@ -237,14 +237,41 @@ public class Main {
 
         //Bubble Sort
 
-        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
+//        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
+//
+//
+//        InsertionSort.insertionSortDescending(intArray);
+//
+//        for(int i = 0; i < intArray.length; i++){
+//            System.out.print(intArray[i] + " ");
+//        }
 
 
-        InsertionSort.insertionSortDescending(intArray);
 
-        for(int i = 0; i < intArray.length; i++){
-            System.out.print(intArray[i] + " ");
-        }
+        Node list1_1 = new Node(7);
+        Node list1_2 = new Node(1);
+        Node list1_3 = new Node(6);
+        Node list1_4 = new Node(8);
+        Node list1_5 = new Node(9);
+        Node list1_6 = new Node(11);
 
+
+        Node list2_1 = new Node(6);
+        Node list2_2 = new Node(7);
+        Node list2_3 = new Node(3);
+
+        list1_1.next = list1_2;
+        list1_2.next = list1_3;
+        list1_3.next = list1_4;
+        list1_4.next = list1_5;
+        list1_5.next = list1_6;
+
+        list2_1.next = list2_2;
+        list2_2.next = list2_3;
+        list2_3.next = list1_5;
+
+        Node intersection = IntersectionLinkedList.intersection(list1_1, list2_1);
+
+        System.out.println(intersection.data);
     }
 }

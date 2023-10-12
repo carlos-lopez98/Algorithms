@@ -16,7 +16,7 @@ public class IntersectionLinkedList {
             Node pointerListOne = headOne;
             int sizeListOne = 0;
 
-            Node pointerListTwo = headOne;
+            Node pointerListTwo = headTwo;
             int sizeListTwo = 0;
 
             while(pointerListOne != null){
@@ -29,6 +29,45 @@ public class IntersectionLinkedList {
                 pointerListTwo = pointerListTwo.next;
             }
 
+            pointerListOne = headOne;
+            pointerListTwo = headTwo;
+
+            System.out.println("listTwoSize " + sizeListTwo);
+            System.out.println("listOneSize " + sizeListOne);
+
+            if(sizeListOne > sizeListTwo){
+               int difference = sizeListOne - sizeListTwo;
+               int counter = 0;
+
+               while(counter != difference && pointerListOne != null){
+                   pointerListOne = pointerListOne.next;
+                   counter++;
+               }
+            }else if(sizeListTwo > sizeListOne){
+                int difference = sizeListTwo - sizeListOne;
+                int counter = 0;
+
+                while(counter != difference && pointerListOne != null){
+                    pointerListTwo = pointerListTwo.next;
+                    counter++;
+                }
+            }
+
+
+            while(pointerListTwo !=null && pointerListOne !=null){
+                if(pointerListOne == pointerListTwo){
+                    return pointerListOne;
+                }
+                pointerListOne = pointerListOne.next;
+                pointerListTwo = pointerListTwo.next;
+            }
+
+
             return intersecting;
         }
+
+
+
+        //TODO implement another solution, how can you have the pointers meet without knowing the difference in the lists
+        //You can reset the pointers**
 }
