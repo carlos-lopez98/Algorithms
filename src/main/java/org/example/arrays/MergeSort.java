@@ -30,6 +30,14 @@ public class MergeSort {
             return;
         }
 
+        int i = start;
+        int j = midpoint;
+        int tempIndex = 0;
 
+       int[] temp = new int[end-start];
+
+       while(i < midpoint && j < end){
+           temp[tempIndex++] = input[i] <= input[j] ? input[i++] : input[j++];
+       }
     }
 }
