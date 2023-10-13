@@ -3,10 +3,7 @@ package org.example;
 import org.example.arrays.BubbleSort;
 import org.example.arrays.InsertionSort;
 import org.example.arrays.SelectionSort;
-import org.example.practice.MultiDimensionalArrays;
-import org.example.practice.Node;
-import org.example.practice.ReturnKthtoLast;
-import org.example.practice.SinglyLinkedList;
+import org.example.practice.*;
 import org.example.practice.reference_type.Person;
 import org.example.trees.Tree;
 import org.example.trees.TreeNode;
@@ -248,30 +245,33 @@ public class Main {
 
 
 
-        Node list1_1 = new Node(7);
-        Node list1_2 = new Node(1);
-        Node list1_3 = new Node(6);
-        Node list1_4 = new Node(8);
-        Node list1_5 = new Node(9);
-        Node list1_6 = new Node(11);
+//        Node list1_1 = new Node(7);
+//        Node list1_2 = new Node(1);
+//        Node list1_3 = new Node(6);
+//        Node list1_4 = new Node(8);
+//        Node list1_5 = new Node(9);
+//        Node list1_6 = new Node(11);
+//
+//
+//        Node list2_1 = new Node(6);
+//        Node list2_2 = new Node(7);
+//        Node list2_3 = new Node(3);
+//
+//        list1_1.next = list1_2;
+//        list1_2.next = list1_3;
+//        list1_3.next = list1_4;
+//        list1_4.next = list1_5;
+//        list1_5.next = list1_6;
+//
+//        list2_1.next = list2_2;
+//        list2_2.next = list2_3;
+//        list2_3.next = list1_5;
+//
+//        Node intersection = IntersectionLinkedList.intersection(list1_1, list2_1);
+//
+//        System.out.println(intersection.data);
 
 
-        Node list2_1 = new Node(6);
-        Node list2_2 = new Node(7);
-        Node list2_3 = new Node(3);
-
-        list1_1.next = list1_2;
-        list1_2.next = list1_3;
-        list1_3.next = list1_4;
-        list1_4.next = list1_5;
-        list1_5.next = list1_6;
-
-        list2_1.next = list2_2;
-        list2_2.next = list2_3;
-        list2_3.next = list1_5;
-
-        Node intersection = IntersectionLinkedList.intersection(list1_1, list2_1);
-
-        System.out.println(intersection.data);
+        Recursion.countDown(10);
     }
 }
