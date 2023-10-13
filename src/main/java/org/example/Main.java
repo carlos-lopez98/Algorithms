@@ -271,7 +271,7 @@ public class Main {
 //
 //        System.out.println(intersection.data);
 
-
-        Recursion.countDown(10);
+        Recursion.countUp(1);
+//        Recursion.countDown(10);
     }
 }

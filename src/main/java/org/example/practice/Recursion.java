@@ -19,8 +19,6 @@ public class Recursion {
     }
 
 
-
-
     public static void countDown(int num){
 
         if(num == 0){
@@ -29,5 +27,14 @@ public class Recursion {
         System.out.println(num);
 
         countDown(num - 1);
+    }
+
+    public static void countUp(int num){
+
+        if(num == 11){
+            return;
+        }
+        System.out.println(num);
+        countUp(num + 1);
     }
 }
