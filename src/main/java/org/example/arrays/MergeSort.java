@@ -36,8 +36,17 @@ public class MergeSort {
 
        int[] temp = new int[end-start];
 
+       //This will iterate through each partition while storing them in a temporary array
+       //When the storing happens, we're also sorting them
        while(i < midpoint && j < end){
-           temp[tempIndex++] = input[i] <= input[j] ? input[i++] : input[j++];
+           if(input[i] <= input[j]){
+               temp[tempIndex] = input[i];
+               i++;
+           }else if (input[i] > input[j]){
+               temp[tempIndex] = input[j];
+               j++;
+           }
+           tempIndex++;
        }
     }
 }
