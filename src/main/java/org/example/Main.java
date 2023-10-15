@@ -3,6 +3,7 @@ package org.example;
 import org.example.arrays.BubbleSort;
 import org.example.arrays.InsertionSort;
 import org.example.arrays.SelectionSort;
+import org.example.arrays.ShellSort;
 import org.example.practice.*;
 import org.example.practice.reference_type.Person;
 import org.example.trees.Tree;
@@ -234,14 +235,14 @@ public class Main {
 
         //Bubble Sort
 
-//        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
-//
-//
-//        InsertionSort.insertionSortDescending(intArray);
-//
-//        for(int i = 0; i < intArray.length; i++){
-//            System.out.print(intArray[i] + " ");
-//        }
+        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
+
+//        System.out.println(intArray.toString());
+        ShellSort.shellSort(intArray);
+
+        for(int i = 0; i < intArray.length; i++){
+            System.out.print(intArray[i] + " ");
+        }
 
 
 
@@ -271,7 +272,7 @@ public class Main {
 //
 //        System.out.println(intersection.data);
 
-        Recursion.countUp(1);
+//        Recursion.countUp(1);
 //        Recursion.countDown(10);
     }
 }
