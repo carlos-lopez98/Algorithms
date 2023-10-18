@@ -13,20 +13,16 @@ public class ShellSort {
 
 
         for(int gap = array.length/2; gap >= 1; gap /= 2){
+            System.out.println("Gap " + gap);
             for(int i =  0; i < array.length - gap; i++){
-                int j = gap;
-                int pointer = i;
-
-                //You can't do an inner if statement -- it has to be a condition
-                //in the while loop, since you want the variables to keep getting compared
-                while(j < array.length){
-                    if(array[i] > array[j]){
-                        int temp = array[j];
-                        array[j] = array[i];
-                        array[i] = temp;
+                int j = i;
+                while(j + gap < array.length){
+                    if (array[j] > array[j + gap]) {
+                        int temp = array[j + gap];
+                        array[j + gap] = array[j];
+                        array[j] = temp;
                     }
-                    pointer+=gap;
-                    j+= gap;
+                    j += gap;
                 }
             }
         }
