@@ -160,36 +160,36 @@ public class Main {
 //        }
 
 //        //PostOrderTraversal Implementation
-//        TreeNode root = new TreeNode();
-//        root.name = "root";
-//        TreeNode nodeB = new TreeNode();
-//        nodeB.name = "nodeB";
-//        TreeNode nodeC = new TreeNode();
-//        nodeC.name = "nodeC";
-//        TreeNode nodeD = new TreeNode();
-//        nodeD.name = "nodeD";
-//        TreeNode nodeE = new TreeNode();
-//        nodeE.name = "nodeE";
-//        TreeNode nodeF = new TreeNode();
-//        nodeF.name = "nodeF";
-//        TreeNode nodeG = new TreeNode();
-//        nodeG.name = "nodeG";
-//        TreeNode nodeH = new TreeNode();
-//        nodeH.name = "nodeH";
-//
-//
-//        root.children.add(nodeB);
-//        root.children.add(nodeC);
-//        root.children.add(nodeD);
-//        nodeB.children.add(nodeE);
-//        nodeB.children.add(nodeF);
-//        nodeC.children.add(nodeG);
-//        nodeD.children.add(nodeH);
+        TreeNode root = new TreeNode();
+        root.name = "root";
+        TreeNode nodeB = new TreeNode();
+        nodeB.name = "nodeB";
+        TreeNode nodeC = new TreeNode();
+        nodeC.name = "nodeC";
+        TreeNode nodeD = new TreeNode();
+        nodeD.name = "nodeD";
+        TreeNode nodeE = new TreeNode();
+        nodeE.name = "nodeE";
+        TreeNode nodeF = new TreeNode();
+        nodeF.name = "nodeF";
+        TreeNode nodeG = new TreeNode();
+        nodeG.name = "nodeG";
+        TreeNode nodeH = new TreeNode();
+        nodeH.name = "nodeH";
+
+
+        root.children.add(nodeB);
+        root.children.add(nodeC);
+        root.children.add(nodeD);
+        nodeB.children.add(nodeE);
+        nodeB.children.add(nodeF);
+        nodeC.children.add(nodeG);
+        nodeD.children.add(nodeH);
 
 //        Tree.postOrderTraversal(root);
 //            Tree.preOderTraversal(root);
 
-//            Tree.inOrderTraversal(root);
+           Tree.inOrderTraversal(root);
 
 
 //        //SumLists
@@ -233,16 +233,16 @@ public class Main {
 //        }
 
 
-        //Bubble Sort
-
-        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
-
+//        //Bubble Sort
+//
+//        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
+//
 //        System.out.println(intArray.toString());
-        ShellSort.shellSort(intArray);
-
-        for(int i = 0; i < intArray.length; i++){
-            System.out.print(intArray[i] + " ");
-        }
+//        ShellSort.shellSort(intArray);
+//
+//        for(int i = 0; i < intArray.length; i++){
+//            System.out.print(intArray[i] + " ");
+//        }
 
 
 
