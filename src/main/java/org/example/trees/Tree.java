@@ -17,24 +17,26 @@ public class Tree {
     //Basically code it as if this were one iteration
     public static void inOrderTraversal(TreeNode root){
 
-        //Base case is usually null
+        //What is our base case?
+        //When a null node is passed in
         if(root == null){
             return;
         }
 
-        //We want to go to the first to last child, we don't want to go to last child till after we visit the current node
-        for(int i = 0; i < root.children.size() - 1; i++){
-            inOrderTraversal(root.children.get(i));
-        }
+        //After checking our base case, what do we want to do?
+        //Visit left-most children before you visit parent/ current
+       for(int i = 0; i < root.children.size() - 1; i++){
+           inOrderTraversal(root.children.get(i));
+       }
 
-        //This prints out the current root node, after we iterate over left most children
-        //Access to our current node, since we want to access the children first, we do the for loop first
+        //What do we access after accessing all our left-most children?
+        //Visit current - after you visit all left most children
         System.out.println(root.name);
 
-        //This prints out right most child,after the root node
-        //We only do this if the current node has children
+        //What's the last step, to do in our current iteration?
+        //Perform iteration on right most - after you visit current
         if(!root.children.isEmpty()){
-            inOrderTraversal(root.children.get(root.children.size()-1));
+            inOrderTraversal(root.children.get(root.children.size() - 1));
         }
     }
 }
