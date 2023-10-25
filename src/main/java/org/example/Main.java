@@ -186,8 +186,8 @@ public class Main {
         nodeC.children.add(nodeG);
         nodeD.children.add(nodeH);
 
-//        Tree.postOrderTraversal(root);
-           Tree.preOrderTraversal(root);
+       Tree.postOrderTraversal(root);
+//           Tree.preOrderTraversal(root);
 
 //           Tree.inOrderTraversal(root);
 

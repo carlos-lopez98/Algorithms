@@ -48,4 +48,20 @@ public class Tree {
             preOrderTraversal(root.children.get(i));
         }
     }
+
+
+    public static void postOrderTraversal(TreeNode root){
+
+        if(root == null){
+            return;
+        }
+
+        int numChildren = root.children.size();
+
+        for(int i = 0; i < numChildren ; i++){
+            postOrderTraversal(root.children.get(i));
+        }
+
+        System.out.println(root.name);
+    }
 }
