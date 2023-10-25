@@ -187,9 +187,9 @@ public class Main {
         nodeD.children.add(nodeH);
 
 //        Tree.postOrderTraversal(root);
-//            Tree.preOderTraversal(root);
+           Tree.preOrderTraversal(root);
 
-           Tree.inOrderTraversal(root);
+//           Tree.inOrderTraversal(root);
 
 
 //        //SumLists
