@@ -6,12 +6,45 @@ public class BinarySearchTreeNode {
     //Then a link to each left and right child
     //Why isn't it a list of children like in the regular tree implementation?
     private int data;
-    private BinarySearchTreeNode left;
-    private BinarySearchTreeNode right;
+    private BinarySearchTreeNode leftChild;
+    private BinarySearchTreeNode rightChild;
 
     //Initializes our data to a value, when creating a root/ new node
     public BinarySearchTreeNode(int value){
         this.data = value;
+    }
+
+    //We insert into left if the value is lower than root and left is null
+    //We insert into right if the value is greater than root and right is null
+    //If not null, then we keep going down the tree, until we find a null spot
+    //Since this is a recursive call, find a base case
+    public void insert(int value){
+        if( value == data){
+            return;
+        }
+
+        //We go left
+        if(value < this.data){
+            //If left child is null, we found our spot, insert data
+            if(leftChild == null){
+                //insertion
+                leftChild = new BinarySearchTreeNode(value);
+                return;
+            }else{
+                //We call the insert method on it's non null leftChild
+                leftChild.insert(value);
+            }
+        }
+
+        //This will be if the value is greater, as the equal case is handled first
+        else{
+            //We found our spot
+            if(rightChild == null){
+                rightChild = new BinarySearchTreeNode(value);
+            }else{
+                rightChild.insert(value);
+            }
+        }
     }
 
 
@@ -24,18 +57,18 @@ public class BinarySearchTreeNode {
     }
 
     public BinarySearchTreeNode getLeft() {
-        return left;
+        return leftChild;
     }
 
     public void setLeft(BinarySearchTreeNode left) {
-        this.left = left;
+        this.leftChild = left;
     }
 
     public BinarySearchTreeNode getRight() {
-        return right;
+        return rightChild;
     }
 
     public void setRight(BinarySearchTreeNode right) {
-        this.right = right;
+        this.rightChild = right;
     }
 }
