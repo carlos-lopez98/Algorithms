@@ -15,9 +15,15 @@ public class BinarySearchTree {
             root = new BinarySearchTreeNode(value);
             return;
         }
-
         root.insert(value);
     }
 
+    //Work for the get method will be done in the treeNode class
+    public BinarySearchTreeNode getValue(int value){
+        if(root != null){
+            root.getValue(value);
+        }
 
+        return null;
+    }
 }
