@@ -59,4 +59,23 @@ public class BinarySearchTreeNode {
 
         return null;
     }
+
+    //Think about binary trees, the min would be the left most child
+    public int min(){
+     if(leftChild == null){
+         return this.data;
+     }else{
+         return leftChild.min();
+     }
+    }
+
+    //If no more right children are present, then we're at the right most child so return it's data
+    //If not keep traversing
+    public int max(){
+        if(rightChild == null){
+            return this.data;
+        }else{
+            return rightChild.max();
+        }
+    }
 }

@@ -26,4 +26,8 @@ public class BinarySearchTree {
 
         return null;
     }
+
+    public BinarySearchTreeNode delete(){
+        return null;
+    }
 }
