@@ -3,7 +3,7 @@ package org.example.trees;
 public class BinarySearchTreeNode {
 
     //What variables should our BinaryTreeNode store?
-    int data;
+    private int data;
     private BinarySearchTreeNode leftChild;
     private BinarySearchTreeNode rightChild;
 
@@ -77,5 +77,29 @@ public class BinarySearchTreeNode {
         }else{
             return rightChild.max();
         }
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    public BinarySearchTreeNode getLeftChild() {
+        return leftChild;
+    }
+
+    public void setLeftChild(BinarySearchTreeNode leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public BinarySearchTreeNode getRightChild() {
+        return rightChild;
+    }
+
+    public void setRightChild(BinarySearchTreeNode rightChild) {
+        this.rightChild = rightChild;
     }
 }

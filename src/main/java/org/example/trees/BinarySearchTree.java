@@ -36,6 +36,18 @@ public class BinarySearchTree {
 
     private BinarySearchTreeNode delete(BinarySearchTreeNode subTreeRoot, int value){
 
+        //This is basically a base case, if a subtree is passed in --> so a left or right child that is null
+        //Then we just break the recursion and return null
+        if(subTreeRoot == null){
+            return null;
+        }
+
+        //If it's less than, then we want to search to the right of the subTreeRoot
+        if (value < subTreeRoot.getData()){
+
+
+
+        }
 
 
         return null;
