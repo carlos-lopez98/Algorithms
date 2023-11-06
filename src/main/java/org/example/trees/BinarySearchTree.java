@@ -27,7 +27,18 @@ public class BinarySearchTree {
         return null;
     }
 
-    public BinarySearchTreeNode delete(){
+
+    public void delete(int value){
+        //Passes in the root of the tree we want to search through
+        //Also the value we want to delete
+        root = delete(root, value);
+    }
+
+    private BinarySearchTreeNode delete(BinarySearchTreeNode subTreeRoot, int value){
+
+
+
         return null;
     }
+
 }
