@@ -19,13 +19,28 @@ public class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
 
+    //You have two approaches, brute force and compliment numbers
+    //We'll only iterate once, as we'll be adding the compliment value as we go
 
+        HashMap<Integer, Integer> complimentMap = new HashMap<>();
+        int[] result = new int[2];
 
+     for(int i = 0 ; i < nums.length; i++){
 
+         int compliment = target - nums[i];
 
+        if(complimentMap.containsKey(compliment)){
+            result[0] = i;
+            result[1] = complimentMap.get(compliment);
 
+            return result;
+        }else{
+            complimentMap.put(nums[i], i);
+        }
 
-        return new int[]{0, 0};
+     }
+
+        return null;
     }
 }
 
