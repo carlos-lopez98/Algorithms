@@ -1,6 +1,5 @@
 package org.example;
 
-
 /*
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
@@ -36,19 +35,35 @@ import java.util.HashMap;
 public class RomanToInteger {
 
     //First we must map our values to the Symbol
-
-    public HashMap<Character, Integer> romanToIntMap = new HashMap<Character, Integer>();
-
-    romanToIntMap.put("I",1);
-    romanToIntMap.put("V",1);
-    romanToIntMap.put("X",1);
-    romanToIntMap.put("L",1);
-    romanToIntMap.put("C",1);
-    romanToIntMap.put("D",1);
-    romanToIntMap.put("M",1);
+    public static HashMap<Character, Integer> romanToIntMap = new HashMap<Character, Integer>();
 
 
-    public void
 
+    public static int romToInt(String romans){
+
+        romanToIntMap.put('I',1);
+        romanToIntMap.put('V',5);
+        romanToIntMap.put('X',10);
+        romanToIntMap.put('L',50);
+        romanToIntMap.put('C',100);
+        romanToIntMap.put('D',500);
+        romanToIntMap.put('M',1000);
+
+
+        int result = 0;
+
+        for(int i = 0; i < romans.length(); i++){
+            int value = romanToIntMap.get(romans.charAt(i));
+            int nextValue = romanToIntMap.get(romans.charAt(i+1));
+
+            if(value < nextValue){
+                result -= value;
+            }else{
+                result += value;
+            }
+        }
+
+        return result;
+    }
 }
 
