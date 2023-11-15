@@ -160,33 +160,33 @@ public class Main {
 //        }
 
 //        //PostOrderTraversal Implementation
-        TreeNode root = new TreeNode();
-        root.name = "root";
-        TreeNode nodeB = new TreeNode();
-        nodeB.name = "nodeB";
-        TreeNode nodeC = new TreeNode();
-        nodeC.name = "nodeC";
-        TreeNode nodeD = new TreeNode();
-        nodeD.name = "nodeD";
-        TreeNode nodeE = new TreeNode();
-        nodeE.name = "nodeE";
-        TreeNode nodeF = new TreeNode();
-        nodeF.name = "nodeF";
-        TreeNode nodeG = new TreeNode();
-        nodeG.name = "nodeG";
-        TreeNode nodeH = new TreeNode();
-        nodeH.name = "nodeH";
-
-
-        root.children.add(nodeB);
-        root.children.add(nodeC);
-        root.children.add(nodeD);
-        nodeB.children.add(nodeE);
-        nodeB.children.add(nodeF);
-        nodeC.children.add(nodeG);
-        nodeD.children.add(nodeH);
-
-       Tree.postOrderTraversal(root);
+//        TreeNode root = new TreeNode();
+//        root.name = "root";
+//        TreeNode nodeB = new TreeNode();
+//        nodeB.name = "nodeB";
+//        TreeNode nodeC = new TreeNode();
+//        nodeC.name = "nodeC";
+//        TreeNode nodeD = new TreeNode();
+//        nodeD.name = "nodeD";
+//        TreeNode nodeE = new TreeNode();
+//        nodeE.name = "nodeE";
+//        TreeNode nodeF = new TreeNode();
+//        nodeF.name = "nodeF";
+//        TreeNode nodeG = new TreeNode();
+//        nodeG.name = "nodeG";
+//        TreeNode nodeH = new TreeNode();
+//        nodeH.name = "nodeH";
+//
+//
+//        root.children.add(nodeB);
+//        root.children.add(nodeC);
+//        root.children.add(nodeD);
+//        nodeB.children.add(nodeE);
+//        nodeB.children.add(nodeF);
+//        nodeC.children.add(nodeG);
+//        nodeD.children.add(nodeH);
+//
+//       Tree.postOrderTraversal(root);
 //           Tree.preOrderTraversal(root);
 
 //           Tree.inOrderTraversal(root);
@@ -274,5 +274,11 @@ public class Main {
 
 //        Recursion.countUp(1);
 //        Recursion.countDown(10);
+
+        System.out.println(9/10);
+
+
+        System.out.println(3 % 10);
+        System.out.println(9 % 10);
     }
 }
