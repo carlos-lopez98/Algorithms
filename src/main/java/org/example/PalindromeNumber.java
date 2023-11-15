@@ -30,25 +30,19 @@ public class PalindromeNumber {
 
 //Since we cannot simply convert this to a string we must use math
 public boolean isPalindrome(int x){
-
-    int result = 0;
-    int temp = x;
+    //What are the variables we should keep track of?
 
 
-    while (temp >= 1){
+    //What would the condition be for your while loop?
+//    while (){
+//
+//        //How will we get the last digit from our number?
+//
+//        //How are you to place the last digit in it's correct spot on the new number?
+//
+//    }
 
-        //When performing the modulus on a single digit number
-        //You get the number by itself
-        int lastDigit = temp % 10;
-
-        //This effectively reverses the original number
-        result = (result*10) + lastDigit;
-        temp = temp/ 10;
-    }
-
-    if(result == x){
-        return true;
-    }
+    //What must you check for the true case?
 
  return false;
 }
