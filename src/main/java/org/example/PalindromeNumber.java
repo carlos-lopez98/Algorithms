@@ -28,4 +28,23 @@ public class PalindromeNumber {
 
 
 
+//Since we cannot simply convert this to a string we must use math
+public boolean isPalindrome(int x){
+    //Will keep track of our result
+    int result = 0;
+
+    int temp = x;
+
+
+    while (temp > 1){
+
+
+
+
+        temp = temp/ 10;
+    }
+
+
+ return false;
+}
 }
