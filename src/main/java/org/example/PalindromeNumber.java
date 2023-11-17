@@ -31,19 +31,27 @@ public class PalindromeNumber {
 //Since we cannot simply convert this to a string we must use math
 public boolean isPalindrome(int x){
     //What are the variables we should keep track of?
-
+    int result = 0;
+    //You need a temp variable so you can compare your final result to x
+    int temp = x;
 
     //What would the condition be for your while loop?
-//    while (){
-//
-//        //How will we get the last digit from our number?
-//
-//        //How are you to place the last digit in it's correct spot on the new number?
-//
-//    }
+    while ( temp >= 1){
+
+        //How will we get the last digit from our number?
+        int digit = temp % 10;
+
+        //How are you to place the last digit in it's correct spot on the new number?
+        result = (result * 10) + digit;
+
+        //You need to shrink temp everytime making it smaller
+        temp = temp/10;
+    }
 
     //What must you check for the true case?
-
+    if (result == x){
+     return true;
+    }
  return false;
 }
 }
