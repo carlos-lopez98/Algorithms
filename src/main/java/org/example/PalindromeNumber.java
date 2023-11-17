@@ -24,34 +24,16 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 //For some problems you have to think mathematically to get to the optimal solution
 //You can solve this one by converting the number to a string, and then iterating through it
 //How would you solve it if you couldn't iterate through it? This is where the mathematical thinking comes in
+
+
+//For Review - how do you reverse a number, using a while loop?
+//What variables should you keep track of?
+//How do you shrink your while loop condition?
 public class PalindromeNumber {
 
 
 
 //Since we cannot simply convert this to a string we must use math
-public boolean isPalindrome(int x){
-    //What are the variables we should keep track of?
-    int result = 0;
-    //You need a temp variable so you can compare your final result to x
-    int temp = x;
-
-    //What would the condition be for your while loop?
-    while ( temp >= 1){
-
-        //How will we get the last digit from our number?
-        int digit = temp % 10;
-
-        //How are you to place the last digit in it's correct spot on the new number?
-        result = (result * 10) + digit;
-
-        //You need to shrink temp everytime making it smaller
-        temp = temp/10;
-    }
-
-    //What must you check for the true case?
-    if (result == x){
-     return true;
-    }
- return false;
-}
+//public boolean isPalindrome(int x) {
+//}
 }
