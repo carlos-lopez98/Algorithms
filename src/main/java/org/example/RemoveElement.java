@@ -24,6 +24,11 @@ public class RemoveElement {
 
 
 
+    public int removeElement(int[] nums, int val){
+        int k = 0;
 
 
+
+        return k;
+    }
 }
