@@ -23,7 +23,8 @@ not important as well as the size of nums.
 public class RemoveElement {
 
 
-
+    //One important note to remember here is that it doesn't matter if you keep the removed elements in the array
+    //You only need to return the length of the elements that belong in the array
     public int removeElement(int[] nums, int val){
         int k = 0;
 
