@@ -23,7 +23,9 @@ Output: true
 
 public class ContainsDuplicate {
 
-
+    //Iterate through the array, adding each value to a HashMap as the key, and the occurrences as a value
+    //If the occurrence = 2, return true
+    //Else return false at the end of the iteration
 
     public boolean containsDuplicate(int[] nums){
         return false;
