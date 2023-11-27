@@ -26,16 +26,28 @@ public class RemoveElement {
     //One important note to remember here is that it doesn't matter if you keep the removed elements in the array
     //You only need to return the length of the elements that belong in the array
     public int removeElement(int[] nums, int val) {
-        //Knowing the above makes the problem way easier
 
-        //What approach can we take here?
+        int firstPointer = 0;
 
-        //How many for loops do we need?
 
-        //What Variables do we need to keep track of?
+        for(int i = 0; i < nums.length ; i++){
 
-        //What and why do we return?
+            if(nums[i] != val){
+                int temp = nums[i];
+                nums[firstPointer] = temp;
 
-        return 0;
+                firstPointer++;
+            }
+        }
+
+        return firstPointer;
     }
 }
+
+
+//Questions
+//Knowing the above makes the problem way easier
+//What approach can we take here?
+//How many for loops do we need?
+//What Variables do we need to keep track of?
+//What and why do we return?
