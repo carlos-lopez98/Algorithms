@@ -20,6 +20,7 @@ Output: true
  */
 
 
+import java.util.HashMap;
 
 public class ContainsDuplicate {
 
@@ -28,6 +29,18 @@ public class ContainsDuplicate {
     //Else return false at the end of the iteration
 
     public boolean containsDuplicate(int[] nums){
+
+        HashMap<Integer,Integer> intMap = new HashMap<>();
+
+        for(int i = 0; i < nums.length; i++){
+
+                intMap.merge(nums[i],1,Integer::sum);
+
+            if(intMap.get(nums[i]) == 2){
+                return true;
+            }
+        }
+
         return false;
     }
 }
