@@ -27,7 +27,13 @@ Output: [0]
 public class AddTwoNumbers {
 
 
+    //The approach we want to do, is to keep iterating through each list, until we reach the end of both
+    //If we reach the end of one before the other, we will consider the null list's value as 0
+    //Then just add as usual
 
+    //You need to consider the carry
+    //How you'll get the sum? Would this just be l1 + l2, what about the carry?
+    //How you'll get the single digit sum? IE if the sum is 17, single digit should be 7 and carry should be 1
     public Node addTwoNumbers(Node l1, Node l2){
 
         return null;
