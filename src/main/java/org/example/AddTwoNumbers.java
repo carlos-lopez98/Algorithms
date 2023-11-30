@@ -22,6 +22,8 @@ Input: l1 = [0], l2 = [0]
 Output: [0]
  */
 
+
+//Use the ternary operators here, you'll need many if else statements
 public class AddTwoNumbers {
 
 
