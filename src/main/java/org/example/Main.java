@@ -185,11 +185,11 @@ public class Main {
 //        nodeB.children.add(nodeF);
 //        nodeC.children.add(nodeG);
 //        nodeD.children.add(nodeH);
+//
+//       Tree.postOrderTraversal(root);
+//           Tree.preOrderTraversal(root);
 
-//        Tree.postOrderTraversal(root);
-//            Tree.preOderTraversal(root);
-
-//            Tree.inOrderTraversal(root);
+//           Tree.inOrderTraversal(root);
 
 
 //        //SumLists
@@ -233,16 +233,16 @@ public class Main {
 //        }
 
 
-        //Bubble Sort
-
-        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
-
+//        //Bubble Sort
+//
+//        int[] intArray = {20, 35, -15, 7, 55, 1, -22};
+//
 //        System.out.println(intArray.toString());
-        ShellSort.shellSort(intArray);
-
-        for(int i = 0; i < intArray.length; i++){
-            System.out.print(intArray[i] + " ");
-        }
+//        ShellSort.shellSort(intArray);
+//
+//        for(int i = 0; i < intArray.length; i++){
+//            System.out.print(intArray[i] + " ");
+//        }
 
 
 
@@ -274,5 +274,11 @@ public class Main {
 
 //        Recursion.countUp(1);
 //        Recursion.countDown(10);
+
+        System.out.println(9/10);
+
+
+        System.out.println(3 % 10);
+        System.out.println(9 % 10);
     }
 }

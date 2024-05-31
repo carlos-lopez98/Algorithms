@@ -1,68 +1,67 @@
 package org.example.trees;
-
-
 /*
 *
 * This class is meant to be the start of our tree
 * We only hold a reference to the root node
 *
 * */
+
 public class Tree {
+
     public TreeNode root;
 
 
-    public Tree(){
-    }
-    public Tree(TreeNode root){
-        this.root = root;
+    //This will just be a method that prints out our Tree in order
+    //We must print left most children, then root, then right most child
+    //Think of coding this, as you're doing it one node at a time
+    //Basically code it as if this were one iteration
+    public static void inOrderTraversal(TreeNode root){
+
+        if(root == null){
+            return;
+        }
+
+       for(int i = 0; i < root.children.size() - 1; i++){
+           inOrderTraversal(root.children.get(i));
+       }
+
+        System.out.println(root.name);
+
+        if(!root.children.isEmpty()){
+            inOrderTraversal(root.children.get(root.children.size() - 1));
+        }
     }
 
-    //This is post order Traversal, you'll end up traversing all the children nodes
-    //before the parent node is addressed
+
+    public static void preOrderTraversal(TreeNode root){
+
+        if(root==null){
+            return;
+        }
+
+        //Perform action on current node
+        System.out.println(root.name);
+
+        int numChildren = root.children.size();
+
+        for(int i = 0; i < numChildren; i++){
+            preOrderTraversal(root.children.get(i));
+        }
+    }
+
+
     public static void postOrderTraversal(TreeNode root){
 
-        if(root != null){
-
-            if(root.children != null){
-                for(TreeNode node: root.children){
-                    postOrderTraversal(node);
-                }
-            }
-
-            System.out.println(root.name);
+        if(root == null){
+            return;
         }
-    }
 
-    //Visits the nodes in ascending order/ left-right, so left branch, parent, then right branch
-    public static void inOrderTraversal(TreeNode root){
-        //Implementing this with nodes, that have a list reference to children is a bit tricky
+        int numChildren = root.children.size();
 
-        if(root != null){
-            if(!root.children.isEmpty()){
-                //Go Left
-                inOrderTraversal(root.children.get(0));
-
-                //Retrieve current
-                System.out.println(root.name);
-
-                //Go Right
-                for(int i = 1; i < root.children.size(); i++){
-                    inOrderTraversal(root.children.get(i));
-                }
-            }else{
-                System.out.println(root.name);
-            }
+        for(int i = 0; i < numChildren ; i++){
+            postOrderTraversal(root.children.get(i));
         }
-    }
 
-    //Visits the current nodes before the children
-    public static void preOderTraversal(TreeNode root){
-
-        if(root != null){
-            System.out.println(root.name);
-            for(TreeNode node: root.children){
-                preOderTraversal(node);
-            }
-        }
+        System.out.println(root.name);
     }
 }

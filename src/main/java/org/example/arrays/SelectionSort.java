@@ -3,8 +3,6 @@ package org.example.arrays;
 public class SelectionSort {
 
 
-
-
     public static void selectionSortAscendingLeftToRight(int[] array){
         //Outer keeps track of our sorted places
         //Or last unsorted index
