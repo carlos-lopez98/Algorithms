@@ -10,20 +10,26 @@ package org.example;
 //on the separate string
 public class MergeAlternately {
 
-    public String merge(String one, String two){
+    public static String merge(String one, String two){
 
-         String newString = new String();
-        for (int i = 0; i < one.length() || i < two.length(); i++){
+        String newString = new String();
+
+        int i = 0;
+
+        while( i < one.length() || i < two.length()){
 
             if(i < one.length()){
-
                 newString += one.charAt(i);
             }
 
-            if(i < two.length()){
+            if(i< two.length()){
                 newString += two.charAt(i);
             }
+
+            i++;
         }
-        return newString;
+
+
+      return newString;
     }
 }
