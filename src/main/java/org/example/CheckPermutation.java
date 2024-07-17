@@ -9,7 +9,6 @@ import java.util.*;
 * */
 public class CheckPermutation {
 
-
  public static boolean algoOne(String stringOne, String stringTwo){
 
      //O(1) constant

@@ -4,7 +4,6 @@ import org.example.practice.Node;
 
 /*
 * Given only a middle node to delete, remove it's reference from the list
-*
 * */
 public class DeleteMiddleNode {
 
