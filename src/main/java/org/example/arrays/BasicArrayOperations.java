@@ -1,5 +1,7 @@
 package org.example.arrays;
 
+import java.util.Arrays;
+
 public class BasicArrayOperations {
 
 /**
@@ -116,5 +118,37 @@ public class BasicArrayOperations {
         System.out.println(minimum);
     }
 
+/**
+ * Find the maximum element in the array
+ */
 
+    public static void printMax(int[] nums){
+
+        int max = nums[0];
+
+        for(int j: nums){
+            if(j > max){
+                max = j;
+            }
+        }
+
+        System.out.println(max);
+    }
+
+
+    /**
+     * Reverse the array and print
+      */
+
+    public static void printReversedArray (int[] nums){
+
+        for(int i = 0, j = nums.length - 1; i < j; i++, j--){
+
+            int temp = nums[j];
+            nums[j] = nums[i];
+            nums[i] = temp;
+        }
+
+        System.out.println(Arrays.toString(nums));
+    }
 }
