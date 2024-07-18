@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
         int[] empty = {};
 
-        int[] nums = {1,2,3,4,5};
+        int[] nums = {6,2,3,4,5};
 
-        BasicArrayOperations.averageElements(empty);
+        BasicArrayOperations.printMinimum(nums);
     }
 }

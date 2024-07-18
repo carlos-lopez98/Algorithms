@@ -97,4 +97,24 @@ public class BasicArrayOperations {
             System.out.println(sum/nums.length);
         }
     }
+
+
+    /**
+     * Find the minimum element in the array
+      */
+
+    public static void printMinimum(int[] nums){
+
+        int minimum = nums[0];
+
+        for(int j: nums){
+            if(minimum > j){
+                minimum = j;
+            }
+        }
+
+        System.out.println(minimum);
+    }
+
+
 }
