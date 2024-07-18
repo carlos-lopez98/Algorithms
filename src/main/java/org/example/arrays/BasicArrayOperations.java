@@ -63,4 +63,38 @@ public class BasicArrayOperations {
             System.out.println(j);
         }
     }
+
+    /**
+     * Print the sum of all elements in the array
+     */
+
+    public static void sumElements(int[] nums){
+        int sum = 0;
+
+        for(int j: nums){
+            sum += j;
+        }
+
+        System.out.println(sum);
+    }
+
+
+    /**
+     * Print the average of all elements within the array
+      */
+
+    public static void averageElements(int[] nums){
+        if (nums.length == 0){
+            System.out.println("Array does not contain any elements");
+        } else{
+            int sum = 0;
+
+            for(int j: nums){
+                sum += j;
+            }
+
+
+            System.out.println(sum/nums.length);
+        }
+    }
 }
