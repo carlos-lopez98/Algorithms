@@ -13,8 +13,6 @@ public class Main {
 
         int[] nums = {1,2,3,4,5};
 
-        BasicArrayOperations.changeElementAtIndex(nums,0,16);
-
-        System.out.println(Arrays.toString(nums));
+        BasicArrayOperations.printElements(nums);
     }
 }

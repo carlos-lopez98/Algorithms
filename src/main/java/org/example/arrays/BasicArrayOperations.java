@@ -36,4 +36,31 @@ public class BasicArrayOperations {
         }
 
     }
+
+
+/**
+ * Find the length of an array without the .length method
+ */
+
+    public static int findLength(int[] nums){
+
+        int i = 0;
+
+        for (int j: nums){
+            i++;
+        }
+
+        return i;
+    }
+
+
+/**
+ *Print all elements of the provided array
+ */
+
+    public static void printElements(int[] nums){
+        for(int j : nums){
+            System.out.println(j);
+        }
+    }
 }
