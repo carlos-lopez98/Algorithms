@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
         int[] empty = {};
 
-        int[] nums = {6,2,3,7,5};
+        int[] nums = {1,2,3,4,5};
 
-        BasicArrayOperations.printCountOfValue(nums, 15);
+        System.out.println(BasicArrayOperations.isSorted(nums));
     }
 }

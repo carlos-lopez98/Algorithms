@@ -189,4 +189,19 @@ public class BasicArrayOperations {
         System.out.println("Count of value = " + counter);
 
     }
+
+
+    /**
+     * Check if the int array is sorted
+      */
+    public static boolean isSorted(int nums[]){
+
+        for(int j = 0, i = 1; j < nums.length - 1; i++, j++){
+            if(nums[j] > nums[i]){
+                return false;
+            }
+        }
+
+      return true;
+    }
 }
