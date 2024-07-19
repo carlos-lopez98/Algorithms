@@ -151,4 +151,42 @@ public class BasicArrayOperations {
 
         System.out.println(Arrays.toString(nums));
     }
+
+    /**
+     * Linear search, find an element in the array, print the index
+      */
+
+    public static void printIndexOfValue(int nums[], int value){
+
+        for(int i = 0; i < nums.length; i++){
+
+            if (nums[i] == value){
+                System.out.println("index is " + i);
+                break;
+            }
+
+            if(i == nums.length -1){
+                System.out.println("Value not found");
+            }
+        }
+    }
+
+    /**
+     * Count how many times a specific element appears in an array
+      */
+
+    public static void printCountOfValue(int nums[], int value){
+
+        int counter = 0;
+
+        for(int j: nums){
+
+            if(value == j){
+                counter++;
+            }
+        }
+
+        System.out.println("Count of value = " + counter);
+
+    }
 }

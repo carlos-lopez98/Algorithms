@@ -14,6 +14,6 @@ public class Main {
 
         int[] nums = {6,2,3,7,5};
 
-        BasicArrayOperations.printReversedArray(nums);
+        BasicArrayOperations.printCountOfValue(nums, 15);
     }
 }
