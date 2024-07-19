@@ -14,6 +14,6 @@ public class Main {
 
         int[] nums = {1,2,3,4,5,16,25,18,19,29};
 
-        BasicArrayOperations.printSecondLargestElement(nums);
+        BasicArrayOperations.removeAnElement(nums, 25);
     }
 }

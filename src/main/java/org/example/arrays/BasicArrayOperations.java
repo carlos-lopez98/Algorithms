@@ -228,4 +228,29 @@ public class BasicArrayOperations {
 
         System.out.println("Second Max Element = " + secondMax);
     }
+    /**
+     * Remove an element from an array
+      */
+    public static void removeAnElement(int[] nums, int valueToRemove){
+        //If we're only removing one element, then we just need to create a new array of size nums.length - 1
+        int[] updatedArray = new int[nums.length - 1];
+
+        for(int i =0; i< nums.length; i++){
+
+            if(nums[i] == valueToRemove && i+1 < nums.length){
+                int temp = nums[i+1];
+
+               nums[i+1] = nums[i];
+               nums[i] = temp;
+            }
+        }
+
+        for(int i = 0; i < nums.length - 1; i++){
+
+            updatedArray[i] = nums[i];
+
+        }
+
+        System.out.println(Arrays.toString(updatedArray));
+    }
 }
