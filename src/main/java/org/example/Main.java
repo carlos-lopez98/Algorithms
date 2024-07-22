@@ -13,7 +13,8 @@ public class Main {
         int[] empty = {};
 
         int[] nums = {0,12};
+        int[] numsTwo = {2,3,4};
 
-        BasicArrayOperations.insertElement(nums, 0, 25);
+        BasicArrayOperations.addArrays(nums, numsTwo);
     }
 }

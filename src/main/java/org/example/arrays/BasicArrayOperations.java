@@ -1,5 +1,6 @@
 package org.example.arrays;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class BasicArrayOperations {
@@ -279,7 +280,30 @@ public class BasicArrayOperations {
             }
 
         }
+    }
 
-        System.out.println(Arrays.toString(updatedNums));
+    /**
+     * Add one array to the end of another array
+     */
+
+    //Explanation: You have to create a new array equal to the length of the sum of the other two array lengths
+    //Then just iterate through each array and add the elements in, you'll just need one extra counter to keep
+    //position within both for loops
+    public static void addArrays(int[] nums, int[] numsTwo){
+
+        int[] sumArray = new int[nums.length + numsTwo.length];
+
+        int counter = 0;
+
+        for(int i = 0; i < nums.length; i++){
+            sumArray[i] = nums[i];
+            counter++;
+        }
+
+        for(int j = 0; j < numsTwo.length; j++){
+            sumArray[counter] = numsTwo[j];
+            counter++;
+        }
+
     }
 }
