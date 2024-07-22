@@ -253,4 +253,25 @@ public class BasicArrayOperations {
 
         System.out.println(Arrays.toString(updatedArray));
     }
+
+    /**
+     * Insert an element at a specific position in the array
+     */
+
+    public static void insertElement(int[] nums, int position){
+
+        int[] updatedNums = new int[nums.length + 1];
+
+        for (int i = 0; i < updatedNums.length; i++){
+
+            if(i == position){
+                updatedNums[i] = nums[i];
+                i++;
+            }else{
+                updatedNums[i] = nums[i];
+            }
+        }
+
+        System.out.println(Arrays.toString(updatedNums));
+    }
 }
