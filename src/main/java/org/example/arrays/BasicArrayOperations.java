@@ -258,18 +258,26 @@ public class BasicArrayOperations {
      * Insert an element at a specific position in the array
      */
 
-    public static void insertElement(int[] nums, int position){
+
+    //Explanation: We had to create a new array, since we're adding an element and array sizes are immutable
+    //We have two pointers, one iterating in one array, one in the second
+    //once we reach the position where we wish to insert, we insert into the first array, and move the pointer by one
+    //second pointer keeps it's place in the second array, then is able to keep the same order of the array when adding
+    // the remainder elements
+    public static void insertElement(int[] nums, int position, int insert){
 
         int[] updatedNums = new int[nums.length + 1];
 
-        for (int i = 0; i < updatedNums.length; i++){
+        for (int i = 0, j = 0; i < updatedNums.length; i++, j++){
 
-            if(i == position){
-                updatedNums[i] = nums[i];
+            if(position == i){
+                updatedNums[i] = insert;
                 i++;
+                updatedNums[i] = nums[j];
             }else{
-                updatedNums[i] = nums[i];
+                updatedNums[i] = nums[j];
             }
+
         }
 
         System.out.println(Arrays.toString(updatedNums));

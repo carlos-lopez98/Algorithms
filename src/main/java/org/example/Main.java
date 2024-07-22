@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
         int[] empty = {};
 
-        int[] nums = {1,2,3,4,5,16,25,18,19,29};
+        int[] nums = {0,12};
 
-        BasicArrayOperations.removeAnElement(nums, 25);
+        BasicArrayOperations.insertElement(nums, 0, 25);
     }
 }
