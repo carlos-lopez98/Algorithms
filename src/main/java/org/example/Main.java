@@ -3,6 +3,7 @@ package org.example;
 import org.example.arrays.*;
 import org.example.practice.*;
 import org.example.practice.reference_type.Person;
+import org.example.strings.CheckPalilndromeString;
 import org.example.strings.StringOperations;
 import org.example.trees.Tree;
 import org.example.trees.TreeNode;
@@ -18,8 +19,6 @@ public class Main {
 
         BasicArrayOperations.addArrays(nums, numsTwo);*/
 
-
-        StringOperations.reverseString("Carlos");
-        StringOperations.revereStringUsingStringBuilder("Carlos");
+        System.out.println(CheckPalilndromeString.checkPalindrome("a"));
     }
 }
