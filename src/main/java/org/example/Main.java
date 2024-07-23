@@ -18,7 +18,7 @@ public class Main {
         BasicArrayOperations.addArrays(nums, numsTwo);*/
 
 
-        boolean checkPermutation = CheckPermutation.algoOne("Carter Maclennan", "Caclennan Marter");
+        boolean checkPermutation = CheckPermutation.algoTwo("Carter Maclennan", "Caclennan Marter");
         System.out.println(checkPermutation);
     }
 }

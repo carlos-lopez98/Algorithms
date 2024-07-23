@@ -14,6 +14,9 @@ import java.util.*;
 //What about case sensitive? Is GOD a permutation of dog?
 public class CheckPermutation {
 
+    //Space complexity for this one is O(1)
+    //Runtime is O(1)
+
  public static boolean algoOne(String stringOne, String stringTwo){
      //Assuming whitespaces matter, then strings not of same lengths will return false
      if(stringOne.length() != stringTwo.length()){
@@ -43,4 +46,19 @@ public class CheckPermutation {
 
      return true;
  }
+
+    //You can also solve this just by sorting the strings, then checking if they are equal to each other
+    //The sorting algorithm runs at O(n log n)
+    public static boolean algoTwo(String one, String two){
+
+      char[] arrayOne = one.toCharArray();
+      char[] arrayTwo = two.toCharArray();
+
+
+      Arrays.sort(arrayOne);
+      Arrays.sort(arrayTwo);
+
+
+     return Arrays.toString(arrayOne).equals(Arrays.toString(arrayTwo));
+    }
 }
