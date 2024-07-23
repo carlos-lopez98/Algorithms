@@ -32,4 +32,13 @@ public class StringOperations {
 
         System.out.println(builder);
     }
+
+
+    //Replace all occurrences of " " within a string
+    //Remember String has a replace function, that replaces every occurrence of a particular character
+    public static void removeSpaces(String s){
+
+        String updated = new String(s.replace(" ",""));
+        System.out.println(updated);
+    }
 }

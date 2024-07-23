@@ -12,13 +12,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-      /*  int[] empty = {};
 
-        int[] nums = {0,12};
-        int[] numsTwo = {2,3,4};
-
-        BasicArrayOperations.addArrays(nums, numsTwo);*/
-
-        System.out.println(CheckPalilndromeString.checkPalindrome("a"));
+        StringOperations.removeSpaces("C a r l o s ");
     }
 }
