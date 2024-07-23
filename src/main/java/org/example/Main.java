@@ -3,6 +3,7 @@ package org.example;
 import org.example.arrays.*;
 import org.example.practice.*;
 import org.example.practice.reference_type.Person;
+import org.example.strings.StringOperations;
 import org.example.trees.Tree;
 import org.example.trees.TreeNode;
 
@@ -18,7 +19,7 @@ public class Main {
         BasicArrayOperations.addArrays(nums, numsTwo);*/
 
 
-        boolean checkPermutation = CheckPermutation.algoTwo("Carter Maclennan", "Caclennan Marter");
-        System.out.println(checkPermutation);
+        StringOperations.reverseString("Carlos");
+        StringOperations.revereStringUsingStringBuilder("Carlos");
     }
 }
