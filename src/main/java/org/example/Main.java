@@ -10,11 +10,15 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] empty = {};
+      /*  int[] empty = {};
 
         int[] nums = {0,12};
         int[] numsTwo = {2,3,4};
 
-        BasicArrayOperations.addArrays(nums, numsTwo);
+        BasicArrayOperations.addArrays(nums, numsTwo);*/
+
+
+        boolean checkPermutation = CheckPermutation.algoOne("Carter Maclennan", "Caclennan Marter");
+        System.out.println(checkPermutation);
     }
 }
