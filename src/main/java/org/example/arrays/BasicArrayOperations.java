@@ -306,4 +306,10 @@ public class BasicArrayOperations {
         }
 
     }
+
+    /**
+     * Find and print any duplicates in the array
+     */
+
+    
 }

@@ -13,17 +13,17 @@ public class IsUnique {
 
     //This one works but uses a data structure
     public static boolean algoOne(String string){
-       Set<Character> uniqueSet = new HashSet();
+       Set<Character> charSet = new HashSet<>();
 
-        for(char current: string.toCharArray()){
-            uniqueSet.add(current);
-        }
+       for(char c: string.toCharArray()){
+           charSet.add(c);
+       }
 
-        if(uniqueSet.size() == string.length()){
-            return true;
-        }else{
-            return false;
-        }
+       if(charSet.size() == string.length()){
+           return true;
+       }else {
+           return false;
+       }
     }
 
     //This one works but doesn't check for things like spaces etc...
@@ -45,4 +45,28 @@ public class IsUnique {
 
 
     //Another possible solution is to use the ASCII code of the string -- **NEED TO IMPLEMENT**
+    //Assume working with the standard ASCII table of 128 values
+
+    public static boolean algoThree(String string){
+        //Remember to check for edge cases
+        if(string.length() > 128) {
+            return false;
+        }
+
+        boolean[] booleanValues = new boolean[128];
+
+        for(char c: string.toCharArray()){
+
+            //When you set an int = char, the int will become the ASCII value of the char
+            int temp = c;
+
+            if(booleanValues[temp]){
+                return false;
+            }
+
+            booleanValues[temp] = true;
+        }
+
+        return true;
+    }
 }
