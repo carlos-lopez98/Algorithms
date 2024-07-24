@@ -5,13 +5,13 @@ package org.example.linkedlist;
 public class LinkedListNodeImpl<T> {
 
     private T data;
-    private LinkedListNodeImpl next;
+    private LinkedListNodeImpl<T> next;
 
     public LinkedListNodeImpl(T data){
         this.data = data;
     }
 
-    public LinkedListNodeImpl(T data, LinkedListNodeImpl next){
+    public LinkedListNodeImpl(T data, LinkedListNodeImpl<T> next){
         this.data = data;
         this.next = next;
     }
@@ -24,11 +24,11 @@ public class LinkedListNodeImpl<T> {
         this.data = data;
     }
 
-    public LinkedListNodeImpl getNext() {
-        return next;
+    public LinkedListNodeImpl<T> getNext() {
+        return this.next;
     }
 
-    public void setNext(LinkedListNodeImpl next) {
+    public void setNext(LinkedListNodeImpl<T> next) {
         this.next = next;
     }
 }
