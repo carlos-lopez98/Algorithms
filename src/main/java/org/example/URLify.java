@@ -17,34 +17,32 @@ public class URLify {
     //Assumes the full length may include spaces we don't need and true length is just up until the end of
     //the string we want changed --"Here we are" True Length not "Here we are   "
     public static String algoOne(char[] args, int trueLength){
+    //Count the whitespaces inside the true string to determine the second pointer start position
         int whitespaces = 0;
 
-        //Count whitespaces first to get our position for our second pointer
-        for(int i = 0; i < trueLength; i++){
+        for(int i =0; i < trueLength; i++){
             if(args[i] == ' '){
                 whitespaces++;
             }
         }
 
-        //Now that we know the whitespace count we can successfully see where our second pointer should start
-
         int secondPointer = trueLength + whitespaces*2;
 
-        for(int j = trueLength - 1; j >= 0; j--){
+        for(int i = trueLength - 1; i >= 0; i--){
 
-            if(args[j] == ' '){
-                args[secondPointer - 1] = '0';
+            if(args[i] == ' '){
+                args[secondPointer - 1] ='0';
                 args[secondPointer - 2] = '2';
                 args[secondPointer - 3] = '%';
-
                 secondPointer -= 3;
             }else{
-                args[secondPointer-1] = args[j];
+                args[secondPointer - 1] = args[i];
                 secondPointer--;
             }
+
         }
 
-
+    //You have to start from the end because you can't
         return new String(args);
     }
 }
