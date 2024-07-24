@@ -14,6 +14,6 @@ public class Main {
     public static void main(String[] args) {
 
 //        StringOperations.removeSpaces("C a r l o s ");
-        System.out.println(IsUnique.algoThree("Heloo"));
+        System.out.println(CheckPermutation.algoOne("Carlos", "rlosaC"));
     }
 }

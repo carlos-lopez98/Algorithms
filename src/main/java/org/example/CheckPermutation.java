@@ -9,7 +9,7 @@ import java.util.*;
 * */
 
 //Questions to ask:
-//Do whitespaces matter?
+//Do whitespaces matter? Would "Dog  " be a permutation of "goD" -- no spaces do matter
 //What ASCII set is the string based off?
 //What about case sensitive? Is GOD a permutation of dog?
 public class CheckPermutation {
@@ -18,47 +18,50 @@ public class CheckPermutation {
     //Runtime is O(1)
 
  public static boolean algoOne(String stringOne, String stringTwo){
-     //Assuming whitespaces matter, then strings not of same lengths will return false
-     if(stringOne.length() != stringTwo.length()){
-         return false;
-     }
+        if(stringOne.length() != stringTwo.length()) {
+            return false;
+        }
 
-     HashMap<Integer, Integer> valueMap = new HashMap<>();
+        //Then you just check if the remaining strings are equal
+        HashMap<Integer, Integer> isPermutationMap = new HashMap<>();
 
-     for(int i = 0; i < stringOne.length(); i++){
-         //So if the key is not in the hashmap, then it will put the value 0
-         int tempKey = stringOne.charAt(i);
-         valueMap.putIfAbsent(tempKey, 0);
-         valueMap.merge( tempKey, 1, Integer::sum);
-     }
+        //You can use a hashmap, then add to the value, while you use the charAt ASCII value as the key
+        for(int i = 0; i < stringOne.length(); i++){
+            int key = stringOne.charAt(i);
 
-     for (int j = 0; j < stringTwo.length(); j++){
+            //If the key is not in the Map yet, then set default to 0
+            isPermutationMap.putIfAbsent(key, 0);
 
-         int tempKey = stringTwo.charAt(j);
-         valueMap.putIfAbsent(tempKey, 0);
+            isPermutationMap.merge(key, 1, Integer::sum);
+        }
 
-         valueMap.merge(tempKey, -1, Integer::sum);
+        //Now you use the same map, but subtract 1 instead of adding to the value in the hashmap
+        for(int j = 0; j < stringTwo.length(); j++){
+            int key = stringTwo.charAt(j);
 
-         if (valueMap.get(tempKey) < 0){
-             return false;
-         }
-     }
+            if(!isPermutationMap.containsKey(key)){
+                return false;
+            }
 
-     return true;
+            isPermutationMap.merge(key, -1, Integer::sum);
+
+            if(isPermutationMap.get(key) < 0){
+                return false;
+            }
+        }
+        return true;
  }
 
     //You can also solve this just by sorting the strings, then checking if they are equal to each other
-    //The sorting algorithm runs at O(n log n)
+    //The sorting algorithm runs at O(n log n) -- this is because of the sorting
     public static boolean algoTwo(String one, String two){
 
-      char[] arrayOne = one.toCharArray();
-      char[] arrayTwo = two.toCharArray();
+     char[] sortedOne = one.toCharArray();
+     char[] sortedTwo = two.toCharArray();
 
+     Arrays.sort(sortedTwo);
+     Arrays.sort(sortedOne);
 
-      Arrays.sort(arrayOne);
-      Arrays.sort(arrayTwo);
-
-
-     return Arrays.toString(arrayOne).equals(Arrays.toString(arrayTwo));
+        return Arrays.toString(sortedOne).equals(Arrays.toString(sortedTwo));
     }
 }
