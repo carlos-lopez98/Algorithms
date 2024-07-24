@@ -10,4 +10,11 @@ package org.example.linkedlist;
 //2. LinkedLists must traverse from the head to get to a specific node/ data, unless it's a doubly linked list
 //3. To remove a data point, you must remove the reference to that particular node in order to remove it from the list
 public class LinkedListImpl {
+
+
+
+
+
+
+
 }
