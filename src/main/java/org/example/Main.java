@@ -13,6 +13,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        StringOperations.removeSpaces("C a r l o s ");
+//        StringOperations.removeSpaces("C a r l o s ");
+
+        System.out.println(URLify.algoOne(new String("Hello we are    ").toCharArray(), 12));
     }
 }
