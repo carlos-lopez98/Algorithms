@@ -1,14 +1,6 @@
 package org.example;
 
-import org.example.arrays.*;
-import org.example.practice.*;
-import org.example.practice.reference_type.Person;
-import org.example.strings.CheckPalilndromeString;
-import org.example.strings.StringOperations;
-import org.example.trees.Tree;
-import org.example.trees.TreeNode;
-
-import java.util.Arrays;
+import org.example.strings.PalindromePermutation;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +8,8 @@ public class Main {
 //        StringOperations.removeSpaces("C a r l o s ");
 
         String s = "Hello we are    ";
-        System.out.println(URLify.algoOne(s.toCharArray(), 12));
+
+        System.out.println(PalindromePermutation.checkPalindromePermutation("ttaacco"));
+
     }
 }

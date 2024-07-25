@@ -8,26 +8,50 @@ package org.example.strings;
 
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 //Clarifying Questions:
 //What makes a palindrome? Think of as many examples as you can
 //You can ignore casing and non-letter characters - meaning you can remove them
 
-public class PalindromPermutation {
+public class PalindromePermutation {
 
+
+    //With the function we created, we'll be able to track a character as a value of 0-26
     public static boolean checkPalindromePermutation(String string){
+        //How would we be able to keep track of pairs?
 
+        //if a char shows up even number of times it's good
+        //if it shows up odd number of times - there can be only one character
 
+        //If Odd count
+        //if amountShown % 2 == 1
 
-        return false;
+        int oddCount = 0;
+
+        HashMap<Integer, Integer> charCounter = new HashMap<>();
+
+        for(int i = 0 ; i < string.length(); i++){
+
+            int value = getCharValue(string.charAt(i));
+
+            charCounter.merge(value,1,Integer::sum);
+        }
+
+        for(int i: charCounter.values()){
+            if(i % 2 == 1){
+                oddCount++;
+            }
+        }
+
+        return !(oddCount > 1);
     }
+
+
 
     //This will return a value of 0-26 for alphabetical characters
     //It will return a value of -1, for nonalphabetical characters
     //In our checkPermutation function we can ignore if the value returned is -1
-    private static int getCharVaue(char c){
+    private static int getCharValue(char c){
         //Create the integer range
         //Numerical value 'a' - 'z'
         //Numerical value 'A' - 'Z'
