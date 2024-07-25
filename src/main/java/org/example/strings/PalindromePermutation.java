@@ -15,7 +15,6 @@ import java.util.HashMap;
 
 public class PalindromePermutation {
 
-
     //With the function we created, we'll be able to track a character as a value of 0-26
     public static boolean checkPalindromePermutation(String string){
         //How would we be able to keep track of pairs?
