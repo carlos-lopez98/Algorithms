@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.strings.OneAway;
 import org.example.strings.PalindromePermutation;
 
 public class Main {
@@ -8,8 +9,6 @@ public class Main {
 //        StringOperations.removeSpaces("C a r l o s ");
 
         String s = "Hello we are    ";
-
-        System.out.println(PalindromePermutation.checkPalindromePermutation("ttaacco"));
-
+        System.out.println(OneAway.isOneAway("maid","tail"));
     }
 }

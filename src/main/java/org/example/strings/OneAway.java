@@ -30,7 +30,6 @@ public class OneAway {
         }
     }
 
-
     public static boolean checkReplacement(String one, String two){
         int oneAway = 0;
 
