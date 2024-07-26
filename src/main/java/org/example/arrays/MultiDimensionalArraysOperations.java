@@ -1,10 +1,10 @@
-package org.example.practice;
+package org.example.arrays;
 
 
 /*
  * Practice for Multi Dimensional Arrays
  * */
-public class MultiDimensionalArrays {
+public class MultiDimensionalArraysOperations {
 
     //Initialization
     static int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
@@ -89,4 +89,12 @@ public class MultiDimensionalArrays {
             System.out.println(sum);
         }
     }
+
+    //Swap values using indexes
+    public static void swapValues(int[][]){
+
+
+    }
+
+
 }

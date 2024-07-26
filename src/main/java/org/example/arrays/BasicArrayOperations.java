@@ -247,7 +247,6 @@ public class BasicArrayOperations {
         }
 
         for(int i = 0; i < nums.length - 1; i++){
-
             updatedArray[i] = nums[i];
 
         }
