@@ -7,7 +7,7 @@ package org.example.strings;
     //Are we using non-alphabetic characters?
     //Will this be a string without spaces?
     //Does a one letter string count as palindrome?
-public class CheckPalilndromeString {
+public class CheckPalindromeString {
 
     //Assume just alphabetical string, one letter string counts as a palindrome
     public static boolean checkPalindrome(String s){
@@ -21,6 +21,7 @@ public class CheckPalilndromeString {
                 return false;
             }
         }
+
         return true;
     }
 }

@@ -1,61 +1,70 @@
 package org.example.strings;
 
-/*
-*
-* There are three types of edits that can be performed on strings: insert a character,
-* remove a character, or replace a character. Given two strings, write a function to check if
-* they are one edit (or zero edits away)
-*
-* */
+import java.util.HashMap;
 
-//--Think in functions, try to make segments of your code into private functions
+/**
+ * Problem:
+ *   There are three types of edits that can performed on strings:
+ *   insert a character, remove a character, or replace a character.
+ *   Given two strings, write a function to check if they are one edit (or zero edits) away.
+ *
+ * Example:
+ *   pale, ple   -> true
+ *   pales, pale -> true
+ *   pale, bale  -> true
+ *   pale, bake  -> false
+ *
+ * Solution:
+ *   complexity: O(n)
+ */
+
 public class OneAway {
-
-
-    public static boolean isOneAway(String one, String two){
-
-        // Since we're looking just for one edit away, if either of the strings is greater than
-        // two, we'll automatically know we're two edits away and return false
-        if (one.length() >= two.length() + 2 || one.length() <= two.length() - 2
-                || two.length() >= one.length() + 2 || two.length() <= one.length() - 2) {
+    
+    //Clarifying Questions:
+    //Is pale one away from "p ale"? Do non alphabetical characters count? Yes they count
+    //Is it case sensitive? "Pale" "pale" is this one away? Yes one away
+    
+    public static boolean isOneAway(String one, String two) {
+        
+        //If the string lengths are larger by more than two spaces - then automatically false
+        if(one.length() + 2 > two.length() || two.length() + 2 > one.length()){
             return false;
         }
 
-        if(one.length() == two.length()){
-            return checkReplacement(one, two);
-        } else if(one.length() > two.length()){
-            return checkInsertionAndRemoval(two, one);
-        }else {
-            return checkInsertionAndRemoval(one, two);
+        if(one.length() > two.length() || two.length() > one.length()){
+            checkIfInsertOrRemove(one, two);
+        }else{
+
         }
+
+
+        return false;
     }
 
-    public static boolean checkReplacement(String one, String two){
-        int oneAway = 0;
+    private static boolean checkIfInsertOrRemove(String one, String two) {
+        int oneEditCounter = 0;
 
-        for(int i = 0, j = 0; i < one.length(); i++, j++){
-            if(one.charAt(i) != two.charAt(j)){
-                oneAway++;
+        //Returns shorter string
+        String shorter = one.length() > two.length() ? two : one;
+
+        //Returns longer string
+        String longer = one.length() > two.length() ? one : two;
+
+        for(int i = 0, j = 0 ; i < shorter.length(); i++, j++){
+            //If you encouner a character that doesn't equal, increase the editCounter
+            if(shorter.charAt(i) != longer.charAt(j)){
+                oneEditCounter++;
+                i--;
+
+                if(oneEditCounter > 1){
+                    return false;
+                }
             }
         }
-        return !(oneAway > 1);
+
+        return true;
     }
 
-    //Will take the shorter string as the first parameter
-    //Takes the second string as the longer parameter
-    public static boolean checkInsertionAndRemoval(String s, String l){
-        //Will be used to track how many edits away the short string is from the long string
-        //If more than one edit away, will return false
-        int oneEdit = 0;
 
-        for(int i = 0, j = 0; i < s.length(); i++, j++){
-            if(s.charAt(i) != l.charAt(j)){
-             //Shorter one needs to stay at the same position
-             i--;
-             oneEdit++;
-            }
-        }
-        return !(oneEdit > 1);
-    }
 }
 
