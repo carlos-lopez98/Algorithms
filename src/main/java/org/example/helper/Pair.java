@@ -15,6 +15,22 @@ public class Pair<K,B> extends Object {
     }
 
 
+    public K getFirst() {
+        return first;
+    }
+
+    public void setFirst(K first) {
+        this.first = first;
+    }
+
+    public B getSecond() {
+        return second;
+    }
+
+    public void setSecond(B second) {
+        this.second = second;
+    }
+
     @Override
     public boolean equals(Object o) {
 

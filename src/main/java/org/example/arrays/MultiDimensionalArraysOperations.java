@@ -1,6 +1,8 @@
 package org.example.arrays;
 
 
+import org.example.helper.Pair;
+
 import java.util.Arrays;
 
 /*
@@ -8,13 +10,10 @@ import java.util.Arrays;
  * */
 public class MultiDimensionalArraysOperations {
 
-    //Initialization
-    static int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-
 
 
     //This prints the array correctly
-    public static void printArray() {
+    public static void printArray(int[][] matrix) {
 
         for(int row = 0; row < matrix.length; row++){
             for(int col = 0; col < matrix[row].length; col++){
@@ -24,7 +23,7 @@ public class MultiDimensionalArraysOperations {
         }
     }
 
-    public static void printArrayCorrect() {
+    public static void printArrayCorrect(int[][] matrix) {
 
         //Outer Loop here is the Row Traversal
         for (int i = 0; i < matrix.length; i++) {
@@ -39,7 +38,7 @@ public class MultiDimensionalArraysOperations {
     }
 
 
-    public static void printIndicesByRow() {
+    public static void printIndicesByRow(int[][] matrix) {
 
         System.out.println("Print Top");
         System.out.println(matrix[0][0] + " " + matrix[0][1] + " " + matrix[0][2]);
@@ -52,7 +51,7 @@ public class MultiDimensionalArraysOperations {
 
     }
 
-    public static void printIndicesByColumn() {
+    public static void printIndicesByColumn(int[][] matrix) {
 
         System.out.println("Print First");
         System.out.println(matrix[0][0] + " " + matrix[1][0] + " " + matrix[2][0]);
@@ -65,7 +64,7 @@ public class MultiDimensionalArraysOperations {
 
     }
 
-    public static void sumRows() {
+    public static void sumRows(int[][] matrix) {
         //Staying in first column, and getting the length of that column, returns row numbers
         for (int i = 0; i < matrix.length; i++) {
             System.out.println("Sum Row: " + i);
@@ -77,7 +76,7 @@ public class MultiDimensionalArraysOperations {
         }
     }
 
-    public static void sumColumns() {
+    public static void sumColumns(int[][] matrix) {
         //Staying in first row, and getting length of that row, returns column numbers
         for (int i = 0; i < matrix[0].length; i++) {
             System.out.println("Sum of Column: " + i);
@@ -90,8 +89,13 @@ public class MultiDimensionalArraysOperations {
     }
 
     //Swap values using indexes
-    public static void swapValues(int[][] hello){
+    //Takes in a Pair of indices
+    public static void swapValues(int[][] matrix, Pair<Integer,Integer> positionOne, Pair<Integer, Integer> positionTwo){
 
+        int temp = matrix[positionOne.getFirst()][positionOne.getSecond()];
+
+        matrix[positionOne.getFirst()][positionOne.getSecond()] = matrix[positionTwo.getFirst()][positionTwo.getSecond()];
+        matrix[positionTwo.getFirst()][positionTwo.getSecond()] = temp;
 
     }
 

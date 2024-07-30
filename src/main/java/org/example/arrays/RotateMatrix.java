@@ -12,13 +12,13 @@ public class RotateMatrix {
     public static int[][] rotateMatrixNotInPlace(int[][] matrix){
 
 
-        return new int[][];
+        return new int[2][2];
     }
 
 
     public static int[][] rotateMatrixInPlace(int[][] matrix){
 
 
-        return new int[][];
+        return new int[2][2];
     }
 }
