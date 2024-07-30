@@ -21,17 +21,15 @@ public class MultiDimensionalArraysOperations {
     //First Column, First Row
     //First Column, Second Row
 
-    public static String printArray() {
+    //This prints the array correctly
+    public static void printArray() {
 
-        //This prints the address reference to where the array is stored in memory
-
-        //Think of a 2-d array as an array of arrays, when you do the Array.toString() you stringify the array
-        //What does the outer array store? addresses to more arrays, so you're output will be an array of addresses to more arrays
-
-
-        //If you want to print out a 2-d array correctly, you'll have to iterate through the array
-
-        return Arrays.toString(matrix);
+        for(int row = 0; row < matrix.length; row++){
+            for(int col = 0; col < matrix[row].length; col++){
+                System.out.print(matrix[row][col] + " ");
+            }
+            System.out.println();
+        }
     }
 
     public static void printArrayCorrect() {

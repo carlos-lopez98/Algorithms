@@ -11,7 +11,7 @@ public class Main {
         String s = "Hello we are    ";
 
         int[] nums = {1,2,3,4,5};
-        System.out.println(MultiDimensionalArraysOperations.printArray());
+        MultiDimensionalArraysOperations.printArray();
 
         System.out.println(Arrays.toString(nums));
 
