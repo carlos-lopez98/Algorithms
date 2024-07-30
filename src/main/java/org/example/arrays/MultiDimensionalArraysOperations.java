@@ -11,12 +11,11 @@ import java.util.Arrays;
 public class MultiDimensionalArraysOperations {
 
 
-
     //This prints the array correctly
     public static void printArray(int[][] matrix) {
 
-        for(int row = 0; row < matrix.length; row++){
-            for(int col = 0; col < matrix[row].length; col++){
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
                 System.out.print(matrix[row][col] + " ");
             }
             System.out.println();
@@ -90,7 +89,7 @@ public class MultiDimensionalArraysOperations {
 
     //Swap values using indexes
     //Takes in a Pair of indices
-    public static void swapValues(int[][] matrix, Pair<Integer,Integer> positionOne, Pair<Integer, Integer> positionTwo){
+    public static void swapValues(int[][] matrix, Pair<Integer, Integer> positionOne, Pair<Integer, Integer> positionTwo) {
 
         int temp = matrix[positionOne.getFirst()][positionOne.getSecond()];
 
@@ -100,25 +99,26 @@ public class MultiDimensionalArraysOperations {
     }
 
     //Transpose matrix, switch rows to columns
-    public static void transposeMatrix(int[][] matrix){
-
-
-
-
+    //This literally just switches the rows to columns
+    //The pointers start at the top left and go all the way till they hit the bottom right corner
+    public static void transposeMatrix(int[][] matrix) {
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = row; col < matrix[row].length; col++) {
+                int temp = matrix[row][col];
+                matrix[row][col] = matrix[col][row];
+                matrix[col][row] = temp;
+            }
+        }
     }
 
     //Rotate the matrix by 90 degrees clockwise
-    public static void rotateMatrixClockwise(int[][] matrix){
-
-
-
+    public static void rotateMatrixClockwise(int[][] matrix) {
 
 
     }
 
     //Rotate matrix counter clockwise
-    public static void rotateMatrixCounterClockwise(int[][] matrix){
-
+    public static void rotateMatrixCounterClockwise(int[][] matrix) {
 
 
     }

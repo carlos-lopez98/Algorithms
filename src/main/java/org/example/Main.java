@@ -15,8 +15,7 @@ public class Main {
                 {7, 8, 9}
         };
 
-        MultiDimensionalArraysOperations.swapValues(matrix, new Pair<>(0,1), new Pair<>(2,2));
-
+        MultiDimensionalArraysOperations.transposeMatrix(matrix);
         MultiDimensionalArraysOperations.printArray(matrix);
     }
 }
