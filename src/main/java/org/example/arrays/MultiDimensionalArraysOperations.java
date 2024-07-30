@@ -11,15 +11,7 @@ public class MultiDimensionalArraysOperations {
     //Initialization
     static int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-    //Excersises Accessing Elements
-    //2nd Column third row
-    //3rd Column second row
 
-    //Last row, second column
-    //Last row, third column
-
-    //First Column, First Row
-    //First Column, Second Row
 
     //This prints the array correctly
     public static void printArray() {
@@ -103,5 +95,27 @@ public class MultiDimensionalArraysOperations {
 
     }
 
+    //Transpose matrix, switch rows to columns
+    public static void transposeMatrix(int[][] matrix){
 
+
+
+
+    }
+
+    //Rotate the matrix by 90 degrees clockwise
+    public static void rotateMatrixClockwise(int[][] matrix){
+
+
+
+
+
+    }
+
+    //Rotate matrix counter clockwise
+    public static void rotateMatrixCounterClockwise(int[][] matrix){
+
+
+
+    }
 }
