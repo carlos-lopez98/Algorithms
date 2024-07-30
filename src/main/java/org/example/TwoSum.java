@@ -1,34 +1,40 @@
 package org.example;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
-/*
+/**
 *
 * Given an array of integers nums and an integer target, return indices of the
 * two numbers such that they add up to target.
 * You may assume that each input would have exactly one solution,
 * and you may not use the same element twice.
 * You can return the answer in any order.
-*
 * */
-
-
 public class TwoSum {
+    //Questions:
+    //[5,2,4,5,10] -- nums
+    // 6 -- target
+    //[1,2] == [2,4] -- return positions not the numbers
 
     public int[] twoSum(int[] nums, int target) {
 
-    //You have two approaches, brute force and compliment numbers
-    //We'll only iterate once, as we'll be adding the compliment value as we go
+        for(int i  = 0; i < nums.length; i++){
 
-
-
-
-
+        }
         return null;
     }
 }
+
+
+//Runtime Complexity O(n^2), Space Complexity O(1)
+
+
+
+
 
 
 

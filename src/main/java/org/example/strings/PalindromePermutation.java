@@ -9,6 +9,11 @@ package org.example.strings;
 
 import java.util.HashMap;
 
+
+
+
+
+
 //Clarifying Questions:
 //What makes a palindrome? Think of as many examples as you can
 //You can ignore casing and non-letter characters - meaning you can remove them

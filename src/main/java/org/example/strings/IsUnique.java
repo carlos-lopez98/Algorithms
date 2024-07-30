@@ -34,13 +34,25 @@ public class IsUnique {
     }
 
 
+    //Using the ASCII character set
     public static boolean algoTwo(String string){
 
-        return false;
+        if(string.length() > 128){
+            return false;
+        }
+
+        boolean[] duplicateCharacterTracker = new boolean[128];
+
+        for(int i = 0; i < string.length(); i++){
+
+            if(duplicateCharacterTracker[string.charAt(i)]){
+                return false;
+            }
+
+            duplicateCharacterTracker[string.charAt(i)] = true;
+        }
+
+        return true;
     }
 
-    public static boolean algoThree(String string){
-
-        return false;
-    }
 }
