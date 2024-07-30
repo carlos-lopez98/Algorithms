@@ -112,12 +112,18 @@ public class MultiDimensionalArraysOperations {
     }
 
     //Rotate the matrix by 90 degrees clockwise
+    //The method above will help with this problem
+    //Transposing your matrix, turns rows into columns, when you rotate a matrix by 90 degrees, you effectively turn all your rows into columns
+    //The problem here is when you transpose you don't get the columns into the correct position
+    //To correctly position our columns we perform more swaps
+    //We can do this by creating two pointers that traverse each row from outer to inner
     public static void rotateMatrixClockwise(int[][] matrix) {
 
 
     }
 
     //Rotate matrix counter clockwise
+    //To rotate counter clockwise you'll have to adjust how you transpose the matrix
     public static void rotateMatrixCounterClockwise(int[][] matrix) {
 
 
