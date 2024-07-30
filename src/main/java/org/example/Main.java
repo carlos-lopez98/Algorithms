@@ -1,18 +1,19 @@
 package org.example;
 
-import org.example.strings.IsUnique;
-import org.example.strings.OneAway;
-import org.example.strings.PalindromePermutation;
-import org.example.strings.StringCompression;
+import org.example.arrays.MultiDimensionalArraysOperations;
+import org.example.strings.*;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
         String s = "Hello we are    ";
-        System.out.println(IsUnique.algoTwo("Carlos"));
-        System.out.println(IsUnique.algoTwo("AA"));
 
-        System.out.println(IsUnique.algoTwo("   "));
-        System.out.println(IsUnique.algoTwo("a b c"));
+        int[] nums = {1,2,3,4,5};
+        System.out.println(MultiDimensionalArraysOperations.printArray());
+
+        System.out.println(Arrays.toString(nums));
+
     }
 }

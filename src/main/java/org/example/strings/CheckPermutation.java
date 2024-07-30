@@ -17,8 +17,28 @@ public class CheckPermutation {
     //Do spaces matter? is "dog  " a permutation of "god    "? yes, spaces matter, so no need to handle extra spaces/ non-alphabetical characters
 
  public static boolean checkStringPermutation(String stringOne, String stringTwo) {
+     //You can create a HashMap, iterate through stringOne and adding a count for all characters
+
+     //Iterate through the second string subtracting the count for every character, then checking if any space is less than 0
+     // if true return false
 
 
-     return false;
+     HashMap<Integer, Integer> characterCountMap = new HashMap<>();
+
+     for(int i = 0; i < stringOne.length(); i++){
+         int key = stringOne.charAt(i);
+         characterCountMap.merge(key, 1, Integer::sum);
+     }
+
+     for(int j = 0; j < stringTwo.length(); j++){
+         int key = stringTwo.charAt(j);
+         characterCountMap.merge(key, -1,Integer::sum);
+
+         if(characterCountMap.get(key) < 0){
+             return false;
+         }
+     }
+
+     return true;
  }
 }

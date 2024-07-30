@@ -1,6 +1,8 @@
 package org.example.arrays;
 
 
+import java.util.Arrays;
+
 /*
  * Practice for Multi Dimensional Arrays
  * */
@@ -22,7 +24,14 @@ public class MultiDimensionalArraysOperations {
     public static String printArray() {
 
         //This prints the address reference to where the array is stored in memory
-        return matrix.toString();
+
+        //Think of a 2-d array as an array of arrays, when you do the Array.toString() you stringify the array
+        //What does the outer array store? addresses to more arrays, so you're output will be an array of addresses to more arrays
+
+
+        //If you want to print out a 2-d array correctly, you'll have to iterate through the array
+
+        return Arrays.toString(matrix);
     }
 
     public static void printArrayCorrect() {
