@@ -134,4 +134,16 @@ public class MultiDimensionalArraysOperations {
 
 
     }
+
+    public static void transposeBottomLeftToUpperRight(int[][] matrix){
+
+        for(int i = matrix.length - 1; i >= 0 ; i--){
+
+         for(int j = i; j < matrix[i].length; j++) {
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+         }
+        }
+    }
 }
