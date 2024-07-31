@@ -21,6 +21,18 @@ public class ZeroMatrix {
         boolean[] rowWithZero = new boolean[matrix.length];
 
 
+        //Checking to see what columns need to zero out
+        //We perform this check, because if we do it right after
+        //Finding the zero, we may unintentionally zero out too many rows/ columns
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix[i].length; j++){
+                if(matrix[i][j] == 0){
+                    colWithZero[j] = true;
+                    rowWithZero[i] = true;
+                }
+            }
+        }
+
 
     }
 }
