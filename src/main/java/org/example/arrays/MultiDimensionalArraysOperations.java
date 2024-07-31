@@ -101,6 +101,7 @@ public class MultiDimensionalArraysOperations {
     //Transpose matrix, switch rows to columns
     //This literally just switches the rows to columns
     //The pointers start at the top left and go all the way till they hit the bottom right corner
+    //You can only transpose on the top left to bottom right axis, since those positions cause no swaps, IE 0,0 swapped with 0,0 stays the same, 1,1, and 2,2, 3,3
     public static void transposeMatrix(int[][] matrix) {
         for (int row = 0; row < matrix.length; row++) {
             for (int col = row; col < matrix[row].length; col++) {
@@ -133,17 +134,5 @@ public class MultiDimensionalArraysOperations {
     public static void rotateMatrixCounterClockwise(int[][] matrix) {
 
 
-    }
-
-    public static void transposeBottomLeftToUpperRight(int[][] matrix){
-
-        for(int i = matrix.length - 1; i >= 0 ; i--){
-
-         for(int j = i; j < matrix[i].length; j++) {
-            int temp = matrix[i][j];
-            matrix[i][j] = matrix[j][i];
-            matrix[j][i] = temp;
-         }
-        }
     }
 }
