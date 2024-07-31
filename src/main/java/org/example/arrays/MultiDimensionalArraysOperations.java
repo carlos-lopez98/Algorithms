@@ -118,8 +118,14 @@ public class MultiDimensionalArraysOperations {
     //To correctly position our columns we perform more swaps
     //We can do this by creating two pointers that traverse each row from outer to inner
     public static void rotateMatrixClockwise(int[][] matrix) {
-
-
+        transposeMatrix(matrix);
+        for(int i = 0; i < matrix.length; i++){
+         for(int k = 0, j = matrix[i].length - 1; k < j ; k++, j--){
+          int temp = matrix[i][j];
+          matrix[i][j] = matrix[i][k];
+          matrix[i][k] = temp;
+         }
+        }
     }
 
     //Rotate matrix counter clockwise
