@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.arrays.MultiDimensionalArraysOperations;
+import org.example.arrays.ZeroMatrix;
 import org.example.helper.Pair;
 import org.example.strings.*;
 
@@ -10,21 +11,13 @@ public class Main {
     public static void main(String[] args) {
 
         int[][] matrix = {
-                {1, 2, 3},
+                {0, 2, 3},
                 {4, 5, 6},
-                {7, 8, 9}
+                {7, 8, 0}
 
         };
 
-        MultiDimensionalArraysOperations.transposeMatrix(matrix);
-        MultiDimensionalArraysOperations.printArray(matrix);
-        MultiDimensionalArraysOperations.transposeMatrix(matrix);
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
-        MultiDimensionalArraysOperations.transposeBottomLeftToUpperRight(matrix);
+        ZeroMatrix.zeroMatrix(matrix);
         MultiDimensionalArraysOperations.printArray(matrix);
     }
 }
