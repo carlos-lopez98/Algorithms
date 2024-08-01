@@ -28,10 +28,12 @@ public class Recursion {
 
     public static void countDown(int num){
 
+        System.out.println(num);
+
         if(num == 0){
             return;
         }
-        System.out.println(num);
+
 
         countDown(num - 1);
     }
@@ -46,4 +48,17 @@ public class Recursion {
         System.out.println(num);
         countUp(num + 1);
     }
+
+
+    public static void iterateArray(int[] nums, int index){
+
+        if(index >= nums.length){
+            return;
+        }
+
+        System.out.println(nums[index]);
+
+        iterateArray(nums, index + 1);
+    }
+
 }

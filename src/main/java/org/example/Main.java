@@ -23,6 +23,8 @@ public class Main {
 //        MultiDimensionalArraysOperations.printArray(matrix);
 
 
-        System.out.println(Recursion.fact(5));
+        int[] nums = new int[]{1,2,3,4,5};
+
+        Recursion.iterateArray(nums, 0);
     }
 }
