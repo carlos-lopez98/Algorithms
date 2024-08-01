@@ -1,4 +1,4 @@
-package org.example;
+package org.example.arrays;
 
 /*
 
@@ -27,16 +27,17 @@ public class ContainsDuplicate {
 
     //Sort the array, then just check if the next position is equal to the current position
     //If there's any dupes then eventually you'll find it
-    public boolean containsDuplicate(int[] nums) {
+    public static boolean containsDuplicate(int[] nums) {
 
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length; i++) {
 
-            if (nums[i] == i + 1 && i < nums.length - 1) {
+            if (i < nums.length - 1 && nums[i] == nums[i+1] ) {
                 return true;
             }
         }
+
         return false;
     }
 
