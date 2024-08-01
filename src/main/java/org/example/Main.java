@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.arrays.*;
 import org.example.helper.Pair;
+import org.example.practice.Recursion;
 import org.example.strings.*;
 
 import java.util.Arrays;
@@ -9,18 +10,19 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-        int[][] matrix = {
-                {0, 2, 3},
-                {4, 5, 6},
-                {7, 8, 0}
-        };
+//        int[][] matrix = {
+//                {0, 2, 3},
+//                {4, 5, 6},
+//                {7, 8, 0}
+//        };
+//
+//
+//
+//        RotateMatrix.rotateMatrixNotInPlace(matrix);
+//
+//        MultiDimensionalArraysOperations.printArray(matrix);
 
 
-
-        RotateMatrix.rotateMatrixNotInPlace(matrix);
-
-        MultiDimensionalArraysOperations.printArray(matrix);
-
-
+        System.out.println(Recursion.fact(5));
     }
 }
