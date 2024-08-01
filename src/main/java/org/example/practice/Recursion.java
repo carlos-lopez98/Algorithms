@@ -50,6 +50,10 @@ public class Recursion {
     }
 
 
+    //When you use recursion to iterate throuogh something
+    //You need a way to keep track of your current iteration
+    //Think of each call to it's call stack as an iteration
+    //soo you need to know where you're at to appropriately work on the array/ data structure
     public static void iterateArray(int[] nums, int index){
 
         if(index >= nums.length){
