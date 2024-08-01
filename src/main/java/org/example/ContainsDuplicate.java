@@ -21,21 +21,37 @@ Output: true
  */
 
 
-import java.util.HashMap;
+import java.util.*;
 
 public class ContainsDuplicate {
 
-    public HashMap<Integer, Integer> intMap = new HashMap<>();
+    //Sort the array, then just check if the next position is equal to the current position
+    //If there's any dupes then eventually you'll find it
+    public boolean containsDuplicate(int[] nums) {
 
-    public boolean containsDuplicate(int[] nums){
+        Arrays.sort(nums);
 
-        //If the value is in the hashmap return true
-        //If value not in the hashmap add to the hashmap
+        for (int i = 0; i < nums.length; i++) {
 
-        
+            if (nums[i] == i + 1 && i < nums.length - 1) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
+    public static boolean containsDupSetSolution(int[] nums){
+        Set<Integer> intSet = new HashSet<>();
 
+        //Add numbers to set, if dup it won't be added
+        for (int num : nums) {
+            intSet.add(num);
+        }
+
+        if(intSet.size() < nums.length){
+            return true;
+        }
         return false;
     }
 }
