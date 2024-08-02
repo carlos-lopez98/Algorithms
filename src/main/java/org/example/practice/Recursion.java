@@ -55,14 +55,29 @@ public class Recursion {
     //Think of each call to it's call stack as an iteration
     //soo you need to know where you're at to appropriately work on the array/ data structure
     public static void iterateArray(int[] nums, int index){
-
         if(index >= nums.length){
             return;
         }
-
         System.out.println(nums[index]);
-
         iterateArray(nums, index + 1);
     }
+
+    //To iterate a string you can do the same thing
+
+    public static void iterateString(String string, int charPosition){
+
+        if(charPosition >= string.length()){
+            return;
+        }
+
+        System.out.println(string.charAt(charPosition));
+
+        iterateString(string, charPosition + 1);
+
+    }
+
+
+
+    public static void
 
 }
