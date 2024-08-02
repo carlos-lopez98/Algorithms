@@ -26,7 +26,8 @@ public class Main {
         int[] nums = new int[]{20, 35, -15, 7, 55, 1 ,-22};
 
 
-        BubbleSort.sortAscendingRightToLeft(nums);
+        InsertionSort.insertionSortFor(nums);
+
 
         for(int num: nums){
             System.out.print(num + " ");
