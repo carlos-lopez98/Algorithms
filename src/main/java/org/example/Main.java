@@ -23,12 +23,15 @@ public class Main {
 //        MultiDimensionalArraysOperations.printArray(matrix);
 
 
-        int[] nums = new int[]{1,2,3,4,5};
+        int[] nums = new int[]{20, 35, -15, 7, 55, 1 ,-22};
 
-        BubbleSort.sortDescendingRightToLeft(nums);
+
+        BubbleSort.sortAscendingRightToLeft(nums);
 
         for(int num: nums){
-            System.out.println(num);
+            System.out.print(num + " ");
         }
+
+
     }
 }
