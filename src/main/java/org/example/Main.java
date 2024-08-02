@@ -25,7 +25,7 @@ public class Main {
 
         int[] nums = new int[]{1,2,3,4,5};
 
-        BubbleSort.sortDescendingLeftToRight(nums);
+        BubbleSort.sortDescendingRightToLeft(nums);
 
         for(int num: nums){
             System.out.println(num);

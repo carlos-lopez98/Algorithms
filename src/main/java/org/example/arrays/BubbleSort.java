@@ -26,7 +26,17 @@ public class BubbleSort {
     }
 
     public static void sortDescendingRightToLeft(int[] intArray) {
+        for (int lastUnsortedIndex = 0; lastUnsortedIndex < intArray.length; lastUnsortedIndex++) {
 
+            for (int i = intArray.length - 1; i > lastUnsortedIndex; i--) {
+                int curr = intArray[i];
+                int next = intArray[i - 1];
+
+                if (curr < next) {
+                    swap(intArray, i, i - 1);
+                }
+            }
+        }
     }
 
     public static void sortAscendingLeftToRight(int[] intArray) {
