@@ -10,29 +10,11 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-//        int[][] matrix = {
-//                {0, 2, 3},
-//                {4, 5, 6},
-//                {7, 8, 0}
-//        };
-//
-//
-//
-//        RotateMatrix.rotateMatrixNotInPlace(matrix);
-//
-//        MultiDimensionalArraysOperations.printArray(matrix);
 
 
         int[] nums = new int[]{20, 35, -15, 7, 55, 1 ,-22};
 
-
-        InsertionSort.insertionSortFor(nums);
-
-
-        for(int num: nums){
-            System.out.print(num + " ");
-        }
-
+        System.out.println(PalindromePermutation.checkPalindromePermutation("aaabbb"));
 
     }
 }

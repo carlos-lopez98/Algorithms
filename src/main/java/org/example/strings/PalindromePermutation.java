@@ -10,61 +10,52 @@ package org.example.strings;
 import java.util.HashMap;
 
 //Clarifying Questions:
-//What makes a palindrome? Think of as many examples as you can
-//You can ignore casing and non-letter characters - meaning you can remove them
-//You can ask what the ASCII set being used will be, giving you a predetermined size for an array
-//Or you can use a HashMap?
+//Firsty what makes a palindrome? Each letter must have a pair, in order for a letter to have a pair
+//It must be even, there can only be one letter that has a non-pair
+//To ignore non-letter characters you can create a way to remove them as well as ignore the casing
 
 public class PalindromePermutation {
 
-    //With the function we created, we'll be able to track a character as a value of 0-26
-    public static boolean checkPalindromePermutation(String string){
+    public static boolean checkPalindromePermutation(String string) {
 
 
-        int[] evenOrOddCount = new int[27];
+
+        int[] characterCounter = new int[27];
 
         for(int i = 0; i < string.length(); i++){
-            if(getCharValue(string.charAt(i)) != -1){
-                evenOrOddCount[getCharValue(string.charAt(i))]++;
+            int curr = getNumericalValue(string.charAt(i));
+
+            //Keeps track of the character counts in the string
+            characterCounter[curr]++;
+        }
+
+        int oddCount = 0;
+
+        for(int count: characterCounter){
+            if(count % 2 == 1){
+                oddCount++;
             }
         }
 
-        int oddCounter = 0;
 
-        for(int i = 0; i < evenOrOddCount.length; i++){
-            if(evenOrOddCount[i] % 2 == 1){
-                oddCounter++;
-            }
-        }
-
-
-        return !(oddCounter > 1);
+        return !(oddCount > 1);
     }
 
-
-
-
-
-    //This function will return an int value of 0-26, depending on the letter
-    private static int getCharValue(char c){
+    //Function returns a number from 0 - 26 depending on what letter is being passed in
+    //Any non-letter characters are going to be ignored, including spaces and what not
+    public static int getNumericalValue(char c){
 
         int A = Character.getNumericValue('A');
         int Z = Character.getNumericValue('Z');
-
         int a = Character.getNumericValue('a');
         int z = Character.getNumericValue('z');
 
-        //If it's a letter, it has to fall within one of the below ranges
-        //If it's not a letter, it'll fall out of the range, then return -1
+        int curr = Character.getNumericValue(c);
 
-        if(Character.getNumericValue(c) <= Z && Character.getNumericValue(c) >= A){
-            int value = Character.getNumericValue(c) - A;
-
-            return value;
-        }else if(Character.getNumericValue(c) <= z && Character.getNumericValue(c) >= a){
-            int value = Character.getNumericValue(c) - a; //If it's a j, you'll have j - a, returns 10
-
-            return value;
+        if(curr <= Z && curr >= A){
+            return curr - A;
+        } else if(curr <= z && curr >= a){
+            return curr - a;
         }
 
         return -1;
