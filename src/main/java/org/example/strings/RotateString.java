@@ -6,11 +6,11 @@ package org.example.strings;
  * is a rotation of s1 using only one call to isSubstring()
  *
  * INPUT:
- * "erbottlewat" is a rotation of "waterbottle" return true
+ * "erbottlewat" is a rotation of "waterbottle" return true "bottlewater"  "ttelwaterbo"
  * "bcdea" is a rotation of "abcde" return true
  * "bcade" is not a rotation of "abcde" return false
  */
 public class RotateString {
 
-
+    
 }

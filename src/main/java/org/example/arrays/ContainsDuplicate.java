@@ -25,34 +25,11 @@ import java.util.*;
 
 public class ContainsDuplicate {
 
-    //Sort the array, then just check if the next position is equal to the current position
-    //If there's any dupes then eventually you'll find it
     public static boolean containsDuplicate(int[] nums) {
 
-        Arrays.sort(nums);
-
-        for (int i = 0; i < nums.length; i++) {
-
-            if (i < nums.length - 1 && nums[i] == nums[i+1] ) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 
 
-    public static boolean containsDupSetSolution(int[] nums){
-        Set<Integer> intSet = new HashSet<>();
 
-        //Add numbers to set, if dup it won't be added
-        for (int num : nums) {
-            intSet.add(num);
-        }
-
-        if(intSet.size() < nums.length){
-            return true;
-        }
         return false;
     }
 }
