@@ -1,6 +1,6 @@
 package org.example.arrays;
 
-/*
+/**
  * Given an image that represents a N*N matrix, where each pixel in the image is represented by an integer.
  * write a method to rotate the image by 90 degrees. Can you do this in place?
  * */
@@ -13,55 +13,24 @@ public class RotateMatrix {
     //[8, 9, 10, 11]               [14, 10, 6, 2]
     //[12, 13, 14, 15]             [15, 11, 7, 3]
 
-
-    //When you transpose you get the below
     //[0,4,8,12]
     //[1,5,9,13]
     //[2,6,10,14]
     //[3,7,11,15]
 
-    //These are the correct columns, but they're not in the right order
-    //To get the flip done you can start performing swaps
 
-    public static void rotateMatrixNotInPlace(int[][] matrix) {
+    //When rotating a matrix, you need to think about what exactly is being done
+    //If you notice from the above, you can see one thing, the rows become columns
+    //Turning rows into columns is a basic matrix manipulation
+    //Transpose, transposing will turn rows into columns, over the diagonal, left to right axis
+    public static void rotateMatrix(int[][] matrix) {
 
-        //First we turn our rows into column along the diagonal up left to down right
 
-        transposeMatrix(matrix);
-
-        //You have one pointer iterating through the rows
-        for(int row = 0; row < matrix.length; row++){
-            //Here you have two pointers iterating through each row, but in the column positions
-         for(int colPositionOne = 0, colPositionTwo = matrix[row].length - 1;
-             colPositionOne < colPositionTwo;
-             colPositionTwo--, colPositionOne++){
-
-             int temp = matrix[row][colPositionOne];
-             matrix[row][colPositionOne] = matrix[row][colPositionTwo];
-             matrix[row][colPositionTwo] = temp;
-         }
-        }
     }
 
-
-    public static int[][] rotateMatrixInPlace(int[][] matrix) {
-
-
-        return new int[2][2];
-    }
 
 
     public static void transposeMatrix(int[][] matrix) {
-
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = row; col < matrix[row].length; col++) {
-                int temp = matrix[row][col];
-                matrix[row][col] = matrix[col][row];
-                matrix[col][row] = temp;
-            }
-        }
-
-
 
     }
 
