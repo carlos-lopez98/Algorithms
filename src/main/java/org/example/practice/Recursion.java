@@ -77,4 +77,32 @@ public class Recursion {
 
         iterateString(string, charPosition + 1);
     }
+
+    //This ensure the last element is counted
+    public static int counter = 1;
+    public static int data;
+
+    public static int backTrackCounter (Node head, int kthposition){
+        if (head != null && counter == kthposition){
+            data = head.data;
+        }
+
+        if(head == null){
+            return 0;
+        }
+        backTrackCounter(head.next, kthposition);
+
+        if (counter == kthposition){
+            data = head.data;
+        }
+
+        counter++;
+        return -1;
+    }
+
+    public static int backTrack(Node head, int kthPosition) {
+        backTrackCounter(head, kthPosition);
+
+        return data;
+    }
 }
