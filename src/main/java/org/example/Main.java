@@ -40,8 +40,9 @@ public class Main {
 //            current = current.next;
 //        }
 
-        int[] nums = {1,2,3,4,5};
-        BubbleSort.sortDescendingLeftToRight(nums);
+        int[] nums = {4,5,3,2,1};
+
+        InsertionSort.insertionSortFor(nums);
         System.out.println(Arrays.toString(nums));
     }
 }

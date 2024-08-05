@@ -45,17 +45,19 @@ public class InsertionSort {
 
     public static void insertionSortFor(int[] intArray) {
 
+        for(int firstUnsortedIndex = 1; firstUnsortedIndex < intArray.length; firstUnsortedIndex++){
+                int elementToInsert = intArray[firstUnsortedIndex];
 
-        for (int firstUnsortedIndex = 1; firstUnsortedIndex < intArray.length; firstUnsortedIndex++) {
-            int currentUnsortedElement = intArray[firstUnsortedIndex];
+                int i;
 
-            int i;
+                for (i = firstUnsortedIndex; i > 0 && intArray[i - 1] > elementToInsert; i--){
 
-            for (i = firstUnsortedIndex; i > 0 && intArray[i - 1] > currentUnsortedElement; i--) {
-                intArray[i] = intArray[i - 1];
-            }
+                    //Shifts elements up
+                    //For loop stops when you reach your insertion point
+                    intArray[i] = intArray[i-1];
+                }
 
-            intArray[i] = currentUnsortedElement;
+                intArray[i] = elementToInsert;
         }
     }
 
