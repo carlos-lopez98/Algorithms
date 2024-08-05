@@ -5,42 +5,44 @@ import org.example.practice.Node;
 import java.util.HashSet;
 import java.util.Set;
 
-/*
+/**
  * Write code to remove duplicates from an unsorted linked list
- *
+ * <p>
  * How would you solve this problem if a temporary buffer is not allowed?
- * */
+ */
 
 public class RemoveDups {
-    //Edge cases - if list is empty - if no dupes are found
-    public Node algoOne(Node head) {
 
-        //Return the same node if it's null
-      if(head == null){
-          return head;
-      }
+    //Easy way I think of doing this is to create let's say a HashMap, with the key as the current nodes value
+    //And the value being the count, if we encounter data that's already in the HashMap, then we remove that duplicate
+    //From the linkedList
+    public static Node algoOne(Node head) {
 
-     Node previousNode = head;
-     Node currentNode = head.next;
+        if (head == null) {
+            return null;
+        }
 
-     //This keeps track of duplicates
-     Set<Integer> duplicateSet = new HashSet<>();
+        Set<Integer> dupTracker = new HashSet<>();
 
-     //Add the first value since we're starting at the second iteration
-     duplicateSet.add(previousNode.data);
+        Node previous = head;
+        Node current = head.next;
 
-     //This will iterate through our linkedlist
-     while(currentNode != null){
+        //Add the first position in the linkedList
+        dupTracker.add(previous.data);
 
-         if(duplicateSet.contains(currentNode.data)){
-             previousNode.next = currentNode.next;
-             currentNode = currentNode.next;
-         }else{
-             duplicateSet.add(currentNode.data);
-             previousNode = currentNode;
-             currentNode = currentNode.next;
-         }
-     }
+        while (current != null) {
+
+            if (dupTracker.contains(current.data)) {
+
+                previous.next = current.next;
+                current = current.next;
+            } else {
+                dupTracker.add(current.data);
+                previous = current;
+                current = current.next;
+            }
+        }
+
         return head;
     }
 }

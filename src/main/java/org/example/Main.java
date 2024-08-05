@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.arrays.*;
 import org.example.helper.Pair;
+import org.example.linkedlist.RemoveDups;
+import org.example.practice.Node;
 import org.example.practice.Recursion;
 import org.example.strings.*;
 
@@ -17,7 +19,27 @@ public class Main {
                 {12,13,14,15}
         };
 
-        RotateMatrix.rotateMatrix(matrix);
-        RotateMatrix.printArray(matrix);
+
+//        Node head = new Node(1);
+//        Node one = new Node(1);
+//        Node two = new Node(2);
+//        Node three = new Node(3);
+//        Node four = new Node(3);
+//
+//        head.next = one;
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//
+//        RemoveDups.algoOne(head);
+//
+//        Node current = head;
+//
+//        while(current != null){
+//            System.out.println(current.data);
+//            current = current.next;
+//        }
+
+        Recursion.countDown(10);
     }
 }

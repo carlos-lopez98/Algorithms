@@ -27,13 +27,13 @@ public class Recursion {
 
 
     public static void countDown(int num){
-
         System.out.println(num);
+
+
 
         if(num == 0){
             return;
         }
-
 
         countDown(num - 1);
     }
@@ -50,7 +50,7 @@ public class Recursion {
     }
 
 
-    //When you use recursion to iterate throuogh something
+    //When you use recursion to iterate through something
     //You need a way to keep track of your current iteration
     //Think of each call to it's call stack as an iteration
     //soo you need to know where you're at to appropriately work on the array/ data structure
@@ -58,6 +58,8 @@ public class Recursion {
         if(index >= nums.length){
             return;
         }
+        //Manipulation logic at whatever index you're at
+
         System.out.println(nums[index]);
         iterateArray(nums, index + 1);
     }
@@ -70,9 +72,9 @@ public class Recursion {
             return;
         }
 
+        //Manipulation logic ath whatever index you're at
         System.out.println(string.charAt(charPosition));
 
         iterateString(string, charPosition + 1);
-
     }
 }
