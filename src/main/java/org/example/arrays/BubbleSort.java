@@ -13,54 +13,25 @@ public class BubbleSort {
     //Smallest to largest
     public static void sortDescendingLeftToRight(int[] intArray) {
         for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-
             for (int i = 0; i < lastUnsortedIndex; i++) {
-                int curr = intArray[i];
-                int next = intArray[i + 1];
-
-                if (curr < next) {
-                    swap(intArray, i, i + 1);
+                if(intArray[i] < intArray[i+1]){
+                    swap(intArray,i, i+1);
                 }
             }
         }
     }
 
     public static void sortDescendingRightToLeft(int[] intArray) {
-        for (int lastUnsortedIndex = 0; lastUnsortedIndex < intArray.length; lastUnsortedIndex++) {
 
-            for (int i = intArray.length - 1; i > lastUnsortedIndex; i--) {
-                int curr = intArray[i];
-                int next = intArray[i - 1];
-
-                if (curr < next) {
-                    swap(intArray, i, i - 1);
-                }
-            }
-        }
     }
 
     public static void sortAscendingLeftToRight(int[] intArray) {
 
-        for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
 
-            for (int i = 0; i < lastUnsortedIndex; i++) {
-
-                if (intArray[i] > intArray[i + 1]) {
-                    swap(intArray, i, i + 1);
-                }
-            }
-        }
     }
 
-
     public static void sortAscendingRightToLeft(int[] intArray) {
-        for (int lastUnsortedIndex = 0; lastUnsortedIndex < intArray.length; lastUnsortedIndex++) {
-            for (int i = intArray.length - 1; i > lastUnsortedIndex; i--) {
-                if (intArray[i] > intArray[i - 1]) {
-                    swap(intArray, i, i - 1);
-                }
-            }
-        }
+
     }
 
     private static void swap(int[] intArray, int currentPosition, int nextPosition) {

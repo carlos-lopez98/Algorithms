@@ -40,6 +40,8 @@ public class Main {
 //            current = current.next;
 //        }
 
-        Recursion.countDown(10);
+        int[] nums = {1,2,3,4,5};
+        BubbleSort.sortDescendingLeftToRight(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }
