@@ -42,7 +42,6 @@ public class Main {
 
         int[] nums = {4,5,3,2,1};
 
-        InsertionSort.insertionSortFor(nums);
-        System.out.println(Arrays.toString(nums));
+        System.out.println(RotateString.rotateString("carlos", "arlocs"));
     }
 }
