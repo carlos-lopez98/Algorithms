@@ -25,13 +25,33 @@ public class RotateMatrix {
     //Transpose, transposing will turn rows into columns, over the diagonal, left to right axis
     public static void rotateMatrix(int[][] matrix) {
 
+    transposeMatrix(matrix);
 
+    for(int i = 0; i < matrix.length; i++){
+        //We basically created two pointers within each inner array
+        for (int j = matrix[i].length - 1, k = 0; k < j; j--, k++){
+            int temp = matrix[i][k];
+            matrix[i][k] = matrix[i][j];
+            matrix[i][j] = temp;
+        }
+    }
     }
 
 
 
+    //Once we transpose, we can rearrange the columns into the correct positions
+    //We notice that to get the correct orientation, we just need to reverse each array
     public static void transposeMatrix(int[][] matrix) {
+        for(int i = 0; i < matrix.length; i++){
 
+            //The reason we start at the i position, is because we don't want to retranspose elements as we go
+            //If we start the j at 0, we will retranspose everything, ending up with the same input matrix
+            for(int j = i; j < matrix[i].length; j++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
     }
 
     public static void printArray(int[][] matrix) {
