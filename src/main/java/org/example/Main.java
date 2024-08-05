@@ -14,7 +14,7 @@ public class Main {
 
         int[] nums = new int[]{20, 35, -15, 7, 55, 1 ,-22};
 
-        System.out.println(PalindromePermutation.checkPalindromePermutation("aaabbb"));
+        System.out.println(StringCompression.stringCompress("aaaabb"));
 
     }
 }
