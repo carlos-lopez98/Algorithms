@@ -13,19 +13,26 @@ public class ReturnKthToLast {
     public static int data = -1;
 
     //Given the head element and the kthToLastPosition
-    public static int returnKthElement(Node head, int kthPosition) {
+    public static void backTrack(Node head, int kthPosition) {
+
+        System.out.println(backTrackCounter);
 
         if (head == null) {
-            return 0;
+            return;
         }
 
-        returnKthElement(head.next, kthPosition);
-        backTrackCounter++;
+        backTrack(head.next, kthPosition);
 
         if (backTrackCounter == kthPosition) {
             data = head.data;
         }
 
+        backTrackCounter++;
+    }
+
+
+    public static int returnKthToLast(Node head, int kthPosition){
+        backTrack(head, kthPosition);
         return data;
     }
 }

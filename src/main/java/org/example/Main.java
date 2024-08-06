@@ -3,6 +3,7 @@ package org.example;
 import org.example.arrays.*;
 import org.example.helper.Pair;
 import org.example.linkedlist.RemoveDups;
+import org.example.linkedlist.ReturnKthToLast;
 import org.example.practice.Node;
 import org.example.practice.Recursion;
 import org.example.strings.*;
@@ -40,8 +41,8 @@ public class Main {
 //            current = current.next;
 //        }
 
-        int[] nums = {4, 5, 3, 2, 1};
+//        int[] nums = {4, 5, 3, 2, 1};
 
-        System.out.println(Recursion.backTrack(head, 4));
+        System.out.println(ReturnKthToLast.returnKthToLast(head, 1));
     }
 }
