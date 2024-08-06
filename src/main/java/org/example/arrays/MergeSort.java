@@ -1,5 +1,9 @@
 package org.example.arrays;
 
+/**
+ * Merge sort is a divide and conquer algorithm
+ * Involves two major phases, splitting phase and merging phase
+ */
 
 public class MergeSort {
 
