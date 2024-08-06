@@ -41,9 +41,9 @@ public class Main {
 //            current = current.next;
 //        }
 
-        int[] nums = {2, 5, 3, 4, 1};
+        int[] nums = {2, 5, 3, 4, 1,7,8,10};
 
-        BubbleSort.sortDescendingRightToLeft(nums);
+        ShellSort.shellSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 }
