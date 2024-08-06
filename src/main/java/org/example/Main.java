@@ -31,7 +31,7 @@ public class Main {
         one.next = two;
         two.next = three;
         three.next = four;
-
+//        System.out.println(ReturnKthToLast.returnKthToLast(head, 1));
 //        RemoveDups.algoOne(head);
 //
 //        Node current = head;
@@ -41,8 +41,9 @@ public class Main {
 //            current = current.next;
 //        }
 
-//        int[] nums = {4, 5, 3, 2, 1};
+        int[] nums = {2, 5, 3, 4, 1};
 
-        System.out.println(ReturnKthToLast.returnKthToLast(head, 1));
+        BubbleSort.sortDescendingRightToLeft(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }
