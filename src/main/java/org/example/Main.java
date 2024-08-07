@@ -3,6 +3,7 @@ package org.example;
 import org.example.arrays.*;
 import org.example.helper.Pair;
 import org.example.linkedlist.DeleteMiddleNode;
+import org.example.linkedlist.Partition;
 import org.example.linkedlist.RemoveDups;
 import org.example.linkedlist.ReturnKthToLast;
 import org.example.practice.Node;
@@ -22,11 +23,11 @@ public class Main {
         };
 
 
-        Node head = new Node(1);
-        Node one = new Node(2);
-        Node two = new Node(3);
-        Node three = new Node(4);
-        Node four = new Node(5);
+        Node head = new Node(6);
+        Node one = new Node(17);
+        Node two = new Node(10);
+        Node three = new Node(1);
+        Node four = new Node(29);
 
         head.next = one;
         one.next = two;
@@ -34,7 +35,7 @@ public class Main {
         three.next = four;
 
 
-        DeleteMiddleNode.deleteNode(two);
+        Partition.partitionTheListUsingTwoSeparateLists(head, 17);
 
         Node current = head;
 

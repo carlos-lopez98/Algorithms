@@ -32,6 +32,9 @@ public class Partition {
         //Here we're looping through our linked list
         while(current != null){
 
+            Node next = current.next;
+            current.next = null;
+
             //First thing we're checking to see if
             //The data at our current node is less than or greater than or equal to partition
             if(current.data < partition){
@@ -54,7 +57,7 @@ public class Partition {
                 }
             }
 
-            current = current.next;
+            current = next;
         }
 
         beforeEnd.next = afterStart;
