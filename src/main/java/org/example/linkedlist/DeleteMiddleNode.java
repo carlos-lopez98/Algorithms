@@ -21,9 +21,6 @@ public class DeleteMiddleNode {
             return;
         }
 
-        //The only way to do this would be to copy over the data from node.next to node including it's pointer
-        //If you were to create a new node, then set that equal to node.next
-        //Then set node = newNode, you wouldn't have the pointer anymore from the node previous to the input node
         node.data = node.next.data;
         node.next = node.next.next;
     }
