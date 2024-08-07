@@ -17,22 +17,55 @@ import org.example.practice.Node;
 public class Partition {
 
 
-    public static void partitionTheListUsingTwoSeparateLists(Node head, int partition) {
+    public static Node partitionTheListUsingTwoSeparateLists(Node head, int partition) {
 
-        Node beforeStart = new Node();
-        Node beforeEnd = new Node();
-        Node afterStart = new Node();
-        Node afterEnd = new Node();
+        //If we just initialize them, technically our nodes won't be null
+        //Then our method won't work
+        Node beforeStart = null;
+        Node beforeEnd = null;
+        Node afterStart = null;
+        Node afterEnd = null;
 
-        beforeStart.next = beforeEnd;
-        afterStart.next =afterEnd;
 
         Node current = head;
 
+        //Here we're looping through our linked list
         while(current != null){
 
+            //First thing we're checking to see if
+            //The data at our current node is less than or greater than or equal to partition
+            if(current.data < partition){
+
+             if(beforeStart == null){
+                 beforeStart = current;
+                 beforeEnd = current;
+             }else{
+                 beforeEnd.next = current;
+                 beforeEnd = beforeEnd.next;
+             }
+
+
+            }
+
+
+            else{
+                if(afterStart == null){
+                    afterStart = current;
+                    afterEnd = current;
+                }else{
+                    afterEnd.next = current;
+                    afterEnd = current;
+                }
+            }
+
+            current = current.next;
         }
 
+        beforeEnd.next = afterStart;
+
+        head = beforeStart;
+
+        return head;
     }
 }
 
