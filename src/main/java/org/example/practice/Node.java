@@ -7,6 +7,9 @@ public class Node {
     public Node(int d){
         data = d;
     }
+
+    public Node(){
+    }
     void appendToTail(int d){
         Node end = new Node(d);
         Node n = this;
