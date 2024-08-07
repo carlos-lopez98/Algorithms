@@ -19,10 +19,25 @@ public class Partition {
 
     public static void partitionTheList(Node head, int partition) {
 
-        Node before = new Node();
-        Node after = new Node();
+        Node beforeStart = new Node();
+        Node beforeEnd = new Node();
+        Node afterStart = new Node();
+        Node afterEnd = new Node();
 
+        beforeStart.next = beforeEnd;
+        afterStart.next =afterEnd;
 
+        Node current = head;
+
+        while(current != null){
+            if(current.data < partition){
+
+            }else {
+                after.next = current;
+                current = current.next;
+                after = after.next;
+            }
+        }
 
 
 
