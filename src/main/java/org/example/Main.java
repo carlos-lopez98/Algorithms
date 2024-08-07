@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.arrays.*;
 import org.example.helper.Pair;
+import org.example.linkedlist.DeleteMiddleNode;
 import org.example.linkedlist.RemoveDups;
 import org.example.linkedlist.ReturnKthToLast;
 import org.example.practice.Node;
@@ -31,19 +32,17 @@ public class Main {
         one.next = two;
         two.next = three;
         three.next = four;
-//        System.out.println(ReturnKthToLast.returnKthToLast(head, 1));
-//        RemoveDups.algoOne(head);
-//
-//        Node current = head;
-//
-//        while(current != null){
-//            System.out.println(current.data);
-//            current = current.next;
-//        }
 
-        int[] nums = {2, 5, 3, 4, 1,7,8,10};
 
-        ShellSort.shellSort(nums);
-        System.out.println(Arrays.toString(nums));
+        DeleteMiddleNode.deleteNode(two);
+
+        Node current = head;
+
+        while(current != null){
+            System.out.println(current.data);
+            current = current.next;
+        }
+
+//        int[] nums = {2, 5, 3, 4, 1,7,8,10};
     }
 }

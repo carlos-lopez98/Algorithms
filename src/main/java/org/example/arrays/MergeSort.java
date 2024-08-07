@@ -12,6 +12,7 @@ public class MergeSort {
     public static void mergeSort(int[] input, int start, int end){
 
         //Once our array is one element, we'll return
+        //You won't perform any operations on arrays size one or smaller
         if(end - start < 2){
             return;
         }
@@ -58,6 +59,8 @@ public class MergeSort {
            }
            tempIndex++;
        }
+
+
 
     }
 }
