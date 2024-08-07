@@ -16,13 +16,19 @@ public class MergeSort {
             return;
         }
 
-
-
         //partition array
         int midpoint = (start + end)/2;
 
+        //{ 15, -14, 16, 17, 25, 19, 1, 0, 7, 3, 4, 18, 39}
+        //Start will always be zero
+        //End will always be inputarray.length
+        //The midpoint in this situation becomes the end
         mergeSort(input, start, midpoint);
+        //The midpoint in this situation becomes the start
         mergeSort(input, midpoint, end);
+
+        //Let's say you've reached the final single point array
+        //Your input will be the array, start, midpoint, and end will all be equal
         merge(input, start, midpoint, end);
     }
 
@@ -52,9 +58,6 @@ public class MergeSort {
            }
            tempIndex++;
        }
-
-
-
 
     }
 }
