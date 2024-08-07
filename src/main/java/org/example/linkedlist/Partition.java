@@ -17,7 +17,7 @@ import org.example.practice.Node;
 public class Partition {
 
 
-    public static void partitionTheList(Node head, int partition) {
+    public static void partitionTheListUsingTwoSeparateLists(Node head, int partition) {
 
         Node beforeStart = new Node();
         Node beforeEnd = new Node();
@@ -30,16 +30,20 @@ public class Partition {
         Node current = head;
 
         while(current != null){
-            if(current.data < partition){
 
-            }else {
-                after.next = current;
-                current = current.next;
-                after = after.next;
-            }
         }
-
-
 
     }
 }
+
+/**
+ * Solution 1:
+ * With the above solution we plan on creating two linkedlists one that stores elements
+ * Smaller than the partition and one that stores elements larger than the partition
+ * Then at the end you can join these together
+ *
+ * For this solution you have to take note of how a linkedlist works, remember that with a
+ * LinkedList you can only add nodes to the head or tail, you also have to take into account
+ * How you'll add elements in, and the obvious edge case of adding the first node to the list
+ * This node will end up becoming the head and tail for the first iteration
+ */
