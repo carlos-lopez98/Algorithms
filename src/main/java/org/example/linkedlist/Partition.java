@@ -35,7 +35,6 @@ public class Partition {
             //First thing we're checking to see if
             //The data at our current node is less than or greater than or equal to partition
             if(current.data < partition){
-
              if(beforeStart == null){
                  beforeStart = current;
                  beforeEnd = current;
@@ -43,10 +42,7 @@ public class Partition {
                  beforeEnd.next = current;
                  beforeEnd = beforeEnd.next;
              }
-
-
             }
-
 
             else{
                 if(afterStart == null){
@@ -79,4 +75,9 @@ public class Partition {
  * LinkedList you can only add nodes to the head or tail, you also have to take into account
  * How you'll add elements in, and the obvious edge case of adding the first node to the list
  * This node will end up becoming the head and tail for the first iteration
+ *
+ * One thing I missed in the above, is that when you set before start or before End = to the current
+ * Node, I ended up also retaining that node's pointer to the remainder of the list
+ * Before I set the beforeStart or beforeEnd = to that node, I should set it's next = null
+ * If I do this, then I have to store it's next value to be able to keep iterating
  */
