@@ -10,6 +10,7 @@ import org.example.practice.Node;
 import org.example.practice.Recursion;
 import org.example.strings.*;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Main {
@@ -23,27 +24,31 @@ public class Main {
         };
 
 
-        Node head = new Node(6);
-        Node one = new Node(17);
-        Node two = new Node(10);
-        Node three = new Node(1);
-        Node four = new Node(29);
+//        Node head = new Node(6);
+//        Node one = new Node(17);
+//        Node two = new Node(10);
+//        Node three = new Node(1);
+//        Node four = new Node(29);
+//
+//        head.next = one;
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//
+//
+//        Partition.partitionTheListUsingTwoSeparateLists(head, 17);
+//
+//        Node current = head;
+//
+//        while(current != null){
+//            System.out.println(current.data);
+//            current = current.next;
+//        }
 
-        head.next = one;
-        one.next = two;
-        two.next = three;
-        three.next = four;
+        int[] nums = {2, 5, 3, 4, 1,7,8,10};
 
+        MergeSort.mergeSort(nums, 0, nums.length);
 
-        Partition.partitionTheListUsingTwoSeparateLists(head, 17);
-
-        Node current = head;
-
-        while(current != null){
-            System.out.println(current.data);
-            current = current.next;
-        }
-
-//        int[] nums = {2, 5, 3, 4, 1,7,8,10};
+        System.out.println(Arrays.toString(nums));
     }
 }

@@ -11,25 +11,14 @@ public class MergeSort {
 
     public static void mergeSort(int[] input, int start, int end){
 
-        //Once our array is one element, we'll return
-        //You won't perform any operations on arrays size one or smaller
         if(end - start < 2){
             return;
         }
 
-        //partition array
         int midpoint = (start + end)/2;
 
-        //{ 15, -14, 16, 17, 25, 19, 1, 0, 7, 3, 4, 18, 39}
-        //Start will always be zero
-        //End will always be inputarray.length
-        //The midpoint in this situation becomes the end
         mergeSort(input, start, midpoint);
-        //The midpoint in this situation becomes the start
         mergeSort(input, midpoint, end);
-
-        //Let's say you've reached the final single point array
-        //Your input will be the array, start, midpoint, and end will all be equal
         merge(input, start, midpoint, end);
     }
 
@@ -41,11 +30,11 @@ public class MergeSort {
             return;
         }
 
-        int i = start;
-        int j = midpoint;
+        int i = start; //0
+        int j = midpoint; //1
         int tempIndex = 0;
 
-       int[] temp = new int[end-start];
+       int[] temp = new int[end-start]; //2 - the size of the temp array, we're comparing only two elements currently
 
        //This will iterate through each partition while storing them in a temporary array
        //When the storing happens, we're also sorting them
@@ -60,7 +49,16 @@ public class MergeSort {
            tempIndex++;
        }
 
-
-
+        System.arraycopy(input,i,input,start+tempIndex, midpoint-i);
+        System.arraycopy(temp,0, input, start, tempIndex);
     }
 }
+/**
+ * In the mergeSort() function, we are just partitioning the array. The partition is dependent on finding a
+ * Midpoint. This midpoint, is used as a new start/ end index, think of it as you're splitting the array into two
+ * A left and right array. The base case handles situations where the arrays, finally are partitioned into single
+ * Elements, when this happens the function stops recursing, it also stops before the merge function is called.
+ *
+ *
+ *
+ */
