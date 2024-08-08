@@ -24,20 +24,19 @@ public class MergeSort {
 
     public static void merge(int[] input, int start, int midpoint, int end){
 
-        //If the last element in the first partition is less than or equal to the first element in the right position
-        //That means all of the elements on the left are sorted, since this will happen first -- to individual elements
+
         if(input[midpoint-1] <= input[midpoint]){
             return;
         }
 
-        int i = start; //0
-        int j = midpoint; //1
+        //Here we're basically creating pointers for each left and right array, to compare the values to each other
+
+        int i = start;
+        int j = midpoint;
         int tempIndex = 0;
 
-       int[] temp = new int[end-start]; //2 - the size of the temp array, we're comparing only two elements currently
+       int[] temp = new int[end-start];
 
-       //This will iterate through each partition while storing them in a temporary array
-       //When the storing happens, we're also sorting them
        while(i < midpoint && j < end){
            if(input[i] <= input[j]){
                temp[tempIndex] = input[i];
@@ -49,7 +48,14 @@ public class MergeSort {
            tempIndex++;
        }
 
+       //This will copy any remaining elements on the left array, into their correct respective position in
+        //The input array
         System.arraycopy(input,i,input,start+tempIndex, midpoint-i);
+
+
+       //You're copying elements from temp, starting at position 0, to input, starting at position start, and you're
+        //You're copying tempIndex elements from position 0, so if tempIndex is 5, you'll copy positions 0 - 4, five
+        //Elements
         System.arraycopy(temp,0, input, start, tempIndex);
     }
 }
@@ -59,6 +65,15 @@ public class MergeSort {
  * A left and right array. The base case handles situations where the arrays, finally are partitioned into single
  * Elements, when this happens the function stops recursing, it also stops before the merge function is called.
  *
+ * The second function is called when returning from the call stack, merge will take care of merging arrays back
+ * Together, it'll handle single left and right arrays, consisting of one element first, as it keeps going up the call
+ * Stack the left and right arrays will become larger, eventually comparing just comparing left to right, finally
+ * Joining back up into a single array.
+ * Here we take note of how, we create to indexes, to compare each element in each left and right partition
+ * We must at the end copy over any remaining elements in the left array, as they're not in the correct position,
+ * Then finally copy over our temp array, back into the correct positions in our input array
  *
+ * Runtime: O(n log n)
+ * Space Complexity: O (n)
  *
  */
