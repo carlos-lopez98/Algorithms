@@ -47,7 +47,7 @@ public class Main {
 
         int[] nums = {2, 5, 3, 4, 1,7,8,10};
 
-        MergeSort.mergeSort(nums, 0, nums.length);
+        ShellSort.shellSortDescending(nums);
 
         System.out.println(Arrays.toString(nums));
     }
