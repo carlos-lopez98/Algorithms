@@ -43,21 +43,25 @@ public class InsertionSort {
         }
     }
 
+    //So insertion sort, consists of a window, that we are going to be inserting our element into
     public static void insertionSortFor(int[] intArray) {
 
-        for(int firstUnsortedIndex = 1; firstUnsortedIndex < intArray.length; firstUnsortedIndex++){
-                int elementToInsert = intArray[firstUnsortedIndex];
+        for(int lastWindowPosition = 1; lastWindowPosition < intArray.length; lastWindowPosition++){
+            //We have to start at position one, because if we don't we'll get an index out of bounds error
+            //Unless we perform an extra if check
+            int compareTo = intArray[lastWindowPosition];
+            int pointer;
+            //lastWindowPosition and pointer - point to the same position
+            for(pointer = lastWindowPosition; pointer > 0 && intArray[pointer - 1] > compareTo; pointer--){
+                //For this you can do a double if check, so that way you can insert correctly
+                //But that will cause the for loop to go all the way through our window
+                //It's best to just stop the for loop at the insertion point
+                //This will shift elements up
+                intArray[pointer] = intArray[pointer - 1];
+            }
 
-                int i;
-
-                for (i = firstUnsortedIndex; i > 0 && intArray[i - 1] > elementToInsert; i--){
-
-                    //Shifts elements up
-                    //For loop stops when you reach your insertion point
-                    intArray[i] = intArray[i-1];
-                }
-
-                intArray[i] = elementToInsert;
+            //Once we reach the end of our for loop, we can insert our value
+            intArray[pointer] = compareTo;
         }
     }
 
@@ -68,3 +72,13 @@ public class InsertionSort {
     //TODO implement using two for loops instead of while loop
 }
 
+/**
+ *
+ * With insertion sort, you need to basically create a window/ gap you can call it
+ * This window, will be where you insert your elements
+ *
+ * In order to do this, you'll have one for loop to iterate your window, and another for loop to iterate through
+ * Your window, when iterating through your window you'll shift elements up, depending on your comparison condition
+ * Then you can insert your element, but in order to insert, you need to remember to keep your element
+ * Saved within a value, or else, you won't be able to insert it, as you're iterator is moving through your window
+ */

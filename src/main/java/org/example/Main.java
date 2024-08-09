@@ -51,7 +51,8 @@ public class Main {
 
         int[] nums = {2, 5, 3, 4, 1,7,8,10};
 
-        mergeSortAlgo(nums, 0, nums.length);
+        InsertionSort.insertionSortFor(nums);
+
 //        org.example.arrays.MergeSort.mergeSort(nums, 0, nums.length);
 
 
