@@ -7,6 +7,7 @@ import org.example.linkedlist.DeleteMiddleNode;
 import org.example.linkedlist.Partition;
 import org.example.practice.*;
 import org.example.practice.MergeSort;
+import org.example.practice.RotateString;
 import org.example.strings.*;
 
 import java.sql.SQLOutput;
@@ -36,7 +37,7 @@ public class Main {
         two.next = three;
         three.next = four;
 
-       int temp = ReturnKthtoLast.returnKthToLast(head, 5);
+       boolean temp = RotateString.rotateString("waterbottle", "ttelwaterbo");
 
         System.out.println(temp);
 
