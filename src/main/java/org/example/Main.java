@@ -13,7 +13,6 @@ import org.example.strings.*;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 
-import static org.example.practice.MergeSort.mergeSortAlgo;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,33 +25,29 @@ public class Main {
         };
 
 
-//        Node head = new Node(1);
-//        Node one = new Node(2);
-//        Node two = new Node(3);
-//        Node three = new Node(4);
-//        Node four = new Node(5);
-//
-//        head.next = one;
-//        one.next = two;
-//        two.next = three;
-//        three.next = four;
-//
-//       boolean temp = RotateString.rotateString("waterbottle", "ttelwaterbo");
-//
-//        System.out.println(temp);
-//
-//        Node current = head;
-//
-//        while(current != null){
-//            System.out.println(current.data);
-//            current = current.next;
-//        }
+        Node head = new Node(1);
+        Node one = new Node(2);
+        Node two = new Node(3);
+        Node three = new Node(4);
+        Node four = new Node(5);
+
+        Node headTwo = new Node(15);
+        Node seven = new Node(17);
+
+        headTwo.next = seven; // 15 -> 17 -> 4 -> 5
+
+        head.next = one; // 1 -> 2 -> 3 -> 4 -> 5
+        one.next = two;
+        two.next = three;
+        three.next = four;
 
 
-        int[] nums = {2, 5, 3, 4, 1,7,8,10};
+        Node intersecting = Intersection.intersectionLinkedList(head, headTwo);
+        System.out.println(intersecting.data);
 
-        MergeSort.mergeSortAlgo(nums, 0, nums.length);
-
-        System.out.println(Arrays.toString(nums));
+//        int[] nums = {2, 5, 3, 4, 1,7,8,10};
+//
+//
+//        System.out.println(Arrays.toString(nums));
     }
 }
