@@ -38,11 +38,32 @@ public class MergeSort {
 
     public static void merge(int[] nums, int start, int mid, int end) {
         //break if the right partition is greater than the left partition
-        if(nums[mid] > nums[mid - 1]){
+        //You use the or equal to, because if they're equal they're technically already in order
+        if(nums[mid] >= nums[mid - 1]){
             return;
         }
+        //This gives us a correctly sized temp array
+        int[] tempArray = new int[end - start];
 
+        int left = start;
+        int right = mid;
+        int temp = 0; //This one you start at the beginning
 
+        //This will continue until you compare all elements
+        while(left < mid && right < end){
+            if(nums[left] > nums[right]){
+                tempArray[temp] = nums[right];
+                right++;
+            }else if(nums[right] > nums[left]){
+                tempArray[temp] = nums[left];
+                left++;
+            }
+            temp++;
+        }
+
+        System.arraycopy(nums, left, nums, start + temp, mid - left);
+
+        System.arraycopy(tempArray, 0, nums, start, temp);
     }
 }
 
