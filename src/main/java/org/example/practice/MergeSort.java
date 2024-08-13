@@ -16,11 +16,31 @@ public class MergeSort {
     //You can
 
 
+    //We want this method to do the partitioning
     public static void mergeSortAlgo(int[] nums, int start, int end) {
+
+        //We need to have an edge case, we want our method to stop partitioning
+        if(end - start < 2){
+            return;
+        }
+
+        //This gives you the midpoint, within a partitioned array as well
+        //That's why we don't just use the nums.length()
+        int midpoint = (start + end)/ 2;
+
+        mergeSortAlgo(nums, start, midpoint);
+
+        mergeSortAlgo(nums, midpoint, end);
+
+        merge(nums, start, midpoint, end);
 
     }
 
     public static void merge(int[] nums, int start, int mid, int end) {
+        //break if the right partition is greater than the left partition
+        if(nums[mid] > nums[mid - 1]){
+            return;
+        }
 
 
     }
