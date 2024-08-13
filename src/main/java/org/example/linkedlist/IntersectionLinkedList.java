@@ -1,4 +1,4 @@
-package org.example;
+package org.example.linkedlist;
 
 import org.example.practice.Node;
 

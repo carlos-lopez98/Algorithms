@@ -4,8 +4,6 @@ package org.example.queues;
  * Implement a Queue
  * */
 
-import org.example.Partition;
-
 //A Queue has usually 4 methods, add() - adds node/ data to end of queue
 //peek() lets you see first in line, remove() removes and returns first item in the queue
 //isEmpty() checks to see if queue is empty
