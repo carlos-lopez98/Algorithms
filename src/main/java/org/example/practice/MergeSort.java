@@ -15,58 +15,20 @@ public class MergeSort {
     //Lastly, you'll merge your temp array back into the original array, take a moment to think how this will happen
     //You can
 
-
     //We want this method to do the partitioning
-    public static void mergeSortAlgo(int[] nums, int start, int end) {
 
-        //We need to have an edge case, we want our method to stop partitioning
-        if(end - start < 2){
-            return;
-        }
-
-        //This gives you the midpoint, within a partitioned array as well
-        //That's why we don't just use the nums.length()
-        int midpoint = (start + end)/ 2;
-
-        mergeSortAlgo(nums, start, midpoint);
-
-        mergeSortAlgo(nums, midpoint, end);
-
-        merge(nums, start, midpoint, end);
-
-    }
-
-    public static void merge(int[] nums, int start, int mid, int end) {
-        //break if the right partition is greater than the left partition
-        //You use the or equal to, because if they're equal they're technically already in order
-        if(nums[mid] >= nums[mid - 1]){
-            return;
-        }
-        //This gives us a correctly sized temp array
-        int[] tempArray = new int[end - start];
-
-        int left = start;
-        int right = mid;
-        int temp = 0; //This one you start at the beginning
-
-        //This will continue until you compare all elements
-        while(left < mid && right < end){
-            if(nums[left] > nums[right]){
-                tempArray[temp] = nums[right];
-                right++;
-            }else if(nums[right] > nums[left]){
-                tempArray[temp] = nums[left];
-                left++;
-            }
-            temp++;
-        }
-
-        System.arraycopy(nums, left, nums, start + temp, mid - left);
-
-        System.arraycopy(tempArray, 0, nums, start, temp);
-    }
 }
 
 /**
- * Merge sort is a divide and conquer algorithm so first we need to partition
+ * Merge sort is a divide and conquer algorithm so first we need to partition the elements all the way down into
+ * Single element arrays
+ *
+ * Once we're there we're start going back up the call stack
+ *
+ * On the way back we want to merge the arrays back into their correct positions in the original array
+ * To do this we must create a temp array, that will store our order correctly, then copy these back into
+ * The original array
+ *
+ * Depending on how we implement our comparisons on the left and right partition, we may have left over elements
+ * On the left partition that should be copied over first**
  */
