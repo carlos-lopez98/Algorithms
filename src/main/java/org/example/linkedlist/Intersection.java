@@ -81,5 +81,6 @@ public class Intersection {
  * Reference the same node, you're not only checking if the nodes have the same data value
  * But if they both reference the same node
  *
- *
+ * Since both lists could potentially be different lengths, we need a way to start the pointers at the same positions
+ * This way you can check if either node matches each other
  */
