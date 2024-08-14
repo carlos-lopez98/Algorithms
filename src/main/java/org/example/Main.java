@@ -8,6 +8,8 @@ import org.example.linkedlist.Partition;
 import org.example.practice.*;
 import org.example.practice.MergeSort;
 import org.example.practice.RotateString;
+import org.example.stacks.MyStack;
+import org.example.stacks.StackNode;
 import org.example.strings.*;
 
 import java.sql.SQLOutput;
@@ -25,29 +27,48 @@ public class Main {
         };
 
 
-        Node head = new Node(1);
-        Node one = new Node(2);
-        Node two = new Node(3);
-        Node three = new Node(4);
-        Node four = new Node(5);
-
-        Node headTwo = new Node(15);
-        Node seven = new Node(17);
-
-        headTwo.next = seven; // 15 -> 17 -> 4 -> 5
-
-        head.next = one; // 1 -> 2 -> 3 -> 4 -> 5
-        one.next = two;
-        two.next = three;
-        three.next = four;
-
-
-        Node intersecting = Intersection.intersectionLinkedList(head, headTwo);
-        System.out.println(intersecting.data);
+//        Node head = new Node(1);
+//        Node one = new Node(2);
+//        Node two = new Node(3);
+//        Node three = new Node(4);
+//        Node four = new Node(5);
+//
+//        Node headTwo = new Node(15);
+//        Node seven = new Node(17);
+//
+//        headTwo.next = seven; // 15 -> 17 -> 4 -> 5
+//
+//        head.next = one; // 1 -> 2 -> 3 -> 4 -> 5
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//
+//
+//        Node intersecting = Intersection.intersectionLinkedList(head, headTwo);
+//        System.out.println(intersecting.data);
 
 //        int[] nums = {2, 5, 3, 4, 1,7,8,10};
 //
 //
 //        System.out.println(Arrays.toString(nums));
+
+
+        StackNode head = new StackNode(1);
+        StackNode one = new StackNode(2);
+        StackNode two = new StackNode(3);
+        StackNode three = new StackNode(4);
+        StackNode four = new StackNode(5);
+
+        MyStack<Integer> stack = new MyStack<Integer>();
+
+        stack.push(head);
+        stack.push(one);
+        stack.push(two);
+        stack.push(three);
+        stack.push(four);
+
+        while(!stack.isEmpty()){
+            System.out.println(stack.pop().data.toString());
+        }
     }
 }

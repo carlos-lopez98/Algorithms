@@ -1,5 +1,7 @@
 package org.example.stacks;
 
+import java.util.Stack;
+
 /*
 *
 * Utilizing Generics again to be able to work with any type on our stack
@@ -10,66 +12,47 @@ public class MyStack<T> {
     private StackNode<T> top;
 
 
-    //Pop you want to return the top node, but also move your top pointer to the next node
+    //Removes the top from the stack, then makes top = to the next node
     public StackNode<T> pop(){
-        if(top == null){
-            return null;
-        }else{
-            StackNode<T> temp = this.top;
-            top = top.next;
 
-            return temp;
+        if(this.isEmpty()){
+            return null;
         }
-    };
 
-    //Returns the data, but pops the top element
-    public T popData(){
-        if(top == null){
-            return null;
+        StackNode<T> temp = top;
+        top = top.next;
+
+        return temp;
+    }
+
+    //Adds to the top of the stack
+    public void push(StackNode<T> push){
+        if(this.isEmpty()){
+            top = push;
         }else{
-            T tempData = this.top.data;
-            top = top.next;
-
-            return tempData;
+            StackNode<T> temp = new StackNode<>(push.data);
+            temp.next = top;
+            top = temp;
         }
     }
 
-    //You want to return the data of the top node
-    //Not pop it off - Check for edge cases - What if top node is null?
     public T peek(){
-        if(top!=null){
-            return top.data;
+        if(this.isEmpty()){
+            return null;
         }
-        return null;
-    };
 
-    //We want it to return true if it's null
+        return top.data;
+    }
+
     public boolean isEmpty(){
         return top == null;
-    };
-
-
-    //Push should be able to push a new Node as well as the data
-    public void push(T data){
-        if(top == null){
-            /*You Cannot Access Null Data*/
-//            this.top.data = data;
-            StackNode<T> node = new StackNode<>(data);
-            this.top = node;
-        }else{
-         StackNode<T> node = new StackNode<>(data);
-         node.next = this.top;
-         top = node;
-        }
-    };
-    public void push(StackNode<T> node){
-    if (top == null){
-        this.top = node;
-    }else{
-     node.next = top;
-     top = node;
-    }
     }
 }
-
+/**
+ * PopNode()
+ * PopData() - Also removes top node though
+ * Peek()
+ * Push()
+ * IsEmpty()
+ */
 
