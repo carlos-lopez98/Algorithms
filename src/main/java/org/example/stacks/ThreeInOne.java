@@ -7,7 +7,7 @@ package org.example.stacks;
 public class ThreeInOne {
 
 
-
+    public int[] threeStack;
 
 
     private class StackOne{
