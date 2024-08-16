@@ -10,6 +10,7 @@ import org.example.practice.MergeSort;
 import org.example.practice.RotateString;
 import org.example.stacks.MyStack;
 import org.example.stacks.StackNode;
+import org.example.stacks.ThreeInOne;
 import org.example.strings.*;
 
 import java.sql.SQLOutput;
@@ -53,22 +54,35 @@ public class Main {
 //        System.out.println(Arrays.toString(nums));
 
 
-        StackNode head = new StackNode(1);
-        StackNode one = new StackNode(2);
-        StackNode two = new StackNode(3);
-        StackNode three = new StackNode(4);
-        StackNode four = new StackNode(5);
+//        StackNode head = new StackNode(1);
+//        StackNode one = new StackNode(2);
+//        StackNode two = new StackNode(3);
+//        StackNode three = new StackNode(4);
+//        StackNode four = new StackNode(5);
+//
+//        MyStack<Integer> stack = new MyStack<Integer>();
+//
+//        stack.push(head);
+//        stack.push(one);
+//        stack.push(two);
+//        stack.push(three);
+//        stack.push(four);
+//
+//        while(!stack.isEmpty()){
+//            System.out.println(stack.pop().data.toString());
+//        }
 
-        MyStack<Integer> stack = new MyStack<Integer>();
 
-        stack.push(head);
-        stack.push(one);
-        stack.push(two);
-        stack.push(three);
-        stack.push(four);
+        ThreeInOne threeStack = new ThreeInOne(4);
 
-        while(!stack.isEmpty()){
-            System.out.println(stack.pop().data.toString());
-        }
+        threeStack.getOne().push(5);
+        System.out.println(threeStack.getOne().pop());
+        threeStack.getOne().push(33);
+        threeStack.getOne().push(20);
+        threeStack.getOne().push(15);
+
+        System.out.println(threeStack.getOne().pop());
+        System.out.println(threeStack.getOne().pop());
+        System.out.println(threeStack.getOne().pop());
     }
 }
