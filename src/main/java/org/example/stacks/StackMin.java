@@ -12,10 +12,6 @@ public class StackMin {
     public StackNodeMin top;
 
 
-    StackMin(){
-
-    }
-
     public void push(int data){
         StackNodeMin temp = new StackNodeMin(data);
         if(isEmpty()){
@@ -81,13 +77,8 @@ public class StackMin {
 }
 
 /**
- * This one would be easy you just create an extra variabe besides top
+ * This one would be easy you just create an extra variable inside the individual nodes, you'd only have to keep track
+ * Of the minimum position at each node addition, when you pop, that node goes away, and the min value will now
+ * Be in the top node of the remaining stack
  *
- * You could call this one min, everytime you push to the stack you just verify if this new value is the new min
- * Then if it is set it equal to min.
- *
- * Then when calling min, you just return the min value, this won't be able to pop() thoush, as the min value can be
- * In a position not at the top of our stack
- *
- * What happens when the min value is popped? How would you keep track of the new min value?
  */

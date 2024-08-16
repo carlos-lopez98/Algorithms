@@ -9,12 +9,14 @@ import org.example.practice.*;
 import org.example.practice.MergeSort;
 import org.example.practice.RotateString;
 import org.example.stacks.MyStack;
+import org.example.stacks.StackMin;
 import org.example.stacks.StackNode;
 import org.example.stacks.ThreeInOne;
 import org.example.strings.*;
 
 import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Stack;
 
 
 public class Main {
@@ -73,16 +75,22 @@ public class Main {
 //        }
 
 
-        ThreeInOne threeStack = new ThreeInOne(4);
+        StackMin minimumStack = new StackMin();
 
-        threeStack.getOne().push(5);
-        System.out.println(threeStack.getOne().pop());
-        threeStack.getOne().push(33);
-        threeStack.getOne().push(20);
-        threeStack.getOne().push(15);
 
-        System.out.println(threeStack.getOne().pop());
-        System.out.println(threeStack.getOne().pop());
-        System.out.println(threeStack.getOne().pop());
+
+        minimumStack.push(5);
+        minimumStack.push(33);
+        System.out.println("The minimum should be five result = " + minimumStack.peekMin());
+
+        minimumStack.push(1);
+        minimumStack.push(12);
+        System.out.println("The minimum should be one result = " + minimumStack.peekMin());
+        minimumStack.pop();
+        minimumStack.pop();
+        minimumStack.push(3);
+
+        System.out.println("The minimum should be threre result = " + minimumStack.peekMin());
+
     }
 }
