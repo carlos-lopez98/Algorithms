@@ -9,6 +9,75 @@ package org.example.stacks;
 
 public class StackMin {
 
+    public StackNodeMin top;
+
+
+    StackMin(){
+
+    }
+
+    public void push(int data){
+        StackNodeMin temp = new StackNodeMin(data);
+        if(isEmpty()){
+            top = temp;
+            top.min = data;
+            return;
+        }
+        temp.next = top;
+        if(temp.data <= top.data){
+            temp.min = temp.data;
+        }else{
+            temp.min = top.data;
+        }
+        top = temp;
+    }
+
+    public StackNodeMin pop(){
+        if(isEmpty()){
+            throw new RuntimeException("stack is empty cannot pop");
+        }
+
+        StackNodeMin temp = top;
+        top = top.next;
+
+        return temp;
+    }
+
+    public int peekMin(){
+        if(isEmpty()){
+            throw new RuntimeException("List is empty, no min to retrieve");
+        }
+
+        return this.top.min;
+    }
+
+    public int peekNode(){
+        if(isEmpty()){
+            throw new RuntimeException("List is empty, nothing to retrieve");
+        }
+
+        return top.data;
+    }
+
+    public boolean isEmpty(){
+        if(this.top == null){
+            return true;
+        }
+
+        return false;
+    }
+
+    public class StackNodeMin{
+
+        StackNodeMin next;
+        int data;
+        int min;
+
+       public StackNodeMin(int data){
+            this.data = data;
+        }
+    }
+
 }
 
 /**
