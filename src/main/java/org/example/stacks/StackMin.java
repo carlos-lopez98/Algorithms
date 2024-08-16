@@ -19,4 +19,6 @@ public class StackMin {
  *
  * Then when calling min, you just return the min value, this won't be able to pop() thoush, as the min value can be
  * In a position not at the top of our stack
+ *
+ * What happens when the min value is popped? How would you keep track of the new min value?
  */
