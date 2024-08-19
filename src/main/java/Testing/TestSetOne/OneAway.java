@@ -18,10 +18,12 @@ public class OneAway {
         //If they are equal in lengths, we just need to see if there are more than one characters that don't match
         if (one.length() == two.length()) {
 
-
+            return equalLengthCompare(one, two);
+        } else if (one.length() > two.length()) {
+            return diffLengthCompare(two, one);
+        } else {
+            return diffLengthCompare(one, two);
         }
-
-
     }
 
     public static boolean equalLengthCompare(String one, String two) {
@@ -34,6 +36,19 @@ public class OneAway {
         }
 
         //If more than two different characters, we'll return false
+        return !(counter > 1);
+    }
+
+    public static boolean diffLengthCompare(String shorter, String longer) {
+        int counter = 0;
+
+        for (int s = 0, l = 0; s < shorter.length(); s++, l++) {
+            if (shorter.charAt(s) != longer.charAt(l)) {
+                counter++;
+                s--;
+            }
+        }
+
         return !(counter > 1);
     }
 

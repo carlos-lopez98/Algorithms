@@ -3,6 +3,7 @@ package Testing;
 import Testing.TestSetOne.Intersection;
 import Testing.TestSetOne.IsPalindrome;
 import Testing.TestSetOne.KthToLast;
+import Testing.TestSetOne.OneAway;
 import org.example.practice.Node;
 
 public class Main {
@@ -66,7 +67,10 @@ public class Main {
         /**
          * Test Set Problem Four One Away
          */
-
+//
+//        System.out.println(OneAway.oneAway("carlos", "carlosss"));
+//        System.out.println(OneAway.oneAway("Hello", "Hell"));
+//        System.out.println(OneAway.oneAway("Help", "Helpo"));
 
     }
 }
