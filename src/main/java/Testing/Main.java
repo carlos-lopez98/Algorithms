@@ -2,6 +2,7 @@ package Testing;
 
 import Testing.TestSetOne.Intersection;
 import Testing.TestSetOne.IsPalindrome;
+import Testing.TestSetOne.KthToLast;
 import org.example.practice.Node;
 
 public class Main {
@@ -30,17 +31,42 @@ public class Main {
 //
 //        System.out.println(Intersection.returnIntersecting(one, second).data);
 
-                Node one = new Node(1);
-                Node two = new Node(1);
-                Node three = new Node(15);
-                Node four = new Node(1);
-                Node five = new Node(3);
+        /**
+         * Test Set Problem Two IsPalindrome
+         */
+//        Node one = new Node(1);
+//        Node two = new Node(1);
+//        Node three = new Node(15);
+//        Node four = new Node(1);
+//        Node five = new Node(3);
+//
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//        four.next = five;
+//
+//        System.out.println(IsPalindrome.isPalindrome(one));
 
-            one.next = two;
-            two.next = three;
-            three.next = four;
-            four.next = five;
+        /**
+         * Test Set Problem Three KthToLast
+         */
+//        Node one = new Node(1);
+//        Node two = new Node(1);
+//        Node three = new Node(15);
+//        Node four = new Node(1);
+//        Node five = new Node(3);
+//
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//        four.next = five;
+//
+//        System.out.println(KthToLast.returnKthToLast(one, 1).data);
 
-        System.out.println(IsPalindrome.isPalindrome(one));
+        /**
+         * Test Set Problem Four One Away
+         */
+
+
     }
 }
