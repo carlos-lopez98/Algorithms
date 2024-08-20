@@ -74,11 +74,13 @@ public class Main {
          * Test Set Problem Five PalindromePermutation
          */
 
-        System.out.println(PalindromePermutation.isPalindrome("racecar"));
-        System.out.println(PalindromePermutation.isPalindrome("rraaecc"));
-        System.out.println(PalindromePermutation.isPalindrome("RRaaEcc"));
-        System.out.println(PalindromePermutation.isPalindrome("Carlos"));
-        System.out.println(PalindromePermutation.isPalindrome("a"));
-        System.out.println(PalindromePermutation.isPalindrome("!!!!"));
+//        System.out.println(PalindromePermutation.isPalindrome("racecar"));
+//        System.out.println(PalindromePermutation.isPalindrome("rraaecc"));
+//        System.out.println(PalindromePermutation.isPalindrome("RRaaEcc"));
+//        System.out.println(PalindromePermutation.isPalindrome("Carlos"));
+//        System.out.println(PalindromePermutation.isPalindrome("a"));
+//        System.out.println(PalindromePermutation.isPalindrome("!!!!"));
+
+
     }
 }

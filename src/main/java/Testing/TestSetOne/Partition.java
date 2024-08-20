@@ -1,5 +1,7 @@
 package Testing.TestSetOne;
 
+import org.example.practice.Node;
+
 /**
  * Write code to partition a linkedlist around a value x, such that all nodes less than x come before all nodes
  * greater than or equal to x. (IMPORTANT) The partition element x can appear anywhere in the "right partition"
@@ -11,4 +13,17 @@ package Testing.TestSetOne;
  * 3 ->1 -> 2 -> 10 -> 5 -> 5 -> 8
  */
 public class Partition {
+
+    public static Node partition(Node head){
+
+
+
+
+    }
 }
+/**
+ * The solution for this one involves creating two separate lists, then combining them together at the end
+ * In order to do this successfully, you need to combine the tail of the left list with the head of the right list
+ *
+ *
+ */
