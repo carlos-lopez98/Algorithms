@@ -14,16 +14,49 @@ import org.example.practice.Node;
  */
 public class Partition {
 
-    public static Node partition(Node head){
+    public static Node partition(Node head, int partition){
+        //Returns null if the input is null
+        if(head == null){
+            return null;
+        }
+        Node leftHead = null;
+        Node leftTail = null;
+        Node rightHead = null;
+        Node rightTail = null;
 
+        while(head != null){
 
+            Node temp = new Node(head.data);
+            //If less then add to left side
+            if(head.data < partition){
+                if(leftHead == null){
+                    leftHead = temp;
+                    leftTail = leftHead;
+                }else{
+                 leftTail.next = temp;
+                 leftTail = leftTail.next;
+                }
 
+            }
+            //If greater add to right side
+            else{
+                if(rightHead == null){
+                    rightHead = temp;
+                    rightTail = rightHead;
+                }else{
+                    rightTail.next = temp;
+                    rightTail = rightTail.next;
+                }
+            }
+            head = head.next;
+        }
 
+        leftTail.next = rightHead;
+
+        return leftHead;
     }
 }
 /**
  * The solution for this one involves creating two separate lists, then combining them together at the end
  * In order to do this successfully, you need to combine the tail of the left list with the head of the right list
- *
- *
  */
