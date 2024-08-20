@@ -7,9 +7,42 @@ package Testing.TestSetOne;
  */
 public class PalindromePermutation {
 
+    public static boolean isPalindrome(String s){
+        //Character counter initialized to 26 as there are only 26 letters in the alphabet
+        int[] charCounter = new int[26];
+        int nonAlphaCharacter = 0;
+        for(int i = 0; i < s.length(); i++){
+            //returns a value 1-26 for every character in the string
+            int tempCharValue = getNumericalValue(s.charAt(i));
 
+            if(tempCharValue != -1){
+                //Inputs the count at every position in the count array
+                charCounter[tempCharValue]++;
+            }else{
+                nonAlphaCharacter++;
+            }
 
-    public int getNumericalValue(char input){
+            if(nonAlphaCharacter == s.length()){
+                return false;
+            }
+        }
+
+        //Checking for odd and even, not character count
+        int oddCounter = 0;
+
+        for(int j = 0; j < charCounter.length; j++){
+
+            if(charCounter[j] % 2 == 1){
+              oddCounter++;
+            }
+        }
+
+        //Returns false if the oddcounter is greater than 1, which is what we want, if more than one odd, then we don't
+        //Have a palindrome permutation
+        return !(oddCounter > 1);
+    }
+
+    public static int getNumericalValue(char input){
 
         int a = Character.getNumericValue('a');
         int z = Character.getNumericValue('z');
@@ -17,11 +50,13 @@ public class PalindromePermutation {
         int A = Character.getNumericValue('A');
         int Z = Character.getNumericValue('Z');
 
+        int in = Character.getNumericValue(input);
+
         //This should return a range of 0-26
-        if(input <= z && input >= a){
-            return input - a;
-        } else if( input <= Z && input >= A){
-            return input -A;
+        if(in <= z && in >= a){
+            return in - a;
+        } else if( in <= Z && in >= A){
+            return in - A;
         }else{
             return -1;
         }

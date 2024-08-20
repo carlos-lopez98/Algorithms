@@ -1,9 +1,7 @@
 package Testing;
 
-import Testing.TestSetOne.Intersection;
-import Testing.TestSetOne.IsPalindrome;
-import Testing.TestSetOne.KthToLast;
-import Testing.TestSetOne.OneAway;
+import Testing.TestSetOne.*;
+import com.sun.security.jgss.GSSUtil;
 import org.example.practice.Node;
 
 public class Main {
@@ -72,5 +70,15 @@ public class Main {
 //        System.out.println(OneAway.oneAway("Hello", "Hell"));
 //        System.out.println(OneAway.oneAway("Help", "Helpo"));
 
+        /**
+         * Test Set Problem Five PalindromePermutation
+         */
+
+        System.out.println(PalindromePermutation.isPalindrome("racecar"));
+        System.out.println(PalindromePermutation.isPalindrome("rraaecc"));
+        System.out.println(PalindromePermutation.isPalindrome("RRaaEcc"));
+        System.out.println(PalindromePermutation.isPalindrome("Carlos"));
+        System.out.println(PalindromePermutation.isPalindrome("a"));
+        System.out.println(PalindromePermutation.isPalindrome("!!!!"));
     }
 }
