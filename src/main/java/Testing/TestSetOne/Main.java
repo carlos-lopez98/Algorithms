@@ -81,6 +81,37 @@ public class Main {
 //        System.out.println(PalindromePermutation.isPalindrome("a"));
 //        System.out.println(PalindromePermutation.isPalindrome("!!!!"));
 
+        /**
+         * Test Set Problem Six Partition
+         *
+         * 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1
+         */
+//        Node one = new Node(3);
+//        Node two = new Node(5);
+//        Node three = new Node(8);
+//        Node four = new Node(5);
+//        Node five = new Node(10);
+//        Node six = new Node(2);
+//        Node seven = new Node(1);
+//
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//        four.next = five;
+//        five.next = six;
+//        six.next = seven;
+//
+//        Node partition = Partition.partition(one, 8);
+//
+//        while(partition !=null){
+//            System.out.print(partition.data + " ");
+//            partition = partition.next;
+//        }
 
+        /**
+         * Test Set Problem Seven Rotate90Degrees
+         */
+
+        
     }
 }
