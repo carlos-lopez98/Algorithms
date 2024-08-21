@@ -122,5 +122,13 @@ public class Main {
 //        Rotate90Degrees.rotate90(matrix);
 //        Rotate90Degrees.printArray(matrix);
 
+        /**
+         * Test Set Problem Eight RotateString
+         */
+//        System.out.println(RotateString.isRotation("waterbottle", "bottlewater"));
+//        System.out.println(RotateString.isRotation("waterbottle", "erbottlewat"));
+//        System.out.println(RotateString.isRotation("car", "carlos"));
+//        System.out.println(RotateString.isRotation("waterbottle", "erbottelwat"));
+
     }
 }
