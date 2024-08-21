@@ -147,5 +147,21 @@ public class Main {
 //        char[] arrayTwo = new String("Brown Bear  ").toCharArray();
 //        System.out.println(Urlify.url(arrayOne, 25));
 //        System.out.println(Urlify.url(arrayTwo, 10));
+
+        /**
+         * Test Set problem Eleven ZeroMatrix
+         */
+
+//        int[][] arrayOne = new int[][]{
+//                {0,1,2,1},
+//                {1,1,1,1},
+//                {1,1,1,1},
+//                {2,2,2,2},
+//                {4,5,0,2}
+//        };
+//
+//        ZeroMatrix.zero(arrayOne);
+//        ZeroMatrix.printArray(arrayOne);
+
     }
 }
