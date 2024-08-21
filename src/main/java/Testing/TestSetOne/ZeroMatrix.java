@@ -4,6 +4,41 @@ package Testing.TestSetOne;
  * Write an algorithm such that if an element in an MXN matrix is 0, it's entire row and column are set to 0.
  */
 public class ZeroMatrix {
+
+
+    public static void zero(int[][] matrix) {
+        boolean[] rows = new boolean[matrix.length];
+        boolean[] columns = new boolean[matrix[0].length];
+
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                if(matrix[row][col] == 0){
+                 rows[row] = true;
+                 columns[col]= true;
+                }
+            }
+        }
+
+        for(int row = 0; row < matrix.length; row++){
+            for(int col = 0; col < matrix[row].length; col++){
+                if(rows[row]){
+                    matrix[row][col] = 0;
+                }else if(columns[col]){
+                    matrix[row][col] = 0;
+                }
+            }
+        }
+    }
+
+    public void printArray(int[][] matrix) {
+
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                System.out.print(matrix[row][col]);
+            }
+            System.out.println();
+        }
+    }
 }
 
 /**
