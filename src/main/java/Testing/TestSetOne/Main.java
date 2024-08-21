@@ -143,5 +143,9 @@ public class Main {
          * Test Set problem Ten Urlify
          */
 
+        char[] arrayOne = new String("The brown fox jumped over        ").toCharArray();
+        char[] arrayTwo = new String("Brown Bear  ").toCharArray();
+        System.out.println(Urlify.url(arrayOne, 25));
+        System.out.println(Urlify.url(arrayTwo, 10));
     }
 }

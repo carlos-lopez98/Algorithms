@@ -8,9 +8,32 @@ package Testing.TestSetOne;
 public class Urlify {
 
 
-    public static char[] url(char[] s) {
+    public static char[] url(char[] s, int trueLength) {
 
+        int firstpointer = trueLength - 1;
+        int whitespace = 0;
 
+        for(int i =0; i < trueLength; i++){
+            if(s[i] == ' '){
+               whitespace++;
+            }
+        }
+
+        int secondPointer = (trueLength - 1) + (whitespace * 2);
+
+        for(; firstpointer > 0; firstpointer--){
+            if(s[firstpointer] != ' '){
+                s[secondPointer] = s[firstpointer];
+                secondPointer--;
+            }else{
+                s[secondPointer] = '0';
+                s[secondPointer - 1] = '2';
+                s[secondPointer - 2] = '%';
+                secondPointer -=3;
+            }
+        }
+
+        return s;
     }
 }
 /**
