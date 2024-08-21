@@ -14,17 +14,29 @@ public class RotateString {
             return false;
         }
 
-
         for(int i = 0; i < one.length(); i++){
-
+            if(checkRotationAtPoint(one, two, i)){
+                return true;
+            }
         }
+
+        return false;
     }
 
     public static boolean checkRotationAtPoint(String one, String two, int rotation){
 
+        for(int onePointer = 0, secondPointer = rotation; onePointer < one.length(); secondPointer++, onePointer++){
+            if(secondPointer == two.length()){
+                //Resets the second pointer back to zero, after comparing the final character in the second string
+                secondPointer = secondPointer % two.length();
+            }
 
+            if(one.charAt(onePointer) != two.charAt(secondPointer)){
+                return false;
+            }
+        }
 
-
+        return true;
     }
 }
 
