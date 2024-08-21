@@ -43,4 +43,30 @@ public class StackOfPlates {
         return false;
     }
 
+    public void push(int data){
+        if(listOne.isEmpty()){
+            Stack<Integer> newStack = new Stack<Integer>();
+            listOne.add(0, new Stack<>());
+            topStack = 0;
+        }
+
+        Stack<Integer> temp = listOne.get(topStack);
+
+        if(temp.size() == this.cap){
+            topStack++;
+            Stack<Integer> newStack = new Stack<>();
+            listOne.add(topStack, newStack);
+            newStack.push(data);
+        }else{
+            temp.push(data);
+        }
+    }
+
+    public void pop(){
+
+
+
+
+
+    }
 }
