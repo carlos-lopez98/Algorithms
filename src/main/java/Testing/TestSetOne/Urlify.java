@@ -7,7 +7,6 @@ package Testing.TestSetOne;
  */
 public class Urlify {
 
-
     public static char[] url(char[] s, int trueLength) {
 
         int firstpointer = trueLength - 1;
