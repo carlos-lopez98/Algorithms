@@ -7,9 +7,41 @@ package Testing.TestSetOne;
 public class Rotate90Degrees {
 
 
-    //This will turn all rows to columns
-    public static void transpose(int[] matrix) {
+    public static void rotate90(int[][] matrix){
 
+        transpose(matrix);
+
+        //Swap columns logic
+        for(int row = 0; row < matrix.length; row++){
+            //Two col pointers that move inward
+            for(int colLeft = 0, colRight = matrix[row].length - 1; colLeft < colRight; colLeft++, colRight--){
+                int temp = matrix[row][colRight];
+                matrix[row][colRight] = matrix[row][colLeft];
+                matrix[row][colLeft] = temp;
+            }
+        }
+
+    }
+
+
+    //This will turn all rows to columns
+    public static void transpose(int[][] matrix) {
+     for(int row = 0; row < matrix.length; row++){
+         for(int col = row; col < matrix[row].length; col++){
+          int temp = matrix[row][col];
+          matrix[row][col] = matrix[col][row];
+          matrix[col][row] = temp;
+         }
+     }
+    }
+
+    public static void printArray(int[][] matrix){
+        for(int row = 0; row< matrix.length; row++){
+            for(int col = 0; col < matrix[row].length; col++){
+                System.out.print(matrix[row][col] + " ");
+            }
+            System.out.println();
+        }
     }
 }
 
