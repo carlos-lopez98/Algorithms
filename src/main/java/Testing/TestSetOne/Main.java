@@ -130,5 +130,9 @@ public class Main {
 //        System.out.println(RotateString.isRotation("car", "carlos"));
 //        System.out.println(RotateString.isRotation("waterbottle", "erbottelwat"));
 
+        /**
+         * Test Set Problem Nine String Compression
+         */
+
     }
 }
