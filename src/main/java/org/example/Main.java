@@ -8,10 +8,7 @@ import org.example.linkedlist.Partition;
 import org.example.practice.*;
 import org.example.practice.MergeSort;
 import org.example.practice.RotateString;
-import org.example.stacks.MyStack;
-import org.example.stacks.StackMin;
-import org.example.stacks.StackNode;
-import org.example.stacks.ThreeInOne;
+import org.example.stacks.*;
 import org.example.strings.*;
 
 import java.sql.SQLOutput;
@@ -75,22 +72,44 @@ public class Main {
 //        }
 
 
-        StackMin minimumStack = new StackMin();
+//        StackMin minimumStack = new StackMin();
+//
+//
+//
+//        minimumStack.push(5);
+//        minimumStack.push(33);
+//        System.out.println("The minimum should be five result = " + minimumStack.peekMin());
+//
+//        minimumStack.push(1);
+//        minimumStack.push(12);
+//        System.out.println("The minimum should be one result = " + minimumStack.peekMin());
+//        minimumStack.pop();
+//        minimumStack.pop();
+//        minimumStack.push(3);
+//
+//        System.out.println("The minimum should be threre result = " + minimumStack.peekMin());
 
+        StackOfPlates dinnerPlates = new StackOfPlates(2);
 
+        dinnerPlates.push(11);
+        dinnerPlates.push(15);
 
-        minimumStack.push(5);
-        minimumStack.push(33);
-        System.out.println("The minimum should be five result = " + minimumStack.peekMin());
+        dinnerPlates.push(16);
+        dinnerPlates.push(11);
 
-        minimumStack.push(1);
-        minimumStack.push(12);
-        System.out.println("The minimum should be one result = " + minimumStack.peekMin());
-        minimumStack.pop();
-        minimumStack.pop();
-        minimumStack.push(3);
+        dinnerPlates.push(15);
+        dinnerPlates.push(16);
 
-        System.out.println("The minimum should be threre result = " + minimumStack.peekMin());
+        dinnerPlates.push(11);
+        dinnerPlates.push(15);
 
+        dinnerPlates.push(16);
+
+        System.out.println(dinnerPlates.popAt(0));
+        System.out.println(dinnerPlates.popAt(0));
+
+        System.out.println(dinnerPlates.topStack);
+
+        System.out.println(dinnerPlates.popAt(0));
     }
 }

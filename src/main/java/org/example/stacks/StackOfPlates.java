@@ -21,7 +21,7 @@ public class StackOfPlates {
     //Sets the cap for each stack
     public int cap;
 
-    public StackOfPlates(int cap) {
+     public StackOfPlates(int cap) {
         listOne = new ArrayList<>();
         topStack = 0;
         this.cap = cap;
@@ -62,11 +62,32 @@ public class StackOfPlates {
         }
     }
 
-    public void pop(){
+    public int pop(){
+        if(isEmpty()){
+            throw new RuntimeException("StackOfStacks is Empty");
+        }
 
+        Stack<Integer> temp = listOne.get(topStack);
+        int returnVar = temp.pop();
 
+        if(temp.isEmpty()){
+            topStack--;
+        }
 
+        return returnVar;
+    }
 
+    public int popAt(int index){
+         if(index > topStack){
+             throw new RuntimeException("Index is out of range for our stacks");
+         }
 
+         Stack<Integer> temp = listOne.get(index);
+
+        if(temp.isEmpty()){
+            throw new RuntimeException("Stack is Empty");
+        }
+
+        return temp.pop();
     }
 }
