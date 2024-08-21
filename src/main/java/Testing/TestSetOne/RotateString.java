@@ -8,30 +8,27 @@ package Testing.TestSetOne;
 public class RotateString {
 
 
-    public static boolean isRotation(String one, String two){
+    public static boolean isRotation(String one, String two) {
         //Lengths must be equal in order for the second string to be a rotation of the first string
-        if(one.length() != two.length()){
+        if (one.length() != two.length()) {
             return false;
         }
-
-        for(int i = 0; i < one.length(); i++){
-            if(checkRotationAtPoint(one, two, i)){
+        for (int i = 0; i < one.length(); i++) {
+            if (checkRotationAtPoint(one, two, i)) {
                 return true;
             }
         }
-
         return false;
     }
 
-    public static boolean checkRotationAtPoint(String one, String two, int rotation){
+    public static boolean checkRotationAtPoint(String one, String two, int rotation) {
 
-        for(int onePointer = 0, secondPointer = rotation; onePointer < one.length(); secondPointer++, onePointer++){
-            if(secondPointer == two.length()){
+        for (int onePointer = 0, secondPointer = rotation; onePointer < one.length(); secondPointer++, onePointer++) {
+            if (secondPointer == two.length()) {
                 //Resets the second pointer back to zero, after comparing the final character in the second string
                 secondPointer = secondPointer % two.length();
             }
-
-            if(one.charAt(onePointer) != two.charAt(secondPointer)){
+            if (one.charAt(onePointer) != two.charAt(secondPointer)) {
                 return false;
             }
         }
@@ -42,7 +39,7 @@ public class RotateString {
 
 /**
  * This one is best done using the trick where you can start an iteration at different points in a string
- *
+ * <p>
  * Trick is done by giving a function different starting positions and using % the string's length as the start point
  * Envision an outer loop that passes is values 0 - string length as the starting point, once starting point is taken
  * the second for loop will always start the first string comparison at position 0 while the second comparison starts
