@@ -134,5 +134,9 @@ public class Main {
          * Test Set Problem Nine String Compression
          */
 
+        System.out.println(StringCompression.compress("aabbcc"));
+        System.out.println(StringCompression.compress("aaabbb"));
+        System.out.println(StringCompression.compress("aaaaaabbbc"));
+        System.out.println(StringCompression.compress("a"));
     }
 }

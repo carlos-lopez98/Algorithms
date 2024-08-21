@@ -9,6 +9,28 @@ package Testing.TestSetOne;
 public class StringCompression {
 
 
+    public static String compress(String s){
+
+        StringBuilder newString = new StringBuilder();
+        int dupCounter = 1;
+        char previous = s.charAt(0);
+
+        for(int i = 1; i < s.length(); i++){
+            if(previous == s.charAt(i)){
+                dupCounter++;
+            }else{
+             newString.append(previous);
+             newString.append(dupCounter);
+             dupCounter = 1;
+             previous = s.charAt(i);
+            }
+        }
+
+        newString.append(previous);
+        newString.append(dupCounter);
+
+        return newString.toString().length() >= s.length() ? s : newString.toString();
+    }
 }
 /**
  * This one can be done using a simple string concatenation, but in order to improve efficiency it's better
