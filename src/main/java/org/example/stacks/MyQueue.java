@@ -10,24 +10,25 @@ public class MyQueue {
     public Stack<Integer> inStack;
     public Stack<Integer> holdStack;
 
-    public MyQueue(){
+    public MyQueue() {
         inStack = new Stack<>();
         holdStack = new Stack<>();
     }
-    public void add(int data){
+
+    public void add(int data) {
         inStack.push(data);
     }
 
-    public int deQueue(){
+    public int deQueue() {
 
 
-        while(!inStack.isEmpty()){
+        while (!inStack.isEmpty()) {
             holdStack.add(inStack.pop());
         }
 
         int returnVar = holdStack.pop();
 
-        while(!holdStack.isEmpty()){
+        while (!holdStack.isEmpty()) {
             inStack.add(holdStack.pop());
         }
 
