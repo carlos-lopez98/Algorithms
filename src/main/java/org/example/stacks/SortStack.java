@@ -6,4 +6,6 @@ package org.example.stacks;
  * supports the following operations: push, pop, peek, and isEmpty.
  */
 public class SortStack {
+
+
 }
