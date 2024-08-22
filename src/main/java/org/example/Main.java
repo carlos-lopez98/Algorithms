@@ -89,27 +89,36 @@ public class Main {
 //
 //        System.out.println("The minimum should be threre result = " + minimumStack.peekMin());
 
-        StackOfPlates dinnerPlates = new StackOfPlates(2);
+//        StackOfPlates dinnerPlates = new StackOfPlates(2);
+//
+//        dinnerPlates.push(11);
+//        dinnerPlates.push(15);
+//
+//        dinnerPlates.push(16);
+//        dinnerPlates.push(11);
+//
+//        dinnerPlates.push(15);
+//        dinnerPlates.push(16);
+//
+//        dinnerPlates.push(11);
+//        dinnerPlates.push(15);
+//
+//        dinnerPlates.push(16);
+//
+//        System.out.println(dinnerPlates.popAt(0));
+//        System.out.println(dinnerPlates.popAt(0));
+//
+//        System.out.println(dinnerPlates.topStack);
+//
+//        System.out.println(dinnerPlates.popAt(0));
 
-        dinnerPlates.push(11);
-        dinnerPlates.push(15);
+        MyQueue queue = new MyQueue();
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.add(4);
 
-        dinnerPlates.push(16);
-        dinnerPlates.push(11);
-
-        dinnerPlates.push(15);
-        dinnerPlates.push(16);
-
-        dinnerPlates.push(11);
-        dinnerPlates.push(15);
-
-        dinnerPlates.push(16);
-
-        System.out.println(dinnerPlates.popAt(0));
-        System.out.println(dinnerPlates.popAt(0));
-
-        System.out.println(dinnerPlates.topStack);
-
-        System.out.println(dinnerPlates.popAt(0));
+        System.out.println(queue.deQueue());
+        System.out.println(queue.deQueue());
     }
 }
