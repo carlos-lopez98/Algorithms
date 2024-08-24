@@ -8,4 +8,6 @@ package org.example.stacks;
  * operations such as enqueue, dequeueAny, dequeueDog, and dequeueCat. You may use the built-in LinkedList.
  */
 public class AnimalShelter {
+
+
 }

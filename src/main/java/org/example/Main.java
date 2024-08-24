@@ -112,13 +112,18 @@ public class Main {
 //
 //        System.out.println(dinnerPlates.popAt(0));
 
-        MyQueue queue = new MyQueue();
-        queue.add(1);
-        queue.add(2);
-        queue.add(3);
-        queue.add(4);
+      Stack<Integer> intStack = new Stack<>();
+      intStack.push(10);
+      intStack.push(7);
+      intStack.push(15);
+      intStack.push(22);
+      intStack.push(3);
 
-        System.out.println(queue.deQueue());
-        System.out.println(queue.deQueue());
+
+      SortStack.sort(intStack);
+
+      while(!intStack.isEmpty()){
+          System.out.println(intStack.pop() + " ");
+      }
     }
 }
