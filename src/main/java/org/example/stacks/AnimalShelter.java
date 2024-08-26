@@ -20,7 +20,32 @@ public class AnimalShelter {
     }
 
     public void enQueue(Animal dogCat){
+    if(dogCat == null){
+        return;
+    }
 
+    if(dogCat instanceof Animal.Cat){
+        cats.add(dogCat);
+    }else{
+        dogs.add(dogCat);
+    }
+    }
+
+    public Animal deQueueAny(){
+
+
+
+
+
+
+    }
+
+    public Animal.Cat deQueueCat(){
+
+
+    }
+
+    public Animal.Dog deQueueDog(){
 
 
     }
