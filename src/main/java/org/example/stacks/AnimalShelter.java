@@ -1,5 +1,7 @@
 package org.example.stacks;
 
+import java.util.LinkedList;
+
 /**
  * An animal shelter, which holds only dogs and cats, operates on a strictly "first-in, first-out" bases.
  * People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select
@@ -9,5 +11,17 @@ package org.example.stacks;
  */
 public class AnimalShelter {
 
+    public LinkedList<Animal> cats;
+    public LinkedList<Animal> dogs;
 
+    public AnimalShelter(){
+        cats = new LinkedList<Animal>();
+        dogs = new LinkedList<Animal>();
+    }
+
+    public void enQueue(Animal dogCat){
+
+
+
+    }
 }
