@@ -1,5 +1,7 @@
 package org.example.stacks;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.LinkedList;
 
 /**
@@ -33,20 +35,33 @@ public class AnimalShelter {
 
     public Animal deQueueAny(){
 
+        Animal dequeue = null;
 
+        if(!dogs.isEmpty() && !cats.isEmpty()){
+            LocalDateTime timeArrivedCat = cats.peek().timeArrived;
+            LocalDateTime timeArrivedDog = dogs.peek().timeArrived;
+            dequeue = timeArrivedCat.isAfter(timeArrivedDog) ? dogs.removeFirst() : cats.removeFirst();
+        }else if(!cats.isEmpty()){
+            dequeue = cats.removeFirst();
+        }else if(!dogs.isEmpty()){
+            dequeue = dogs.removeFirst();
+        }
 
-
-
-
+        return dequeue;
     }
 
     public Animal.Cat deQueueCat(){
-
-
+        if(cats.isEmpty()){
+            return null;
+        }
+        return (Animal.Cat) cats.removeFirst();
     }
 
     public Animal.Dog deQueueDog(){
+        if(dogs.isEmpty()){
+            return null;
+        }
 
-
+        return (Animal.Dog) dogs.removeFirst();
     }
 }

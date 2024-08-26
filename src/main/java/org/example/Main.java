@@ -12,6 +12,7 @@ import org.example.stacks.*;
 import org.example.strings.*;
 
 import java.sql.SQLOutput;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -112,18 +113,29 @@ public class Main {
 //
 //        System.out.println(dinnerPlates.popAt(0));
 
-      Stack<Integer> intStack = new Stack<>();
-      intStack.push(10);
-      intStack.push(7);
-      intStack.push(15);
-      intStack.push(22);
-      intStack.push(3);
+//      Stack<Integer> intStack = new Stack<>();
+//      intStack.push(10);
+//      intStack.push(7);
+//      intStack.push(15);
+//      intStack.push(22);
+//      intStack.push(3);
 
+//
+//      SortStack.sort(intStack);
+//
+//      while(!intStack.isEmpty()){
+//          System.out.println(intStack.pop() + " ");
+//      }
 
-      SortStack.sort(intStack);
+        AnimalShelter shelter = new AnimalShelter();
+        Animal animal = new Animal();
 
-      while(!intStack.isEmpty()){
-          System.out.println(intStack.pop() + " ");
-      }
+        Animal.Cat catOne = animal.new Cat(LocalDateTime.now());
+        Animal.Dog dogOne = animal.new Dog(LocalDateTime.now());
+
+        shelter.enQueue(catOne);
+        shelter.enQueue(dogOne);
+
+        System.out.println("Animal in front " + shelter.deQueueAny().getClass());
     }
 }

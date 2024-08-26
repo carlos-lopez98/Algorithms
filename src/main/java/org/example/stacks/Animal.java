@@ -7,18 +7,18 @@ import java.time.LocalDateTime;
  */
 public class Animal {
 
-    LocalDateTime timeArrived;
+    public LocalDateTime timeArrived;
 
     public class Dog extends Animal{
 
-        Dog(LocalDateTime timeArrived){
+        public Dog(LocalDateTime timeArrived){
             this.timeArrived = timeArrived;
         }
     }
 
     public class Cat extends Animal{
 
-        Cat(LocalDateTime timeArrived){
+        public Cat(LocalDateTime timeArrived){
             this.timeArrived = timeArrived;
         }
     }
