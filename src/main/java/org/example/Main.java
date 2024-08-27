@@ -127,15 +127,22 @@ public class Main {
 //          System.out.println(intStack.pop() + " ");
 //      }
 
-        AnimalShelter shelter = new AnimalShelter();
-        Animal animal = new Animal();
+//        AnimalShelter shelter = new AnimalShelter();
+//        Animal animal = new Animal();
+//
+//        Animal.Cat catOne = animal.new Cat(LocalDateTime.now());
+//        Animal.Dog dogOne = animal.new Dog(LocalDateTime.now());
+//
+//        shelter.enQueue(catOne);
+//        shelter.enQueue(dogOne);
+//
+//        System.out.println("Animal in front " + shelter.deQueueAny().getClass());
 
-        Animal.Cat catOne = animal.new Cat(LocalDateTime.now());
-        Animal.Dog dogOne = animal.new Dog(LocalDateTime.now());
+        int[] array = new int[]{20, 35, -15, 7, 55, 1, -22};
+        QuickSort.quickSort(array, 0, array.length);
 
-        shelter.enQueue(catOne);
-        shelter.enQueue(dogOne);
-
-        System.out.println("Animal in front " + shelter.deQueueAny().getClass());
+        for(int num: array){
+            System.out.print(num + " ");
+        }
     }
 }

@@ -26,12 +26,12 @@ public class QuickSort {
         int pivot = input[start];
 
         int i = start;
-        int j = end;
+        int j = end-1;
 
         while (i < j){
 
             //This is an empty loop body, it gets our j index to the first element smaller than the pivot
-            for(;input[j] >= pivot; j--){};
+            for(;i < j && input[j] >= pivot; j--){};
 
             if(i < j){
                 //Since our first element is the pivot point
@@ -40,13 +40,18 @@ public class QuickSort {
             }
 
 
-            for(; input[i] <= pivot; i++);
+            for(; i < j && input[i] <= pivot; i++){};
+
             if(i < j){
                 input[j] = input[i];
             }
         }
 
-        return i;
+        //Once we're outside of the for loop, we've effectively crossed our pivot point, so we put our pivot element
+        //Into the position it's supposed to be in
+        input[j] = pivot;
+
+        return j;
     }
 }
 /**
