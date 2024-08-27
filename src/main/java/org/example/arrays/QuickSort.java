@@ -22,9 +22,31 @@ public class QuickSort {
 
     public static int partition(int[] input, int start, int end){
 
+        //This first element is our pivot and is stored
+        int pivot = input[start];
+
+        int i = start;
+        int j = end;
+
+        while (i < j){
+
+            //This is an empty loop body, it gets our j index to the first element smaller than the pivot
+            for(;input[j] >= pivot; j--){};
+
+            if(i < j){
+                //Since our first element is the pivot point
+                //We don't have to worry about losing the first input[i] as we've saved it in pivot
+                input[i] = input[j];
+            }
 
 
+            for(; input[i] <= pivot; i++);
+            if(i < j){
+                input[j] = input[i];
+            }
+        }
 
+        return i;
     }
 }
 /**
