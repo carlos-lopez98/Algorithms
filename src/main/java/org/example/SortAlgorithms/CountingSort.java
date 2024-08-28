@@ -3,6 +3,42 @@ package org.example.SortAlgorithms;
 public class CountingSort {
 
 
+
+
+    public static void countSort(int[] input, int min, int max){
+
+        int range = (max - min) + 1; //Plus one is so that we include the last element, think if the range was just max
+        //our max element would be left out, think range 0 - 10, if you create an array size ten, you'll leave out 10
+
+        int[] countArray = new int[range];
+
+        //Loops through our input, adding 1 to it's count, in it's respective position
+        for(int i = 0; i < input.length; i++){
+            //This gives us the respective position within the range
+            // IE if range is 50
+            //Elements are 35 - 85, 35 would give us 0 in our new size 50 array
+            countArray[input[i] - min]++;
+        }
+
+        for(int num: countArray){
+            System.out.print(num + " ");
+        };
+
+        //Now that we have the counts of every element from min to max, and they're in the correct order in our countArray
+        //We input them bck into our original input array
+        int j = 0;
+
+        for(int i = 0; i < countArray.length; i++){
+            int element;
+
+            while(countArray[i] > 0){
+                element = i + min;
+                input[j] = element;
+                j++;
+                countArray[i]--;
+            }
+        }
+    }
 }
 /**
  * This Algorithm assumes the elements to be sorted are within a given range.

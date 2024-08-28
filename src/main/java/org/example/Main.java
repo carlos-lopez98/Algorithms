@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.SortAlgorithms.CountingSort;
 import org.example.SortAlgorithms.QuickSort;
 
 
@@ -124,9 +125,9 @@ public class Main {
 //
 //        System.out.println("Animal in front " + shelter.deQueueAny().getClass());
 
-        int[] array = new int[]{20, 35, -15, 7, 55, 1, -22};
-        QuickSort.quickSort(array, 0, array.length);
-
+        int[] array = new int[]{2, 5, 9, 8, 2, 8, 7, 10, 4, 3};
+        CountingSort.countSort(array, 2, 10);
+        System.out.println();
         for(int num: array){
             System.out.print(num + " ");
         }
