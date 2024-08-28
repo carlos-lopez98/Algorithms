@@ -1,20 +1,6 @@
 package org.example;
 
-import org.example.arrays.*;
-import org.example.helper.Pair;
-import org.example.linkedlist.*;
-import org.example.linkedlist.DeleteMiddleNode;
-import org.example.linkedlist.Partition;
-import org.example.practice.*;
-import org.example.practice.MergeSort;
-import org.example.practice.RotateString;
-import org.example.stacks.*;
-import org.example.strings.*;
-
-import java.sql.SQLOutput;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Stack;
+import org.example.SortAlgorithms.QuickSort;
 
 
 public class Main {
