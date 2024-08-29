@@ -16,7 +16,7 @@ public class CountingSort {
         for(int i = 0; i < input.length; i++){
             //This gives us the respective position within the range
             // IE if range is 50
-            //Elements are 35 - 85, 35 would give us 0 in our new size 50 array
+
             countArray[input[i] - min]++;
         }
 
