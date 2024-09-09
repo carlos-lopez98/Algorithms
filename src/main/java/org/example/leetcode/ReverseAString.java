@@ -1,4 +1,4 @@
-package org.example;
+package org.example.leetcode;
 
 /*
 * Given a string S, return the reverse of the string

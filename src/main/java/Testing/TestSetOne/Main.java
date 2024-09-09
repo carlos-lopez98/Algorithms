@@ -1,4 +1,4 @@
-package Testing;
+package Testing.TestSetOne;
 
 import Testing.TestSetOne.*;
 import com.sun.security.jgss.GSSUtil;

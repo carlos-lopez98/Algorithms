@@ -1,4 +1,4 @@
-package org.example;
+package org.example.leetcode;
 
 /*
 * Given a sequence arr[] of size n, Write a function int equilibrium(int[] arr, int n) that returns an

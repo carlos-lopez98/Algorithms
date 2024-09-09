@@ -1,4 +1,4 @@
-package org.example;
+package org.example.leetcode;
 
 /*
 Given an integer x, return true if x is a palindrome, and false otherwise.
