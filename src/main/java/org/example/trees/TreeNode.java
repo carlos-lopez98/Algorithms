@@ -17,6 +17,27 @@ public class TreeNode {
             this.data = data;
         }
 
+        public void insert(int value){
+            if (value == data){
+                return;
+            }
+
+            if(value < data){
+                if(leftChild == null){
+                    value = this.data;
+                }else{
+                    leftChild.insert(value);
+                }
+            }else{
+
+                if(rightChild == null){
+                    value = this.data;
+                }else{
+                    rightChild.insert(value);
+                }
+            }
+        }
+
     public int getData() {
         return data;
     }
