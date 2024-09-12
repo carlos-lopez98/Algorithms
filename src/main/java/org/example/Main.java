@@ -2,8 +2,11 @@ package org.example;
 
 import org.example.SortAlgorithms.CountingSort;
 import org.example.SortAlgorithms.QuickSort;
+import org.example.SortAlgorithms.RadixSort;
 import org.example.linkedlist.MergeTwoSortedLists;
 import org.example.practice.Node;
+
+import java.util.Arrays;
 
 
 public class Main {
@@ -134,27 +137,35 @@ public class Main {
 //            System.out.print(num + " ");
 //        }
 
-        Node one = new Node(1);
-        Node two = new Node(2);
-        Node three = new Node(4);
+//        Node one = new Node(1);
+//        Node two = new Node(2);
+//        Node three = new Node(4);
+//
+//        one.next = two;
+//        two.next = three;
+//
+//        Node secondOne = new Node(1);
+//        Node secondTwo = new Node(3);
+//        Node secondThree = new Node(4);
+//
+//        secondOne.next = secondTwo;
+//        secondTwo.next = secondThree;
+//
+//        MergeTwoSortedLists mergeAlgo = new MergeTwoSortedLists();
+//        Node newList = mergeAlgo.mergeTwoLists(one, secondOne);
+//
+//
+//        while(newList != null){
+//            System.out.print(newList.data + " ");
+//            newList = newList.next;
+//
+//
+//        }
 
-        one.next = two;
-        two.next = three;
+        int[] radixArray = {4725,4586,1330,8792,1594,5729};
 
-        Node secondOne = new Node(1);
-        Node secondTwo = new Node(3);
-        Node secondThree = new Node(4);
+        RadixSort.radSort(radixArray,10,4);
 
-        secondOne.next = secondTwo;
-        secondTwo.next = secondThree;
-
-        MergeTwoSortedLists mergeAlgo = new MergeTwoSortedLists();
-        Node newList = mergeAlgo.mergeTwoLists(one, secondOne);
-
-
-        while(newList != null){
-            System.out.print(newList.data + " ");
-            newList = newList.next;
-        }
+        System.out.println(Arrays.toString(radixArray));
     }
 }
