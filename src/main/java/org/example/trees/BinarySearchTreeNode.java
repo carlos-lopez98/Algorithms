@@ -38,6 +38,19 @@ public class BinarySearchTreeNode {
         }
     }
 
+    public void traverseInOrder(){
+        if(leftChild != null){
+            leftChild.traverseInOrder();
+        }
+
+        System.out.print("Data = " + data + ", ");
+
+        if(rightChild != null){
+            rightChild.traverseInOrder();
+        }
+
+    }
+
     //How would you implement a method to return a node, if it's data is  equal to a certain value?
     public BinarySearchTreeNode getValue(int value){
         if(this.data == value){

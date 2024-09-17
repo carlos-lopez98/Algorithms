@@ -5,6 +5,8 @@ import org.example.SortAlgorithms.QuickSort;
 import org.example.SortAlgorithms.RadixSort;
 import org.example.linkedlist.MergeTwoSortedLists;
 import org.example.practice.Node;
+import org.example.trees.BinarySearchTree;
+import org.example.trees.Tree;
 
 import java.util.Arrays;
 
@@ -162,10 +164,24 @@ public class Main {
 //
 //        }
 
-        int[] radixArray = {4725,4586,1330,8792,1594,5729};
+//        int[] radixArray = {4725,4586,1330,8792,1594,5729};
+//
+//        RadixSort.radSort(radixArray,10,4);
+//
+//        System.out.println(Arrays.toString(radixArray));
 
-        RadixSort.radSort(radixArray,10,4);
+        BinarySearchTree intTree = new BinarySearchTree();
+        intTree.insert(25);
+        intTree.insert(20);
+        intTree.insert(15);
+        intTree.insert(27);
+        intTree.insert(30);
+        intTree.insert(29);
+        intTree.insert(26);
+        intTree.insert(22);
+        intTree.insert(32);
 
-        System.out.println(Arrays.toString(radixArray));
+        intTree.traverseInOrder();
+
     }
 }
