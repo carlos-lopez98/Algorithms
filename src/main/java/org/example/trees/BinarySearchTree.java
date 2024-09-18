@@ -15,4 +15,9 @@ public class BinarySearchTree {
     public void traverseInOrder(){
         root.traverseInOrder();
     }
+
+    public BinarySearchTreeNode getValue(int value){
+
+        return root.getValue(value);
+    }
 }

@@ -6,6 +6,7 @@ import org.example.SortAlgorithms.RadixSort;
 import org.example.linkedlist.MergeTwoSortedLists;
 import org.example.practice.Node;
 import org.example.trees.BinarySearchTree;
+import org.example.trees.BinarySearchTreeNode;
 import org.example.trees.Tree;
 
 import java.util.Arrays;
@@ -181,7 +182,10 @@ public class Main {
         intTree.insert(22);
         intTree.insert(32);
 
-        intTree.traverseInOrder();
+//        intTree.traverseInOrder();
 
+        System.out.println(intTree.getValue(22).getData());
+        System.out.println(intTree.getValue(32).getData());
+        System.out.println(intTree.getValue(16));
     }
 }

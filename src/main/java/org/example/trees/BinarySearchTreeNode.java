@@ -51,23 +51,17 @@ public class BinarySearchTreeNode {
 
     }
 
-    //How would you implement a method to return a node, if it's data is  equal to a certain value?
+    //    //How would you implement a method to return a node, if it's data is equal to a certain value?
     public BinarySearchTreeNode getValue(int value){
-        if(this.data == value){
+
+        if(value == data){
             return this;
         }
 
-        //When traversing left or right, we should account for null left child and right child
-
-        if(this.data < value){
-            if(rightChild != null){
-                rightChild.getValue(value);
-
-            }
-        }else{
-            if(leftChild != null){
-                leftChild.getValue(value);
-            }
+        if(value < data && leftChild != null){
+            return leftChild.getValue(value);
+        }else if(rightChild != null){
+            return rightChild.getValue(value);
         }
 
         return null;
