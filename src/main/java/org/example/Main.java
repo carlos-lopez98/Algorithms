@@ -192,5 +192,7 @@ public class Main {
         System.out.println(intTree.getMin());
         System.out.println(intTree.getMax());
 
+
+
     }
 }
