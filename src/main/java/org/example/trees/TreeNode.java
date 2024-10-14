@@ -52,6 +52,25 @@ public class TreeNode {
             }
         }
 
+
+        public TreeNode get(int value){
+
+            if (value == this.data){
+                return this;
+            }else if(value < data){
+                if(this.getLeftChild() != null){
+                    this.getLeftChild().get(value);
+                }
+            }else{
+                if(this.getRightChild() != null){
+                    this.getRightChild().get(value);
+                }
+            }
+
+            //If the value isn't in the tree it'll return null
+            return null;
+        }
+
     public int getData() {
         return data;
     }

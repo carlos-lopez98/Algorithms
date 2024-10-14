@@ -57,7 +57,6 @@ public class BinarySearchTreeNode {
         if(value == data){
             return this;
         }
-
         if(value < data && leftChild != null){
             return leftChild.getValue(value);
         }else if(rightChild != null){

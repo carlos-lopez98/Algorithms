@@ -182,10 +182,12 @@ public class Main {
         intTree.insert(22);
         intTree.insert(32);
 
-        intTree.traverseInOrder();
 
-//        System.out.println(intTree.getValue(22).getData());
-//        System.out.println(intTree.getValue(32).getData());
-//        System.out.println(intTree.getValue(16));
+
+        System.out.println(intTree.getValue(22).getData());
+        System.out.println(intTree.getValue(32).getData());
+        System.out.println(intTree.getValue(16).getData());
+
+
     }
 }

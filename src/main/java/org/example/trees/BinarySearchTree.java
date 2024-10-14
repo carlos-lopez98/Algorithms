@@ -20,4 +20,8 @@ public class BinarySearchTree {
 
         return root.getValue(value);
     }
+
+    public BinarySearchTreeNode get(int value){
+        return root.getValue(value);
+    }
 }
