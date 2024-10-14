@@ -24,4 +24,12 @@ public class BinarySearchTree {
     public BinarySearchTreeNode get(int value){
         return root.getValue(value);
     }
+
+    public int getMin(){
+        return root.min();
+    }
+
+    public int getMax(){
+        return root.max();
+    }
 }

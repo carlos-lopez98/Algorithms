@@ -183,11 +183,14 @@ public class Main {
         intTree.insert(32);
 
 
+//
+//        System.out.println(intTree.getValue(22).getData());
+//        System.out.println(intTree.getValue(32).getData());
+//        System.out.println(intTree.getValue(16).getData());
 
-        System.out.println(intTree.getValue(22).getData());
-        System.out.println(intTree.getValue(32).getData());
-        System.out.println(intTree.getValue(16).getData());
 
+        System.out.println(intTree.getMin());
+        System.out.println(intTree.getMax());
 
     }
 }
