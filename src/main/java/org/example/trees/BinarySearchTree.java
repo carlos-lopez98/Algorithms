@@ -64,12 +64,15 @@ public class BinarySearchTree {
         else{
             //If the current node is a leaf, then the rightchild will be null
             //If it's a node with only a right child, then the rightchild will replace the node
+            //This covers cases where the node to delete has 0 or 1 children
             if(subtreeRoot.getLeftChild() == null){
-                subtreeRoot.getRightChild();
+                return subtreeRoot.getRightChild();
+            }else if(subtreeRoot.getRightChild() == null){
+                return subtreeRoot.getLeftChild();
             }
 
         }
 
-        return null;
+        return subtreeRoot;
     }
 }
