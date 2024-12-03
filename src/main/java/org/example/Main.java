@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.SortAlgorithms.BubbleSort;
 import org.example.SortAlgorithms.CountingSort;
 import org.example.SortAlgorithms.QuickSort;
 import org.example.SortAlgorithms.RadixSort;
@@ -9,6 +10,7 @@ import org.example.trees.BinarySearchTree;
 import org.example.trees.BinarySearchTreeNode;
 import org.example.trees.Tree;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 
 
@@ -21,6 +23,13 @@ public class Main {
                 {8, 9, 10, 11},
                 {12, 13, 14, 15}
         };
+
+
+        int[] newArray = {5, 3, 15, 10, 11, 7, 0};
+        BubbleSort.sortAscendingLeftToRight(newArray);
+        for(int i: newArray){
+            System.out.println(i + " ");
+        }
 
 
 //        Node head = new Node(1);
@@ -170,27 +179,27 @@ public class Main {
 //        RadixSort.radSort(radixArray,10,4);
 //
 //        System.out.println(Arrays.toString(radixArray));
-
-        BinarySearchTree intTree = new BinarySearchTree();
-        intTree.insert(25);
-        intTree.insert(20);
-        intTree.insert(15);
-        intTree.insert(27);
-        intTree.insert(30);
-        intTree.insert(29);
-        intTree.insert(26);
-        intTree.insert(22);
-        intTree.insert(32);
-
-
 //
-//        System.out.println(intTree.getValue(22).getData());
-//        System.out.println(intTree.getValue(32).getData());
-//        System.out.println(intTree.getValue(16).getData());
-
-
-        System.out.println(intTree.getMin());
-        System.out.println(intTree.getMax());
+//        BinarySearchTree intTree = new BinarySearchTree();
+//        intTree.insert(25);
+//        intTree.insert(20);
+//        intTree.insert(15);
+//        intTree.insert(27);
+//        intTree.insert(30);
+//        intTree.insert(29);
+//        intTree.insert(26);
+//        intTree.insert(22);
+//        intTree.insert(32);
+//
+//
+////
+////        System.out.println(intTree.getValue(22).getData());
+////        System.out.println(intTree.getValue(32).getData());
+////        System.out.println(intTree.getValue(16).getData());
+//
+//
+//        System.out.println(intTree.getMin());
+//        System.out.println(intTree.getMax());
 
 
 
