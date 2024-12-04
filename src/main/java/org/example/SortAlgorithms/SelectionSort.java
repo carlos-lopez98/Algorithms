@@ -24,20 +24,16 @@ public class SelectionSort {
 
 
     public static void selectionSortDescendingLeftToRight(int[] intArray) {
+        for(int i = 0; i < intArray.length; i++){
+            int largestIndex = intArray.length-1;
 
-        for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            int i = 1;
-            int min = 0;
-
-            while (i <= lastUnsortedIndex) {
-               if(intArray[i] < intArray[min]){
-                   min = i;
+            for(int j = intArray.length-1; j >= i; j--){
+               if(j == i){
+                   swap(intArray,largestIndex,j);
+               }else if(intArray[j] > intArray[largestIndex]) {
+                   largestIndex = j;
                }
-                i++;
             }
-            //Swap will only swap, when the index values don't equal if they do equal it'll return
-            //So if intArray[min] == intArray[unSortedIndex] -- no need to swap, it's already in correct position
-            swap(intArray, min, lastUnsortedIndex);
         }
     }
 

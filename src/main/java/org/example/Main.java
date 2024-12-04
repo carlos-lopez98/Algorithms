@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.SortAlgorithms.BubbleSort;
-import org.example.SortAlgorithms.CountingSort;
-import org.example.SortAlgorithms.QuickSort;
-import org.example.SortAlgorithms.RadixSort;
+import org.example.SortAlgorithms.*;
 import org.example.linkedlist.MergeTwoSortedLists;
 import org.example.practice.Node;
 import org.example.trees.BinarySearchTree;
@@ -26,11 +23,10 @@ public class Main {
 
 
         int[] newArray = {5, 3, 15, 10, 11, 7, 0};
-        BubbleSort.sortAscendingLeftToRight(newArray);
-        for(int i: newArray){
-            System.out.println(i + " ");
+       SelectionSort.selectionSortDescendingLeftToRight(newArray);
+        for(int num: newArray){
+            System.out.println(num +" ");
         }
-
 
 //        Node head = new Node(1);
 //        Node one = new Node(2);
