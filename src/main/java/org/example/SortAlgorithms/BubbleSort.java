@@ -46,7 +46,13 @@ public class BubbleSort {
     }
 
     public static void sortAscendingRightToLeft(int[] intArray) {
-
+        for(int outer = 0; outer < intArray.length - 1; outer++){
+            for(int inner = intArray.length-1; inner > outer; inner--){
+             if(intArray[inner] > intArray[inner-1]){
+                 swap(intArray,inner,inner-1);
+             }
+            }
+        }
     }
 
     private static void swap(int[] intArray, int currentPosition, int nextPosition) {

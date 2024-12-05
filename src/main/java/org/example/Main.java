@@ -23,7 +23,11 @@ public class Main {
 
 
         int[] newArray = {5, 3, 15, 10, 11, 7, 0};
-       SelectionSort.selectionSortDescendingLeftToRight(newArray);
+        //{ 5, 3, 0, 10, 11, 7, 15}
+        //{ 5, 3, 0, 10, 7, 11, 15}
+        //{5, 3, 0, 7, 10, 11, 15}
+        //
+       BubbleSort.sortAscendingRightToLeft(newArray);
         for(int num: newArray){
             System.out.println(num +" ");
         }
