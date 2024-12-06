@@ -65,7 +65,23 @@ public class InsertionSort {
         }
     }
 
+   // int[] newArray = {5, 3, 15, 10, 11, 7, 0};
 
+    public static void sortDescendingSortLeft(int[] arr){
+        //Sorted partition will be on the left
+       for(int sortedWindowPartition = 0; sortedWindowPartition < arr.length - 1; sortedWindowPartition++){
+           int unsortedIndex = sortedWindowPartition + 1;
+           int sortedPartitionPointer = sortedWindowPartition;
+
+           while (sortedPartitionPointer >= 0 && arr[unsortedIndex] > arr[sortedPartitionPointer]) {
+               int temp = arr[unsortedIndex];
+               arr[unsortedIndex] = arr[sortedPartitionPointer];
+               arr[sortedPartitionPointer] = temp;
+            unsortedIndex--;
+            sortedPartitionPointer--;
+           }
+       }
+    }
     //TODO implement descending order with sorted on left and unsorted on right
     //TODO implement ascending order, unsorted on left side, and sorted on right
     //TODO implement descending order, unsorted on left side, and sorted on right
