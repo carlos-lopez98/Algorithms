@@ -27,7 +27,7 @@ public class Main {
         //{ 5, 3, 0, 10, 7, 11, 15}
         //{5, 3, 0, 7, 10, 11, 15}
         //
-       InsertionSort.sortDescendingSortLeft(newArray);
+       InsertionSort.sortAscendingUnsortLeftSortRight(newArray);
         for(int num: newArray){
             System.out.println(num +" ");
         }

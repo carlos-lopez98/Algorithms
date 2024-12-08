@@ -67,6 +67,7 @@ public class InsertionSort {
 
    // int[] newArray = {5, 3, 15, 10, 11, 7, 0};
 
+    //TODO implement descending order with sorted on left and unsorted on right
     public static void sortDescendingSortLeft(int[] arr){
         //Sorted partition will be on the left
        for(int sortedWindowPartition = 0; sortedWindowPartition < arr.length - 1; sortedWindowPartition++){
@@ -82,8 +83,40 @@ public class InsertionSort {
            }
        }
     }
-    //TODO implement descending order with sorted on left and unsorted on right
+
+
     //TODO implement ascending order, unsorted on left side, and sorted on right
+    public static void sortAscendingUnsortLeftSortRight(int[] arr){
+        //Outer loop for sorted partition
+        for(int sortedPartition = arr.length - 1; sortedPartition > 0; sortedPartition--){
+            //You'll have an element outside of the sorted window you'll be using to compareTo the elements inside the
+            //Sorted window
+            int compareTo = sortedPartition - 1;
+
+            //Then you need an iterator inside the sortedwindow, to use as the compareTo position
+            int innerIterator = sortedPartition;
+
+
+            //int[] newArray = {5, 3, 15, 10, 11, 7, 0};
+
+
+            //This is the iterating window
+            //If the inneriterator reaches the length of the array end
+            //but keep going if the compareTo value and the iterator position meet a certain constraint
+            while(innerIterator < arr.length && arr[compareTo] > arr[innerIterator]){
+
+                //Basically this block is just swapping pushing elements as the larger element is put in the correct
+                //Position
+                int temp = arr[compareTo];
+                arr[compareTo] = arr[innerIterator];
+                arr[innerIterator] = temp;
+
+                //Both iterators need to be increased as they're moving left to right to make the comparisons
+                innerIterator++;
+                compareTo++;
+            };
+        }
+    }
     //TODO implement descending order, unsorted on left side, and sorted on right
     //TODO implement using two for loops instead of while loop
 }
