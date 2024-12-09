@@ -34,14 +34,12 @@ public class BubbleSort {
 
     public static void sortAscendingLeftToRight(int[] intArray) {
 
-        //Outer Loop to keep track of the window
-        for(int i = intArray.length - 1; i > 0; i--){
-         for (int j = 0; j < i; j++){
-             System.out.println("J = " + j);
-          if(intArray[j] > intArray[j+1]){
-              swap(intArray, j, j+1);
-          }
-         }
+        for(int sorted = intArray.length-1; sorted > 0 ; sorted--){
+            for(int unsorted = 0; unsorted < sorted; unsorted++){
+                if(intArray[unsorted] > intArray[unsorted+1]){
+                 swap(intArray, unsorted, unsorted+1);
+                }
+            }
         }
     }
 
