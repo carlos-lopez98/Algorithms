@@ -118,6 +118,30 @@ public class InsertionSort {
         }
     }
     //TODO implement descending order, unsorted on left side, and sorted on right
+
+    public static void sortDescendingUnsortLeftSortRight(int[] arr){
+
+        //Outer loop for sorted partition
+        //Inner loop for unsorted partition
+
+        //Variable to hold the compareTo element
+        //Variable to iterate within the sorted partition
+        //Variable to perform the swapping - so temp variable
+
+        for(int sorted = arr.length - 1; sorted > 0; sorted--){
+            int compareTo = sorted - 1;
+            int iterator = sorted;
+            while(iterator <= arr.length && arr[compareTo] < arr[iterator]){
+                int temp = arr[compareTo];
+                arr[compareTo] = arr[iterator];
+                arr[iterator] = temp;
+
+                iterator++;
+                compareTo++;
+            }
+        }
+    }
+
     //TODO implement using two for loops instead of while loop
 }
 
