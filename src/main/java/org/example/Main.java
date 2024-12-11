@@ -13,24 +13,24 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-
-        int[][] matrix = {
-                {0, 1, 2, 3},
-                {4, 5, 6, 7},
-                {8, 9, 10, 11},
-                {12, 13, 14, 15}
-        };
-
-
-        int[] newArray = {5, 3, 15, 10, 11, 7, 0};
-        //{ 5, 3, 0, 10, 11, 7, 15}
-        //{ 5, 3, 0, 10, 7, 11, 15}
-        //{5, 3, 0, 7, 10, 11, 15}
-        //
-       BubbleSort.sortAscendingLeftToRight(newArray);
-        for(int num: newArray){
-            System.out.println(num +" ");
-        }
+//
+//        int[][] matrix = {
+//                {0, 1, 2, 3},
+//                {4, 5, 6, 7},
+//                {8, 9, 10, 11},
+//                {12, 13, 14, 15}
+//        };
+//
+//
+//        int[] newArray = {5, 3, 15, 10, 11, 7, 0};
+//        //{ 5, 3, 0, 10, 11, 7, 15}
+//        //{ 5, 3, 0, 10, 7, 11, 15}
+//        //{5, 3, 0, 7, 10, 11, 15}
+//        //
+//       BubbleSort.sortAscendingLeftToRight(newArray);
+//        for(int num: newArray){
+//            System.out.println(num +" ");
+//        }
 
 //        Node head = new Node(1);
 //        Node one = new Node(2);
@@ -202,6 +202,16 @@ public class Main {
 //        System.out.println(intTree.getMax());
 
 
+       BinarySearchTree tree = new BinarySearchTree();
+       tree.insert(25);
+       tree.insert(20);
+       tree.insert(15);
+       tree.insert(27);
+       tree.insert(30);
+       tree.insert(29);
+       tree.insert(26);
+       tree.insert(22);
+       tree.insert(32);
 
     }
 }

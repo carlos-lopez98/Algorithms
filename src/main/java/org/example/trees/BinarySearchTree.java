@@ -2,8 +2,17 @@ package org.example.trees;
 
 public class BinarySearchTree {
 
-    public BinarySearchTreeNode root;
+    private BinarySearchTreeNode root;
 
+    public BinarySearchTree(BinarySearchTreeNode root){
+        this.root = root;
+    }
+
+    public BinarySearchTree(){
+    }
+
+    //If tree is empty, then the root becomes the data
+    //Else we call insert, to see where the data will be inserted
     public void insert(int data){
         if(root == null){
             root = new BinarySearchTreeNode(data);
@@ -12,67 +21,11 @@ public class BinarySearchTree {
         }
     }
 
-    public void traverseInOrder(){
-        root.traverseInOrder();
+    public BinarySearchTreeNode getRoot() {
+        return root;
     }
 
-    public BinarySearchTreeNode getValue(int value){
-
-        return root.getValue(value);
-    }
-
-    public BinarySearchTreeNode get(int value){
-        return root.getValue(value);
-    }
-
-    public int getMin(){
-
-        if(root == null){
-            return Integer.MIN_VALUE;
-        }
-
-        return root.min();
-    }
-
-    public int getMax(){
-        if(root == null){
-            return Integer.MAX_VALUE;
-        }
-
-        return root.max();
-    }
-
-    public void delete(int value){
-        root = delete(root, value);
-    }
-
-    private BinarySearchTreeNode delete(BinarySearchTreeNode subtreeRoot, int value){
-
-        if(subtreeRoot == null){
-            return null;
-        }
-        //If the value is less than the root we're searching
-        //Replace the result of the
-        if(value < subtreeRoot.getData()){
-            subtreeRoot.setLeftChild(delete(subtreeRoot.getLeftChild(), value));
-        }
-
-        else if(value > subtreeRoot.getData()){
-            subtreeRoot.setRightChild(delete(subtreeRoot.getRightChild(), value));
-        }
-
-        else{
-            //If the current node is a leaf, then the rightchild will be null
-            //If it's a node with only a right child, then the rightchild will replace the node
-            //This covers cases where the node to delete has 0 or 1 children
-            if(subtreeRoot.getLeftChild() == null){
-                return subtreeRoot.getRightChild();
-            }else if(subtreeRoot.getRightChild() == null){
-                return subtreeRoot.getLeftChild();
-            }
-
-        }
-
-        return subtreeRoot;
+    public void setRoot(BinarySearchTreeNode root) {
+        this.root = root;
     }
 }

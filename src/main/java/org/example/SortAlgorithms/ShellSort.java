@@ -72,6 +72,6 @@ public class ShellSort {
  * We store the element we're comparing so we don't accidentally compare the wrong values.
  * <p>
  * Some key things to note, are how we're shifting elements by gap in the while loop, we save our compareTo value
- * Into a variable so we don't lose it/ we can keep comparing the new values too the old value and that we have the
+ * Into a variable so we don't lose it/ we can keep comparing the new values to the old value and that we have the
  * Insertion point after the while loop handling the comparisons/ shifting
  */
