@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Map;
 
 /**
-*
 * Given an array of integers nums and an integer target, return indices of the
 * two numbers such that they add up to target.
 * You may assume that each input would have exactly one solution,
@@ -20,13 +19,10 @@ public class TwoSum {
     // 6 -- target
     //[1,2] == [2,4] -- return positions not the numbers
 
-    public int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
 
-        for(int i  = 0; i < nums.length; i++){
 
-        }
-        return null;
-    }
+
 }
 
 

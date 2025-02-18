@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.SortAlgorithms.*;
+import org.example.leetcode.TwoSum;
 import org.example.linkedlist.MergeTwoSortedLists;
 import org.example.practice.Node;
 import org.example.trees.BinarySearchTree;
@@ -201,17 +202,26 @@ public class Main {
 //        System.out.println(intTree.getMin());
 //        System.out.println(intTree.getMax());
 
+//
+//       BinarySearchTree tree = new BinarySearchTree();
+//       tree.insert(25);
+//       tree.insert(20);
+//       tree.insert(15);
+//       tree.insert(27);
+//       tree.insert(30);
+//       tree.insert(29);
+//       tree.insert(26);
+//       tree.insert(22);
+//       tree.insert(32);
 
-       BinarySearchTree tree = new BinarySearchTree();
-       tree.insert(25);
-       tree.insert(20);
-       tree.insert(15);
-       tree.insert(27);
-       tree.insert(30);
-       tree.insert(29);
-       tree.insert(26);
-       tree.insert(22);
-       tree.insert(32);
+       int[] test = new int[]{5,2,4,5,10};
+       int target = 6;
+
+      int[] indices =  TwoSum.twoSum(test, target);
+
+      for(int i : indices){
+         System.out.print(i + " ");
+      }
 
     }
 }
