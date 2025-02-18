@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.SortAlgorithms.*;
+import org.example.leetcode.BestTimetoBuyandSellStocks;
 import org.example.leetcode.TwoSum;
 import org.example.linkedlist.MergeTwoSortedLists;
 import org.example.practice.Node;
@@ -214,14 +215,7 @@ public class Main {
 //       tree.insert(22);
 //       tree.insert(32);
 
-       int[] test = new int[]{5,2,4,5,10};
-       int target = 6;
 
-      int[] indices =  TwoSum.twoSum(test, target);
-
-      for(int i : indices){
-         System.out.print(i + " ");
-      }
-
+       System.out.println(BestTimetoBuyandSellStocks.returnMaxProfit(new int[]{7,6,4,3,1}));
     }
 }
