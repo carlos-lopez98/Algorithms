@@ -3,6 +3,7 @@ package org.example;
 import org.example.SortAlgorithms.*;
 import org.example.leetcode.BestTimetoBuyandSellStocks;
 import org.example.leetcode.TwoSum;
+import org.example.leetcode.ValidParentheses;
 import org.example.linkedlist.MergeTwoSortedLists;
 import org.example.practice.Node;
 import org.example.trees.BinarySearchTree;
@@ -217,5 +218,12 @@ public class Main {
 
 
        System.out.println(BestTimetoBuyandSellStocks.returnMaxProfit(new int[]{7,6,4,3,1}));
+
+        System.out.println(ValidParentheses.isValid("()[]{}"));
+        System.out.println(ValidParentheses.isValid("()"));
+        System.out.println(ValidParentheses.isValid("(())"));
+        System.out.println(ValidParentheses.isValid("{[]}"));
+        System.out.println(ValidParentheses.isValid("[}"));
+        System.out.println(ValidParentheses.isValid("(())("));
     }
 }
