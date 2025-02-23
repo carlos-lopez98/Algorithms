@@ -268,6 +268,14 @@ public class Main {
         tree.insert(22);
         tree.insert(32);
 
+        System.out.println("Print PreOrder");
+        tree.printPreOrder();
+        System.out.println();
+        System.out.println("Print PostOrder");
+        tree.printPostOrder();
+        System.out.println();
+        System.out.println("Print InOrder");
         tree.printInOrder();
+
     }
 }

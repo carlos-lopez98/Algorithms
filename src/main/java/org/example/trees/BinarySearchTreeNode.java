@@ -41,6 +41,36 @@ public class BinarySearchTreeNode {
         }
     }
 
+    //Post order traversal is left -> right -> root
+    public void printPostOrder (BinarySearchTreeNode node){
+
+        if(node.leftChild != null){
+            printPostOrder(node.leftChild);
+        }
+
+        if(node.rightChild != null){
+            printPostOrder(node.rightChild);
+        }
+
+        System.out.print(node.data + " ");
+    }
+
+    public void printPreOrder(BinarySearchTreeNode node){
+
+        if(node != null){
+            System.out.print(node.data + " ");
+        }
+
+        if(node.leftChild != null){
+            printPreOrder(node.leftChild);
+        }
+
+        if(node.rightChild != null){
+            printPreOrder(node.rightChild);
+        }
+    }
+
+
     public BinarySearchTreeNode(int data){
         this.data = data;
     }

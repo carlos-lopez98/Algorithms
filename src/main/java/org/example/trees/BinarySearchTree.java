@@ -27,6 +27,14 @@ public class BinarySearchTree {
 
     }
 
+    public void printPreOrder(){
+        root.printPreOrder(root);
+    }
+
+    public void printPostOrder(){
+        root.printPostOrder(root);
+    }
+
     public BinarySearchTreeNode getRoot() {
         return root;
     }
