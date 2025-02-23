@@ -7,22 +7,28 @@ public class BinarySearchTreeNode {
     private BinarySearchTreeNode rightChild;
 
 
+    //This insertion method does not automatically rebalance the tree
     public void insert(int data){
-        if(this.data == data){
+
+        //Handles duplicates by just ignoring them
+        if(data == this.data){
             return;
-        }else if(data > this.data){
-            if(rightChild == null){
-                rightChild = new BinarySearchTreeNode(data);
+        }
+
+        if(data < this.data){
+            if(this.leftChild == null){
+                this.leftChild = new BinarySearchTreeNode(data);
             }else{
-                rightChild.insert(data);
+                this.leftChild.insert(data);
             }
-        }else {
-            if(leftChild == null){
-                leftChild = new BinarySearchTreeNode(data);
+        }else{
+            if(this.rightChild == null){
+                this.rightChild = new BinarySearchTreeNode(data);
             }else{
-                leftChild.insert(data);
+                this.rightChild.insert(data);
             }
         }
+
     }
 
     public void printInOrder( BinarySearchTreeNode node) {
