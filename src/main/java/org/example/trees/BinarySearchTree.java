@@ -35,6 +35,9 @@ public class BinarySearchTree {
         root.printPostOrder(root);
     }
 
+    public void printBFSOrder(){
+        root.printBFSOrder(root);
+    }
     public BinarySearchTreeNode getRoot() {
         return root;
     }

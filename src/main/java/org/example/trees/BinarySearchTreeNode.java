@@ -1,5 +1,8 @@
 package org.example.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTreeNode {
 
     private int data;
@@ -76,6 +79,38 @@ public class BinarySearchTreeNode {
         }
     }
 
+    public void printBFSOrder(BinarySearchTreeNode root){
+        //Queue is meant to store items in the order we want
+        //So it'll go root -> left child -> right child
+       Queue<BinarySearchTreeNode> level = new LinkedList();
+        level.add(root);
+
+        int depth = 0;
+
+
+        while (!level.isEmpty()){
+            int length = level.size();
+
+
+            System.out.println("Current Level " + depth);
+            for(int i = 0; i < length; i++){
+                BinarySearchTreeNode current = level.remove();
+
+                System.out.print(current.data + " ");
+
+                if(current.leftChild != null){
+                    level.add(current.leftChild);
+                }
+
+                if(current.rightChild != null){
+                    level.add(current.rightChild);
+                }
+            }
+
+            System.out.println();
+            depth++;
+        }
+    }
 
     public BinarySearchTreeNode(int data){
         this.data = data;
