@@ -1,10 +1,7 @@
 package org.example;
 
 import org.example.SortAlgorithms.*;
-import org.example.leetcode.BestTimetoBuyandSellStocks;
-import org.example.leetcode.MergeTwoSortedLists;
-import org.example.leetcode.TwoSum;
-import org.example.leetcode.ValidParentheses;
+import org.example.leetcode.*;
 import org.example.practice.Node;
 import org.example.trees.BinarySearchTree;
 import org.example.trees.BinarySearchTreeNode;
@@ -204,17 +201,8 @@ public class Main {
 //        System.out.println(intTree.getMin());
 //        System.out.println(intTree.getMax());
 
-//
-//       BinarySearchTree tree = new BinarySearchTree();
-//       tree.insert(25);
-//       tree.insert(20);
-//       tree.insert(15);
-//       tree.insert(27);
-//       tree.insert(30);
-//       tree.insert(29);
-//       tree.insert(26);
-//       tree.insert(22);
-//       tree.insert(32);
+
+
 
 
 //       System.out.println(BestTimetoBuyandSellStocks.returnMaxProfit(new int[]{7,6,4,3,1}));
@@ -231,27 +219,55 @@ public class Main {
          * Test for MergedTwoSortedLists
          */
 
-        Node head = new Node(1);
-        Node one = new Node(2);
-        Node two = new Node(3);
-        Node three = new Node(4);
-        Node four = new Node(5);
+//        Node head = new Node(1);
+//        Node one = new Node(2);
+//        Node two = new Node(3);
+//        Node three = new Node(4);
+//        Node four = new Node(5);
+//
+//        Node headTwo = new Node(15);
+//        Node seven = new Node(17);
+//        headTwo.next = seven; // 15 -> 17 -> 4 -> 5
+//
+//        head.next = one; // 1 -> 2 -> 3 -> 4 -> 5
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//
+//        Node newList = MergeTwoSortedLists.mergeTwoLists(headTwo, head);
+//
+//        while(newList != null){
+//            System.out.println(newList.data + " ");
+//            newList = newList.next;
+//        }
 
-        Node headTwo = new Node(15);
-        Node seven = new Node(17);
-        headTwo.next = seven; // 15 -> 17 -> 4 -> 5
+        /**
+         * Test for ValidPalindrome
+         */
 
-        head.next = one; // 1 -> 2 -> 3 -> 4 -> 5
-        one.next = two;
-        two.next = three;
-        three.next = four;
+//        String one = "A man, a plan, a canal: Panama";
+//        String two = "race a car";
+//        String three = " ";
+//
+//        System.out.println(ValidPalindrome.checkIfPalindrome(one));
+//        System.out.println(ValidPalindrome.checkIfPalindrome(two));
+//        System.out.println( ValidPalindrome.checkIfPalindrome(three));
 
-        Node newList = MergeTwoSortedLists.mergeTwoLists(headTwo, head);
+        /**
+         * Test Area for Binary Search Trees
+         */
 
-        while(newList != null){
-            System.out.println(newList.data + " ");
-            newList = newList.next;
-        }
+        BinarySearchTree tree = new BinarySearchTree();
+        tree.insert(25);
+        tree.insert(20);
+        tree.insert(15);
+        tree.insert(27);
+        tree.insert(30);
+        tree.insert(29);
+        tree.insert(26);
+        tree.insert(22);
+        tree.insert(32);
 
+        tree.printInOrder();
     }
 }

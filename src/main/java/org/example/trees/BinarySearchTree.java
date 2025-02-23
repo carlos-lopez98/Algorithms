@@ -21,6 +21,12 @@ public class BinarySearchTree {
         }
     }
 
+    public void printInOrder(){
+
+        root.printInOrder(root);
+
+    }
+
     public BinarySearchTreeNode getRoot() {
         return root;
     }

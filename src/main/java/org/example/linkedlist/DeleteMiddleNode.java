@@ -15,7 +15,6 @@ import org.example.practice.Node;
  */
 public class DeleteMiddleNode {
 
-
     public static void deleteNode(Node node) {
         if (node == null) {
             return;

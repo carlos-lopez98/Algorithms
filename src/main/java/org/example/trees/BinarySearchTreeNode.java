@@ -25,6 +25,22 @@ public class BinarySearchTreeNode {
         }
     }
 
+    public void printInOrder( BinarySearchTreeNode node) {
+
+        //Goes all the way down the left subtree
+
+        if(node.leftChild != null){
+            printInOrder(node.leftChild);
+        }
+
+        //Then prints
+        System.out.print(node.data + " ");
+
+        if(node.rightChild != null){
+            printInOrder(node.rightChild);
+        }
+    }
+
     public BinarySearchTreeNode(int data){
         this.data = data;
     }
@@ -52,4 +68,6 @@ public class BinarySearchTreeNode {
     public void setRightChild(BinarySearchTreeNode rightChild) {
         this.rightChild = rightChild;
     }
+
+
 }
