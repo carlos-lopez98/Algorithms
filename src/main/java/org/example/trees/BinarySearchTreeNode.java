@@ -96,8 +96,10 @@ public class BinarySearchTreeNode {
             for(int i = 0; i < length; i++){
                 BinarySearchTreeNode current = level.remove();
 
+                //Performs action on node
                 System.out.print(current.data + " ");
 
+                //Adds node's children to the queue *if any
                 if(current.leftChild != null){
                     level.add(current.leftChild);
                 }
