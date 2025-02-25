@@ -31,6 +31,16 @@ public class BinarySearchTree {
         root.printPreOrder(root);
     }
 
+    public BinarySearchTreeNode getMax(){
+
+        return  root.getMaxNode(root);
+    }
+
+    public BinarySearchTreeNode getMin(){
+
+        return root.getMinNode(root);
+    }
+
     public void printPostOrder(){
         root.printPostOrder(root);
     }

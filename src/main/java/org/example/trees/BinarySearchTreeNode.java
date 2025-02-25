@@ -10,7 +10,7 @@ public class BinarySearchTreeNode {
     private BinarySearchTreeNode rightChild;
 
 
-    //This insertion method does not automatically rebalance the tree
+    //This insertion method does not automatically re-balance the tree
     public void insert(int data){
 
         //Handles duplicates by just ignoring them
@@ -112,6 +112,41 @@ public class BinarySearchTreeNode {
             System.out.println();
             depth++;
         }
+    }
+
+
+    //Recursive Approach
+    public int printHeight(BinarySearchTreeNode root){
+
+        if(root == null){
+            return -1;
+        }
+
+        int heightLeft = printHeight(root.leftChild);
+        int heightRight = printHeight(root.rightChild);
+
+
+        return Math.max(heightLeft, heightRight) + 1;
+    }
+
+    public BinarySearchTreeNode getMaxNode(BinarySearchTreeNode root){
+
+        if(root.rightChild == null){
+            return root;
+        }
+
+
+        return getMaxNode(root.rightChild);
+    }
+
+    public BinarySearchTreeNode getMinNode(BinarySearchTreeNode root){
+
+
+        if(root.leftChild == null){
+            return root;
+        }
+
+        return getMinNode(root.leftChild);
     }
 
     public BinarySearchTreeNode(int data){

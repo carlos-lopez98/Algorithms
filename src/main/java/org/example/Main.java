@@ -274,11 +274,17 @@ public class Main {
 //        System.out.println("Print PostOrder");
 //        tree.printPostOrder();
 //        System.out.println();
-//        System.out.println("Print InOrder");
-//        tree.printInOrder();
+        System.out.println("Print InOrder");
+        tree.printInOrder();
 //        System.out.println();
-        System.out.println("Print BFS");
-        tree.printBFSOrder();
+//        System.out.println("Print BFS");
+//        tree.printBFSOrder();
+//
+//        System.out.println("After Inverting");
+//        InvertBinaryTree.invertTree(tree.getRoot());
+//        tree.printBFSOrder();
 
+        System.out.println(tree.getMax().getData());
+        System.out.println(tree.getMin().getData());
     }
 }
