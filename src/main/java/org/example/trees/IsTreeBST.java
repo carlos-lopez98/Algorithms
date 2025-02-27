@@ -5,11 +5,15 @@ package org.example.trees;
  */
 public class IsTreeBST {
 
-    public static boolean isBST(){
 
+
+    public static boolean isBST(){
 
         return false;
     }
 
+    public static boolean helperMethod(){
 
+     return false;
+    }
 }
