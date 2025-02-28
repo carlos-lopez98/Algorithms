@@ -33,7 +33,6 @@ public class RotateString {
         return false;
     }
 
-
     public static boolean checkSplice(String one, String two, int insertionPoint) {
         //If we're able to get through the whole for loop, then we have a splice point
         //return true
@@ -42,6 +41,7 @@ public class RotateString {
                 return false;
             }
         }
+
         return true;
     }
 }

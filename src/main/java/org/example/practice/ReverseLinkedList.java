@@ -2,26 +2,26 @@ package org.example.practice;
 
 public class ReverseLinkedList {
 
-    public static Node reverseList(Node node) {
+    public static Node reverseList(Node head) {
 
         //Head of the return list - must return reverse
-        Node head = new Node();
+        Node returnHead = new Node();
 
         //Iterate through non-reversed list
-        while (node != null){
+        while (head != null){
             //Creates a new node = to the current node
-            Node temp = new Node(node.data);
+            Node temp = new Node(head.data);
 
             //Set temp.next = to previous node
-            temp.next = head;
+            temp.next = returnHead;
 
             //Move head backwards - usually a tail pointer would go towards the end of the list
             //In this case you move backwards
-            head = temp;
+            returnHead = temp;
         }
 
         //At the end you return a list in reverse 4 -> 3 -> 2 -> 1
-        return head;
+        return returnHead;
     }
 }
 /**
