@@ -1,5 +1,6 @@
 package org.example.leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,14 +29,47 @@ public class EncodeAndDecodeStrings {
 
 
     //Encodes our list of strings - to a string
-    public static String encodeString(List<String> string){
+    public static String encodeString(List<String> strings){
 
+        char delimiter = '@';
+        StringBuilder builder = new StringBuilder();
 
+        //Having the length + the delimiter is what makes this work
+        for (String str: strings){
+            builder.append(str.length());
+            builder.append(delimiter);
+            builder.append(str);
+        }
 
+        //Returns encoded string
+        return builder.toString();
     }
 
     //Will decode a long string back into a list of strings
-    public static List<String> decodeString(String string){
+    public static List<String> decodeString(String encodedString){
 
+        char delimiter = '@';
+        char[] string = encodedString.toCharArray();
+
+        List<String> returnList = new ArrayList<>();
+
+        for(int i = 0; i < encodedString.length(); i++){
+            StringBuilder stringLength = new StringBuilder();
+
+            //Gives us the length of the string to iterate over
+            while(string[i] != delimiter){
+                stringLength.append(string[i]);
+                i++;
+            }
+
+            StringBuilder currentString = new StringBuilder();
+            for(int j = i + 1; j < Integer.valueOf(stringLength.toString()); j++){
+                currentString.append(string[j]);
+            }
+
+            returnList.add(currentString.toString());
+        }
+
+        return returnList;
     }
 }
