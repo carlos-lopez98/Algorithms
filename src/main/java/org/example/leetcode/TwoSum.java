@@ -27,13 +27,6 @@ public class TwoSum {
 
 
 //Runtime Complexity O(n^2), Space Complexity O(1)
-
-
-
-
-
-
-
 //    public int[] twoSum(int[] nums, int target) {
 //
 //        Map<Integer, Integer> map = new HashMap<>();

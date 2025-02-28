@@ -2,30 +2,25 @@ package org.example.practice;
 
 public class ReverseLinkedList {
 
-
     public static Node reverseList(Node node) {
-        //First create a pointer to our new reversed list
-        Node head = null;
 
-        //Start iterating through our input list
-        while (node != null) {
+        //Head of the return list - must return reverse
+        Node head = new Node();
 
-            //Create a new node to create the links
-            Node n = new Node(node.data);
-            //Link our new node to our head, head value will then change
-            n.next = head;
-            //Move head up, this effectively adds elements in reverse
-            //So if you have 1, 2, 3, 4
+        //Iterate through non-reversed list
+        while (node != null){
+            //Creates a new node = to the current node
+            Node temp = new Node(node.data);
 
-            //You'll add 1 at the end
-            //Then add 2 -> 1
-            //3 -> 2 -> 1
-            //4 -> 3 -> 2 -> 1
-            head = n;
+            //Set temp.next = to previous node
+            temp.next = head;
 
-            //Move pointer up for iteration
-            node = node.next;
+            //Move head backwards - usually a tail pointer would go towards the end of the list
+            //In this case you move backwards
+            head = temp;
         }
+
+        //At the end you return a list in reverse 4 -> 3 -> 2 -> 1
         return head;
     }
 }
