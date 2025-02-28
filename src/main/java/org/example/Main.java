@@ -8,7 +8,9 @@ import org.example.trees.BinarySearchTreeNode;
 import org.example.trees.Tree;
 
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Main {
@@ -257,25 +259,25 @@ public class Main {
          * Test Area for Binary Search Trees
          */
 
-        BinarySearchTree tree = new BinarySearchTree();
-        tree.insert(25);
-        tree.insert(20);
-        tree.insert(15);
-        tree.insert(27);
-        tree.insert(30);
-        tree.insert(29);
-        tree.insert(26);
-        tree.insert(22);
-        tree.insert(32);
-
+//        BinarySearchTree tree = new BinarySearchTree();
+//        tree.insert(25);
+//        tree.insert(20);
+//        tree.insert(15);
+//        tree.insert(27);
+//        tree.insert(30);
+//        tree.insert(29);
+//        tree.insert(26);
+//        tree.insert(22);
+//        tree.insert(32);
+//
 //        System.out.println("Print PreOrder");
 //        tree.printPreOrder();
 //        System.out.println();
 //        System.out.println("Print PostOrder");
 //        tree.printPostOrder();
 //        System.out.println();
-        System.out.println("Print InOrder");
-        tree.printInOrder();
+//        System.out.println("Print InOrder");
+//        tree.printInOrder();
 //        System.out.println();
 //        System.out.println("Print BFS");
 //        tree.printBFSOrder();
@@ -283,8 +285,25 @@ public class Main {
 //        System.out.println("After Inverting");
 //        InvertBinaryTree.invertTree(tree.getRoot());
 //        tree.printBFSOrder();
+//
+//        System.out.println(tree.getMax().getData());
+//        System.out.println(tree.getMin().getData());
 
-        System.out.println(tree.getMax().getData());
-        System.out.println(tree.getMin().getData());
+
+        /**
+         * Test Area for encode and decode strings
+         */
+
+        List<String> strings = new ArrayList<>();
+        strings.add("Hello");
+        strings.add("World");
+
+        List<String> emptyString = new ArrayList<>();
+        emptyString.add("");
+
+        String encoded = EncodeAndDecodeStrings.encodeString(emptyString);
+        List<String> decodedList = EncodeAndDecodeStrings.decodeString(encoded);
+
+        decodedList.forEach(System.out::println);
     }
 }

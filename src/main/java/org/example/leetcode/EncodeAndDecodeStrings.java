@@ -62,11 +62,17 @@ public class EncodeAndDecodeStrings {
                 i++;
             }
 
+            i++;
+
             StringBuilder currentString = new StringBuilder();
-            for(int j = i + 1; j < Integer.valueOf(stringLength.toString()); j++){
-                currentString.append(string[j]);
+            int length = Integer.parseInt(stringLength.toString());
+
+            for(int j = 0; j < length; j++){
+                currentString.append(string[i]);
+                i++;
             }
 
+            i--;
             returnList.add(currentString.toString());
         }
 
