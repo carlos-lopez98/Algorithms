@@ -32,13 +32,18 @@ import java.util.stream.Collectors;
 public class GroupAnagram {
 
     public static List<List<String>> groupAnagrams(String[] strs){
+        //Used to group and track anagrams
         HashMap<String, List<String>> groupAnagramTracker = new HashMap<>();
 
+        //Iterates through your string array
         for (String currentString : strs) {
+            //keeps track of current string and it's sorted version
             char[] sortedString = currentString.toCharArray();
             Arrays.sort(sortedString);
             String sorted = Arrays.toString(sortedString);
 
+            //If the sorted version is in the hashmap
+            //Add the unsorted in as a value, but using the sorted as a key
             if (!groupAnagramTracker.containsKey(sorted)) {
                 groupAnagramTracker.put(sorted, new ArrayList<>());
             }
@@ -47,6 +52,7 @@ public class GroupAnagram {
         }
 
 
+        //Return the values in the map, as a List of list of strings
         List<List<String>> groupedAnagrams = groupAnagramTracker.values()
                 .stream()
                 .toList();

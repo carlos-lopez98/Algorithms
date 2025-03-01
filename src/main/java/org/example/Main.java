@@ -294,16 +294,26 @@ public class Main {
          * Test Area for encode and decode strings
          */
 
-        List<String> strings = new ArrayList<>();
-        strings.add("Hello");
-        strings.add("World");
+//        List<String> strings = new ArrayList<>();
+//        strings.add("Hello");
+//        strings.add("World");
+//
+//        List<String> emptyString = new ArrayList<>();
+//        emptyString.add("");
+//
+//        String encoded = EncodeAndDecodeStrings.encodeString(emptyString);
+//        List<String> decodedList = EncodeAndDecodeStrings.decodeString(encoded);
+//
+//        decodedList.forEach(System.out::println);
 
-        List<String> emptyString = new ArrayList<>();
-        emptyString.add("");
+        /**
+         * Test for product except self
+         */
 
-        String encoded = EncodeAndDecodeStrings.encodeString(emptyString);
-        List<String> decodedList = EncodeAndDecodeStrings.decodeString(encoded);
+        int[] input = new int[]{2,3,4,5};
 
-        decodedList.forEach(System.out::println);
+        int[] output = ProductExceptSelf.productExceptSelf(input);
+
+        Arrays.stream(output).forEach(System.out::println);
     }
 }

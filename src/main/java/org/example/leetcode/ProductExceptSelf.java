@@ -30,4 +30,43 @@ package org.example.leetcode;
  */
 
 public class ProductExceptSelf {
+
+
+    //The intuition here is that all numbers multiplied on the left of i times all the numbers multiplied on the right of i
+    // is our answer. So prefix times suffix = answer for the ith position
+    public static int[] productExceptSelf(int[] input){
+        int length = input.length;
+
+
+        int[] leftMult = new int[length];
+        int[] rightMult = new int[length];
+        int[] result = new int[length];
+
+        //Our left most position doesn't have a prefix
+        leftMult[0] = 1;
+
+        //Our right most position doesn't have a suffix
+        rightMult[length - 1] = 1;
+
+        //Calculate the multiplication product of all positions left of i
+        for(int i = 1; i < length; i++){
+            leftMult[i] = leftMult[i - 1] * input[i - 1];
+        }
+
+        //Calculate the multiplication product of all position right of i
+        for(int i = length -2; i >= 0; i--){
+
+            //At the current position in right mult
+            //The suffix should be the previous position in right mult
+            //Times the current position in nums
+           rightMult[i] = rightMult[i + 1] * input[i + 1];
+        }
+
+        //Calculate the answer at each position by multiplying left * right positions
+        for(int i = 0; i < length; i++){
+            result[i] = leftMult[i] * rightMult[i];
+        }
+
+        return result;
+    }
 }
