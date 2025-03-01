@@ -310,10 +310,24 @@ public class Main {
          * Test for product except self
          */
 
-        int[] input = new int[]{2,3,4,5};
+//        int[] input = new int[]{2,3,4,5};
+//
+//        int[] output = ProductExceptSelf.productExceptSelf(input);
+//
+//        Arrays.stream(output).forEach(System.out::println);
 
-        int[] output = ProductExceptSelf.productExceptSelf(input);
+        /**
+         * Test for isPalindrome
+         */
 
-        Arrays.stream(output).forEach(System.out::println);
+        String one = "racecar";
+        String two = "1a a1";
+        String three = "11122111";
+        String four = "232323";
+
+        System.out.println(ValidPalindrome.checkIfPalindrome(one));
+        System.out.println(ValidPalindrome.checkIfPalindrome(two));
+        System.out.println(ValidPalindrome.checkIfPalindrome(three));
+        System.out.println(ValidPalindrome.checkIfPalindrome(four));
     }
 }

@@ -25,14 +25,13 @@ public class ValidPalindrome {
         while(start < end){
 
             //These two while loops ignore the non digit or letter characters
-            while(start < end && !Character.isLetterOrDigit(compareTo.charAt(start))){
+            while(start < end && getNumericalValue(compareTo.charAt(start)) < 0 && getNumericalValue(compareTo.charAt(start)) > 38){
                 start++;
             }
 
             while(start < end && !Character.isLetterOrDigit(compareTo.charAt(end))){
                 end--;
             }
-
 
             //If the position at start does not equal the position at end - then it's not a palindrome
             if(compareTo.charAt(start) != compareTo.charAt(end)){
@@ -44,5 +43,23 @@ public class ValidPalindrome {
         }
 
         return true;
+    }
+
+    public static int getNumericalValue(char c){
+
+        int a = Character.getNumericValue('a');
+        int A = Character.getNumericValue('A');
+        int z = Character.getNumericValue('z');
+        int Z = Character.getNumericValue('Z');
+
+        if(c <= z && c >= a){
+            return c - a;
+        }else if( c <= Z && c >= A ){
+            return c - A;
+        }else if (Character.getNumericValue(c) < 10){
+            return 27 + Character.getNumericValue(c);
+        }
+
+     return -1;
     }
 }
