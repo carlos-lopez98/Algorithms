@@ -3,6 +3,7 @@ package org.example;
 import org.example.SortAlgorithms.*;
 import org.example.leetcode.*;
 import org.example.practice.Node;
+import org.example.practice.ReverseLinkedList;
 import org.example.trees.BinarySearchTree;
 import org.example.trees.BinarySearchTreeNode;
 import org.example.trees.Tree;
@@ -204,9 +205,6 @@ public class Main {
 //        System.out.println(intTree.getMax());
 
 
-
-
-
 //       System.out.println(BestTimetoBuyandSellStocks.returnMaxProfit(new int[]{7,6,4,3,1}));
 //
 //        System.out.println(ValidParentheses.isValid("()[]{}"));
@@ -320,17 +318,37 @@ public class Main {
          * Test for isPalindrome
          */
 
-        String one = "racecar";
-        String two = "1a a1";
-        String three = "11122111";
-        String four = "0P";
-        String five = "A man, a plan, a canal: Panama";
+//        String one = "racecar";
+//        String two = "1a a1";
+//        String three = "11122111";
+//        String four = "0P";
+//        String five = "A man, a plan, a canal: Panama";
+//
+//        System.out.println(ValidPalindrome.checkIfPalindrome(one));
+//        System.out.println(ValidPalindrome.checkIfPalindrome(two));
+//        System.out.println(ValidPalindrome.checkIfPalindrome(three));
+//        System.out.println(ValidPalindrome.checkIfPalindrome(four));
+//        System.out.println(ValidPalindrome.checkIfPalindrome(five));
 
-        System.out.println(ValidPalindrome.checkIfPalindrome(one));
-        System.out.println(ValidPalindrome.checkIfPalindrome(two));
-        System.out.println(ValidPalindrome.checkIfPalindrome(three));
-        System.out.println(ValidPalindrome.checkIfPalindrome(four));
-        System.out.println(ValidPalindrome.checkIfPalindrome(five));
+        /**
+         * Test for reverse linked list
+         */
+        Node head = new Node(1);
+        Node one = new Node(2);
+        Node two = new Node(3);
+        Node three = new Node(4);
+        Node four = new Node(5);
 
+        head.next = one;
+        one.next = two;
+        two.next = three;
+        three.next = four;
+
+        Node reversed = ReverseLinkedList.reverseList(head);
+
+        while(reversed != null){
+            System.out.print(reversed.data + " ");
+            reversed = reversed.next;
+        }
     }
 }

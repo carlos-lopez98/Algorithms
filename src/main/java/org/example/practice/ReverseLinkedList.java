@@ -3,17 +3,18 @@ package org.example.practice;
 public class ReverseLinkedList {
 
     public static Node reverseList(Node head) {
-        Node newHead = new Node();
+        Node newHead = null;
 
         while (head != null){
+
+
             // Equal to 2
-            Node temp = head;
-            //Next = 1
+            Node temp = new Node(head.data);
+
             temp.next = newHead;
 
             //Points to 2
             newHead = temp;
-
 
             head = head.next;
         }
