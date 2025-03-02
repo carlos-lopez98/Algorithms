@@ -323,11 +323,14 @@ public class Main {
         String one = "racecar";
         String two = "1a a1";
         String three = "11122111";
-        String four = "232323";
+        String four = "0P";
+        String five = "A man, a plan, a canal: Panama";
 
         System.out.println(ValidPalindrome.checkIfPalindrome(one));
         System.out.println(ValidPalindrome.checkIfPalindrome(two));
         System.out.println(ValidPalindrome.checkIfPalindrome(three));
         System.out.println(ValidPalindrome.checkIfPalindrome(four));
+        System.out.println(ValidPalindrome.checkIfPalindrome(five));
+
     }
 }

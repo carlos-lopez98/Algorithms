@@ -25,11 +25,11 @@ public class ValidPalindrome {
         while(start < end){
 
             //These two while loops ignore the non digit or letter characters
-            while(start < end && getNumericalValue(compareTo.charAt(start)) < 0 && getNumericalValue(compareTo.charAt(start)) > 38){
+            while(start < end && getNumericalValue(compareTo.charAt(start)) == -1){
                 start++;
             }
 
-            while(start < end && !Character.isLetterOrDigit(compareTo.charAt(end))){
+            while(start < end && getNumericalValue(compareTo.charAt(end)) == -1){
                 end--;
             }
 
@@ -52,12 +52,14 @@ public class ValidPalindrome {
         int z = Character.getNumericValue('z');
         int Z = Character.getNumericValue('Z');
 
-        if(c <= z && c >= a){
-            return c - a;
-        }else if( c <= Z && c >= A ){
-            return c - A;
-        }else if (Character.getNumericValue(c) < 10){
-            return 27 + Character.getNumericValue(c);
+        int curr = Character.getNumericValue(c);
+
+        if(curr <= z && curr >= a){
+            return curr - a;
+        }else if( curr <= Z && curr >= A ){
+            return curr - A;
+        }else if (curr >= 0 && curr <= 9){
+            return 27 + curr;
         }
 
      return -1;
