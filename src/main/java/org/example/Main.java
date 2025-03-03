@@ -333,22 +333,31 @@ public class Main {
         /**
          * Test for reverse linked list
          */
-        Node head = new Node(1);
-        Node one = new Node(2);
-        Node two = new Node(3);
-        Node three = new Node(4);
-        Node four = new Node(5);
+//        Node head = new Node(1);
+//        Node one = new Node(2);
+//        Node two = new Node(3);
+//        Node three = new Node(4);
+//        Node four = new Node(5);
+//
+//        head.next = one;
+//        one.next = two;
+//        two.next = three;
+//        three.next = four;
+//
+//        Node reversed = ReverseLinkedList.reverseList(head);
+//
+//        while(reversed != null){
+//            System.out.print(reversed.data + " ");
+//            reversed = reversed.next;
+//        }
 
-        head.next = one;
-        one.next = two;
-        two.next = three;
-        three.next = four;
+        /**
+         * Test for Longest Consecutive Sequence
+         */
+        int[] nums = new int[]{100,4,200,1,3,2};
+        int[] numsTwo = new int[]{0,3,7,2,5,8,4,6,0,1};
 
-        Node reversed = ReverseLinkedList.reverseList(head);
+        System.out.println(LongestConsecutiveSequence.returnLongestConsecutiveSequence(numsTwo));
 
-        while(reversed != null){
-            System.out.print(reversed.data + " ");
-            reversed = reversed.next;
-        }
     }
 }

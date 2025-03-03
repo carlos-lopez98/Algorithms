@@ -13,6 +13,8 @@ public class InvertBinaryTree {
 
 
     public static BinarySearchTreeNode invertTree(BinarySearchTreeNode root){
+
+        //Base Case
         if(root == null){
             return null;
         }
@@ -22,7 +24,6 @@ public class InvertBinaryTree {
 
         root.setLeftChild(right);
         root.setRightChild(left);
-
 
         invertTree(root.getLeftChild());
         invertTree(root.getRightChild());
