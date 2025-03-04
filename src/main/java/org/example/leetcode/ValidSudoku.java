@@ -40,9 +40,7 @@ public class ValidSudoku {
                 }
 
                 int number = value - '0';
-
                 int gridPosition = i/3 * 3 + (j/3);
-
                 if(uniqueInGrid[gridPosition].contains(number) || uniqueInCol[j].contains(number) || uniqueInRow[i].contains(number)){
                     return false;
                 }
