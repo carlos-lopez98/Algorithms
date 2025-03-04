@@ -1,6 +1,10 @@
 package org.example.leetcode;
 
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order,
  * find two numbers such that they add up to a specific target number. Let these two numbers be
@@ -41,15 +45,8 @@ package org.example.leetcode;
 public class TwoSumIIInputArrayIsSorted {
 
 
+ public static int[] returnIfTwoSum(int[] A){
 
- public static int[] returnIfTwoSum(){
-
-
-
-
-
-
-
-     return new int[]{};
+    return new int[]{};
  }
 }
