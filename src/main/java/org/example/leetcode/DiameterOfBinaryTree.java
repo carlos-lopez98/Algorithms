@@ -22,7 +22,6 @@ public class DiameterOfBinaryTree {
 
     public static int diameterOfBinaryTree (BinarySearchTreeNode root){
         recursiveCall(root);
-
         return diameter;
     }
 

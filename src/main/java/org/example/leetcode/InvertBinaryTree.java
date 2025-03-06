@@ -19,6 +19,7 @@ public class InvertBinaryTree {
             return null;
         }
 
+        //Creates temp new flipped pointers
         BinarySearchTreeNode left = root.getLeftChild();
         BinarySearchTreeNode right = root.getRightChild();
 
