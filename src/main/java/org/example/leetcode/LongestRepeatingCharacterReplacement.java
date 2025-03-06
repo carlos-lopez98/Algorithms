@@ -1,5 +1,8 @@
 package org.example.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * You are given a string s and an integer k. You can choose any character of the string and
  * change it to any other uppercase English character. You can perform this operation at most k times.
@@ -27,4 +30,51 @@ package org.example.leetcode;
 public class LongestRepeatingCharacterReplacement {
 
 
+    //k is the maximum allowed of operations
+    public static int returnLongestRepeatingCharacter(String s, int k){
+       if(s.isEmpty()){
+           return 0;
+       }
+
+       int left = 0;
+       int right = 0;
+
+       int longestSequence = 0;
+       int currentWindow = 1;
+
+       Map<Character, Integer> frequencies = new HashMap<>();
+
+       int maxFreq = 0;
+
+        //Sliding window technique
+        while(right < s.length()){
+            char current = s.charAt(right);
+            int currentFreq = 0;
+
+            frequencies.merge(current, 1, Integer::sum);
+
+            if(frequencies.containsKey(current)){
+                currentFreq = frequencies.get(current);
+            }
+
+            //Keeps track of the element that shows up the most in our currentwindow
+            maxFreq = Math.max(currentFreq, maxFreq);
+
+            //Operations needed is our current window size - the element that shows up the most
+            //If the operations needed are ever more than k - shrink our window
+            while(currentWindow - maxFreq > k){
+                frequencies.merge(s.charAt(left), -1, Integer::sum);
+                left++;
+                currentWindow--;
+            }
+
+
+
+            longestSequence = Math.max(currentWindow, longestSequence);
+            right++;
+            currentWindow++;
+        }
+
+        return longestSequence;
+    }
 }
