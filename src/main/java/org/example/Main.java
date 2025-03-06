@@ -354,10 +354,18 @@ public class Main {
         /**
          * Test for Longest Consecutive Sequence
          */
-        int[] nums = new int[]{100,4,200,1,3,2};
-        int[] numsTwo = new int[]{0,3,7,2,5,8,4,6,0,1};
+//        int[] nums = new int[]{100,4,200,1,3,2};
+//        int[] numsTwo = new int[]{0,3,7,2,5,8,4,6,0,1};
+//
+//        System.out.println(LongestConsecutiveSequence.returnLongestConsecutiveSequence(numsTwo));
 
-        System.out.println(LongestConsecutiveSequence.returnLongestConsecutiveSequence(numsTwo));
+        /**
+         * Test for longest substring without repeating characters
+         */
+
+        String s = "abcabcbb";
+        System.out.println( LongestSubstringWithoutRepeatingCharacters.getLongestSubstring(s));
+
 
     }
 }
