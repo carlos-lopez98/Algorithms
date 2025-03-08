@@ -42,16 +42,33 @@ public class MinimumWindowSubstring {
             return "";
         }
 
+        int[] frequency = new int[128];
+        char[] s_arr = s.toCharArray();
+        char[] t_arr = t.toCharArray();
+
+        //All characters in t must be within window
+        for(char cur: t_arr){
+            frequency[cur]++;
+        }
+
 
 
         int right = 0;
         int left = 0;
+
+        int minLen = Integer.MAX_VALUE;
+
+        String ans = "";
 
         while (right < s.length()) {
 
 
             right++;
         }
-        return "";
+
+
+
+
+        return ans;
     }
 }
