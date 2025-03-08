@@ -55,6 +55,7 @@ public class FindMinInRotatedSortedArray {
         int left = 0;
         int right = nums.length - 1;
 
+        //You include right because unlike in a normal binary search, the right element may be your minimum
         while(left <= right){
             int midpoint = left + (right - left)/ 2;
 
