@@ -46,7 +46,8 @@ public class KokoEatingBananas {
             int mid = minEatingRate + (maxEatingRate - minEatingRate) / 2; // Correct mid calculation
 
             if (willFinishInTime(piles, h, mid)) {
-                maxEatingRate = mid; // Try a smaller eating rate
+                maxEatingRate = mid; // Try a smaller eating rate to see if a smaller rate can finish in time
+                //This is the same as going left
             } else {
                 minEatingRate = mid + 1; // Increase the eating rate
             }
