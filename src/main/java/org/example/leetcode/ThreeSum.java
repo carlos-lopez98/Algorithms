@@ -44,10 +44,37 @@ public class ThreeSum {
     //inward
     public List<List<Integer>> threeSum(int[] nums) {
 
+        Arrays.sort(nums); //returns sorted array
+        List<List<Integer>> threeSum = new ArrayList<>();
+
+        for(int fixed = 0; fixed < nums.length; fixed++){
+
+            int left = fixed +1;
+            int right = nums.length-1;
+
+            if(fixed > 0 && nums[fixed] == nums[fixed - 1]){
+                continue;
+            }
+
+            while (left < right){
+                int sum = nums[fixed] + nums[left] + nums[right];
+
+                if(sum == 0){
+                    threeSum.add(new ArrayList<>(Arrays.asList(nums[fixed], nums[left], nums[right])));
+                    left++;
+                    right--;
+
+                    while (left < right && nums[left] == nums[left - 1]) left++; //Skipping duplicates
+                    while (left < right && nums[right] == nums[right +1]) right--; // skips duplicates
+                }else if (sum < 0){
+                    left++;
+                }else{
+                    right--;
+                }
+            }
+        }
 
 
-
-
-        return null;
+        return threeSum;
     }
 }

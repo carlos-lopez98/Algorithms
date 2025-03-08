@@ -45,23 +45,26 @@ public class TwoSumIIInputArrayIsSorted {
 
 
     public static int[] returnIfTwoSum(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
 
-        int i = 0;
-        int j = nums.length - 1;
+        //Array is sorted, so you can steer the sum
+        int[] ans = new int[2];
 
-        while (i < j) {
+        while (left < right){
+            int sum = nums[left] + nums[right];
 
-            if(nums[i] + nums[j] == target){
-                return new int[] {i + 1, j+1};
-            }
-
-            if(nums[i] + nums[j] > target){
-                j--;
-            }else if(nums[i] + nums[j] < target){
-                i++;
+            if (sum < target){
+                left++;
+            }else if (sum > target){
+                right--;
+            }else{
+               ans[0] = left + 1;
+               ans[1] = right + 1;
+               return ans;
             }
         }
 
-        return null;
+        return ans;
     }
 }
