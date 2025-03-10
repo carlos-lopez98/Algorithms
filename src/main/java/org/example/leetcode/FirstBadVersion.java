@@ -29,4 +29,39 @@ package org.example.leetcode;
  * 1 <= bad <= n <= 231 - 1
  */
 public class FirstBadVersion {
+
+
+
+    //N represents how many versions there are
+    //After nth position all future versions will become bad - you are to find the first version in which
+    //The bad iterations start
+    public int firstBadVersion(int n){
+        if(n == 1){
+            return n;
+        }
+
+        //1,3,4,7,8,11,12
+
+        int left = 0;
+        int right = n;
+
+        while(left <= right){
+            int midpoint = left + (right - left)/2;
+
+            if(isBadVersion(midpoint) && !isBadVersion(midpoint - 1)){
+                return midpoint;
+            }else if(isBadVersion(midpoint)){
+                right = midpoint;
+            }else{
+                left = midpoint + 1;
+            }
+        }
+
+        return -1;
+    }
+
+
+    public boolean isBadVersion(int pivot){
+        return true;
+    }
 }
