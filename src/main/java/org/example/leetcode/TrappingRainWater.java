@@ -35,8 +35,6 @@ public class TrappingRainWater {
                     water += leftMax - height[leftWall];
                 }
                 leftWall++;
-
-
             }else{
                 if(height[rightWall] > rightMax){
                     rightMax = height[rightWall];
