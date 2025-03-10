@@ -26,7 +26,6 @@ package org.example.leetcode;
  */
 public class SearchInRotatedSortedArray {
 
-
     public static int findIndex(int[] nums, int target){
         if(nums.length == 1){
             if(nums[0] == target){
