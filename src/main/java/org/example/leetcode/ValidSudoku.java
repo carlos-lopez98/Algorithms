@@ -44,6 +44,7 @@ public class ValidSudoku {
                 if(uniqueInGrid[gridPosition].contains(number) || uniqueInCol[j].contains(number) || uniqueInRow[i].contains(number)){
                     return false;
                 }
+
                         uniqueInRow[i].add(number);
                         uniqueInCol[j].add(number);
                         uniqueInGrid[gridPosition].add(number);
