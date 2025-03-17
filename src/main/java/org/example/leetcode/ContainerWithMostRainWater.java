@@ -22,14 +22,11 @@ public class ContainerWithMostRainWater {
     public static int mostRainWater(int[] height){
         int leftWall = 0;
         int rightWall = height.length -1;
-
         int maxArea = 0;
-
         while(leftWall < rightWall){
             int h = Math.min(height[leftWall], height[rightWall]);
             int w = Math.abs(rightWall - leftWall);
             int currArea = h * w;
-
             if(height[leftWall] > height[rightWall]){
                 rightWall--;
             }else if (height[leftWall] < height[rightWall]){
@@ -38,7 +35,6 @@ public class ContainerWithMostRainWater {
                 leftWall++;
                 rightWall--;
             }
-
             maxArea = Math.max(currArea, maxArea);
         }
 
