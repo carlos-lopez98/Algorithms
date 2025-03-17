@@ -28,11 +28,9 @@ package org.example.leetcode;
  */
 public class KokoEatingBananas {
 
-
     //h is the hours koko has to eat all her bananas
     //Koko likes taking her sweet time, so she wants to eat exactly enough per hour to take up all the hours
     public static int returnEatingRate(int[] piles, int h){
-
         int minEatingRate = 1; // Minimum possible rate
         int maxEatingRate = 0; // Max pile size (upper bound)
 
@@ -40,7 +38,6 @@ public class KokoEatingBananas {
         for (int pile : piles) {
             maxEatingRate = Math.max(pile, maxEatingRate);
         }
-
         // Binary search from 1 to maxEatingRate
         while (minEatingRate < maxEatingRate) {
             int mid = minEatingRate + (maxEatingRate - minEatingRate) / 2; // Correct mid calculation
@@ -52,7 +49,6 @@ public class KokoEatingBananas {
                 minEatingRate = mid + 1; // Increase the eating rate
             }
         }
-
         return minEatingRate;
     }
 
@@ -61,7 +57,6 @@ public class KokoEatingBananas {
         for (int bananaPile: piles){
             hours += (int) Math.ceil((double) bananaPile /eatingRate);
         }
-
         return hours <= h;
     }
 }

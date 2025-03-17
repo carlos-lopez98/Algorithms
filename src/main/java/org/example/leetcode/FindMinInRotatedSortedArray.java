@@ -64,7 +64,6 @@ public class FindMinInRotatedSortedArray {
             } else if (nums[midpoint] > nums[right]){
                 left = midpoint + 1;
             }else{
-
                 //Again you include right - since it can potentially be the element you need
                 right = midpoint;
             }
