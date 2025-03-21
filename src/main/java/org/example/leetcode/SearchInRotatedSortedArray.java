@@ -27,11 +27,8 @@ package org.example.leetcode;
 public class SearchInRotatedSortedArray {
 
     public static int findIndex(int[] nums, int target){
-        if(nums.length == 1){
-            if(nums[0] == target){
-                return 0;
-            }
-
+        //Edge Cases
+        if(nums.length == 1 && nums[0] != target){
             return -1;
         }
 
@@ -39,34 +36,33 @@ public class SearchInRotatedSortedArray {
         int right = nums.length - 1;
 
         while (left <= right){
-            int mid = left + (right - left)/2;
+            int mid = left + (right - left)/ 2;
 
             if(nums[mid] == target){
-                return mid; //index of where mid is
+                return mid;
             }
 
-            //This tells you that left side is sorted
-            //If nums[mid] target -> that only tells you that nums[mid] is less
-            // but that could still be in the left side or right side - you also have to check if target is between
-            //nums[left] and nums[mid]
-            if(nums[left] <= nums[mid]){
+            //Means right side is sorted
+            if(nums[mid] <= nums[right]){
 
-                //This means target is within the left side
-                if(nums[left] <= target && target <= nums[mid]){
-                 right = mid - 1;
+
+                //If it falls in range of right - go right
+                if(nums[mid] < target && target <= nums[right]){
+                    left = mid + 1;
                 }else{
+                    //else go left
+                    right = mid - 1;
+                }
+            }
+            //Else left side is sorted
+            else{
+                //If it falls within sorted range - go left
+                if(nums[left] <= target && target < nums[mid]){
+                    right = mid - 1;
+                }else{
+                    //else go right
                     left = mid + 1;
                 }
-
-                //If left side is unsorted - means the right side is sorted
-            }else {
-                //Right side is sorted
-                if(nums[mid] <= target && target <= nums[right]){
-                    left = mid +1;
-                }else{
-                 right = mid - 1;
-                }
-                //smaller to the right
             }
         }
         return -1;
