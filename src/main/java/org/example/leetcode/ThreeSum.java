@@ -43,37 +43,38 @@ public class ThreeSum {
     //your left pointer forward, but if your target is smaller than you're current position, then you move your rightpointer
     //inward
     public List<List<Integer>> threeSum(int[] nums) {
+        //First thing sort the list - which will allow you to steer the sum
+        Arrays.sort(nums);
 
-        Arrays.sort(nums); //returns sorted array
-        List<List<Integer>> threeSum = new ArrayList<>();
+        List<List<Integer>> threeSum = new ArrayList<>(); // This is where you'll store your sum pairs
 
-        for(int fixed = 0; fixed < nums.length; fixed++){
+        for(int fixed = 0; fixed < nums.length - 2; fixed++){
 
-            int left = fixed +1;
-            int right = nums.length-1;
-
-            if(fixed > 0 && nums[fixed] == nums[fixed - 1]){
-                continue;
+            //Needs to be a while loop or else, it'll just do it once - this ensures we skip all possible duplicates
+            while(fixed > 0 && nums[fixed] == nums[fixed - 1]){
+                fixed++;
             }
 
-            while (left < right){
-                int sum = nums[fixed] + nums[left] + nums[right];
+            int left = 0;
+            int right = nums.length - 1;
+
+            while(left < right){
+                int sum = nums[fixed] + nums[right] + nums[left];
 
                 if(sum == 0){
-                    threeSum.add(new ArrayList<>(Arrays.asList(nums[fixed], nums[left], nums[right])));
+                    threeSum.add(Arrays.asList(fixed,left,right));
                     left++;
                     right--;
-
-                    while (left < right && nums[left] == nums[left - 1]) left++; //Skipping duplicates
-                    while (left < right && nums[right] == nums[right +1]) right--; // skips duplicates
-                }else if (sum < 0){
-                    left++;
+                } else if(sum > 0){
+                    right--;
                 }else{
-                    right--;
+                    left++;
                 }
+
+                while(left > fixed + 1 && nums[left] == nums[left - 1]) left++;
+                while(right < nums.length -2 && nums[right] == nums[right + 1])right--;
             }
         }
-
 
         return threeSum;
     }
