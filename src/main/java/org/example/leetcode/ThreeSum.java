@@ -51,28 +51,30 @@ public class ThreeSum {
         for(int fixed = 0; fixed < nums.length - 2; fixed++){
 
             //Needs to be a while loop or else, it'll just do it once - this ensures we skip all possible duplicates
-            while(fixed > 0 && nums[fixed] == nums[fixed - 1]){
-                fixed++;
+            if(fixed > 0 && nums[fixed] == nums[fixed - 1]){
+                continue;
             }
 
-            int left = 0;
+            int left = fixed + 1;
             int right = nums.length - 1;
 
             while(left < right){
                 int sum = nums[fixed] + nums[right] + nums[left];
 
                 if(sum == 0){
-                    threeSum.add(Arrays.asList(fixed,left,right));
+                    threeSum.add(Arrays.asList(nums[fixed],nums[left],nums[right]));
                     left++;
                     right--;
+
+                    while(left < right && nums[left] == nums[left - 1]) left++;
+                    while(left < right && nums[right] == nums[right + 1])right--;
                 } else if(sum > 0){
                     right--;
                 }else{
                     left++;
                 }
 
-                while(left > fixed + 1 && nums[left] == nums[left - 1]) left++;
-                while(right < nums.length -2 && nums[right] == nums[right + 1])right--;
+
             }
         }
 

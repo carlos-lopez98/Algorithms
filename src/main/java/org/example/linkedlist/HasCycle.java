@@ -15,21 +15,17 @@ public class HasCycle {
 
 
     public static boolean hasCylce(Node head) {
-        if (head == null){
-            return false;
-        }
-
+        if (head == null) return false;
 
         Node slow = head;
-        Node fast = head.next;
+        Node fast = head;
 
-        while(slow != null && fast != null){
+        while(fast != null && fast.next != null){
             if(slow == fast){
                 return true;
             }
 
             slow = slow.next;
-            //Be careful when setting fast equal to fast.next.next
             fast = fast.next.next;
         }
 
