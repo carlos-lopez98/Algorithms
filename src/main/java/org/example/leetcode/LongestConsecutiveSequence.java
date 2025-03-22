@@ -24,38 +24,41 @@ import java.util.Set;
  */
 public class LongestConsecutiveSequence {
 
-    public static int returnLongestConsecutiveSequence(int[] nums){
-        if(nums.length == 0){
+    public static int returnLongestConsecutiveSequence(int[] nums) {
+        if (nums.length == 0) {
             return 0;
         }
 
-        int longestSequence = 1;
+        Set<Integer> intSet = new HashSet<>();
 
-        Set<Integer> numSet = new HashSet<>();
-
-        //Turns nums into an int stream -> adds each num to numSet
-        //O (n) runtime
-        Arrays.stream(nums).forEach((num) -> numSet.add(num));
-
-        //Iterate through nums O(n) runtime
-        for(int i = 0; i < nums.length; i++){
-            int current = nums[i];
-            int previous = current - 1;
-
-            //If start of sequence
-            if(!numSet.contains(previous)){
-
-                int currentSequence = 1;
-
-                //Start counting sequences
-                while(numSet.contains(current + 1)){
-                    currentSequence++;
-                    current++;
-                }
-                longestSequence = Math.max(currentSequence, longestSequence);
-            }
+        for (int num : nums) {
+            intSet.add(num);
         }
 
-        return longestSequence;
+        int longest = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if(i > 0 && nums[i] == nums[i -1]){
+                continue;
+            }
+
+            int counter = 0;
+
+            if (!intSet.contains(nums[i] - 1)) {
+                //If the current number - 1 is not in the set - then this is the start of a new consecutive sequence
+                int curr = nums[i];
+                counter++;
+                //While the set contains the currentNumber + 1 counter goes up by 1, curr is incremented
+                //Eventually the set will not contain curr
+                while (intSet.contains(curr + 1)) {
+                    counter++;
+                    curr++;
+                }
+
+                //After the while loop you set longest = to counter if it's larger than the current iteration
+                longest = Math.max(counter, longest);
+            }
+        }
+        return longest;
     }
 }

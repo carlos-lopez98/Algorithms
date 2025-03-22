@@ -74,11 +74,11 @@ public class MinimumWindowSubstring {
                     minLen = currWindow;
                     ans = s.substring(left, right + 1);
                 }
+
                 char leftChar = s.charAt(left);
 
                 //You added a character back into frequency
                 if(++frequency[leftChar] > 0){
-
                     //So you can also decrement counter as you freed up an character
                     counter--;
                 }
