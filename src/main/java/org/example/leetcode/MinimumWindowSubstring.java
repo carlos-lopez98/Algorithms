@@ -34,58 +34,6 @@ public class MinimumWindowSubstring {
 
 
     public static String minWindowString(String s, String t) {
-        if (s.equals(t)) {
-            return s;
-        }
 
-        int[] frequency = new int[128];
-        char[] s_arr = s.toCharArray();
-        char[] t_arr = t.toCharArray();
-
-        //All characters in t must be within window
-        for(char cur: t_arr){
-            frequency[cur]++;
-        }
-
-        int right = 0;
-        int left = 0;
-        int minLen = Integer.MAX_VALUE;
-        int counter = 0;
-
-        String ans = "";
-
-        while (right < s.length()) {
-            char current = s_arr[right];
-
-            //Expanding window
-            //If you run into an element - you subtract it's frequency
-            //If the frequency is still above 0, that means you found one character that should be in s from t
-            if(--frequency[current] >= 0 ){
-                counter++;
-            }
-
-            //Shrink window
-            //If you reached all the characters that should be t
-            //Then start shrinking the window
-            while(counter == t.length()){
-                int currWindow = right - left + 1;
-
-                if(currWindow < minLen){
-                    minLen = currWindow;
-                    ans = s.substring(left, right + 1);
-                }
-
-                char leftChar = s.charAt(left);
-
-                //You added a character back into frequency
-                if(++frequency[leftChar] > 0){
-                    //So you can also decrement counter as you freed up an character
-                    counter--;
-                }
-                left++;
-            }
-            right++;
-        }
-        return ans;
     }
 }
