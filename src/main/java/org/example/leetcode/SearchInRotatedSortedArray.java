@@ -27,40 +27,38 @@ package org.example.leetcode;
 public class SearchInRotatedSortedArray {
 
     public static int findIndex(int[] nums, int target){
-        //Edge Cases
         if(nums.length == 1 && nums[0] != target){
             return -1;
         }
 
-        int left = 0;
-        int right = nums.length - 1;
+
+        int left = 0, right = nums.length - 1;
+
 
         while (left <= right){
-            int mid = left + (right - left)/ 2;
+
+            int mid = left + (right - left)/2;
 
             if(nums[mid] == target){
                 return mid;
             }
 
-            //Means right side is sorted
+
+            //Right is sorted
             if(nums[mid] <= nums[right]){
-
-
-                //If it falls in range of right - go right
+                //Check if element is within sorted range
                 if(nums[mid] < target && target <= nums[right]){
+                    //If it is shrink down to right side
                     left = mid + 1;
                 }else{
-                    //else go left
+                    //If it isn't means it's on the left side
                     right = mid - 1;
                 }
-            }
-            //Else left side is sorted
-            else{
-                //If it falls within sorted range - go left
+            } else {
+                //it means the left side is sorted
                 if(nums[left] <= target && target < nums[mid]){
                     right = mid - 1;
                 }else{
-                    //else go right
                     left = mid + 1;
                 }
             }

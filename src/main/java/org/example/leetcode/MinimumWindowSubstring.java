@@ -34,6 +34,6 @@ public class MinimumWindowSubstring {
 
 
     public static String minWindowString(String s, String t) {
-
+        return new String();
     }
 }
