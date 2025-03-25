@@ -29,7 +29,13 @@ public class TopKFrequentElements {
         }
 
         List<Map.Entry<Integer,Integer>> sortedFreq = new ArrayList<>((frequencies.entrySet()));
+
+        //Sorts Descending
         sortedFreq.sort((entry1, entry2) -> entry2.getValue() - entry1.getValue());
+
+        //Sorts Ascending
+        sortedFreq.sort((entry1, entry2) -> entry1.getValue() - entry2.getValue());
+
 
 
         int[] returnList = new int[k];

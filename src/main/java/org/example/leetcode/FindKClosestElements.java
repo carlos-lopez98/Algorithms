@@ -3,6 +3,7 @@ package org.example.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Given a sorted integer array arr, two integers k and x, return the k closest integers to x in the array.
@@ -30,41 +31,29 @@ import java.util.List;
 public class FindKClosestElements {
 
     public List<Integer> findClosestElements(int[] arr, int k, int x){
+
         List<Integer> ans = new ArrayList<>();
 
-        //Return all elements if k = arr.length
         if(k == arr.length){
-            for(int i : arr){
-                ans.add(i);
-            }
-
-            return ans;
+            return Arrays.stream(arr).boxed().collect(Collectors.toList());
         }
-
 
         int left = 0;
         int right = arr.length - k;
 
         while(left < right){
-            int midpoint = left + (right - left)/2;
+            int mid = left + (right - left)/2;
 
-            //This means that x is
-            if(x - arr[midpoint] > arr[midpoint + k] - x ){
-                left = midpoint + 1;
+            if(Math.abs(arr[mid] - x) > Math.abs(arr[mid + k] - x)){
+                left = mid + 1;
             }else{
-                right = midpoint;
+                right = mid;
             }
-
-
-
-
-
         }
 
         for(int i = left; i < left + k; i++){
             ans.add(arr[i]);
         }
-
 
         return ans;
     }
