@@ -48,18 +48,41 @@ import java.util.Map;
 
 public class TimeBasedKeyValueStore {
 
+
     class TimeMap {
 
-        public TimeMap() {
+        //*Can store multiple values for the same key at different timestamps
+        //Each value will technically be different because it'll have a different timestamp
+        //Each key can have an associated value -> with multiple timestamps
+        Map<String, List<TimeValue>> keyValueStore;
 
+        public TimeMap() {
+        keyValueStore = new HashMap<>();
+        }
+
+        //This represents our value - timestamp pair
+        public class TimeValue{
+
+            //This can have a value associated with multiple timestamps
+            String value;
+            Integer timestamp;
+
+            public TimeValue(String value, Integer timestamp){
+                this.value = value;
+                this.timestamp = timestamp;
+            }
         }
 
         public void set(String key, String value, int timestamp) {
+            //Pairs of value-timestamp associated with the key
+            List<TimeValue> listPair;
 
+            if(keyValueStore.containsKey(key)){
+                listPair = keyValueStore.get(key);
+            }
         }
 
         public String get(String key, int timestamp) {
-
         }
     }
 }
