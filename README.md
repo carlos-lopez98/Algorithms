@@ -51,7 +51,7 @@ Feel free to explore, learn from my mistakes, or fork it for your own practice.
 
 ## 📈 Progress
 
-I'm currently solving ~2–3 problems a week as part of ongoing learning and interview prep.
+I'm currently solving anywhere between 5-20 problems a week as part of ongoing learning and interview prep.
 
 ---
 
