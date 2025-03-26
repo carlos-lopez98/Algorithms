@@ -33,11 +33,11 @@ import org.example.practice.Node;
 public class ReOrderList {
 
 
-    public static void reOrder(Node head){
 
+    public static void reOrder(Node head) {
         Node slow = head;
         Node fast = head;
-        Node prev = null;
+        Node prev = new Node();
 
         while(fast != null && fast.next != null){
 
@@ -48,50 +48,33 @@ public class ReOrderList {
 
         prev.next = null;
 
-        Node reversed = reverseList(slow);
-
-        merge(head, reversed);
+        reverseList(slow);
     }
 
+
+    public static Node reverseList(Node head){
+        Node curr = head;
+        Node prev = null;
+
+        while(curr != null){
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
 
     public static void merge(Node one, Node two){
-        while (one != null && two != null){
+        Node tempOne = one.next;
+        Node tempTwo = two.next;
 
-            Node tempOne = one.next;
-            Node tempTwo = two.next;
+
+        while(one != null){
 
             one.next = two;
-
-            if(tempOne == null){
-                two.next = tempTwo;
-                break;
-            }
-
-            two.next = tempOne;
-
-
-            one = tempOne;
-            two = tempTwo;
+            one = two;
         }
-
-    }
-
-
-    //Helper function that reverses a list - problem is we need to give it the middle point of our big list
-    public static Node reverseList(Node head){
-
-        Node prev = null;
-        Node current = head;
-        Node next;
-
-        while(current != null){
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-
-        //Start of our new reversed list - not new, this happens in O (1) space
-        return prev;
     }
 }
