@@ -62,11 +62,9 @@ public class TimeBasedKeyValueStore {
 
         //This represents our value - timestamp pair
         public class TimeValue{
-
             //This can have a value associated with multiple timestamps
             String value;
             Integer timestamp;
-
             public TimeValue(String value, Integer timestamp){
                 this.value = value;
                 this.timestamp = timestamp;
@@ -74,15 +72,51 @@ public class TimeBasedKeyValueStore {
         }
 
         public void set(String key, String value, int timestamp) {
+            TimeValue current = new TimeValue(value, timestamp);
+
             //Pairs of value-timestamp associated with the key
             List<TimeValue> listPair;
 
             if(keyValueStore.containsKey(key)){
                 listPair = keyValueStore.get(key);
+                //Just add the new pair to the end of the existing list
+                listPair.add(current);
+            }
+            //If no list is associated with the key
+            else{
+                keyValueStore.put(key, new ArrayList<>());
+                List<TimeValue> temp = keyValueStore.get(key);
+                temp.add(current);
             }
         }
 
         public String get(String key, int timestamp) {
+        //When we try to retrieve a value - key will return a list of TimeValue
+
+            if(keyValueStore.isEmpty() || !keyValueStore.containsKey(key)){
+                return "";
+            }
+
+            List<TimeValue> listOfKeyValues = keyValueStore.get(key);
+
+            int left = 0;
+            int right = listOfKeyValues.size() - 1;
+
+            while(left <= right){
+                int midpoint = left + (right - left)/2;
+
+                if(listOfKeyValues.get(midpoint).timestamp == timestamp){
+                    return listOfKeyValues.get(midpoint).value;
+                }
+
+                if(listOfKeyValues.get(midpoint).timestamp < timestamp){
+                    left = midpoint + 1;
+                }else{
+                    right = midpoint - 1;
+                }
+            }
+
+            return right >= 0 ? listOfKeyValues.get(right).value : "";
         }
     }
 }
