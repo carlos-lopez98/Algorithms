@@ -28,68 +28,47 @@ import java.util.List;
 public class EncodeAndDecodeStrings {
 
 
-    //Encodes our list of strings - to a string
-    public static String encodeString(List<String> strings) {
-        //Create Delimiter
+    public String encode(List<String> strs) {
+        StringBuilder sb = new StringBuilder();
         char delimiter = '@';
-        //Use stringbuilder for manipulation
-        StringBuilder builder = new StringBuilder();
-        //You need to make sure you start with length first - that way, your first word starts with the length
-        //You can ignore any numbers after the delimiter check
-        for (String str : strings) {
-            builder.append(str.length());
-            builder.append(delimiter);
-            builder.append(str);
+
+        for(String current: strs){
+            sb.append(current.length());
+            sb.append(delimiter);
+            sb.append(current);
         }
-        //Returns encoded string
-        return builder.toString();
+
+        return sb.toString();
     }
 
-    //Will decode a long string back into a list of strings
-    public static List<String> decodeString(String encodedString) {
+    // Decodes a single string to a list of strings.
+    public List<String> decode(String s) {
 
-        //Create Delimiter
         char delimiter = '@';
+        List<String> returnList = new ArrayList<String>();
 
-        //Return array
-        char[] string = encodedString.toCharArray();
-
-        List<String> returnList = new ArrayList<>();
-
-
-        for (int i = 0; i < encodedString.length(); i++) {
-            //String builder to know how long our string will be
+        for(int i =0; i < s.length(); i++) {
             StringBuilder stringLength = new StringBuilder();
 
-            //Gives us the length of the string to iterate over
-            //This stops at the delimiter
-            while (string[i] != delimiter) {
-                stringLength.append(string[i]);
+            while(s.charAt(i) != delimiter){
+                stringLength.append(s.charAt(i));
                 i++;
             }
 
-            //So we increase i to be at our first letter
             i++;
+        int length = Integer.parseInt(stringLength.toString());
+        StringBuilder current = new StringBuilder();
 
-            //Parsing our length from builder to an int
-            //Creating a builder for the return string
-            StringBuilder currentString = new StringBuilder();
-            int length = Integer.parseInt(stringLength.toString());
-
-            //We need a new variable j so we don't go past our length
-            for (int j = 0; j < length; j++) {
-                currentString.append(string[i]);
-                i++;
-            }
-            //I will stop at the first number - we back track once, becuase
-            //If we leave it there, the loop will then move it to the second possible number or delimiter
-            i--;
-
-            //Then we add the current string to the list
-            returnList.add(currentString.toString());
+        for(int j = i; j <i + length; j++){
+            current.append(s.charAt(j));
+            i++;
         }
 
-        //In the end we return a list of strings
+        i--;
+
+        returnList.add(current.toString());
+    }
+
         return returnList;
     }
 }
