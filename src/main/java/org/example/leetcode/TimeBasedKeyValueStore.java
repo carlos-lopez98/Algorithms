@@ -1,5 +1,6 @@
 package org.example.leetcode;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,88 +43,23 @@ import java.util.Map;
  * All the timestamps timestamp of set are strictly increasing.
  * At most 2 * 105 calls will be made to set and get.
  */
+
+
+
 public class TimeBasedKeyValueStore {
 
     class TimeMap {
 
-        Map<String, List<TimeValue>> map;
-
-
-        //Create a class called TimeValue - for our value and timestamp pair
-        //The input string will be the key so it'll be a Map<String, TimeValue>
-        class TimeValue {
-            String value;
-            int timestamp;
-
-            public TimeValue(String value, int timestamp) {
-                this.value = value;
-                this.timestamp = timestamp;
-            }
-
-        }
-
-
         public TimeMap() {
-            this.map = new HashMap<>();
+
         }
 
-        //Creates a list assigned to a key - each item in list consists of a timestamp and a value
-        //As per the constraints, all timestamps will always be ascending - essentially since it's sorted
-        //You can perform a binary search to retrieve the alloted time stamp
         public void set(String key, String value, int timestamp) {
 
-            //If map doesn't have the key - create a new empty arraylist for that key
-            if (!map.containsKey(key)) {
-                map.put(key, new ArrayList<>());
-            }
-
-            //It's a list of TimeValues because a value can have multiple timestamps
-            List<TimeValue> temp = map.get(key);
-            temp.add(new TimeValue(value, timestamp));
         }
 
         public String get(String key, int timestamp) {
 
-            if (!map.containsKey(key)) {
-                return "";
-            }
-
-            //If you're looking for a particular time stamp
-            //First you retrieve your list
-
-            //Since timestamps are added in a linear ascending fashion we're able to use binary search
-            List<TimeValue> list = map.get(key);
-            int left = 0;
-            int right = list.size() - 1;
-
-
-            while (left <= right) {
-
-                int midPoint = left + (right - left) / 2;
-                TimeValue current = list.get(midPoint);
-
-                if (current.timestamp == timestamp) {
-                    return current.value;
-                }
-
-                if (timestamp < current.timestamp) {
-                    right = midPoint - 1;
-                } else {
-                    left = midPoint + 1;
-                }
-            }
-
-            //You return right because if you visualize the binary search
-            //When you don't have a value in your set list
-            //Returning right will return the value next biggest
-            //So if you're looking for 4, but 4 is not a timestamp
-            //But 3 is in the timestamp, this ensures three is returned
-
-            if(right >= 0){
-                return list.get(right).value;
-            }
-
-            return "";
         }
     }
 }
