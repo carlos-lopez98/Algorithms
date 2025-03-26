@@ -42,12 +42,13 @@ public class FindKClosestElements {
         int right = arr.length - k;
 
         while(left < right){
-            int mid = left + (right - left)/2;
+            int midpoint = left + (right - left)/2;
 
-            if(Math.abs(arr[mid] - x) > Math.abs(arr[mid + k] - x)){
-                left = mid + 1;
-            }else{
-                right = mid;
+            //If left wall is further - then move it up
+            if(x - arr[midpoint] > arr[midpoint + k] - x ){
+               left = midpoint + 1;
+            }else {
+                right = midpoint;
             }
         }
 
