@@ -67,14 +67,17 @@ public class ReOrderList {
     }
 
     public static void merge(Node one, Node two){
-        Node tempOne = one.next;
-        Node tempTwo = two.next;
-
-
-        while(one != null){
+        while(one != null && two != null){
+            Node tempOne = one.next;
+            Node tempTwo = two.next;
 
             one.next = two;
-            one = two;
+
+            if(tempOne == null) break;
+            two.next = tempOne;
+
+            one = tempOne;
+            two = tempTwo;
         }
     }
 }

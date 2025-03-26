@@ -37,71 +37,47 @@ import java.util.Map;
 public class MinimumWindowSubstring {
 
 
-    public static String minWindowString(String s, String t) {
+        public static String minWindowString(String s, String t) {
+            if (s == null || t == null || s.length() < t.length()) return "";
 
-        if(t.length() > s.length()){
-            return "";
-        }
-
-        if(s.equals(t)){
-            return s;
-        }
-
-        //Will be initialized with all the frequencies in t
-        Map<Character, Integer> tFreqMap = new HashMap<>();
-
-        //Will contain all the frequencies within our current window
-        Map<Character, Integer> windowFreqMap = new HashMap<>();
-
-        for(char curr: t.toCharArray()){
-            tFreqMap.merge(curr,1,Integer::sum);
-        }
-
-
-        int left = 0;
-        int right = 0;
-        int counter = 0;
-        int minLength = Integer.MAX_VALUE; //We set it to max, so that any viable first window will be smaller
-        String ans = "";
-
-        while(right < s.length()){
-            char curr = s.charAt(right);
-
-            //Checks our current variable - right
-            if(tFreqMap.containsKey(curr)){
-                windowFreqMap.merge(curr,1,Integer::sum);
-                if(windowFreqMap.get(curr) == tFreqMap.get(curr)){
-                    counter++;
-                    System.out.println("Current = " + curr);
-                    System.out.print("Count = " + windowFreqMap.get(curr));
-                }
+            Map<Character, Integer> tFreq = new HashMap<>();
+            for (char c : t.toCharArray()) {
+                tFreq.put(c, tFreq.getOrDefault(c, 0) + 1);
             }
 
-            //Variable window - so while a certain condition is true/ false
-            //Shorten our window
-            while(counter == tFreqMap.size()){
-                char toRemove = s.charAt(left);
+            Map<Character, Integer> window = new HashMap<>();
+            int have = 0;
+            int need = tFreq.size();
 
-                if(minLength > right - left + 1){
-                    minLength = right - left + 1;
-                    ans = s.substring(left,right + 1);
+            int left = 0;
+            int minLen = Integer.MAX_VALUE;
+            int minStart = 0;
+
+            for (int right = 0; right < s.length(); right++) {
+                char c = s.charAt(right);
+                window.put(c, window.getOrDefault(c, 0) + 1);
+
+                if (tFreq.containsKey(c) && window.get(c).intValue() == tFreq.get(c).intValue()) {
+                    have++;
                 }
 
-                left++;
-
-
-                if (tFreqMap.containsKey(toRemove)) {
-                    windowFreqMap.merge(toRemove, -1, Integer::sum);
-                    if (windowFreqMap.get(toRemove) < tFreqMap.get(toRemove)) {
-                        counter--;
+                while (have == need) {
+                    // update minimum
+                    if (right - left + 1 < minLen) {
+                        minLen = right - left + 1;
+                        minStart = left;
                     }
+
+                    char leftChar = s.charAt(left);
+                    window.put(leftChar, window.get(leftChar) - 1);
+                    if (tFreq.containsKey(leftChar) && window.get(leftChar) < tFreq.get(leftChar)) {
+                        have--;
+                    }
+
+                    left++;
                 }
             }
 
-            //Expands our window at the end
-            right++;
+            return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
         }
-
-        return ans;
     }
-}

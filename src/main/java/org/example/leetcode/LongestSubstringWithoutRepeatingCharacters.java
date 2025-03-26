@@ -47,6 +47,9 @@ public class LongestSubstringWithoutRepeatingCharacters {
         while(right < s.length()){
             char current = s.charAt(right);
 
+            //The key here is where we've put this while loop
+            //If our charset contains current, we start removing from the left
+            //Before we add our current character
             while(charSet.contains(current)){
                 charSet.remove(s.charAt(left));
                 left++;

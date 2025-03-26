@@ -49,6 +49,8 @@ public class TimeBasedKeyValueStore {
         Map<String, List<TimeValue>> map;
 
 
+        //Create a class called TimeValue - for our value and timestamp pair
+        //The input string will be the key so it'll be a Map<String, TimeValue>
         class TimeValue {
             String value;
             int timestamp;
@@ -75,20 +77,28 @@ public class TimeBasedKeyValueStore {
                 map.put(key, new ArrayList<>());
             }
 
+            //It's a list of TimeValues because a value can have multiple timestamps
             List<TimeValue> temp = map.get(key);
             temp.add(new TimeValue(value, timestamp));
         }
 
         public String get(String key, int timestamp) {
+
             if (!map.containsKey(key)) {
                 return "";
             }
 
+            //If you're looking for a particular time stamp
+            //First you retrieve your list
+
+            //Since timestamps are added in a linear ascending fashion we're able to use binary search
             List<TimeValue> list = map.get(key);
             int left = 0;
             int right = list.size() - 1;
 
+
             while (left <= right) {
+
                 int midPoint = left + (right - left) / 2;
                 TimeValue current = list.get(midPoint);
 
@@ -102,6 +112,12 @@ public class TimeBasedKeyValueStore {
                     left = midPoint + 1;
                 }
             }
+
+            //You return right because if you visualize the binary search
+            //When you don't have a value in your set list
+            //Returning right will return the value next biggest
+            //So if you're looking for 4, but 4 is not a timestamp
+            //But 3 is in the timestamp, this ensures three is returned
 
             if(right >= 0){
                 return list.get(right).value;
