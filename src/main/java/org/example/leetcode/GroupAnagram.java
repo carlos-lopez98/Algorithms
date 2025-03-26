@@ -42,12 +42,13 @@ public class GroupAnagram {
             Arrays.sort(sortedString);
             String sorted = Arrays.toString(sortedString);
 
-            //If the sorted version is in the hashmap
-            //Add the unsorted in as a value, but using the sorted as a key
+            //If the sorted version is not in the hashmap
+            //Add it in as a key with an empty list
             if (!groupAnagramTracker.containsKey(sorted)) {
                 groupAnagramTracker.put(sorted, new ArrayList<>());
             }
 
+            //Here's where the unsorted is added
             groupAnagramTracker.get(sorted).add(currentString);
         }
 
@@ -56,6 +57,8 @@ public class GroupAnagram {
         List<List<String>> groupedAnagrams = groupAnagramTracker.values()
                 .stream()
                 .toList();
+
+        List<List<String>> anagrams = groupAnagramTracker.values().stream().toList();
 
         return groupedAnagrams;
     }
