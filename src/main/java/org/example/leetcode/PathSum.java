@@ -35,9 +35,7 @@ import org.example.trees.TreeNode;
 public class PathSum {
 
     public boolean hasPathSum(TreeNode root, int targetSum){
-
         int sum = 0;
-
         return recurse(root, targetSum, sum);
     }
 
@@ -51,7 +49,6 @@ public class PathSum {
         if(root.getLeftChild() == null && root.getRightChild() == null){
             return sum == targetSum;
         }
-
 
         return recurse(root.getLeftChild(),targetSum, sum) || recurse(root.getRightChild(),targetSum, sum);
     }
