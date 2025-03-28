@@ -59,7 +59,11 @@ public class FindIfPathExistsInGraph {
 
                 //Since this is an undirected graph, there would be a connection in both directions
                 //So we would add row to our column value, and a col to our row value
+
+                //First one denotes that node 0 connects to node 1
                 graph.computeIfAbsent(row, value -> new ArrayList<>()).add(col);
+
+                //Second one would denote that node 1, connects to node 0
                 graph.computeIfAbsent(col, value -> new ArrayList<>()).add(row);
             }
 
@@ -81,6 +85,7 @@ public class FindIfPathExistsInGraph {
                 visited[currNode] = true;
 
                 //This will iterate through the list of neighbors for the current node
+                //Each neighbor has a DFS performed on it
                 for(int nextNode : graph.get(currNode)){
 
                     //If this returns true - that means we found our destination - if not the recursive call will
