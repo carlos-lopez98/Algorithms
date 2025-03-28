@@ -90,6 +90,7 @@ public class SimplifyPath {
         List<String> conversion = new ArrayList<>(pathStack);
 
         StringBuilder sb = new StringBuilder();
+
         for (String current: conversion) {
             sb.append("/");
             sb.append(current);
