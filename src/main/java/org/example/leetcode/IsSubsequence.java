@@ -25,7 +25,6 @@ public class IsSubsequence {
     public boolean isSubsequence(String s, String t) {
         //represents s
         int i = 0;
-
         //represents t
         int j = 0;
 

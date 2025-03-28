@@ -70,6 +70,7 @@ public class MinimumWindowSubstring {
 
                     char leftChar = s.charAt(left);
                     window.put(leftChar, window.get(leftChar) - 1);
+
                     if (tFreq.containsKey(leftChar) && window.get(leftChar) < tFreq.get(leftChar)) {
                         have--;
                     }

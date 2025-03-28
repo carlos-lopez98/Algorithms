@@ -363,8 +363,16 @@ public class Main {
          * Test for longest substring without repeating characters
          */
 
-        String s = "abcabcbb";
-        System.out.println( LongestSubstringWithoutRepeatingCharacters.getLongestSubstring(s));
+//        String s = "abcabcbb";
+//        System.out.println( LongestSubstringWithoutRepeatingCharacters.getLongestSubstring(s));
+
+        /**
+         * Testing for simplify path
+         */
+
+        SimplifyPath path = new SimplifyPath();
+
+        path.simplifyPath("Hello//World//Woop/.././...");
 
 
     }
