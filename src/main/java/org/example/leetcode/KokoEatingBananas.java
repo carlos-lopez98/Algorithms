@@ -39,6 +39,8 @@ public class KokoEatingBananas {
             maxEatingRate = Math.max(pile, maxEatingRate);
         }
         // Binary search from 1 to maxEatingRate
+        //We do less than because we're narrowing our answer to a specific value
+        //When we do less than or = to, we will potentially skip the last value if it's not equal to our target
         while (minEatingRate < maxEatingRate) {
             int mid = minEatingRate + (maxEatingRate - minEatingRate) / 2; // Correct mid calculation
 
