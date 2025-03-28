@@ -92,7 +92,6 @@ public class TimeBasedKeyValueStore {
 
         public String get(String key, int timestamp) {
         //When we try to retrieve a value - key will return a list of TimeValue
-
             if(keyValueStore.isEmpty() || !keyValueStore.containsKey(key)){
                 return "";
             }
@@ -112,6 +111,11 @@ public class TimeBasedKeyValueStore {
                 if(listOfKeyValues.get(midpoint).timestamp < timestamp){
                     left = midpoint + 1;
                 }else{
+                    //This will push past the boundary on the last iteration
+                    //And give you the lower ceiling boundary - IE if you asked for 3
+                    //And you got 2 & 4, and mid = 2, then left will converge onto 4,
+                    //Then in the next iteration 4 > 3, so right will be midpoint - 1
+                    //Giving you the correct floor value
                     right = midpoint - 1;
                 }
             }

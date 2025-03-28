@@ -41,6 +41,7 @@ public class MinimumWindowSubstring {
             if (s == null || t == null || s.length() < t.length()) return "";
 
             Map<Character, Integer> tFreq = new HashMap<>();
+
             for (char c : t.toCharArray()) {
                 tFreq.put(c, tFreq.getOrDefault(c, 0) + 1);
             }

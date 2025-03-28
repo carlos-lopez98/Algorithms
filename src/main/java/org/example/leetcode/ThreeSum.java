@@ -44,8 +44,10 @@ public class ThreeSum {
     //inward
     public List<List<Integer>> threeSum(int[] nums) {
         //First thing sort the list - which will allow you to steer the sum
+        //You must sort, or else you won't be able to steer the sum
         Arrays.sort(nums);
 
+        //Create your return list, it's a list of list of triplets
         List<List<Integer>> threeSum = new ArrayList<>(); // This is where you'll store your sum pairs
 
         for(int fixed = 0; fixed < nums.length - 2; fixed++){
@@ -55,6 +57,8 @@ public class ThreeSum {
                 continue;
             }
 
+            //Remember that the left pointer will start at one position right of you're first pointer
+            //The right pointer always starts at the last position in your array and moves inward
             int left = fixed + 1;
             int right = nums.length - 1;
 
@@ -66,7 +70,10 @@ public class ThreeSum {
                     left++;
                     right--;
 
+                    //Skip potential duplicates for left pointer - this is only after you found a valid triplet
                     while(left < right && nums[left] == nums[left - 1]) left++;
+
+                    //Skip potential duplicates for right pointer - this is only after you found a valid triplet
                     while(left < right && nums[right] == nums[right + 1])right--;
                 } else if(sum > 0){
                     right--;
