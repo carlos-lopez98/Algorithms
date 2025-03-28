@@ -32,49 +32,52 @@ public class LongestRepeatingCharacterReplacement {
 
     //k is the maximum allowed of operations
     public static int returnLongestRepeatingCharacter(String s, int k){
-       if(s.isEmpty()){
-           return 0;
-       }
+    //Edge Case
+        if (s.isEmpty()){
+            return 0;
+        }
+    //Initialize variables
+    int left = 0;
+    int right = 0;
+    //This can default to one, since you always start with a window size 1
+    int windowSize = 1;
+    int longestSequence = 0;
+    int[] frequencies = new int[127];
+    int maxFreq = 0;
 
-       int left = 0;
-       int right = 0;
+    //While our rightwall is less than length
+    while(right < s.length()){
+        //This is our current character for readability
+        char curr = s.charAt(right);
 
-       int longestSequence = 0;
-       int currentWindow = 1;
+        //This keeps track of each character within our window and how many times they show up
+        frequencies[curr - 'A'] += 1;
 
-       Map<Character, Integer> frequencies = new HashMap<>();
+        //this is a tracker of the current character's frequency
+        int currentFreq = frequencies[curr - 'A'];
 
-       int maxFreq = 0;
+        //If the current characters frequency is greater than the maximum running frequency
+        //That becomes our new max
+        maxFreq = Math.max(currentFreq, maxFreq);
 
-        //Sliding window technique
-        while(right < s.length()){
-            char current = s.charAt(right);
-            int currentFreq = 0;
+        //If the changes needed is greater than k - means we have to shrink our window
+        while(windowSize - maxFreq > k){
+            //remove the left most character frequency
+            frequencies[s.charAt(left) - 'A'] -=1;
 
-            frequencies.merge(current, 1, Integer::sum);
-
-            if(frequencies.containsKey(current)){
-                currentFreq = frequencies.get(current);
-            }
-
-            //Keeps track of the element that shows up the most in our currentwindow
-            maxFreq = Math.max(currentFreq, maxFreq);
-
-            //Operations needed is our current window size - the element that shows up the most
-            //If the operations needed are ever more than k - shrink our window
-            while(currentWindow - maxFreq > k){
-                frequencies.merge(s.charAt(left), -1, Integer::sum);
-                left++;
-                currentWindow--;
-            }
-
-
-
-            longestSequence = Math.max(currentWindow, longestSequence);
-            right++;
-            currentWindow++;
+            //Shrink window, while keeping track of the new window's size
+            left++;
+            windowSize--;
         }
 
-        return longestSequence;
+        //Longest sequence will be = to the greater value either window size or the current running longest sequence
+        longestSequence = Math.max(windowSize, longestSequence);
+
+        //Grow the window after every iteration
+        right++;
+        windowSize++;
+    }
+
+    return longestSequence;
     }
 }
