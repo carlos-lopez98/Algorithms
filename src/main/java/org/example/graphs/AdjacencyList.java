@@ -73,7 +73,7 @@ public class AdjacencyList {
 
         for(int[] edge : edges){
             int x = edge[0];
-            Edge curr = new Edge(edge[1], edge[1]);
+            Edge curr = new Edge(edge[0], edge[1]);
 
             adjacencyList.computeIfAbsent(x, value -> new ArrayList<>()).add(curr);
         }
@@ -81,8 +81,18 @@ public class AdjacencyList {
         return adjacencyList;
     }
 
+    //#5 When the edges are represented by strings - directed graph
+    public Map<String, List<String>> createStringAdjacencyList(String[][] edges){
+     Map<String, List<String>> adjacencyList = new HashMap<>();
 
+     for(String[] edge: edges){
+         String x = edge[0];
+         String s = edge[1];
 
+         adjacencyList.computeIfAbsent(x, value -> new ArrayList<>()).add(s);
+         adjacencyList.computeIfAbsent(s, value -> new ArrayList<>()).add(x);
+     }
 
-
+        return adjacencyList;
+    }
 }
