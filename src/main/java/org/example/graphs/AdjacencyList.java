@@ -56,6 +56,32 @@ public class AdjacencyList {
         return adjacencyList;
     }
 
+    //#4 create an adjacency list for a weighted edges
+    class Edge{
+        int neighbor;
+        int weight;
+
+        public Edge(int neighbor, int weight){
+            this.neighbor = neighbor;
+            this.weight = weight;
+        }
+    }
+
+    public Map<Integer, List<Edge>> createWeightedAdjacencyList(int[][] edges){
+        HashMap<Integer, List<Edge>> adjacencyList = new HashMap<>();
+
+
+        for(int[] edge : edges){
+            int x = edge[0];
+            Edge curr = new Edge(edge[1], edge[1]);
+
+            adjacencyList.computeIfAbsent(x, value -> new ArrayList<>()).add(curr);
+        }
+
+        return adjacencyList;
+    }
+
+
 
 
 
