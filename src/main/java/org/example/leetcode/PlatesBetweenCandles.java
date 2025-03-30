@@ -38,69 +38,71 @@ import java.util.List;
  * queries[i].length == 2
  * 0 <= lefti <= righti < s.length
  */
+/**
+ * Optimized solution using prefix sums and nearest-candle tracking.
+ *
+ * Approach:
+ * Traverse the string once to build
+ *   1. A prefix sum of plates at each candle (prefixSum)
+ *   2. An array (closestLeft) to track the nearest candle to the left for each index
+ * - Traverse the string again from right to left to build:
+ *   3. An array (closestRight) for the nearest candle to the right for each index
+ *
+ * Each query uses the two closest candles to determine how many plates
+ * are between them using the prefixSum list.
+ *
+ * Time Complexity: O(n + q)
+ */
 public class PlatesBetweenCandles {
 
     public int[] platesBetweenCandles(String s, int[][] queries) {
         int n = s.length();
 
-        //We need an empty list, that will keep track of the prefix sum
-        //We use an array list because we don't know how many potential candles there are going to be
         List<Integer> prefixSum = new ArrayList<>();
+        int[] closestCandleLeftOfIndex = new int[n];
+        int[] closestCandleRightOfIndex = new int[n];
+        int[] result = new int[queries.length];
 
-        //Each array keeps track of the candle closest to the current index - one is closest to the left
-        //The other closest to the right
-        int[] closestLeft = new int[n];
-        int[] closestRight = new int[n];
-
-        //This will keep track of how many plates up to the current point we have
         int sum = 0;
-
-        //This will track the current candle prefixSum index - it represents the index for a candle
-        //And in the prefixSum List it stores the current running count of plates up to the candle
         int index = -1;
 
-        //First iteration through string
-        for(int i = 0; i < n; i++){
+        //Iterate from left to right to calculate prefixSum & closestCandlesLeft
+        for (int i = 0; i < n; i++) {
             char curr = s.charAt(i);
-
-            if(curr == '*'){
+            if (curr == '*') {
                 sum++;
-                //If a string starts with ***, then these indices - don't have a closestLeft candle - so we set them
-                //To -1
-                closestLeft[i] = index;
-            }else{ // If we reach a candle - we can update our prefixsum list
-                //so at first candle or zeroth candle sum = sum
-                //our index can move up, and starting at this point, our closestLeft candle is the candle at index
-             prefixSum.add(sum);
-             index++;
-             closestLeft[i] = index;
+                closestCandleLeftOfIndex[i] = index;
+            } else {
+                prefixSum.add(sum);
+                index++;
+                closestCandleLeftOfIndex[i] = index;
             }
         }
 
-        //Now we can build our closestRight - to do this we iterate from the right inward
+        //We reset index - because at the end of the for loop - candles = prefixSum.size()
         index = prefixSum.size();
-            for (int i = n - 1; i >= 0; i--) {
-                if (s.charAt(i) == '|') {
-                    index--;
-                }
-                closestRight[i] = index;
+        for (int i = n - 1; i >= 0; i--) {
+            if (s.charAt(i) == '|') {
+                index--;
             }
+            closestCandleRightOfIndex[i] = index;
+        }
 
-        int[] result = new int[queries.length];
+        //Third loop does the final calculation
+        //We first make sure that there is space between both candles
+        //Then we calculate our result for the the current position
+        for (int i = 0; i < queries.length; i++) {
+            int left = queries[i][0];
+            int right = queries[i][1];
 
-        for(int i = 0; i < queries.length; i++){
-          int left = queries[i][0];
-          int right = queries[i][1];
+            int leftCandle = closestCandleRightOfIndex[left];
+            int rightCandle = closestCandleLeftOfIndex[right];
 
-          int leftCandle = closestRight[left];
-          int rightCandle = closestLeft[right];
-
-          if(leftCandle < rightCandle){
-              result[i] = prefixSum.get(rightCandle) - prefixSum.get(leftCandle);
-          }else{
-              result[i] = 0;
-          }
-
+            if (leftCandle < rightCandle) {
+                result[i] = prefixSum.get(rightCandle) - prefixSum.get(leftCandle);
+            } else {
+                result[i] = 0;
+            }
         }
 
         return result;
