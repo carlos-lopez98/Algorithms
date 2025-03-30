@@ -1,6 +1,7 @@
 package org.example.leetcode;
 
-public class PlusOne {
+import org.w3c.dom.ls.LSOutput;
 
+public class PlusOne {
 
 }
