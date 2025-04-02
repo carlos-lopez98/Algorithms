@@ -1,10 +1,9 @@
 package org.example.leetcode;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.example.practice.Node;
+
+import java.util.*;
 
 /**
  * There is a bi-directional graph with n vertices, where each vertex is labeled from 0 to n - 1
@@ -41,10 +40,10 @@ import java.util.Map;
  */
 
 public class FindIfPathExistsInGraph {
+    Map<Integer, List<Integer>> graph = new HashMap<>();
 
-        public boolean validPath(int n, int[][] edges, int source, int destination){
+    public boolean validPath(int n, int[][] edges, int source, int destination){
             //Create an adjacency list
-            Map<Integer, List<Integer>> graph = new HashMap<>();
             boolean[] visited = new boolean[n];
 
             //Code to build an adjacency list - basically a hashmap representation of a graph
@@ -96,6 +95,36 @@ public class FindIfPathExistsInGraph {
                         return true;
                     }
                 }
+            }
+
+            return false;
+        }
+
+
+
+        //BFS Approach
+        public boolean BFS(Map<Integer,List<Integer>> graph,boolean[] visited, int source, int destination){
+
+            if(source == destination){
+                return true;
+            }
+
+            Queue<Integer> queue = new LinkedList<>();
+
+            visited[source] = true;
+            queue.add(source);
+
+            while(!queue.isEmpty()){
+                int curr = queue.poll();
+
+                for(int neighbor: graph.get(curr)) {
+                    if (!visited[neighbor]) {
+                        visited[neighbor] = true;
+                        queue.add(neighbor);
+                    }
+                }
+
+                if(curr == destination) return true;
             }
 
             return false;
