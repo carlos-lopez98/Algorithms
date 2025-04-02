@@ -86,6 +86,8 @@ public class FindIfPathExistsInGraph {
 
                 //This will iterate through the list of neighbors for the current node
                 //Each neighbor has a DFS performed on it
+                //If the path is bad - goes onto the next neighbor
+                //If it's good, it breaks recursion and returns true
                 for(int nextNode : graph.get(currNode)){
 
                     //If this returns true - that means we found our destination - if not the recursive call will
