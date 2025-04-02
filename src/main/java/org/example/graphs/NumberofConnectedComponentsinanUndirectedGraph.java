@@ -1,9 +1,6 @@
 package org.example.graphs;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class NumberofConnectedComponentsinanUndirectedGraph {
 
@@ -27,18 +24,20 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
             }
 
 
+            //Since we have our nodes n when we start - we must iterate through n to make sure we reach each component
             for(int i = 0; i < n; i++){
                 if(!seen[i]){
                     components++;
 
                     //Scans all nodes in the current component - adds them to seen
-                    dfs(adjacencyList, seen, i);
+                    BFS(adjacencyList, seen, i);
                 }
             }
 
             return components;
         }
 
+        //Each component is iterated over using DFS
         public void dfs(Map<Integer, List<Integer>> adjList, boolean[] seen, int startNode){
             //Set current node as seen
             seen[startNode] = true;
@@ -46,6 +45,26 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
             for(int i = 0; i < adjList.get(startNode).size(); i++) {
                 if(!seen[adjList.get(startNode).get(i)]){
                     dfs(adjList, seen, adjList.get(startNode).get(i));
+                }
+            }
+        }
+
+
+        //Only difference in this approach is that each component is iterated over using BFS
+        public void BFS(Map<Integer, List<Integer>> adjList, boolean[] seen, int startNode){
+
+            Queue<Integer> queue = new LinkedList<>();
+            queue.add(startNode);
+
+            while(!queue.isEmpty()){
+                int curr = queue.poll();
+
+                //This won't be able to add unconnected components
+                for(int neighbor: adjList.get(curr)){
+                    if(!seen[neighbor]){
+                        seen[neighbor] = true;
+                        queue.add(neighbor);
+                    }
                 }
             }
         }
