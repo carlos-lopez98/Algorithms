@@ -39,8 +39,6 @@ public class AllPathsFromSourceToTarget {
 
 
 
-
-
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
         this.target = graph.length -1;
         this.graph = graph;
@@ -73,6 +71,25 @@ public class AllPathsFromSourceToTarget {
             DFS(edge, path);
             //Once we come out of recursion - we remove our path
             path.removeLast();
+        }
+    }
+
+    public void BFS(int start, List<Integer> path){
+        if(start == target){
+            paths.add(new ArrayList<>(path));
+        }
+
+        //Break out of our BFS - will return the empty paths list we instantiated above
+        if(graph == null || graph.length == 0){
+            return;
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        queue.add(start);
+
+        while(!queue.isEmpty()){
+
         }
     }
 }
