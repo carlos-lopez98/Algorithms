@@ -30,43 +30,48 @@ import java.util.*;
 
 public class AllPathsFromSourceToTarget {
 
+    //Since we have our variables at class level
+    //There is no need to keep passing them into the recursive function
     int target;
     int[][] graph;
 
-    //Keeps a list of all viable paths
-    List<List<Integer>> results;
+    List<List<Integer>> paths;
 
-    //No Cycles
-    //Means we only need one hashmap for the adjacency list
+
+
+
+
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-        this.target = graph.length - 1;
+        this.target = graph.length -1;
         this.graph = graph;
+        paths = new ArrayList<>();
 
-        this.results = new ArrayList<>();
 
-        LinkedList<Integer> path = new LinkedList<>();
-        path.addLast(0);
+        //Path is mutable, as we do DFS, we keep adding nodes to our path
+        List<Integer> path = new ArrayList<>();
+        path.add(0);
 
-        this.backTrack(0,path);
+        DFS( 0, path);
 
-        return this.results;
+        return paths;
     }
 
-    public void backTrack(int currNode, LinkedList<Integer> path ){
-        //Our base case - if we reach a node = to target - we have a viable path
-        if(currNode == this.target){
-            this.results.add(new ArrayList<>(path));
+
+    public void DFS(int node, List<Integer> path){
+        if(node == target){
+
+            //We do a new ArrayList<> to ensure we store a copy of the path
+            //If not, then as our path is edited, so is our reference to it
+            paths.add(new ArrayList<>(path));
             return;
         }
 
-        //If not we recurse down the neighbor nodes
-        for(int nextNode : this.graph[currNode]){
-            //You add next node to path
-            path.addLast(nextNode);
-            this.backTrack(nextNode, path);
+        for(int edge : graph[node]){
+            path.add(edge);
 
-            //Once you pop off from the call stack you remove the node
-            //Essentially, you backtracked at this point
+            //Recurse until we find a path
+            DFS(edge, path);
+            //Once we come out of recursion - we remove our path
             path.removeLast();
         }
     }

@@ -120,6 +120,7 @@ public class TimeBasedKeyValueStore {
                 }
             }
 
+            //Create the bound
             return right >= 0 ? listOfKeyValues.get(right).value : "";
         }
     }

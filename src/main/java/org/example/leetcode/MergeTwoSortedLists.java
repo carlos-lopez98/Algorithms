@@ -11,9 +11,6 @@ import org.example.practice.Node;
 
 public class MergeTwoSortedLists {
 
-
-
-
     public static Node mergeTwoLists(Node listOne, Node listTwo){
 
         Node dummy = new Node();
@@ -30,6 +27,7 @@ public class MergeTwoSortedLists {
                 mergePointer.next = listTwo;
                 listTwo = listTwo.next;
             }
+
             mergePointer = mergePointer.next;
         }
 
