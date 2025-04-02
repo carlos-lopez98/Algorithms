@@ -46,6 +46,7 @@ public class PathSum {
 
         sum += root.getData();
 
+        //You check for sum when both children are null - this means we're at a possible path or leaf node
         if(root.getLeftChild() == null && root.getRightChild() == null){
             return sum == targetSum;
         }
