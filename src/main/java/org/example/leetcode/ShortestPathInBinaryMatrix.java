@@ -29,6 +29,21 @@ public class ShortestPathInBinaryMatrix {
         queue.add(new int[]{0,0});
 
 
+        //Now we can start our BFS like normal
+        while(!queue.isEmpty()){
+            int[] cell = queue.remove();
+            int row = cell[0];
+            int col = cell[1];
+
+            //Value becomes our distance - for first iteration
+            int distance = grid[row][col];
+
+            //If we're at our target - return the distance to target
+            if(row == grid.length - 1 && col == grid[0].length - 1){
+                return distance;
+            }
+        }
+
     }
 
 
