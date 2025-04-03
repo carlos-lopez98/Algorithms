@@ -84,12 +84,34 @@ public class AllPathsFromSourceToTarget {
             return;
         }
 
-        Queue<Integer> queue = new LinkedList<>();
+        //When using a BFS approach each node is added to a queue
+        //Since we want to store paths for each node as well, we can basically
+        //create a queue that matches up with each node, but stores the path up to that point
+        Queue<List<Integer>> queueForPath = new LinkedList<>();
+        path.add(0);
+        queueForPath.add(path);
 
-        queue.add(start);
+        while(!queueForPath.isEmpty()){
 
-        while(!queue.isEmpty()){
+            List<Integer> currentPath = queueForPath.poll();
+            //Retrieves the most recently added element in our path
+            int node = currentPath.get(currentPath.size() - 1);
 
+            for(int neighbor : graph[node]){
+                List<Integer> tmpPath = new ArrayList<>(currentPath); //Creates a new path up to our current path
+
+                //Adds the new neighbor to our path
+                tmpPath.add(neighbor);
+
+                //If our neighbor is the target - we can just add that path to the overall paths list
+                if(neighbor == target){
+                    paths.add(new ArrayList<>(tmpPath));
+                }
+                //If it's not the target, we can queue up that path
+                else{
+                    queueForPath.add(new ArrayList<>(tmpPath));
+                }
+            }
         }
     }
 }
