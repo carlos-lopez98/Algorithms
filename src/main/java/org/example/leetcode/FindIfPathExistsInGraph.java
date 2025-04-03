@@ -123,7 +123,8 @@ public class FindIfPathExistsInGraph {
                         queue.add(neighbor);
                     }
                 }
-
+                //This statement is in the while loop, because this is where we perform operations
+                //for each node at each level - this is when we should be performing our check
                 if(curr == destination) return true;
             }
 
