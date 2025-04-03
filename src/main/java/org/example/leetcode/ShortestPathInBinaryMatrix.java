@@ -35,17 +35,38 @@ public class ShortestPathInBinaryMatrix {
             int row = cell[0];
             int col = cell[1];
 
-            //Value becomes our distance - for first iteration
+            //In every iteration we reset distance = to the new spot we hopped to
+            //That means at every position we must set the next value we're traversing to
+            //to distance + 1, so if we're 4 spaces into the path, our next space we hop to will be 5
             int distance = grid[row][col];
 
             //If we're at our target - return the distance to target
             if(row == grid.length - 1 && col == grid[0].length - 1){
                 return distance;
             }
+
+            visit(row - 1, col - 1, distance, grid, queue); //top left
+            visit(row - 1, col, distance, grid, queue);         //top
+            visit(row - 1, col + 1, distance, grid, queue); //top right
+            visit(row, col - 1, distance, grid, queue);         //left
+            visit(row, col + 1, distance, grid, queue);         // right
+            visit(row + 1, col - 1, distance, grid, queue); //bottom left
+            visit(row + 1, col, distance, grid, queue);         //bottom
+            visit(row + 1, col + 1, distance, grid, queue); //bottom right
         }
 
+        //This will only happen if we don't find a vianble path
+        return -1;
     }
 
+    public void visit(int row, int col, int distance, int[][] grid, Queue<int[]> queue){
+        int n = grid.length;
 
-    public int BFS()
+        if(row >= 0 && row < n && col >= 0 && col < n &&
+                grid[row][col] == 0){
+
+            grid[row][col] = distance + 1;
+            queue.add(new int[]{row, col});
+        }
+    }
 }
