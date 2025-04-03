@@ -38,17 +38,19 @@ public class PopulatingNextRightPointersinEachNode {
         //Outer while loop
         //Inner for loop iterating through the children at the current level
         while(!queue.isEmpty()){
-            int numChildren = queue.size();
+            int nodesInLevel = queue.size();
 
-            for(int i = 0; i < numChildren; i++){
+            for(int i = 0; i < nodesInLevel; i++){
                 Node curr = queue.poll();
 
-                if(i == numChildren - 1){
+                if(i == nodesInLevel - 1){
                     curr.next = null;
                 }else{
                     curr.next = queue.peek();
                 }
 
+                //Make sure we add left and then right children into our queue
+                //As that's the appropriate order
                 if(curr.left != null){
                     queue.add(curr.left);
                 }
