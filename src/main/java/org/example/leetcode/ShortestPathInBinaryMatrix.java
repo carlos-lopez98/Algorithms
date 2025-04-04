@@ -59,6 +59,9 @@ public class ShortestPathInBinaryMatrix {
         return -1;
     }
 
+    //For your visit function
+    //You're just checking whether or not to add a new cell to your queue
+    //Then changing the number at that cell to your distance traveled
     public void visit(int row, int col, int distance, int[][] grid, Queue<int[]> queue){
         int n = grid.length;
 
