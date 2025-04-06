@@ -42,9 +42,12 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
             //Set current node as seen
             seen[startNode] = true;
 
-            for(int i = 0; i < adjList.get(startNode).size(); i++) {
-                if(!seen[adjList.get(startNode).get(i)]){
-                    dfs(adjList, seen, adjList.get(startNode).get(i));
+            for(int i = 0 ; i < adjList.get(startNode).size(); i++){
+                int curr = adjList.get(startNode).get(i);
+
+                //If current isn't in the visited list - run dfs on the curr node
+                if (!seen[curr]){
+                    dfs(adjList,seen, curr);
                 }
             }
         }
