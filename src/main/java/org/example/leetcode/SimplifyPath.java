@@ -68,6 +68,8 @@ public class SimplifyPath {
         //Using /+ in the regex operator, means java will treat all slashes as a single delimiter
         String[] stringList = path.split("/+");
 
+        //Check for the three conditions - if empty skip, if equals dot skip - if equals dot dot then pop
+        //Else we push onto the stack
         for(String current: stringList){
             if(current.isEmpty()){
                 continue;
@@ -87,7 +89,10 @@ public class SimplifyPath {
             pathStack.push(current);
         }
 
+        //Remember that we must convert our stack into a list
+        //This can be done simply by throwing in our stack into a List<String>
         List<String> conversion = new ArrayList<>(pathStack);
+
 
         StringBuilder sb = new StringBuilder();
 
@@ -96,6 +101,7 @@ public class SimplifyPath {
             sb.append(current);
         }
 
+        //Return if empty else return the path as a string
         return sb.toString().isEmpty() ? "/" : sb.toString();
     }
 }
