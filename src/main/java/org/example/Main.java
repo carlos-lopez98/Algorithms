@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.SortAlgorithms.*;
 import org.example.dynamicprogramming.HouseRobber;
+import org.example.dynamicprogramming.HouseRobberII;
 import org.example.leetcode.*;
 import org.example.practice.Node;
 import org.example.practice.ReverseLinkedList;
@@ -376,12 +377,11 @@ public class Main {
 //        path.simplifyPath("Hello//World//Woop/.././...");
 
         /**
-         * Testing for House Robber
+         * Testing for House Robber II
          */
 
-        HouseRobber newRobber = new HouseRobber(new int[]{2,7,9,3,1});
-        int rob = newRobber.rob(4);
-        System.out.println(rob);
-
+        HouseRobberII newRobber = new HouseRobberII();
+        int robbed = newRobber.rob(new int[]{1,2,3});
+        System.out.println(robbed);
     }
 }
