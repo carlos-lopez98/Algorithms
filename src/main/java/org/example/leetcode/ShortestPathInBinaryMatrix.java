@@ -5,46 +5,46 @@ import java.util.Queue;
 
 public class ShortestPathInBinaryMatrix {
 
-    //When working with an nxn matrix
-    //You can choose to make an alternate matrix
+
     public int shortestPathBinaryMatrix(int[][] grid){
         int n = grid.length;
 
-        //Basically if top left corner and bottom left corner aren't open
-        //Then automatically return -1, since we don't technically have a source or destination
+
+        //We can first check if our start and destination are valid
         if(grid[0][0] != 0 || grid[n - 1][n-1] != 0 ){
             return -1;
         }
 
-        //Use ArrayDequeue, when working with BFS
-        //And when you don't need list functionality or don't need to handle null cases
+
+        //Get our queue for our BFS - int[] is used to denote a cell
         Queue<int[]> queue = new ArrayDeque<>();
 
-        //We're basically marking visited nodes as 1, so we don't touch them again
-        //This also lets us add the distance, so if it becomes one our distance is now distance += this next spot
-        //we're traversing into
+        //We set our first iteration into 1 - as that will be our distance to our start
         grid[0][0] = 1;
 
-        //Remember that an n x n matrix is basically an int[] n by an int[] n
+        //Then we add our starting cell
+        //Remember for BFS we need a start position
         queue.add(new int[]{0,0});
 
 
-        //Now we can start our BFS like normal
+        //Technically here is where we're processing our cell
+        //To see if we're at the right position, and it's how our BFS is traversing
         while(!queue.isEmpty()){
             int[] cell = queue.remove();
+
+            //We get our cell values
             int row = cell[0];
             int col = cell[1];
-
-            //In every iteration we reset distance = to the new spot we hopped to
-            //That means at every position we must set the next value we're traversing to
-            //to distance + 1, so if we're 4 spaces into the path, our next space we hop to will be 5
+            //Distance will be equal to where we're at
             int distance = grid[row][col];
 
-            //If we're at our target - return the distance to target
+            //In every iteration we check if we've reached our target
             if(row == grid.length - 1 && col == grid[0].length - 1){
                 return distance;
             }
 
+
+            //If not we visit in a BFS manner
             visit(row - 1, col - 1, distance, grid, queue); //top left
             visit(row - 1, col, distance, grid, queue);         //top
             visit(row - 1, col + 1, distance, grid, queue); //top right
@@ -55,20 +55,21 @@ public class ShortestPathInBinaryMatrix {
             visit(row + 1, col + 1, distance, grid, queue); //bottom right
         }
 
-        //This will only happen if we don't find a vianble path
         return -1;
     }
 
-    //For your visit function
-    //You're just checking whether or not to add a new cell to your queue
-    //Then changing the number at that cell to your distance traveled
+    //The visit function is just to check if the cell is valid
     public void visit(int row, int col, int distance, int[][] grid, Queue<int[]> queue){
         int n = grid.length;
 
+        //For our visit we must make sure our row and col are valid
         if(row >= 0 && row < n && col >= 0 && col < n &&
                 grid[row][col] == 0){
 
+            //We set our distance equal to distance + 1 - into the grid
             grid[row][col] = distance + 1;
+
+            //Then we add the cell to our queue for BFS
             queue.add(new int[]{row, col});
         }
     }

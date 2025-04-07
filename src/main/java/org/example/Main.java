@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.SortAlgorithms.*;
+import org.example.dynamicprogramming.HouseRobber;
 import org.example.leetcode.*;
 import org.example.practice.Node;
 import org.example.practice.ReverseLinkedList;
@@ -370,10 +371,17 @@ public class Main {
          * Testing for simplify path
          */
 
-        SimplifyPath path = new SimplifyPath();
+//        SimplifyPath path = new SimplifyPath();
+//
+//        path.simplifyPath("Hello//World//Woop/.././...");
 
-        path.simplifyPath("Hello//World//Woop/.././...");
+        /**
+         * Testing for House Robber
+         */
 
+        HouseRobber newRobber = new HouseRobber(new int[]{2,7,9,3,1});
+        int rob = newRobber.rob(4);
+        System.out.println(rob);
 
     }
 }
