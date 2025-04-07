@@ -19,7 +19,8 @@ public class RottingOranges {
             }
         }
 
-        //Add all positions that contain a rotten orange into queue
+        //Here's our initial queue for our BFS
+        //Contains all the rotting oranges that are starting
         Queue<Integer> queue = new ArrayDeque<>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -31,26 +32,33 @@ public class RottingOranges {
 
 
         int minutes = 0;
+
+
         while (!queue.isEmpty() && freshOranges > 0) {
             int size = queue.size();
 
             //Return first rotten orange in queue
             for (int i = 0; i < size; i++) {
+                //This is just a way to get the cell position
                 int num = queue.poll(), row = num / n, col = num % n;
 
                 //Let's use the directions to iterate through each neighbor
                 for(int[] direction: directions){
                     int x  = direction[0] + row, y = direction[1] + col;
                     if(x > -1 && y > -1 && x < m && y < n && grid[x][y] == 1){
+                        //Adds the cells on each side to the queue
                         queue.add(x * n + y);
                         freshOranges--;
                         grid[x][y] = 2;
                     }
                 }
             }
+            //After each while queue.size() iteration - we add one to minutes
             minutes++;
         }
 
+        //Then we lastly check if any fresh oranges are left - we can do this in another for loop
+        //Then we don't have to keep track of freshOranges as a variable
         return freshOranges == 0 ? minutes : -1;
     }
 }
