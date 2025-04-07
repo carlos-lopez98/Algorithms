@@ -38,42 +38,45 @@ import java.util.List;
 
 public class ThreeSum {
 
-    //The intuition here is you have to sort in order to steer the sum
-    //By that it means that with a sorted nums array, if you're off the target with a smaller number you can move
-    //your left pointer forward, but if your target is smaller than you're current position, then you move your rightpointer
-    //inward
+    //Intuition is we can steer the sum - if we sort our values
     public List<List<Integer>> threeSum(int[] nums) {
-        //First thing sort the list - which will allow you to steer the sum
-        //You must sort, or else you won't be able to steer the sum
+
+        //We always start by first sorting our values
         Arrays.sort(nums);
 
-        //Create your return list, it's a list of list of triplets
-        List<List<Integer>> threeSum = new ArrayList<>(); // This is where you'll store your sum pairs
+        //Create your output list - a list of integer triplets
+        List<List<Integer>> threeSum = new ArrayList<>();
 
         for(int fixed = 0; fixed < nums.length - 2; fixed++){
 
-            //Needs to be a while loop or else, it'll just do it once - this ensures we skip all possible duplicates
+            //Here's our first check for duplicates
+            //if our fixed pointer runs into the same value
+            //We skip that iteration move to the next
             if(fixed > 0 && nums[fixed] == nums[fixed - 1]){
                 continue;
             }
 
-            //Remember that the left pointer will start at one position right of you're first pointer
-            //The right pointer always starts at the last position in your array and moves inward
+
+            //Make sure our pointers iterate from l to r
+            //and from r - l
             int left = fixed + 1;
             int right = nums.length - 1;
 
+            //Break this inner loop when the pointers meet
             while(left < right){
+
+                //We're tracking the sum as we need to know if the triplets add up to the target value
                 int sum = nums[fixed] + nums[right] + nums[left];
+
 
                 if(sum == 0){
                     threeSum.add(Arrays.asList(nums[fixed],nums[left],nums[right]));
                     left++;
                     right--;
 
-                    //Skip potential duplicates for left pointer - this is only after you found a valid triplet
+                    //After we found our target value we can skip potential duplicates once more
+                    //Ensure we remember our bounds l < right - this can stop us from doing an unecessary calculation
                     while(left < right && nums[left] == nums[left - 1]) left++;
-
-                    //Skip potential duplicates for right pointer - this is only after you found a valid triplet
                     while(left < right && nums[right] == nums[right + 1])right--;
                 } else if(sum > 0){
                     right--;
