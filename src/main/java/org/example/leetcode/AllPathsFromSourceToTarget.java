@@ -30,8 +30,9 @@ import java.util.*;
 
 public class AllPathsFromSourceToTarget {
 
-    //Since we have our variables at class level
-    //There is no need to keep passing them into the recursive function
+    //To make our function calls simpler
+    //We can store some variables like the graph and target
+    //Easily as a universal class variable
     int target;
     int[][] graph;
 
@@ -45,7 +46,6 @@ public class AllPathsFromSourceToTarget {
         paths = new ArrayList<>();
 
 
-        //Path is mutable, as we do DFS, we keep adding nodes to our path
         List<Integer> path = new ArrayList<>();
         path.add(0);
 
@@ -56,20 +56,24 @@ public class AllPathsFromSourceToTarget {
 
 
     public void DFS(int node, List<Integer> path){
-        if(node == target){
 
-            //We do a new ArrayList<> to ensure we store a copy of the path
-            //If not, then as our path is edited, so is our reference to it
+        //Base case - if we reach our target
+        //Then we can simply add a copy of our current path to the list of possible paths
+        //We add a copy since we're passing in path as a reference variable
+        if(node == target){
             paths.add(new ArrayList<>(path));
             return;
         }
 
+        //Then we just call DFS on each neighboring node
         for(int edge : graph[node]){
+
+            //At each recursive call we add that node to the path
             path.add(edge);
 
-            //Recurse until we find a path
             DFS(edge, path);
-            //Once we come out of recursion - we remove our path
+
+            //Then we pop from the path once we reach a viable path - this is to re-use the path variable path
             path.removeLast();
         }
     }
@@ -79,36 +83,39 @@ public class AllPathsFromSourceToTarget {
             paths.add(new ArrayList<>(path));
         }
 
-        //Break out of our BFS - will return the empty paths list we instantiated above
         if(graph == null || graph.length == 0){
             return;
         }
 
-        //When using a BFS approach each node is added to a queue
-        //Since we want to store paths for each node as well, we can basically
-        //create a queue that matches up with each node, but stores the path up to that point
+        //Here we use a queue to simulate our current path
         Queue<List<Integer>> queueForPath = new LinkedList<>();
         path.add(0);
+
+        //Add our path into our queue - the queue will line up to our node
+        //If you think about it, your node will always be the first element in your path
+        //So when you do a queuePath.pop() you're retrieving the correct node
         queueForPath.add(path);
 
         while(!queueForPath.isEmpty()){
 
+            //Here we pop our current path into a temp variable
+            //This allows us to perform operations in a neater cleaner fashion
             List<Integer> currentPath = queueForPath.poll();
-            //Retrieves the most recently added element in our path
+            //Then we get our current node
             int node = currentPath.get(currentPath.size() - 1);
 
+            //Then we add each child node to the queue with it's respective path
             for(int neighbor : graph[node]){
-                List<Integer> tmpPath = new ArrayList<>(currentPath); //Creates a new path up to our current path
+                List<Integer> tmpPath = new ArrayList<>(currentPath);
 
-                //Adds the new neighbor to our path
                 tmpPath.add(neighbor);
 
-                //If our neighbor is the target - we can just add that path to the overall paths list
+                //But if the neighbor is our target - there is no need to add it to the queue
+                //Instead we add it to our pathstoreturn
                 if(neighbor == target){
+                    //Remember to use new as we're using path as a reference variable
                     paths.add(new ArrayList<>(tmpPath));
-                }
-                //If it's not the target, we can queue up that path
-                else{
+                } else{
                     queueForPath.add(new ArrayList<>(tmpPath));
                 }
             }
