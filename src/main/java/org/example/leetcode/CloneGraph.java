@@ -22,36 +22,35 @@ public class CloneGraph {
             neighbors = _neighbors;
         }
     }
-
-
-    //The intuition here is to create a clone of your starting node
-    //Then add that clone in as a value in your hashmap with the key being your actual node
-    //Then we iterate through each neighbor in the original node -
-
-
+    //The intuition here is to create a clone of every node - then use the original node as the key
+    //If a clone has already been created - we return the cloned node - the input will always be a reference to an
+    //original node
     Map<Node, Node> visited = new HashMap<>();
     public Node cloneGraph(Node node){
-        //This is a recursive problem so we have base cases
+
+        //First base case if we get an input of a null node
         if(node == null){
             return null;
         }
 
-        //This visited is used to store cloned copies of the original node
+        //Second base case - if we already have a clone ready
         if(visited.containsKey(node)){
-            //Returns the copy of the node
             return visited.get(node);
         }
 
-        //We can't just add the neighbors in as a list
-        //That would create a reference copy
+       //Create the clone - here we create a clone - without any cloned children yet
+        //This will be done within our for loop
         Node clone = new Node(node.val, new ArrayList<>());
-        //Ties the original to it's clone
+
+        //We add our clone in as a value - while the original is added in as a key
         visited.put(node, clone);
 
-        //Iterate through all the original neighbors
+        //Here we iterate through our neighbors
+        //Then we add neighbors to our clone
+        //By calling this cloneGraph DFS essentially
         for(Node neighbor: node.neighbors){
 
-            //Add clones the the clone neighbors list
+            //What will happen here is that a clone get's returned for every original neighbor
             clone.neighbors.add(cloneGraph(neighbor));
         }
 
