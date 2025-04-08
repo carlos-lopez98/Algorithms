@@ -78,8 +78,8 @@ public class FindIfPathExistsInGraph {
                 return true;
             }
 
-            //If we haven't visited the currentNode then we add it to visited
-            //If we have visited this will skip
+            //We only perform the operation
+            //If we can visit the node - IE it's not been visited already
             if(!visited[currNode]){
                 visited[currNode] = true;
 

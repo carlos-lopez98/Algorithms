@@ -86,7 +86,7 @@ public class RandomPickWithWeight {
         public int pickIndex(){
             Random randomNumGenerator = new Random();
 
-            //Generates a random int from 1 - 100
+            //Generates a random int from 0 - 1
             double target = randomNumGenerator.nextDouble();
             int left = 0;
             int right = oddRange.length - 1;
