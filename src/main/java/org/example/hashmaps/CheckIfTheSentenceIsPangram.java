@@ -14,8 +14,6 @@ public class CheckIfTheSentenceIsPangram {
                 check.add(sentence.charAt(i));
             }
         }
-
-
         return check.size() >= 26;
     }
 }
