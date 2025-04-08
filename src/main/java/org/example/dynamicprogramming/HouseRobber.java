@@ -25,7 +25,7 @@ public class HouseRobber {
     }
 
     //To cache - you need to recurse in on the cache
-        //This sets up every value in your cache
+        // This sets up every value in your cache
     if(cache[n] != -1){
         return cache[n];
     }else{
