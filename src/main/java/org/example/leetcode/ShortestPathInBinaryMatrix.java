@@ -27,8 +27,7 @@ public class ShortestPathInBinaryMatrix {
         queue.add(new int[]{0,0});
 
 
-        //Technically here is where we're processing our cell
-        //To see if we're at the right position, and it's how our BFS is traversing
+        //This queue part is our BFS part
         while(!queue.isEmpty()){
             int[] cell = queue.remove();
 
@@ -58,8 +57,8 @@ public class ShortestPathInBinaryMatrix {
         return -1;
     }
 
-    //The visit function is just to check if the cell is valid
-    public void visit(int row, int col, int distance, int[][] grid, Queue<int[]> queue){
+        //This visit part is only being used to mark our distances within our cells
+        public void visit(int row, int col, int distance, int[][] grid, Queue<int[]> queue){
         int n = grid.length;
 
         //For our visit we must make sure our row and col are valid

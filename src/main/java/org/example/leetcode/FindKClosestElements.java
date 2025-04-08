@@ -52,6 +52,7 @@ public class FindKClosestElements {
             }
         }
 
+        //Once you find the start to your range - then just iterate up to k return those elements
         for(int i = left; i < left + k; i++){
             ans.add(arr[i]);
         }
