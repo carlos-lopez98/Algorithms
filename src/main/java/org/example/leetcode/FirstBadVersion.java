@@ -48,10 +48,13 @@ public class FirstBadVersion {
         while(left <= right){
             int midpoint = left + (right - left)/2;
 
+            //Main check here we're able to use midpoint -1 & midpoint +1 because
+            //we have a target, so mid is always being checked, don't have to include it
+            //It's not a case where mid could still be our answer
             if(isBadVersion(midpoint) && !isBadVersion(midpoint - 1)){
                 return midpoint;
             }else if(isBadVersion(midpoint)){
-                right = midpoint;
+                right = midpoint - 1;
             }else{
                 left = midpoint + 1;
             }
