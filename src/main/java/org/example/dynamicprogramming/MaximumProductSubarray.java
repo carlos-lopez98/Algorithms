@@ -32,18 +32,23 @@ public class MaximumProductSubarray {
     public int maxProductDP(int[] nums){
         if (nums.length == 0) return 0;
 
-        int max_so_far = nums[0];
-        int min_so_far = nums[0];
-        int result = max_so_far;
+        int max_so_far = nums[0]; //Local max up to i
+        int min_so_far = nums[0]; //Local min up to i
+        int result = max_so_far; //Global Max - after comparing max_so_far and min_so_far in every iteration
 
         for (int i = 1; i < nums.length; i++) {
             int curr = nums[i];
             int temp_max = Math.max(
                     curr,
+                    //This gives us two new potential maxes
                     Math.max(max_so_far * curr, min_so_far * curr)
             );
+
             min_so_far = Math.min(
                     curr,
+
+                    //This gives us two new potential minimums
+                    //notice how we use our old local max - we don't use the new one, as that would cause errors
                     Math.min(max_so_far * curr, min_so_far * curr)
             );
 
