@@ -11,6 +11,7 @@ public class RottingOranges {
         int m = grid.length, n = grid[0].length;
         int freshOranges = 0;
 
+        //Extra we can perform this at the end - and just check for fresh oranges
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1) {
@@ -19,8 +20,8 @@ public class RottingOranges {
             }
         }
 
-        //Here's our initial queue for our BFS
-        //Contains all the rotting oranges that are starting
+
+        //Add all starting rotten oranges to your queue
         Queue<Integer> queue = new ArrayDeque<>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -35,6 +36,8 @@ public class RottingOranges {
 
 
         while (!queue.isEmpty() && freshOranges > 0) {
+            //This queue.size() is a key to this madness
+            //Allows you to perform breadth traversal on multiple locations at the same time
             int size = queue.size();
 
             //Return first rotten orange in queue
