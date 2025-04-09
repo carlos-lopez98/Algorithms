@@ -19,7 +19,8 @@ public class MaximumProductSubarray {
             prefix *= nums[i];
             suffix *= nums[j];
 
-            maxProduct = Math.max(maxProduct, Math.max(prefix, suffix));
+            maxProduct = Math.max(maxProduct, prefix);
+            maxProduct = Math.max(maxProduct, suffix);
 
             if (prefix == 0) prefix = 1;
             if (suffix == 0) suffix = 1;
