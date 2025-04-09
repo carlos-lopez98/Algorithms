@@ -3,6 +3,7 @@ package org.example;
 import org.example.SortAlgorithms.*;
 import org.example.dynamicprogramming.HouseRobber;
 import org.example.dynamicprogramming.HouseRobberII;
+import org.example.dynamicprogramming.MaximumProductSubarray;
 import org.example.leetcode.*;
 import org.example.practice.Node;
 import org.example.practice.ReverseLinkedList;
@@ -380,8 +381,17 @@ public class Main {
          * Testing for House Robber II
          */
 
-        HouseRobberII newRobber = new HouseRobberII();
-        int robbed = newRobber.rob(new int[]{1,2,3});
-        System.out.println(robbed);
+//        HouseRobberII newRobber = new HouseRobberII();
+//        int robbed = newRobber.rob(new int[]{1,2,3});
+//        System.out.println(robbed);
+
+        /**
+         * Testing for Maximum Product Subarray
+         */
+
+        MaximumProductSubarray newProduct = new MaximumProductSubarray();
+
+        int max = newProduct.maxProduct(new int[]{2,3,-2,4});
+        System.out.println(max);
     }
 }

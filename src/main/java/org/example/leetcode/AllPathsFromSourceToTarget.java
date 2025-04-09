@@ -74,7 +74,7 @@ public class AllPathsFromSourceToTarget {
             DFS(edge, path);
 
             //Then we pop from the path once we reach a viable path - this is to re-use the path variable path
-            path.removeLast();
+//            path.removeLast();
         }
     }
 
