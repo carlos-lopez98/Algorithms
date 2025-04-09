@@ -38,8 +38,6 @@ public class AllPathsFromSourceToTarget {
 
     List<List<Integer>> paths;
 
-
-
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
         this.target = graph.length -1;
         this.graph = graph;
@@ -71,6 +69,8 @@ public class AllPathsFromSourceToTarget {
             //At each recursive call we add that node to the path
             path.add(edge);
 
+            //If you think about this DFS call it'll look like a recursion tree
+            //Since we don't have a visited array - our runtime would be exponential 2^n
             DFS(edge, path);
 
             //Then we pop from the path once we reach a viable path - this is to re-use the path variable path
