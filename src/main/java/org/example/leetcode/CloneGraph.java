@@ -26,31 +26,29 @@ public class CloneGraph {
     //If a clone has already been created - we return the cloned node - the input will always be a reference to an
     //original node
     Map<Node, Node> visited = new HashMap<>();
+
+    //This is more like a cloneNode method
     public Node cloneGraph(Node node){
 
-        //First base case if we get an input of a null node
         if(node == null){
             return null;
         }
 
-        //Second base case - if we already have a clone ready
         if(visited.containsKey(node)){
+
+            //If our node has already been cloned, then return its clone
             return visited.get(node);
         }
 
-       //Create the clone - here we create a clone - without any cloned children yet
-        //This will be done within our for loop
+        //If not we make a clone
         Node clone = new Node(node.val, new ArrayList<>());
 
-        //We add our clone in as a value - while the original is added in as a key
+        //Add it to our clone list with the original as a key
         visited.put(node, clone);
 
-        //Here we iterate through our neighbors
-        //Then we add neighbors to our clone
-        //By calling this cloneGraph DFS essentially
+        //Iterate through the original's children
+        //Adding clones to our cloned copy
         for(Node neighbor: node.neighbors){
-
-            //What will happen here is that a clone get's returned for every original neighbor
             clone.neighbors.add(cloneGraph(neighbor));
         }
 

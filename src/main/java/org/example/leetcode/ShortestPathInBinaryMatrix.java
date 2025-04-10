@@ -34,7 +34,10 @@ public class ShortestPathInBinaryMatrix {
             //We get our cell values
             int row = cell[0];
             int col = cell[1];
-            //Distance will be equal to where we're at
+
+            //WE make sure to set distance equal to our current cell
+            //Since we always iterate through our shortest path first, distance will always be right
+            //When working with BFS
             int distance = grid[row][col];
 
             //In every iteration we check if we've reached our target

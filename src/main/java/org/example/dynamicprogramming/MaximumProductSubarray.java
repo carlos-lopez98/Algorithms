@@ -38,6 +38,7 @@ public class MaximumProductSubarray {
 
         for (int i = 1; i < nums.length; i++) {
             int curr = nums[i];
+
             int temp_max = Math.max(
                     curr,
                     //This gives us two new potential maxes
