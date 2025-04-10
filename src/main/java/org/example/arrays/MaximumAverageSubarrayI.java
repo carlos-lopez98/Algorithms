@@ -1,5 +1,6 @@
 package org.example.arrays;
 
+//This solution is more intuitive than the nums[right] - nums[right - k]
 public class MaximumAverageSubarrayI {
 
     //Fixed sliding window problem

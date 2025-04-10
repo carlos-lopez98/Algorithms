@@ -10,7 +10,6 @@ public class MaximumProductSubarray {
     //This works because a suffix will have a third negative
     //While the prefix may not
     public int maxProduct(int[] nums) {
-
         int prefix = 1;
         int suffix = 1;
         int maxProduct = Integer.MIN_VALUE;
@@ -47,7 +46,6 @@ public class MaximumProductSubarray {
 
             min_so_far = Math.min(
                     curr,
-
                     //This gives us two new potential minimums
                     //notice how we use our old local max - we don't use the new one, as that would cause errors
                     Math.min(max_so_far * curr, min_so_far * curr)
