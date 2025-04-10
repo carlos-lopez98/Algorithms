@@ -38,12 +38,17 @@ public class LongestConsecutiveSequence {
         int longest = 0;
 
         for (int i = 0; i < nums.length; i++) {
+            //This makes sure we are ignoring duplicates
+            //If not we'd just iterate again through a same subsequence
+            //Basically doing duplicate work
             if(i > 0 && nums[i] == nums[i -1]){
                 continue;
             }
 
             int counter = 0;
 
+            //If you're not a starting subsequence number
+            //Then we can start counting
             if (!intSet.contains(nums[i] - 1)) {
                 //If the current number - 1 is not in the set - then this is the start of a new consecutive sequence
                 int curr = nums[i];
