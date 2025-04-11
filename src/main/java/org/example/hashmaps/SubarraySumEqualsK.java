@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-//This one requires the hashMap trick
-//Essentially rightSum - leftSum may equal k
-//So if we have rightSum - k in our hashmap
-//We've hit a viable subArray so our counter can go up
+//This one is just a trick
+//Based off of a math formula
+// n(n+1)/2
 public class SubarraySumEqualsK {
 
     public int subarraySum(int[] nums, int k) {
@@ -21,7 +20,6 @@ public class SubarraySumEqualsK {
 
             sum += nums[i];
 
-            //You're basically doing a compliment approach from twosum
             if (map.containsKey(sum - k))
                 count += map.get(sum - k);
                 map.put(sum, map.getOrDefault(sum, 0) + 1);
