@@ -7,6 +7,7 @@ import org.example.dynamicprogramming.MaximumProductSubarray;
 import org.example.leetcode.*;
 import org.example.practice.Node;
 import org.example.practice.ReverseLinkedList;
+import org.example.recursion.PrintStringInReverse;
 import org.example.trees.BinarySearchTree;
 import org.example.trees.BinarySearchTreeNode;
 import org.example.trees.Tree;
@@ -389,9 +390,16 @@ public class Main {
          * Testing for Maximum Product Subarray
          */
 
-        MaximumProductSubarray newProduct = new MaximumProductSubarray();
+//        MaximumProductSubarray newProduct = new MaximumProductSubarray();
+//
+//        int max = newProduct.maxProduct(new int[]{2,3,-2,4});
+//        System.out.println(max);
 
-        int max = newProduct.maxProduct(new int[]{2,3,-2,4});
-        System.out.println(max);
+        /**
+         * Testing for PrintStringInReverse
+         */
+
+        PrintStringInReverse reverseIt = new PrintStringInReverse();
+        reverseIt.printInReverse("Hello");
     }
 }

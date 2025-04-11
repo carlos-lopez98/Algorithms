@@ -52,13 +52,8 @@ public class GroupAnagram {
             groupAnagramTracker.get(sorted).add(currentString);
         }
 
-
         //Return the values in the map, as a List of list of strings
-        List<List<String>> groupedAnagrams = groupAnagramTracker.values()
-                .stream()
-                .toList();
-
-        List<List<String>> anagrams = groupAnagramTracker.values().stream().toList();
+        List<List<String>> groupedAnagrams = new ArrayList<>(groupAnagramTracker.values());
 
         return groupedAnagrams;
     }
