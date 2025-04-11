@@ -41,10 +41,12 @@ public class FindKClosestElements {
         int left = 0;
         int right = arr.length - k;
 
+        //Using left < right
+        //Makes it to where both our right pointer and left pointer are viable starting positions
         while(left < right){
             int midpoint = left + (right - left)/2;
 
-            //If left wall is further - then move it up
+
             if(x - arr[midpoint] > arr[midpoint + k] - x ){
                left = midpoint + 1;
             }else {
