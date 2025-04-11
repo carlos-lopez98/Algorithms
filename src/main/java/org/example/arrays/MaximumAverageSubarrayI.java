@@ -14,7 +14,9 @@ public class MaximumAverageSubarrayI {
         while(r < nums.length){
             runningSum += nums[r];
 
-            //We'd only need to calculate the average when we're at a contiguous window of size k
+            //You check if you have a new max
+            //While your window is equal to size k
+            //Otherwise, you might be checking the wrong window
             if(r - l + 1 == k){
                 maxSum =  Math.max(runningSum, maxSum);
                 runningSum -= nums[l];
