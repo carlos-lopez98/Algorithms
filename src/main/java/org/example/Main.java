@@ -9,6 +9,7 @@ import org.example.practice.Node;
 import org.example.practice.ReverseLinkedList;
 import org.example.recursion.PrintStringInReverse;
 import org.example.recursion.ReverseString;
+import org.example.recursion.SwapNodesInPairs;
 import org.example.trees.BinarySearchTree;
 import org.example.trees.BinarySearchTreeNode;
 import org.example.trees.Tree;
@@ -406,12 +407,26 @@ public class Main {
         /**
          * Testing for ReverseString
          */
-        ReverseString reverseString = new ReverseString();
-        char[] sTo = new char[]{'H', 'E', 'L','L','O'};
-        reverseString.reverseString(sTo);
+//        ReverseString reverseString = new ReverseString();
+//        char[] sTo = new char[]{'H', 'E', 'L','L','O'};
+//        reverseString.reverseString(sTo);
+//
+//        for(char curr: sTo){
+//            System.out.print(curr + " ");
+//        }
 
-        for(char curr: sTo){
-            System.out.print(curr + " ");
+        /**
+         * Testing swap nodes in pairs
+         */
+
+        SwapNodesInPairs pairs = new SwapNodesInPairs();
+
+        SwapNodesInPairs.ListNode head = new List
+
+        pairs.swapPairs(head);
+
+        while(head != null){
+            System.out.println(head.val);
         }
 
     }
