@@ -8,6 +8,7 @@ import org.example.leetcode.*;
 import org.example.practice.Node;
 import org.example.practice.ReverseLinkedList;
 import org.example.recursion.PrintStringInReverse;
+import org.example.recursion.ReverseString;
 import org.example.trees.BinarySearchTree;
 import org.example.trees.BinarySearchTreeNode;
 import org.example.trees.Tree;
@@ -398,8 +399,20 @@ public class Main {
         /**
          * Testing for PrintStringInReverse
          */
+//
+//        PrintStringInReverse reverseIt = new PrintStringInReverse();
+//        reverseIt.printInReverse("Hello");
 
-        PrintStringInReverse reverseIt = new PrintStringInReverse();
-        reverseIt.printInReverse("Hello");
+        /**
+         * Testing for ReverseString
+         */
+        ReverseString reverseString = new ReverseString();
+        char[] sTo = new char[]{'H', 'E', 'L','L','O'};
+        reverseString.reverseString(sTo);
+
+        for(char curr: sTo){
+            System.out.print(curr + " ");
+        }
+
     }
 }
