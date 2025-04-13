@@ -14,15 +14,25 @@ public class ReverseLinkedList {
 
     public static Node reverseList(Node head){
 
+        //Set previous to point to null
         Node previous = null;
+
+        //Set a current to point to our current head
         Node current = head;
+
+        //Declare a next node
         Node next;
 
         while(current != null){
-            next = current.next; //saves our next spot
-            current.next = previous; //now our .next pointer points to the prev elements - in the first iteration it's null
-            previous = current; //now our previous is our current
-            //lastly we move our current up
+            //Let's say our linked list was 1, 2, 3, 4
+            //Next is immediately 2
+            next = current.next;
+            //Head points to null
+            current.next = previous;
+            //Move previous from our null to one
+            previous = current;
+
+            //current moves to two
             current = next;
         }
 

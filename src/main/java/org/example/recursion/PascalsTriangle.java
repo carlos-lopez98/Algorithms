@@ -32,6 +32,8 @@ public class PascalsTriangle {
             return base;
         }
 
+        List<List<Integer>> base = createRows(numRows - 1, triangle);
+
         base.add(new ArrayList<>(numRows));
 
         List<Integer> currRow = base.get(numRows - 1);
