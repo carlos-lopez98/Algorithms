@@ -425,9 +425,5 @@ public class Main {
 
         pairs.swapPairs(head);
 
-        while(head != null){
-            System.out.println(head.val);
-        }
-
     }
 }

@@ -17,6 +17,7 @@ public class SwapNodesInPairs {
              return head;
          }
 
+         //If we edit the values from these, they trickle to the original
          ListNode first = head;
          ListNode second = head.next;
 
@@ -29,6 +30,4 @@ public class SwapNodesInPairs {
 
         return second;
     }
-
-
 }
