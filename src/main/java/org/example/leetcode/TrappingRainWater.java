@@ -28,13 +28,20 @@ public class TrappingRainWater {
 
         while (leftWall < rightWall){
 
+            //Iterate from left to right - if right is greater
             if(height[leftWall] <= height[rightWall]){
+
+
                 if(height[leftWall] > leftMax){
+                    //Set new max if you reach a high point
                     leftMax = height[leftWall];
                 }else{
                     water += leftMax - height[leftWall];
                 }
                 leftWall++;
+
+
+                //Iterate from right to left - if left is greater
             }else{
                 if(height[rightWall] > rightMax){
                     rightMax = height[rightWall];
