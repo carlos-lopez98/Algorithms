@@ -53,8 +53,7 @@ public class GroupAnagram {
         }
 
         //Return the values in the map, as a List of list of strings
-        List<List<String>> groupedAnagrams = new ArrayList<>(groupAnagramTracker.values());
 
-        return groupedAnagrams;
+        return new ArrayList<>(groupAnagramTracker.values());
     }
 }
