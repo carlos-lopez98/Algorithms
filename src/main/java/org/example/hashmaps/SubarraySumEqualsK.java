@@ -16,6 +16,9 @@ public class SubarraySumEqualsK {
 
         map.put(0, 1);
 
+        //Use the prefix sum trick
+        //This one aligns with the two sum solution
+        //Where you're looking for a compliment value
         for (int i = 0; i < nums.length; i++) {
 
             sum += nums[i];
