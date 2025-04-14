@@ -24,15 +24,18 @@ public class ReverseLinkedList {
         Node next;
 
         while(current != null){
-            //Let's say our linked list was 1, 2, 3, 4
-            //Next is immediately 2
+
+            //Save the next one, cause we're going to adjust the .next pointer
             next = current.next;
-            //Head points to null
+
+            //Set .next to our previous  - which starts with null
             current.next = previous;
-            //Move previous from our null to one
+
+
+            //Then our previous becomes our current
             previous = current;
 
-            //current moves to two
+            //Then our current moves to the original next
             current = next;
         }
 
