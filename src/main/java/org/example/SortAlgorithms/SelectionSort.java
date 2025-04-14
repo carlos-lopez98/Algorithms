@@ -5,6 +5,11 @@ import java.sql.SQLOutput;
 public class SelectionSort {
 
 
+    //Performing a scan from left to right - looking for the largestIndex
+    //The outer loop is tracking the current sorted positions
+    //Inner loop just looking for the largest element and storing it's index
+    //Once the inner loop reaches the sorted portion - you perform a swap with the largest index
+    //Sorts Ascending left to right
     public static void selectionSortAscendingLeftToRight(int[] array){
         for(int outer = array.length - 1; outer > 0; outer--){
             int largestIndex = 0;
