@@ -17,15 +17,13 @@ public class SwapNodesInPairs {
              return head;
          }
 
-         //If we edit the values from these, they trickle to the original
          ListNode first = head;
          ListNode second = head.next;
 
-         //When working with recursion, we must think, where does our answer go?
-        //Here we swap first and second, but then our first.next - should equal the next appropriate swap
-        //So that's why our first.next becomes swapPairs(head.next.next)
         first.next = swapPairs(head.next.next);
 
+        //second.next is head.next.next - so we can't change this
+        //until after we perform the swap if not, then we get an infinite loop
         second.next = first;
 
         return second;
