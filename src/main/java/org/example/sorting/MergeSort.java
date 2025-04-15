@@ -1,4 +1,4 @@
-package org.example.SortAlgorithms;
+package org.example.sorting;
 
 /**
  * Merge sort is a divide and conquer algorithm

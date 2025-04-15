@@ -1,6 +1,4 @@
-package org.example.SortAlgorithms;
-
-import java.sql.SQLOutput;
+package org.example.sorting;
 
 public class SelectionSort {
 

@@ -1,12 +1,10 @@
-package org.example.SortAlgorithms;
+package org.example.sorting;
 
 
 /**
  * Create sorting methods, that sort descending left to right, descending right to left
  * Create sorting method that sorts descending left to right
  */
-
-import java.lang.reflect.Array;
 
 public class BubbleSort {
 

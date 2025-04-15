@@ -1,22 +1,7 @@
 package org.example;
 
-import org.example.SortAlgorithms.*;
-import org.example.dynamicprogramming.HouseRobber;
-import org.example.dynamicprogramming.HouseRobberII;
-import org.example.dynamicprogramming.MaximumProductSubarray;
-import org.example.leetcode.*;
-import org.example.practice.Node;
-import org.example.practice.ReverseLinkedList;
-import org.example.recursion.PrintStringInReverse;
-import org.example.recursion.ReverseString;
 import org.example.recursion.SwapNodesInPairs;
-import org.example.trees.BinarySearchTree;
-import org.example.trees.BinarySearchTreeNode;
-import org.example.trees.Tree;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 

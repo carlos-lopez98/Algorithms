@@ -1,4 +1,4 @@
-package org.example.SortAlgorithms;
+package org.example.sorting;
 
 /**
  * Shell sort is an algorithm used for sorting

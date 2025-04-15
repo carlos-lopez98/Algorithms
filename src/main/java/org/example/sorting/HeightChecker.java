@@ -1,4 +1,4 @@
-package org.example.SortAlgorithms;
+package org.example.sorting;
 
 //The only way to do this with bubble sort
 //Would be to clone the original array - sort the clone
