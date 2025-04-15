@@ -13,34 +13,30 @@ import java.util.Set;
 
 public class RemoveDups {
 
-    //Easy way I think of doing this is to create let's say a HashMap, with the key as the current nodes value
-    //And the value being the count, if we encounter data that's already in the HashMap, then we remove that duplicate
-    //From the linkedList
-    public static Node algoOne(Node head) {
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
 
-        if (head == null) {
+
+    //Easy solution that's in place doesn't require a set to keep track of the duplicates
+    public static ListNode algoOne(ListNode head) {
+        if(head == null) {
             return null;
         }
 
-        Set<Integer> dupTracker = new HashSet<>();
+        ListNode curr = head;
 
-        Node previous = head;
-        Node current = head.next;
+        while (curr != null){
 
-        //Add the first position in the linkedList
-        dupTracker.add(previous.data);
-
-        while (current != null) {
-
-            if (dupTracker.contains(current.data)) {
-
-                previous.next = current.next;
-                current = current.next;
-            } else {
-                dupTracker.add(current.data);
-                previous = current;
-                current = current.next;
+            while(curr.next != null && curr.val == curr.next.val){
+                curr.next = curr.next.next;
             }
+
+            curr = curr.next;
         }
 
         return head;
