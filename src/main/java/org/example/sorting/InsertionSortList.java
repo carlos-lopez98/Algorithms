@@ -11,40 +11,36 @@ public class InsertionSortList {
 
 
   public ListNode insertionSortList(ListNode head) {
-        //Create a dummy head
         ListNode dummy = new ListNode();
         ListNode curr =  head;
 
-        //Current is to stay pointing to the original unsorted list
         while(curr != null){
-            //Points to an empty node
-            //In every iteration we're creating a new prev pointer
-            //Then iterating from prev to an insertion point
-            //If we're at the correct insertion point - we insert
+
+            //You need to create a prev in each while loop iteration
+            //So that we can iterate through our sorted list
+            //Dummy always points to our starting point in our sorted list
             ListNode prev = dummy;
 
-            //Prev is to point to the sorted list
-            //This while loop finds the insertion point
+
+            //We do this while loop to get to our insertion point
             while(prev.next != null && prev.next.val <= curr.val){
                 prev = prev.next;
             }
-            //Once we're out - prev.next is our insertion point
 
 
-            //This creates a pointer pointing to the remainder of our unsorted list
+            //This saves our next point in our unsorted list
+            //That way we can continue the iteration afterward
             ListNode next =curr.next;
 
-            //Our next node is set to
-            //Our inserted node must preserve the sorted lists positions
-            //So our curr.next becomes prev.next
+            //This is our inserting first slice off prev.next and connect it to our
+            //Inserting element
             curr.next = prev.next;
 
-            //This inserts our curr into the new list
-            //Then our prev.next becomes curr
+            //Next make our current element our inserted element
             prev.next = curr;
 
-            //Curr then becomes our next element in the unsorted list
-            //Then we reset curr back to the original list
+            //Then move curr back to pointing to our unsorted list
+            //So that we can continue iterating through it
             curr = next;
         }
 
