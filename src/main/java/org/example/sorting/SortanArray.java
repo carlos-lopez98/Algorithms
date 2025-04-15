@@ -9,6 +9,8 @@ public class SortanArray {
         //Both of it's children
         //The way this looks in an array - is the array now has the greatest element at the index of 0
         //So first you heapify - your entire array
+        //In this for loop you only go up to nums.length/ 2  - 1, because positions after that are already
+        //leaf nodes only, so that heap property is already verified
         for (int i = nums.length / 2 - 1; i >= 0; i--) {
             maxHeapify(nums, nums.length, i);
         }
@@ -74,7 +76,7 @@ public class SortanArray {
         }
     }
 
-    public int[] sortArrayMergeSort(int[] nums){
+    public int[] sortArrayMergeSort(int[] nums) {
 
         return null;
     }
