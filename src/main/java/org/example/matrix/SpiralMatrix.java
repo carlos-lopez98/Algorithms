@@ -5,78 +5,70 @@ import java.util.List;
 
 public class SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {
+        //We decided to go with a visited number
+        //When we visit a cell we update it's value with 101 - so we know this now acts as a boundary
         int VISITED = 101;
         int rows = matrix.length;
         int columns = matrix[0].length;
 
-        // Four directions that we will move: right, down, left, up.
         int[][] directions = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
 
-        //Current Direction
-        //0 represents right
-        //1 represents down
-        //2 represents left
-        //3 represents up
-        //Since we're spiraling, we know we must go right, down, left, up
-        //So we're able to use the index = (index + 1) % N trick
+
+        //This is the starting direction - since we're going clockwise - it's right
         int currentDirection = 0;
 
-        // The number of times we change the direction.
-        //This is used to track when we hit the end
+        //This acts as our stopper - if we attempt to change directions more than once, we've hit our last element
         int changeDirection = 0;
 
-        // Current place that we are at is (row, col).
-        // row is the row index; col is the column index.
+
         int row = 0;
         int col = 0;
 
-        // Store the first element and mark it as visited.
+        //Result
         List<Integer> result = new ArrayList<>();
+        //Add our first element to the result
         result.add(matrix[0][0]);
-
-        //We're setting visited grids to 101 so we don't have to have a separate
-        //2D array copying cells over, instead if the cell == 101 then we know we've visited it
+        //Then mark first element as visited
         matrix[0][0] = VISITED;
 
-        //While we're not at the end
+        //While we're not at our last position - we can still attempt more movement
         while (changeDirection < 2) {
 
-
             while (
-                            //While inbounds
+                            //If we're in bounds - we keep going in the same direction
                             row + directions[currentDirection][0] >= 0 &&
                             row + directions[currentDirection][0] < rows &&
                             col + directions[currentDirection][1] >= 0 &&
                             col + directions[currentDirection][1] < columns &&
 
-                            //And the next direction is not visited
+                            //If we hit a visited node - or a bound above - we attempt to change direction
                             matrix[row + directions[currentDirection][0]][col +
                                     directions[currentDirection][1]] !=
                                     VISITED
             ) {
-                //while the above is true, that means we're not changing direction
-                //We're in a spot in the matrix where we're going straight
+
+                //Since the above is true we can keep this at 0 because we're not changing directions yet
                 changeDirection = 0;
 
-
-                //Then update the next spot we're moving to to 101
-                //And add that spot to our return list
+                //Our row goes up by the current direction
                 row = row + directions[currentDirection][0];
+                //Our column goes up by the current direction
                 col = col + directions[currentDirection][1];
+                //We add the next cell to our output
                 result.add(matrix[row][col]);
+                //Then we mark it as visited
                 matrix[row][col] = VISITED;
+
+                //The loop repeats until the above condition is not met
             }
-            //Once we're out of the while loop - it means we've hit a bound
-            //Or hit a visited cell
-            //So we
-            // Change our direction.
+
+            //Once it's not met - we can change direction
+            //This current direction +1 % 4 - is the key
             currentDirection = (currentDirection + 1) % 4;
 
-            // Increment change_direction because we changed our direction.
-            //And we increment our change direction counter
-            //If we break out of the above while - means we've hit another wall
-            //Which means we're at the end - so the outer while breaks out and
-            //We can return our list
+
+            //And we increase attempts by one
+            //If this reaches two - then we've hit our last element
             changeDirection++;
         }
 
