@@ -16,9 +16,8 @@ public class InsertionSortList {
 
         while(curr != null){
 
-            //You need to create a prev in each while loop iteration
-            //So that we can iterate through our sorted list
-            //Dummy always points to our starting point in our sorted list
+            //In every iteration we need prev to reset back
+            //To the start of our sorted list
             ListNode prev = dummy;
 
 

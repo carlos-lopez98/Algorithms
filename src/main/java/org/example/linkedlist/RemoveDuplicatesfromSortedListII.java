@@ -20,7 +20,7 @@ public class RemoveDuplicatesfromSortedListII {
             //Iterating through the original list containing dupes
             while (head != null) {
 
-                //The check to see if we're starting a duplicate chaing
+                //The check to see if we're starting a duplicate chain
                 if (head.next != null && head.val == head.next.val) {
                     // Move till the end of the duplicates sublist
                     while (head.next != null && head.val == head.next.val) {
