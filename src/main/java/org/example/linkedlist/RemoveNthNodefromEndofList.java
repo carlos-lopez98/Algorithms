@@ -11,6 +11,8 @@ public class RemoveNthNodefromEndofList {
 
  }
 
+ //This is basically just a recursive algorithm returning the next node in the list
+    //If we're at the node we need to skip, we can skip it by returning node.next
     int counter = 0;
     public ListNode removeNthFromEnd(ListNode head, int n) {
 

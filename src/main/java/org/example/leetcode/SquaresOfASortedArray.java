@@ -22,6 +22,9 @@ package org.example.leetcode;
 public class SquaresOfASortedArray {
 
 
+    //This works because the array is sorted
+    //The largest square will either be the leftmost value or right most value
+    //Then we can insert into our new array from right to left
     public int[] sortedSquares(int[] nums){
      int[] returnArr = new int[nums.length];
 
