@@ -1,4 +1,4 @@
-package org.example.leetcode;
+package org.example.linkedlist;
 
 import org.example.practice.Node;
 
@@ -34,6 +34,7 @@ public class ReOrderList {
 
 
 
+    //Finds the middle point
     public static void reOrder(Node head) {
         Node slow = head;
         Node fast = head;
@@ -48,6 +49,7 @@ public class ReOrderList {
 
         prev.next = null;
 
+        //Reverse list starting at the slow pointer
         reverseList(slow);
     }
 
@@ -67,15 +69,22 @@ public class ReOrderList {
     }
 
     public static void merge(Node one, Node two){
+
+        //You create a temp head and temp tail
         while(one != null && two != null){
+            //This saves the next positions in each lists
             Node tempOne = one.next;
             Node tempTwo = two.next;
 
             one.next = two;
 
+            //For some reason you always hit the end of the first list first
+            //You can test this using test cases in a live problem
             if(tempOne == null) break;
             two.next = tempOne;
 
+
+            //At the end you move the original pointers forward
             one = tempOne;
             two = tempTwo;
         }

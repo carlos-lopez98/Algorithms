@@ -404,11 +404,11 @@ public class Main {
          * Testing swap nodes in pairs
          */
 
-        SwapNodesInPairs pairs = new SwapNodesInPairs();
-
-        SwapNodesInPairs.ListNode head = new List
-
-        pairs.swapPairs(head);
+//        SwapNodesInPairs pairs = new SwapNodesInPairs();
+//
+//        SwapNodesInPairs.ListNode head = new List
+//
+//        pairs.swapPairs(head);
 
     }
 }
