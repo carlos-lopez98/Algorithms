@@ -15,14 +15,17 @@ public class FindKthLargest {
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
+        //Add all elements to the priority queue
         for(int num: nums){
             minHeap.add(num);
 
+            //This ensures our kth largest becomes the first element in the resulting heap
             if(minHeap.size() > k){
                 minHeap.remove();
             }
         }
 
+        //Return the first element
         return minHeap.peek();
     }
 }
