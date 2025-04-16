@@ -10,38 +10,39 @@ public class ReverseLinkedListII {
      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  }
 
+    //We can keep these outside - just so they persist out of each call stack
     private boolean stop;
     private ListNode left;
 
     public void recurseAndReverse(ListNode right, int m, int n) {
-        //Then this one keeps going up ontil n is 1
-        //Which n is always greater than m
+
+        //When n == 1 right pointer is in position
         if (n == 1) {
             return;
         }
 
         right = right.next;
 
-
-        //This essentially creates a stopping point for our left pointer
-        //Which is a global variable saved outside of our recursion call stack
+        //When m is less than one, we can stop moving left forwards as it's also now in position
         if (m > 1) {
             this.left = this.left.next;
         }
 
+        //Backtracking starts right after this call - remember that only our right is backtracking not our left
         this.recurseAndReverse(right, m - 1, n - 1);
 
-
-        //Now this is the backtracking part
-        //We start with both left and right pointers in the correct position
-        //This is our queue to stop when our pointers are crossing
+        //If pointers meet or right moves past left
         if (this.left == right || right.next == this.left) {
+
+            //Then we stop
             this.stop = true;
         }
 
-        //We continue swapping if our stop variable
-        //Isn't flipped
+        //If we're stopped then, we stop the swaps - backtracking will still continue - but no swaps will be performed
+        //Swaps only happen if our stop is still false
         if (!this.stop) {
+
+            //Then we swap values - and move our left pointer inward left = left.next
             int t = this.left.val;
             this.left.val = right.val;
             right.val = t;

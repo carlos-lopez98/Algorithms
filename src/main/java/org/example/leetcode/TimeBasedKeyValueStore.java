@@ -120,7 +120,8 @@ public class TimeBasedKeyValueStore {
                 }
             }
 
-            //Create the bound
+            //Remember if we didn't find an applicable timestamp
+            //That we return empty - this will happen if right is less than 0
             return right >= 0 ? listOfKeyValues.get(right).value : "";
         }
     }
