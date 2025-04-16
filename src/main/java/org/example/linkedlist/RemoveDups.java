@@ -30,8 +30,12 @@ public class RemoveDups {
 
         ListNode curr = head;
 
+
         while (curr != null){
 
+            //We're not removing duplicate chains
+            //So if we have a list of all 1s
+            //With this approach the first one, will remain
             while(curr.next != null && curr.val == curr.next.val){
                 curr.next = curr.next.next;
             }
