@@ -3,17 +3,13 @@ package org.example.sorting;
 
 public class InsertionSort {
 
-    //For this one you need to keep track of a sorted partition
-    //Let's say we'll start our sorted partition on the left
-    //This one implements in Ascending order with the sorted partition on the left, while unsorted is on the right
     public static void insertionSort(int[] intArray) {
 
         for (int sortedPartition = 0; sortedPartition < intArray.length - 1; sortedPartition++) {
             int unSorted = sortedPartition + 1;
             int innerSorted = sortedPartition;
 
-            //TO NOTE -- While loops do the first condition check then the second
-            //It's not they do both
+
             while (innerSorted >= 0 && intArray[innerSorted] > intArray[unSorted]) {
                 int temp = intArray[unSorted];
                 intArray[unSorted] = intArray[innerSorted];

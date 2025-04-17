@@ -35,11 +35,11 @@ public class LongestSubstringWithoutRepeatingCharacters {
             return 0;
         }
 
-        //Sliding window technique
         int left = 0;
         int right = 0;
         int longestSequence = 0;
 
+        //With a character set, you can just check if the new character is already in the set
         Set<Character> charSet = new HashSet<>();
 
         int currentWindow = 1;
@@ -47,17 +47,19 @@ public class LongestSubstringWithoutRepeatingCharacters {
         while(right < s.length()){
             char current = s.charAt(right);
 
-            //The key here is where we've put this while loop
-            //If our charset contains current, we start removing from the left
-            //Before we add our current character
+            //If it contains the new character
             while(charSet.contains(current)){
+
+                //Then we can remove our left most and shrink our window
                 charSet.remove(s.charAt(left));
                 left++;
                 currentWindow--;
             }
 
+            //Then we add our rightmost
             charSet.add(current);
 
+            //Then check if we have a new longestSequence
             longestSequence = Math.max(longestSequence, currentWindow);
             currentWindow++;
             right++;

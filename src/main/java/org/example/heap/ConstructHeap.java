@@ -10,7 +10,7 @@ public class ConstructHeap {
     //Construct a minHeap
     PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
-    //Contruct a maxHeap
+    //Construct a maxHeap
     PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 
     //Construct a minheap with default values
