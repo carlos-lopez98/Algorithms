@@ -14,7 +14,8 @@ public class MatrixZeroes {
 
         //Iterate through the grid like normal
         //If we're in a cell with a zero
-        //Mark the it's row and column for zeroing out
+        //We just add that row/ col to denote it needs zeroing out
+        //This can be done using two int arrays as well
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
                 if (matrix[i][j] == 0) {
