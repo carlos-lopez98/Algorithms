@@ -10,26 +10,21 @@ public class RemoveDuplicatesfromSortedListII {
      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  }
         public ListNode deleteDuplicates(ListNode head) {
-            //Dummy node is a new node - with head as the next node
-            //Basically just an empty node
+
             ListNode dummy = new ListNode(0, head);
 
-            // predecessor = the last node
-            // before the sublist of duplicates
+
             ListNode pred = dummy;
 
-            //Iterating through the original list containing dupes
             while (head != null) {
 
-                //The check to see if we're starting a duplicate chain
+                //You need the if statement because of the way you move pred
                 if (head.next != null && head.val == head.next.val) {
-                    // Move till the end of the duplicates sublist
-                    //Keeps skipping until we reach a new unique node
+
                     while (head.next != null && head.val == head.next.val) {
                         head = head.next;
                     }
 
-                    //Sets Pred = head.next - removing our chained elements
                     pred.next = head.next;
                 } else {
 
