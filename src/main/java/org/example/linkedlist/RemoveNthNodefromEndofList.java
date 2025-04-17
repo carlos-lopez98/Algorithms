@@ -26,6 +26,10 @@ public class RemoveNthNodefromEndofList {
     public ListNode removeNth(ListNode head, int n){
         //This moves all the way into our list
          if(head.next != null){
+
+             //Cool trick with linkedlist in recursion
+             //If you pass in the next node eventually that node will be null
+             //You know you just hit the end of the list
             head.next =  removeNth(head.next, n);
          }
 
