@@ -16,17 +16,19 @@ public class SubarraySumEqualsK {
 
         map.put(0, 1);
 
-        //Use the prefix sum trick
-        //This one aligns with the two sum solution
-        //Where you're looking for a compliment value
         for (int i = 0; i < nums.length; i++) {
 
             sum += nums[i];
 
+            //Uses the prefix sum trick
+            //Where prefixSum at right - prefixSumLeft = the sum of a contiguos subarray from right to left
+            //If you store every prefix sum up to point i, you can essentially calculate every contiguous subarraysum
+            //up to point i - if this contiguous sum = k, then we have a valid subarray
             if (map.containsKey(sum - k))
                 count += map.get(sum - k);
                 map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
+
         return count;
     }
 }
