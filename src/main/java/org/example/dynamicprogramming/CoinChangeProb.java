@@ -1,28 +1,33 @@
 package org.example.dynamicprogramming;
 
+import java.util.Arrays;
+
 public class CoinChangeProb {
 
     public int coinChange(int[] coins, int amount){
-        if(amount < 0){
-            return -1;
-        }
+        if(amount <= 0 ) return 0;
 
-        if(amount == 0){
-            return 0;
-        }
 
-        int localMin = Integer.MAX_VALUE;
+        int[] dp = new int[amount +1];
 
-        for(int coin : coins){
-            int remainingAmount = coinChange(coins, amount - coin);
+        int max = amount + 1;
 
-            if(remainingAmount >= 0 ){
-                localMin = Math.min(localMin, remainingAmount + 1);
+        Arrays.fill(dp, max);
+
+        dp[0] = 0;
+
+
+        for(int i = 0; i < dp.length; i++){
+            for(int coin: coins){
+             if(coin > i){
+                 continue;
+             }
+
+             dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
+
             }
-
         }
 
-        return localMin;
+        return (dp[amount] != max) ? dp[amount] : -1;
     }
-
 }

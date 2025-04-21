@@ -14,6 +14,8 @@ public class RemoveDuplicatesfromSortedListII {
             ListNode dummy = new ListNode(0, head);
 
 
+            //Technicall pred is also moving along the original linkedlist
+            //But it's one step before head
             ListNode pred = dummy;
 
             while (head != null) {
