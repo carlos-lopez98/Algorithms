@@ -5,7 +5,9 @@ import java.util.Arrays;
 public class AssignCookies {
 
     public int findContentChildren(int[] g, int[] s) {
-        //This algorithm only works if the input arrays are sorted
+
+        //We must sort so we can try to give the smallest cookie to the smallest
+        //greed child
         Arrays.sort(g);
         Arrays.sort(s);
         int cookieIndex = 0;
@@ -14,16 +16,11 @@ public class AssignCookies {
         //Our bounds
         while(cookieIndex < s.length && contentChildren < g.length){
 
-            //We're iterating from left to right in our cookies
-            //If a cookie will satiate one of our children
-            //Then we can move our children pointer up
-            //As one of our children is satiated
             if(s[cookieIndex] >= g[contentChildren]){
                 contentChildren++;
             }
 
-            //If not we just keep trying a larger cookie
-            //Since our array is sorted already
+            //We try a larger cookie regardless if a child takes it or not
             cookieIndex++;
         }
 
