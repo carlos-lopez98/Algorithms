@@ -17,21 +17,23 @@ public class RemoveDuplicatesfromSortedListII {
 
             while (head != null) {
 
+                //We need to check first if we've reached the start of a duplicating section
                 if (head.next != null && head.val == head.next.val) {
 
-                    //This skips all duplicates
+                    //if we're at the start of a duplicating section then we remove all of them
                     while (head.next != null && head.val == head.next.val) {
                         head = head.next;
                     }
 
-                    //This skips the start of the duplicates
+                    //Then we skip the starting pointer
                     pred.next = head.next;
                 } else {
 
-                    //Only moves forward regularly if no dupes are involved
+                    //If not we can just move normally through our list
                     pred = pred.next;
                 }
 
+                //head will always move forward, regardless if we skip or not
                 head = head.next;
             }
 
