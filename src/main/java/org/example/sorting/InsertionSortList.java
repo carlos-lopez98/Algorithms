@@ -11,6 +11,11 @@ public class InsertionSortList {
 
 
   public ListNode insertionSortList(ListNode head) {
+        //You don't have to have an initial dummy.next
+        //Because in every iteration prev is adding to dummy.next
+
+        //so in the first iteration it'll be null -> prev -> prev -> prev
+        //Eventually dummy.next - is the head for a new sorted list
         ListNode dummy = new ListNode();
         ListNode curr =  head;
 
