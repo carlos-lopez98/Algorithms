@@ -11,8 +11,6 @@ public class RemoveNthNodefromEndofList {
 
  }
 
- //This is basically just a recursive algorithm returning the next node in the list
-    //If we're at the node we need to skip, we can skip it by returning node.next
     int counter = 0;
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
@@ -24,21 +22,17 @@ public class RemoveNthNodefromEndofList {
     }
 
     public ListNode removeNth(ListNode head, int n){
-        //This moves all the way into our list
-         if(head.next != null){
 
-             //Cool trick with linkedlist in recursion
-             //If you pass in the next node eventually that node will be null
-             //You know you just hit the end of the list
+        //We essentially return the head in each iteration
+         if(head.next != null){
             head.next =  removeNth(head.next, n);
          }
 
-         //This starts incrementing on our way back
-        //backtracking portion
+         //Counter allows us to know what spot we're in in the linked list
          counter++;
 
-         //Once we reach our wanted node
-        //We skip it by returning head.next instead of head
+         //but when we reach nth node
+        //we return head.next - meaning we just removed the nth node
          if(counter == n){
              return head.next;
          }
