@@ -55,26 +55,18 @@ public class AllPathsFromSourceToTarget {
 
     public void DFS(int node, List<Integer> path){
 
-        //Base case - if we reach our target
-        //Then we can simply add a copy of our current path to the list of possible paths
-        //We add a copy since we're passing in path as a reference variable
         if(node == target){
             paths.add(new ArrayList<>(path));
             return;
         }
 
-        //Then we just call DFS on each neighboring node
         for(int edge : graph[node]){
 
-            //At each recursive call we add that node to the path
             path.add(edge);
 
-            //If you think about this DFS call it'll look like a recursion tree
-            //Since we don't have a visited array - our runtime would be exponential 2^n
             DFS(edge, path);
 
-            //Then we pop from the path once we reach a viable path - this is to re-use the path variable path
-//            path.removeLast();
+            path.removeLast();
         }
     }
 

@@ -10,7 +10,12 @@ public class SpiralMatrix {
         int rows = matrix.length;
         int columns = matrix[0].length;
 
-        int[][] directions = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
+        int[][] directions = {
+                { 0, 1},
+                { 1, 0},
+                { 0, -1},
+                { -1, 0}
+        };
 
 
         int currentDirection = 0;
@@ -30,6 +35,12 @@ public class SpiralMatrix {
         while (changeDirection < 2) {
 
             while (
+                            //current direction is a number 0 - 3
+                            //It represents the row we're currently on - or the direction technically
+                            //row 0 = right
+                            //row 1 = down
+                            //row 2 = left
+                            //row 3 = up
                             row + directions[currentDirection][0] >= 0 &&
                             row + directions[currentDirection][0] < rows &&
                             col + directions[currentDirection][1] >= 0 &&

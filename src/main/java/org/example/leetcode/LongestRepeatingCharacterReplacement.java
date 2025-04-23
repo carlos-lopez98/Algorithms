@@ -47,21 +47,26 @@ public class LongestRepeatingCharacterReplacement {
     while(right < s.length()){
         char curr = s.charAt(right);
 
-        //Way better way to track frequencies - as this is technically O(1) space
+        //Creative way to track frequencies - this will give a value between 0 - 127
+        //Just depends on whether they're all lowercase or uppercase
         frequencies[curr - 'A'] += 1;
 
         int currentFreq = frequencies[curr - 'A'];
 
+        //Keep track of character that shows up the most
         maxFreq = Math.max(currentFreq, maxFreq);
 
+        //If our changes becomes more than k we shrink
         while(windowSize - maxFreq > k){
             frequencies[s.charAt(left) - 'A'] -=1;
             left++;
             windowSize--;
         }
 
+        //Longest sequence will be our window
         longestSequence = Math.max(windowSize, longestSequence);
 
+        //Move window up by one
         right++;
         windowSize++;
     }
