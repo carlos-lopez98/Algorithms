@@ -28,6 +28,7 @@ public class IntersectionOfMultipleArrays {
             }
         }
 
+        //This is a key part of the problem if we could return unsorted, runtime would be O (mxn)
         Collections.sort(result);
 
         return result;
