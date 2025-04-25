@@ -1,6 +1,9 @@
 package org.example.greedy;
 
 public class LemonadeChange {
+
+    //Decision based algorithm
+    //Guess it's greedy because we're tying to return the best possible answer for each bill in our bills
     public boolean lemonadeChange(int[] bills) {
         int fiveDollarBill = 0;
         int tenDollarBill = 0;
@@ -28,8 +31,6 @@ public class LemonadeChange {
                 }else{
                     return false;
                 }
-
-
             }
         }
 
