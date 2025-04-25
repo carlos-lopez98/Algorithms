@@ -9,8 +9,6 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
             boolean[] seen = new boolean[n];
             int components = 0;
 
-            //Since some of our nodes have the potential to not have any neighbors
-            //We should initialize these potential nodes without any neighbors
             for(int i = 0; i< n; i++){
                 adjacencyList.put(i, new ArrayList<>());
             }
@@ -18,24 +16,25 @@ public class NumberofConnectedComponentsinanUndirectedGraph {
             for(int[] edge: edges){
                 int x = edge[0];
                 int i = edge[1];
-
                 adjacencyList.get(x).add(i);
                 adjacencyList.get(i).add(x);
             }
 
 
-            //Since we have our nodes n when we start - we must iterate through n to make sure we reach each component
             for(int i = 0; i < n; i++){
+
+                //Everytime we hit a new node that hasn't been visited
+                //We basically got ourselves a new component
                 if(!seen[i]){
                     components++;
-
-                    //Scans all nodes in the current component - adds them to seen
                     BFS(adjacencyList, seen, i);
                 }
             }
 
             return components;
         }
+
+        //OUR DFS and BFS algorithms are marking all the nodes within the same component as visited
 
         //Each component is iterated over using DFS
         public void dfs(Map<Integer, List<Integer>> adjList, boolean[] seen, int startNode){
