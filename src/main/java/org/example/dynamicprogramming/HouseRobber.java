@@ -16,25 +16,24 @@ public class HouseRobber {
     }
 
     public int rob(int n) {
+
+        //Base cases
         if (n <= 0) {
             return housesWMoney[0];
         }
-
         if (n == 1) {
             return Math.max(housesWMoney[0], housesWMoney[1]);
         }
 
-        //If something is already in your cache, you just return that element
         if (cache[n] != -1) {
             return cache[n];
         } else {
-            //You either rob the house next door n-1
-            //Or you rob the current house + the house to door down
-            //You fill in the cache as you go
+
+            //Recurrence relation is you either rob the next house or the current and one skipped
             cache[n] = Math.max(rob(n - 1), housesWMoney[n] + rob(n - 2));
         }
 
-        //You return the final position in the cache as that will be your answer
+        //You're cache will fill in from top down, so your nth position will be the position to return
         return cache[n];
     }
 }
