@@ -11,7 +11,8 @@ public class RottingOranges {
         int m = grid.length, n = grid[0].length;
         int freshOranges = 0;
 
-        //Extra we can perform this at the end - and just check for fresh oranges
+        //We technically don't need this fresh oranges variable - we can just iterate through the grid again
+        //And see if we have any fresh oranges left
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1) {
@@ -21,7 +22,9 @@ public class RottingOranges {
         }
 
 
-        //Add all starting rotten oranges to your queue
+        //Once you understand the problem well
+        //You'll realize that this is a multi-start BFS, you need to find all the rotten oranges
+        //Then start BFS through each one
         Queue<Integer> queue = new ArrayDeque<>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -36,32 +39,28 @@ public class RottingOranges {
 
 
         while (!queue.isEmpty() && freshOranges > 0) {
-            //This queue.size() is a key to this madness
-            //Allows you to perform breadth traversal on multiple locations at the same time
+
+            //The size denotes basically each time we need to increase minutes
             int size = queue.size();
 
-            //Return first rotten orange in queue
             for (int i = 0; i < size; i++) {
-                //This is just a way to get the cell position
+                //this row = num/n is just a way of storing row and col into a single integer
                 int num = queue.poll(), row = num / n, col = num % n;
 
-                //Let's use the directions to iterate through each neighbor
                 for(int[] direction: directions){
                     int x  = direction[0] + row, y = direction[1] + col;
                     if(x > -1 && y > -1 && x < m && y < n && grid[x][y] == 1){
-                        //Adds the cells on each side to the queue
                         queue.add(x * n + y);
                         freshOranges--;
                         grid[x][y] = 2;
                     }
                 }
             }
-            //After each while queue.size() iteration - we add one to minutes
+
+            //We always increase our minutes after making it through each .size()
             minutes++;
         }
 
-        //Then we lastly check if any fresh oranges are left - we can do this in another for loop
-        //Then we don't have to keep track of freshOranges as a variable
         return freshOranges == 0 ? minutes : -1;
     }
 }
