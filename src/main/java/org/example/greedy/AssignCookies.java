@@ -16,11 +16,14 @@ public class AssignCookies {
         //Our bounds
         while(cookieIndex < s.length && contentChildren < g.length){
 
+            //If our cookiew can satsify our child - then we have a content child
+            //Try the next child
             if(s[cookieIndex] >= g[contentChildren]){
                 contentChildren++;
             }
 
-            //We try a larger cookie regardless if a child takes it or not
+            //If not we just keep trying a bigger cookie
+            //Only works because we sorted both arrays to start with
             cookieIndex++;
         }
 
