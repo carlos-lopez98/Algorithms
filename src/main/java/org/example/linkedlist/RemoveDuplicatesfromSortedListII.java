@@ -26,6 +26,8 @@ public class RemoveDuplicatesfromSortedListII {
                     }
 
                     //Then we skip the starting pointer
+                    //Our pred doesn't need to move in this if portion
+                    //Since it'll still be the same
                     pred.next = head.next;
                 } else {
 
