@@ -28,15 +28,14 @@ public class RemoveNthNodefromEndofList {
             head.next =  removeNth(head.next, n);
          }
 
-         //Counter allows us to know what spot we're in in the linked list
+         //but we skip when the counter is equal to n on the way back up
+        //during the backtracking part
          counter++;
-
-         //but when we reach nth node
-        //we return head.next - meaning we just removed the nth node
          if(counter == n){
              return head.next;
          }
 
+         //we return the head like normal
          return head;
     }
 }
