@@ -1,4 +1,4 @@
-package org.example.leetcode;
+package org.example.graphs;
 
 
 import org.example.practice.Node;
@@ -77,20 +77,11 @@ public class FindIfPathExistsInGraph {
             if(currNode == destination){
                 return true;
             }
-
-            //We only perform the operation
-            //If we can visit the node - IE it's not been visited already
             if(!visited[currNode]){
                 visited[currNode] = true;
 
-                //This will iterate through the list of neighbors for the current node
-                //Each neighbor has a DFS performed on it
-                //If the path is bad - goes onto the next neighbor
-                //If it's good, it breaks recursion and returns true
                 for(int nextNode : graph.get(currNode)){
 
-                    //If this returns true - that means we found our destination - if not the recursive call will
-                    //Return false
                     if(DFS(graph,visited,nextNode,destination)){
                         return true;
                     }
@@ -101,8 +92,6 @@ public class FindIfPathExistsInGraph {
         }
 
 
-
-        //BFS Approach
         public boolean BFS(Map<Integer,List<Integer>> graph,boolean[] visited, int source, int destination){
 
             if(source == destination){

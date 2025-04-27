@@ -28,6 +28,8 @@ import java.util.List;
 public class EncodeAndDecodeStrings {
 
 
+    //You need to encode the string with a delimiter
+    //And string length
     public String encode(List<String> strs) {
         StringBuilder sb = new StringBuilder();
         char delimiter = '@';
@@ -47,18 +49,23 @@ public class EncodeAndDecodeStrings {
         char delimiter = '@';
         List<String> returnList = new ArrayList<String>();
 
+        //Iterate through original string
         for(int i =0; i < s.length(); i++) {
             StringBuilder stringLength = new StringBuilder();
 
+            //Get your string length when you hit a delimiter
             while(s.charAt(i) != delimiter){
                 stringLength.append(s.charAt(i));
                 i++;
             }
 
             i++;
-        int length = Integer.parseInt(stringLength.toString());
-        StringBuilder current = new StringBuilder();
 
+            //Then convert your string integer into an int
+            int length = Integer.parseInt(stringLength.toString());
+            StringBuilder current = new StringBuilder();
+
+            //The length is how far into your going to iterate into, to pull your string
         for(int j = i; j <i + length; j++){
             current.append(s.charAt(j));
             i++;
