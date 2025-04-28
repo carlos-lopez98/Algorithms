@@ -10,8 +10,9 @@ public class SwapNodesInPairs {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
   }
 
-    //Singly linked list
-    //Only pointing in one direction
+
+  //Need to understand that you need to return the value
+    //That needs to connect to your current list
     public ListNode swapPairs(ListNode head){
          if(head == null || head.next == null){
              return head;
@@ -22,8 +23,6 @@ public class SwapNodesInPairs {
 
         first.next = swapPairs(head.next.next);
 
-        //second.next is head.next.next - so we can't change this
-        //until after we perform the swap if not, then we get an infinite loop
         second.next = first;
 
         return second;
