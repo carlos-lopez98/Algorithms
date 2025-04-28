@@ -1,4 +1,4 @@
-package org.example.leetcode;
+package org.example.matrix;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -41,10 +41,14 @@ public class ValidSudoku {
 
                 int number = value - '0';
                 int gridPosition = i/3 * 3 + (j/3);
+
+                //If the number is already in one of our sets
+                //We return false
                 if(uniqueInGrid[gridPosition].contains(number) || uniqueInCol[j].contains(number) || uniqueInRow[i].contains(number)){
                     return false;
                 }
 
+                        //Else you add the number into it's respective set
                         uniqueInRow[i].add(number);
                         uniqueInCol[j].add(number);
                         uniqueInGrid[gridPosition].add(number);
