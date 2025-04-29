@@ -10,8 +10,10 @@ public class ReverseLinkedListII {
      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  }
 
-    //We can keep these outside - just so they persist out of each call stack
+    //Need global variables to track a stop flag
     private boolean stop;
+
+    //Need a global left so we can perform a two pointer iteration
     private ListNode left;
 
     public void recurseAndReverse(ListNode right, int m, int n) {
@@ -28,8 +30,6 @@ public class ReverseLinkedListII {
 
         this.recurseAndReverse(right, m - 1, n - 1);
 
-        //Stop pointer is needed, because we need to ensure that after right back tracks past left
-        //No further operations are performed
         if (this.left == right || right.next == this.left) {
             this.stop = true;
         }
@@ -40,6 +40,8 @@ public class ReverseLinkedListII {
             this.left.val = right.val;
             right.val = t;
 
+            //With the global left we can move this pointer inward
+            //While our right pointer backtracks because of the recursion
             this.left = this.left.next;
         }
     }
