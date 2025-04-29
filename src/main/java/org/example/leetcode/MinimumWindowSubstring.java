@@ -40,14 +40,20 @@ public class MinimumWindowSubstring {
         public static String minWindowString(String s, String t) {
             if (s == null || t == null || s.length() < t.length()) return "";
 
+            //You need to know the frequencies of the characters in t
             Map<Character, Integer> tFreq = new HashMap<>();
 
             for (char c : t.toCharArray()) {
                 tFreq.put(c, tFreq.getOrDefault(c, 0) + 1);
             }
 
+            //This second window freq map allows us to compare frequencies from the current window
+            //To the t substring
             Map<Character, Integer> window = new HashMap<>();
             int have = 0;
+
+            //This need represents the amount of unique characters in t
+            //But they'll only count towards have, if the frequency matches as well
             int need = tFreq.size();
 
             int left = 0;
@@ -55,13 +61,20 @@ public class MinimumWindowSubstring {
             int minStart = 0;
 
             for (int right = 0; right < s.length(); right++) {
+
+                //Take the current character at right
                 char c = s.charAt(right);
+                //Add it to our window frequency
                 window.put(c, window.getOrDefault(c, 0) + 1);
 
+                //If that frequency matches our frequency in our t map
+                //Then we have met a match so have++
                 if (tFreq.containsKey(c) && window.get(c).intValue() == tFreq.get(c).intValue()) {
                     have++;
                 }
 
+                //Now when we have a valid window
+                //We can check if we have a minimum
                 while (have == need) {
                     // update minimum
                     if (right - left + 1 < minLen) {
@@ -69,9 +82,11 @@ public class MinimumWindowSubstring {
                         minStart = left;
                     }
 
+                    //Then we can shrink by removing the left character
                     char leftChar = s.charAt(left);
                     window.put(leftChar, window.get(leftChar) - 1);
 
+                    //We also must subtract have if the character we're removing is part of t as well
                     if (tFreq.containsKey(leftChar) && window.get(leftChar) < tFreq.get(leftChar)) {
                         have--;
                     }
