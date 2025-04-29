@@ -53,7 +53,6 @@ public class GroupAnagram {
         }
 
         //Return the values in the map, as a List of list of strings
-
         return new ArrayList<>(groupAnagramTracker.values());
     }
 }

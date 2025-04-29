@@ -21,6 +21,7 @@ public class SwapNodesInPairs {
          ListNode first = head;
          ListNode second = head.next;
 
+         //Because of the recursion the space is O(n)
         first.next = swapPairs(head.next.next);
 
         second.next = first;
