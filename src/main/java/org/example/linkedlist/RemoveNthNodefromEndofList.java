@@ -1,5 +1,6 @@
 package org.example.linkedlist;
 
+//You use backtracking to see what node you're at
 public class RemoveNthNodefromEndofList {
 
      public class ListNode {
