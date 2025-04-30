@@ -15,6 +15,8 @@ public class ValidAnagram {
             return false;
         }
 
+        //This one is a little tricky way of solving
+        //With the frist iteration you add to the frequency counts
         int[] array = new int[26];
 
         for (int i = 0; i < s.length(); i++) {
@@ -23,9 +25,10 @@ public class ValidAnagram {
             array[getNumericalValue(current)] = Integer.sum(array[getNumericalValue(current)], 1);
         }
 
+        //In the second iteration you subtract, if a count is ever less than 0 then we know automatically
+        //We have an invalid string
         for (int j = 0; j < t.length(); j++) {
             char current = t.charAt(j);
-
             array[getNumericalValue(current)] = Integer.sum(array[getNumericalValue(current)], -1);
 
             if (array[getNumericalValue(current)] < 0) {
