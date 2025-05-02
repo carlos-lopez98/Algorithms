@@ -24,8 +24,8 @@ public class SubarraySumEqualsK {
             //Where prefixSum at right - prefixSumLeft = the sum of a contiguos subarray from right to left
             //If you store every prefix sum up to point i, you can essentially calculate every contiguous subarraysum
             //up to point i - if this contiguous sum = k, then we have a valid subarray
-            if (map.containsKey(sum - k))
-                count += map.get(sum - k);
+            if (map.containsKey(sum - k)) count += map.get(sum - k);
+
                 map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
 
