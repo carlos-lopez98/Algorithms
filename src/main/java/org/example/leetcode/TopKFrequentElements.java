@@ -21,28 +21,29 @@ import java.util.*;
 public class TopKFrequentElements {
 
     public static int[] topKFrequent (int[] nums, int k){
+        //Return just a top k elements
+        int[] topK = new int[k];
 
-        HashMap<Integer, Integer> frequencies = new HashMap<>();
+        //In order to count frequencies of each num - I can use a frequency counter with a hashmap
+        Map<Integer, Integer> freqCounter = new HashMap<>();
 
-        for(int current: nums){
-        frequencies.merge(current,1, Integer::sum);
+        for(int num: nums){
+           if(freqCounter.containsKey(num)){
+               freqCounter.put(num, freqCounter.get(num) + 1);
+           }else{
+               freqCounter.put(num, 1);
+           }
         }
 
-        List<Map.Entry<Integer,Integer>> sortedFreq = new ArrayList<>((frequencies.entrySet()));
-
-        //Sorts Descending
-        sortedFreq.sort((entry1, entry2) -> entry2.getValue() - entry1.getValue());
+        List<Map.Entry<Integer, Integer>> sorted = new ArrayList<>(freqCounter.entrySet());
 
         //Sorts Ascending
-        sortedFreq.sort((entry1, entry2) -> entry1.getValue() - entry2.getValue());
+        sorted.sort((entryOne, entryTwo) -> entryTwo.getValue() - entryOne.getValue());
 
-
-
-        int[] returnList = new int[k];
-        for(int i = 0 ; i < k; i++){
-            returnList[i] = sortedFreq.get(i).getKey();
+        for(int i = 0; i < k; i++){
+            topK[i] = sorted.get(i).getKey();
         }
 
-        return returnList;
+        return topK;
     }
 }
