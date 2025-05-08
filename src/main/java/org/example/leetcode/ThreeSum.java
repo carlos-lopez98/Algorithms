@@ -41,53 +41,54 @@ public class ThreeSum {
     //Intuition is we can steer the sum - if we sort our values
     public List<List<Integer>> threeSum(int[] nums) {
 
-        //We always start by first sorting our values
+        //Since this solution uses a steer the sum approach we must make sure ou input is sorted
         Arrays.sort(nums);
 
-        //Create your output list - a list of integer triplets
+        //Then we instantiate our output list
         List<List<Integer>> threeSum = new ArrayList<>();
 
         for(int fixed = 0; fixed < nums.length - 2; fixed++){
 
-            //Here's our first check for duplicates
-            //if our fixed pointer runs into the same value
-            //We skip that iteration move to the next
+            //We can continue if our first pointer runs into a duplicate, as we've already found that
+            //Triplet
             if(fixed > 0 && nums[fixed] == nums[fixed - 1]){
                 continue;
             }
 
-
-            //Make sure our pointers iterate from l to r
-            //and from r - l
+            //This is our steering portion
             int left = fixed + 1;
             int right = nums.length - 1;
 
-            //Break this inner loop when the pointers meet
             while(left < right){
 
-                //We're tracking the sum as we need to know if the triplets add up to the target value
                 int sum = nums[fixed] + nums[right] + nums[left];
 
-
                 if(sum == 0){
+
+                    //We have valid triplet
                     threeSum.add(Arrays.asList(nums[fixed],nums[left],nums[right]));
+
+                    //Then we can move both pointers
                     left++;
                     right--;
 
-                    //After we found our target value we can skip potential duplicates once more
-                    //Ensure we remember our bounds l < right - this can stop us from doing an unecessary calculation
+                    //We use this while loop to skip duplicates
                     while(left < right && nums[left] == nums[left - 1]) left++;
                     while(left < right && nums[right] == nums[right + 1])right--;
-                } else if(sum > 0){
+                }
+                //This is the part where the sum is being steered
+                //right moves inward if we have a larger than zero value
+                else if(sum > 0){
                     right--;
                 }else{
+
+                    //Left moves outward if we have a smaller than 0 value
                     left++;
                 }
-
-
             }
         }
 
+        //Then we return our list of triplets w/ duplicates removed
         return threeSum;
     }
 }
