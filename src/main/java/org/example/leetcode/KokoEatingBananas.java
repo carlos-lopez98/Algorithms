@@ -51,6 +51,7 @@ public class KokoEatingBananas {
                 minEatingRate = mid + 1; // Increase the eating rate
             }
         }
+
         return minEatingRate;
     }
 
