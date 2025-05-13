@@ -21,6 +21,7 @@ public class MaximumProductSubarray {
             maxProduct = Math.max(maxProduct, prefix);
             maxProduct = Math.max(maxProduct, suffix);
 
+            //We have to remember to reset if we run into a zero
             if (prefix == 0) prefix = 1;
             if (suffix == 0) suffix = 1;
         }
