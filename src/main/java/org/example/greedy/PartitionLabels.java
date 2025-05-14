@@ -27,10 +27,15 @@ public class PartitionLabels {
         for(int i = 0; i < s.length(); i++){
             size++;
 
-            //End will update everytime to ensure we're staying within a valid partition
+            //The key is this little part
+            //The end of each partition is denoted by the last occurring element in our partition
             end = Math.max(end, lastOccurrence.get(s.charAt(i)));
 
-            //reset size - at the new partition
+            //whenever our I becomes our end
+            //It essentially means we reached the end of a valid partition
+            //Then we can reset the size
+            //end will reset in the next iteration as it has to become a new last occurring spot
+            //which logically will be greater than the current last occurring spot
             if(i == end){
                 result.add(size);
                 size = 0;
