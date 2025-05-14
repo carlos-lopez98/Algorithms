@@ -9,6 +9,8 @@ public class MaximumAverageSubarrayI {
         int r = 0;
         int l = 0;
         double runningSum = 0;
+
+        //Ensure you're setting maxSum = NEGATIVE_INFINITY or else you may run into issues
         double maxSum = Double.NEGATIVE_INFINITY;
 
         while(r < nums.length){
