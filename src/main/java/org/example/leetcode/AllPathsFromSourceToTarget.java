@@ -28,11 +28,10 @@ import java.util.*;
  * The input graph is guaranteed to be a DAG.
  */
 
+//The key to this one is to pay attention to how the input is provided
+    //And how we can backtrack to unwind our paths
 public class AllPathsFromSourceToTarget {
 
-    //To make our function calls simpler
-    //We can store some variables like the graph and target
-    //Easily as a universal class variable
     int target;
     int[][] graph;
 
@@ -61,11 +60,8 @@ public class AllPathsFromSourceToTarget {
         }
 
         for(int edge : graph[node]){
-
             path.add(edge);
-
             DFS(edge, path);
-
             path.removeLast();
         }
     }
