@@ -29,30 +29,27 @@ import java.util.stream.Collectors;
  * 0 <= strs[i].length <= 100
  * strs[i] consists of lowercase English letters.
  */
+
+//The key here is to remember you must create a hashmap
+    //Then use the sorted version of each string as the key
+    //The key returns a list of the unsorted values
 public class GroupAnagram {
 
     public static List<List<String>> groupAnagrams(String[] strs){
-        //Used to group and track anagrams
         HashMap<String, List<String>> groupAnagramTracker = new HashMap<>();
 
-        //Iterates through your string array
         for (String currentString : strs) {
-            //keeps track of current string and it's sorted version
             char[] sortedString = currentString.toCharArray();
             Arrays.sort(sortedString);
             String sorted = Arrays.toString(sortedString);
 
-            //If the sorted version is not in the hashmap
-            //Add it in as a key with an empty list
             if (!groupAnagramTracker.containsKey(sorted)) {
                 groupAnagramTracker.put(sorted, new ArrayList<>());
             }
 
-            //Here's where the unsorted is added
             groupAnagramTracker.get(sorted).add(currentString);
         }
 
-        //Return the values in the map, as a List of list of strings
         return new ArrayList<>(groupAnagramTracker.values());
     }
 }

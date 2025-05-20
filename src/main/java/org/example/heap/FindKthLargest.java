@@ -13,6 +13,7 @@ import java.util.PriorityQueue;
 public class FindKthLargest {
 
     public int findKthLargest(int[] nums, int k) {
+        //Priority queue by default places elements in ascending order
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         for(int num: nums){
