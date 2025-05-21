@@ -14,6 +14,7 @@ public class HeightChecker {
 
 
 
+        //Sort the expected array
         for(int sorted = heights.length - 1; sorted >= 0; sorted--){
             for(int i = 0; i < sorted; i++){
                 if(expected[i] > expected[i + 1]){
@@ -24,6 +25,7 @@ public class HeightChecker {
 
         int mismatch = 0;
 
+        //Compare expected vs heights returning any mismatched elements
         for(int i = 0; i< expected.length; i++){
             if(expected[i] != heights[i]){
                 mismatch++;
@@ -32,6 +34,7 @@ public class HeightChecker {
 
         return mismatch;
     }
+
 
     private void swap(int one, int two, int[] heights){
         int temp = heights[one];
