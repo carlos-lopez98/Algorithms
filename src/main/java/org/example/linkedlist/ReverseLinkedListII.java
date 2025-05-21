@@ -18,6 +18,8 @@ public class ReverseLinkedListII {
 
     public void recurseAndReverse(ListNode right, int m, int n) {
 
+        //This one is what gets me - you need to be able to tell what node will be in the first backtrack
+        //call
         if (n == 1) {
             return;
         }
