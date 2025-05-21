@@ -2,13 +2,9 @@ package org.example.dynamicprogramming;
 
 public class MaximumProductSubarray {
 
-
-    //Intuitive
-    //You basically calculate all prefixProducts
-    //Then you calculate all suffixProducts
-    //Then set maxProduct equal to math.max of prefix or suffix
-    //This works because a suffix will have a third negative
-    //While the prefix may not
+    //We have to remember to do the zero reset
+    //After we check for maxProduct
+    //If we do it before the code will not work
     public int maxProduct(int[] nums) {
         int prefix = 1;
         int suffix = 1;
