@@ -22,6 +22,8 @@ import java.util.Set;
  * Input: nums = [1,0,1,2]
  * Output: 3
  */
+
+//Don't forget to handle duplicates if not you'll keep getting a time limit exceeded
 public class LongestConsecutiveSequence {
 
     public static int returnLongestConsecutiveSequence(int[] nums) {
