@@ -1,5 +1,7 @@
 package org.example.matrix;
 
+//This one just requires matrix transposion + matrix reverse
+//You transpose then reverse every row in the matrix
 public class RotateImage {
     public void rotate(int[][] matrix) {
         transpose(matrix);
