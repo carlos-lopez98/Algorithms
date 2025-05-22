@@ -39,6 +39,9 @@ import java.util.*;
  * There are no self edges.
  */
 
+//Need to remember how to set up adjlist properly
+    //Doing the DFS traversal can get tricky
+    //Need to know when and where to do the recursive call
 public class FindIfPathExistsInGraph {
     Map<Integer, List<Integer>> graph = new HashMap<>();
 
@@ -81,6 +84,7 @@ public class FindIfPathExistsInGraph {
                 visited[currNode] = true;
 
                 for(int nextNode : graph.get(currNode)){
+
 
                     if(DFS(graph,visited,nextNode,destination)){
                         return true;
