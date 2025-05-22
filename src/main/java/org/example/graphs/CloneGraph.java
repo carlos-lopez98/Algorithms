@@ -1,4 +1,4 @@
-package org.example.leetcode;
+package org.example.graphs;
 
 import org.w3c.dom.Node;
 
@@ -22,6 +22,9 @@ public class CloneGraph {
             neighbors = _neighbors;
         }
     }
+
+    //Visited needs to be instantiated outside of the recursion call stack
+    //Since in every iteration we're accessing the map to check if an OG is already tied to a clone
     Map<Node, Node> visited = new HashMap<>();
 
     public Node cloneGraph(Node node){
@@ -44,6 +47,8 @@ public class CloneGraph {
             clone.neighbors.add(cloneGraph(neighbor));
         }
 
+        //We got to remember to return the clone in every iteration - since it's returning a clone to add
+        //To the originals clone neighbors
         return clone;
     }
 }
