@@ -1,6 +1,8 @@
 package org.example.leetcode;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -27,6 +29,9 @@ import java.util.Set;
  * 0 <= s.length <= 5 * 104
  * s consists of English letters, digits, symbols and spaces.
  */
+
+//My takeaway is I really have to be careful with adding and removing values from the hashmap
+    //Keep screwing this up when working with sliding window technique
 public class LongestSubstringWithoutRepeatingCharacters {
 
 
@@ -35,36 +40,23 @@ public class LongestSubstringWithoutRepeatingCharacters {
             return 0;
         }
 
-        int left = 0;
-        int right = 0;
-        int longestSequence = 0;
+        Map<Character,Integer> charFreq = new HashMap<Character,Integer>();
+        int l = 0;
+        int r = 0;
+        int longest = 0;
+        while(r < s.length()){
+            char curr = s.charAt(r);
+            charFreq.put(curr, charFreq.getOrDefault(curr, 0) + 1);
 
-        //With a character set, you can just check if the new character is already in the set
-        Set<Character> charSet = new HashSet<>();
-
-        int currentWindow = 1;
-
-        while(right < s.length()){
-            char current = s.charAt(right);
-
-            //If it contains the new character
-            while(charSet.contains(current)){
-
-                //Then we can remove our left most and shrink our window
-                charSet.remove(s.charAt(left));
-                left++;
-                currentWindow--;
+            while(charFreq.get(s.charAt(r)) > 1){
+                charFreq.put(s.charAt(l), charFreq.get(s.charAt(l)) - 1);
+                l++;
             }
 
-            //Then we add our rightmost
-            charSet.add(current);
-
-            //Then check if we have a new longestSequence
-            longestSequence = Math.max(longestSequence, currentWindow);
-            currentWindow++;
-            right++;
+            longest = Math.max(longest, r - l + 1);
+            r++;
         }
 
-        return longestSequence;
+        return longest;
     }
 }
