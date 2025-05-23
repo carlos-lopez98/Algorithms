@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//This one is about keeping variables easy to read
-//It's easy to lose track of variables within all the brackets
 public class SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {
 
