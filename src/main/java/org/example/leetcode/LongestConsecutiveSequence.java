@@ -40,9 +40,6 @@ public class LongestConsecutiveSequence {
         int longest = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            //This makes sure we are ignoring duplicates
-            //If not we'd just iterate again through a same subsequence
-            //Basically doing duplicate work
             if(i > 0 && nums[i] == nums[i -1]){
                 continue;
             }

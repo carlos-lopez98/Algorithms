@@ -30,8 +30,6 @@ import java.util.Set;
  * s consists of English letters, digits, symbols and spaces.
  */
 
-//My takeaway is I really have to be careful with adding and removing values from the hashmap
-    //Keep screwing this up when working with sliding window technique
 public class LongestSubstringWithoutRepeatingCharacters {
 
 
