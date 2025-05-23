@@ -49,6 +49,7 @@ public class SelectionSort {
         if (i == j) {
             return;
         }
+
         //Basic swapping algorithm
         int temp = array[i];
         array[i] = array[j];

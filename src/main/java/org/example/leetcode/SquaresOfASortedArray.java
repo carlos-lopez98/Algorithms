@@ -22,9 +22,8 @@ package org.example.leetcode;
 public class SquaresOfASortedArray {
 
 
-    //This works because the array is sorted
-    //The largest square will either be the leftmost value or right most value
-    //Then we can insert into our new array from right to left
+   //This two pointer technique allows us to only have to iterate through once
+    //But uses the same amount of space since there's a new int[] being created
     public int[] sortedSquares(int[] nums){
      int[] returnArr = new int[nums.length];
 
