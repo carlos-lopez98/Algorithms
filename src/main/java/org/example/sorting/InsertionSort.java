@@ -6,14 +6,18 @@ public class InsertionSort {
     public static void insertionSort(int[] intArray) {
 
         for (int sortedPartition = 0; sortedPartition < intArray.length - 1; sortedPartition++) {
+            //This is the unsorted position for a value
             int unSorted = sortedPartition + 1;
             int innerSorted = sortedPartition;
 
 
+            //This swapping stops once our unsorted element is in the correct spot
             while (innerSorted >= 0 && intArray[innerSorted] > intArray[unSorted]) {
                 int temp = intArray[unSorted];
                 intArray[unSorted] = intArray[innerSorted];
                 intArray[innerSorted] = temp;
+
+
                 unSorted--;
                 innerSorted--;
             }
