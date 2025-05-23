@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-//This one is just a trick
-//Based off of a math formula
-// n(n+1)/2
+//This one needs the trick
+//But you also have to remember when to do the check
+//And when to put the value into the compliment map
 public class SubarraySumEqualsK {
 
     public int subarraySum(int[] nums, int k) {
