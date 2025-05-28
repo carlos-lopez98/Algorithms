@@ -3,9 +3,7 @@ package org.example.recursion;
 import java.util.ArrayList;
 import java.util.List;
 
-//Your base cases end up being the last row, and last before last
-//You only return the currRow in each iteration
-//The currRow then becomes prevRow, and you can do the calculations within the for loop
+//Gotta be careful where you're stopping your I pointer when you're iterating
 public class PascalsTriangleII {
 
     public List<Integer> getRow(int rowIndex) {
