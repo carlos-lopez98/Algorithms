@@ -10,9 +10,6 @@ public class RottingOranges {
     public int orangesRotting(int[][] grid) {
         int m = grid.length, n = grid[0].length;
         int freshOranges = 0;
-
-        //We technically don't need this fresh oranges variable - we can just iterate through the grid again
-        //And see if we have any fresh oranges left
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == 1) {
@@ -22,9 +19,7 @@ public class RottingOranges {
         }
 
 
-        //Once you understand the problem well
-        //You'll realize that this is a multi-start BFS, you need to find all the rotten oranges
-        //Then start BFS through each one
+
         Queue<Integer> queue = new ArrayDeque<>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -40,11 +35,9 @@ public class RottingOranges {
 
         while (!queue.isEmpty() && freshOranges > 0) {
 
-            //The size denotes basically each time we need to increase minutes
             int size = queue.size();
 
             for (int i = 0; i < size; i++) {
-                //this row = num/n is just a way of storing row and col into a single integer
                 int num = queue.poll(), row = num / n, col = num % n;
 
                 for(int[] direction: directions){
@@ -57,7 +50,6 @@ public class RottingOranges {
                 }
             }
 
-            //We always increase our minutes after making it through each .size()
             minutes++;
         }
 
