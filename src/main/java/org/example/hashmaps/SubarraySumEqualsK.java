@@ -14,6 +14,7 @@ public class SubarraySumEqualsK {
         int count = 0, sum = 0;
         HashMap< Integer, Integer > map = new HashMap <> ();
 
+        //This is a key for single elements that equal k
         map.put(0, 1);
 
         for (int i = 0; i < nums.length; i++) {
